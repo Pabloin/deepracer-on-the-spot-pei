@@ -7,5 +7,5 @@ cp ${MODEL_PATH}/hyperparameters.json   ~/deepracer-on-the-spot-pei/custom_files
 cp ${MODEL_PATH}/model_metadata.json    ~/deepracer-on-the-spot-pei/custom_files
 cp ${MODEL_PATH}/reward_function.py     ~/deepracer-on-the-spot-pei/custom_files
 
-cp ${MODEL_PATH}/config/run.env.pei     ~/deepracer-on-the-spot-pei/run.env
-cp ${MODEL_PATH}/config/system.env.pei  ~/deepracer-on-the-spot-pei/system.env
+cp ${MODEL_PATH}/config/run.env.pei     ~/deepracer-on-the-spot-pei/custom_files/run.env
+cp ${MODEL_PATH}/config/system.env.pei  ~/deepracer-on-the-spot-pei/custom_files/system.env
