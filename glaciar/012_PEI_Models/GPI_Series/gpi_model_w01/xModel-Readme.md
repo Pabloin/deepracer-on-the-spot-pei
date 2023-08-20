@@ -11,6 +11,10 @@ Entrenado?
 cp ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/GPI_Series/gpi_model_w01  \
    ~/deepracer-on-the-spot-pei/custom_files
 
+---------------------
+SPOT
+
+   https://github.com/aws-deepracer-community/deepracer-on-the-spot
 
 
 ---------------------
@@ -23,4 +27,7 @@ DOCS
 
    And traks en K1999
    https://github.com/dp770/aws_deepracer_worksheet/tree/main/tracks
-   
+
+
+----------------
+Esto esta en WIP
