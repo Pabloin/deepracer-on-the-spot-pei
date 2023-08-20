@@ -35,7 +35,7 @@ https://aws-deepracer-community.github.io/deepracer-for-cloud/
          git config user.name Pabloin
          git config user.email pablo.ezequiel.inchausti@gmail.com
 
-
+  
          cd deepracer-for-cloud-pei && ./bin/prepare.sh
 
          .....
