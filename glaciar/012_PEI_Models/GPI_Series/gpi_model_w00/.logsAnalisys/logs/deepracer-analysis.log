@@ -1,0 +1,33 @@
+[I 2023-08-21 04:09:11.219 ServerApp] jupyter_server_fileid | extension was successfully linked.
+[I 2023-08-21 04:09:11.223 ServerApp] jupyter_server_ydoc | extension was successfully linked.
+[I 2023-08-21 04:09:11.227 ServerApp] jupyterlab | extension was successfully linked.
+[I 2023-08-21 04:09:11.227 ServerApp] jupytext | extension was successfully linked.
+[I 2023-08-21 04:09:11.231 ServerApp] nbclassic | extension was successfully linked.
+[I 2023-08-21 04:09:11.232 ServerApp] Writing Jupyter server cookie secret to /root/.local/share/jupyter/runtime/jupyter_cookie_secret
+[I 2023-08-21 04:09:11.717 ServerApp] notebook_shim | extension was successfully linked.
+[I 2023-08-21 04:09:11.734 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2023-08-21 04:09:11.734 FileIdExtension] Configured File ID manager: ArbitraryFileIdManager
+[I 2023-08-21 04:09:11.734 FileIdExtension] ArbitraryFileIdManager : Configured root dir: /workspace
+[I 2023-08-21 04:09:11.734 FileIdExtension] ArbitraryFileIdManager : Configured database path: /root/.local/share/jupyter/file_id_manager.db
+[I 2023-08-21 04:09:11.735 FileIdExtension] ArbitraryFileIdManager : Successfully connected to database file.
+[I 2023-08-21 04:09:11.735 FileIdExtension] ArbitraryFileIdManager : Creating File ID tables and indices with journal_mode = DELETE
+[I 2023-08-21 04:09:11.805 ServerApp] jupyter_server_fileid | extension was successfully loaded.
+[I 2023-08-21 04:09:11.806 ServerApp] jupyter_server_ydoc | extension was successfully loaded.
+[I 2023-08-21 04:09:11.807 LabApp] JupyterLab extension loaded from /usr/local/lib/python3.7/site-packages/jupyterlab
+[I 2023-08-21 04:09:11.808 LabApp] JupyterLab application directory is /usr/local/share/jupyter/lab
+[I 2023-08-21 04:09:11.811 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2023-08-21 04:09:11.811 ServerApp] [Jupytext Server Extension] Deriving a JupytextContentsManager from LargeFileManager
+[I 2023-08-21 04:09:11.812 ServerApp] jupytext | extension was successfully loaded.
+[I 2023-08-21 04:09:11.816 ServerApp] nbclassic | extension was successfully loaded.
+[I 2023-08-21 04:09:11.817 ServerApp] Serving notebooks from local directory: /workspace
+[I 2023-08-21 04:09:11.817 ServerApp] Jupyter Server 1.24.0 is running at:
+[I 2023-08-21 04:09:11.817 ServerApp] http://3ccb7e6cc44c:8888/lab?token=1d91f614326a74d6bbd0a0f5e205d8a48e117da3105525a7
+[I 2023-08-21 04:09:11.817 ServerApp]  or http://127.0.0.1:8888/lab?token=1d91f614326a74d6bbd0a0f5e205d8a48e117da3105525a7
+[I 2023-08-21 04:09:11.817 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2023-08-21 04:09:11.821 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///root/.local/share/jupyter/runtime/jpserver-7-open.html
+    Or copy and paste one of these URLs:
+        http://3ccb7e6cc44c:8888/lab?token=1d91f614326a74d6bbd0a0f5e205d8a48e117da3105525a7
+     or http://127.0.0.1:8888/lab?token=1d91f614326a74d6bbd0a0f5e205d8a48e117da3105525a7

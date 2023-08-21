@@ -1,0 +1,1075 @@
+Starting as worker 3, using world 2022_march_pro and configuration training_params.yaml.
+21/08/2023 00:11:37 passing arg to libvncserver: -rfbport
+21/08/2023 00:11:37 passing arg to libvncserver: 5900
+21/08/2023 00:11:37 x11vnc version: 0.9.13 lastmod: 2011-08-10  pid: 74
+21/08/2023 00:11:37 
+21/08/2023 00:11:37 wait_for_client: WAIT:0
+21/08/2023 00:11:37 
+21/08/2023 00:11:37 initialize_screen: fb_depth/fb_bpp/fb_Bpl 24/32/2560
+21/08/2023 00:11:37 
+21/08/2023 00:11:37 Listening for VNC connections on TCP port 5900
+21/08/2023 00:11:37 Listening for VNC connections on TCP6 port 5900
+21/08/2023 00:11:37 listen6: bind: Address already in use
+21/08/2023 00:11:37 Not listening on IPv6 interface.
+21/08/2023 00:11:37 
+
+The VNC desktop is:      c68f91216baf:0
+PORT=5900
+JWM: warning: /etc/jwm/system.jwmrc[6]: invalid include: /etc/jwm/debian-menu
+IP: 10.0.0.14 172.18.0.4 10.0.1.17  (c68f91216baf)
+12:11:39 INFO:[DeepRacerNodeMonitor]: NodeMonitor started running
+12:11:39 ERROR:[NodeMonitor]: Rosnode threw exception. Master node could be dead
+[s3] Successfully downloaded yaml file from s3 key first-model/training_params.yaml to local ./custom_files/training_params.yaml.
+World name passed in YAML: 2022_march_pro
+{'ALTERNATE_DRIVING_DIRECTION': 'False', 'AWS_REGION': 'us-east-1', 'BEST_MODEL_METRIC': 'progress', 'BODY_SHELL_TYPE': ['deepracer'], 'CAMERA_MAIN_ENABLE': 'True', 'CAMERA_SUB_ENABLE': 'False', 'CAR_COLOR': ['Black'], 'CAR_NAME': 'FastCar', 'CHANGE_START_POSITION': 'True', 'DISPLAY_NAME': 'FastCar', 'ENABLE_DOMAIN_RANDOMIZATION': 'False', 'JOB_TYPE': 'TRAINING', 'KINESIS_VIDEO_STREAM_NAME': '', 'METRICS_S3_BUCKET': ['base-bucket-1f3pfk38sjoqu'], 'METRICS_S3_OBJECT_KEY': ['first-model/metrics/TrainingMetrics.json'], 'MIN_EVAL_TRIALS': '5', 'MODEL_METADATA_FILE_S3_KEY': ['gpi_model_w00/custom_files/model_metadata.json'], 'NUM_WORKERS': '6', 'RACER_NAME': 'FastCar', 'RACE_TYPE': 'TIME_TRIAL', 'REVERSE_DIR': 'False', 'REWARD_FILE_S3_KEY': 'gpi_model_w00/custom_files/reward_function.py', 'ROBOMAKER_SIMULATION_JOB_ACCOUNT_ID': 'Dummy', 'ROUND_ROBIN_ADVANCE_DIST': '0.05', 'SAGEMAKER_SHARED_S3_BUCKET': ['base-bucket-1f3pfk38sjoqu'], 'SAGEMAKER_SHARED_S3_PREFIX': ['first-model'], 'SIMTRACE_S3_BUCKET': 'base-bucket-1f3pfk38sjoqu', 'SIMTRACE_S3_PREFIX': 'first-model', 'START_POSITION_OFFSET': '0.0', 'TRAINING_JOB_ARN': 'arn:Dummy', 'WORLD_NAME': '2022_march_pro'}
+[s3] Successfully downloaded model metadata                  from s3 key gpi_model_w00/custom_files/model_metadata.json to local ./custom_files/racecar/model_metadata.json.
+Sensor list ['FRONT_FACING_CAMERA'], network DEEP_CONVOLUTIONAL_NETWORK_SHALLOW, simapp_version 5.0, training_algorithm clipped_ppo, action_space_type discrete lidar_config {'num_sectors': 8, 'num_values_per_sector': 8, 'clipping_dist': 2.0}
+12:11:42 INFO:[DeepRacerNodeMonitor]: Running nodes are {'/download_params_and_roslaunch_agent_node'}
+xacro: in-order processing became default in ROS Melodic. You can drop the option.
+... logging to /root/.ros/log/d345503e-3fd8-11ee-851a-02420a00000e/roslaunch-c68f91216baf-169.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/opt/install/deepracer_simulation_environment/share/deepracer_simulation_environment/launch/rollout_rl_agent.launch
+[1mstarted roslaunch server http://localhost:35557/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /ALTERNATE_DRIVING_DIRECTION: False
+ * /AWS_REGION: us-east-1
+ * /BEST_MODEL_METRIC: progress
+ * /BODY_SHELL_TYPE: deepracer
+ * /CAMERA_MAIN_ENABLE: True
+ * /CAMERA_SUB_ENABLE: False
+ * /CAR_COLOR: Black
+ * /CAR_NAME: FastCar
+ * /CHANGE_START_POSITION: True
+ * /DISPLAY_NAME: FastCar
+ * /ENABLE_DOMAIN_RANDOMIZATION: False
+ * /JOB_TYPE: TRAINING
+ * /KINESIS_VIDEO_STREAM_NAME: 
+ * /METRICS_S3_BUCKET: base-bucket-1f3pf...
+ * /METRICS_S3_OBJECT_KEY: first-model/metri...
+ * /MIN_EVAL_TRIALS: 5
+ * /MODEL_METADATA_FILE_S3_KEY: gpi_model_w00/cus...
+ * /NUM_WORKERS: 6
+ * /RACER_NAME: FastCar
+ * /RACE_TYPE: TIME_TRIAL
+ * /REVERSE_DIR: False
+ * /REWARD_FILE_S3_KEY: gpi_model_w00/cus...
+ * /ROBOMAKER_SIMULATION_JOB_ACCOUNT_ID: Dummy
+ * /ROUND_ROBIN_ADVANCE_DIST: 0.05
+ * /SAGEMAKER_SHARED_S3_BUCKET: base-bucket-1f3pf...
+ * /SAGEMAKER_SHARED_S3_PREFIX: first-model
+ * /SIMTRACE_S3_BUCKET: base-bucket-1f3pf...
+ * /SIMTRACE_S3_PREFIX: first-model
+ * /START_POSITION_OFFSET: 0.0
+ * /TRAINING_JOB_ARN: arn:Dummy
+ * /WORLD_NAME: 2022_march_pro
+ * /racecar/gazebo_ros_control/pid_gains/left_front_wheel_joint/d: 0.0
+ * /racecar/gazebo_ros_control/pid_gains/left_front_wheel_joint/i: 0.0
+ * /racecar/gazebo_ros_control/pid_gains/left_front_wheel_joint/i_clamp: 0.0
+ * /racecar/gazebo_ros_control/pid_gains/left_front_wheel_joint/p: 0.5
+ * /racecar/gazebo_ros_control/pid_gains/left_rear_wheel_joint/d: 0.0
+ * /racecar/gazebo_ros_control/pid_gains/left_rear_wheel_joint/i: 0.0
+ * /racecar/gazebo_ros_control/pid_gains/left_rear_wheel_joint/i_clamp: 0.0
+ * /racecar/gazebo_ros_control/pid_gains/left_rear_wheel_joint/p: 1.0
+ * /racecar/gazebo_ros_control/pid_gains/left_steering_hinge_joint/d: 0.5
+ * /racecar/gazebo_ros_control/pid_gains/left_steering_hinge_joint/i: 0.0
+ * /racecar/gazebo_ros_control/pid_gains/left_steering_hinge_joint/p: 1.0
+ * /racecar/gazebo_ros_control/pid_gains/right_front_wheel_joint/d: 0.0
+ * /racecar/gazebo_ros_control/pid_gains/right_front_wheel_joint/i: 0.0
+ * /racecar/gazebo_ros_control/pid_gains/right_front_wheel_joint/i_clamp: 0.0
+ * /racecar/gazebo_ros_control/pid_gains/right_front_wheel_joint/p: 0.5
+ * /racecar/gazebo_ros_control/pid_gains/right_rear_wheel_joint/d: 0.0
+ * /racecar/gazebo_ros_control/pid_gains/right_rear_wheel_joint/i: 0.0
+ * /racecar/gazebo_ros_control/pid_gains/right_rear_wheel_joint/i_clamp: 0.0
+ * /racecar/gazebo_ros_control/pid_gains/right_rear_wheel_joint/p: 1.0
+ * /racecar/gazebo_ros_control/pid_gains/right_steering_hinge_joint/d: 0.5
+ * /racecar/gazebo_ros_control/pid_gains/right_steering_hinge_joint/i: 0.0
+ * /racecar/gazebo_ros_control/pid_gains/right_steering_hinge_joint/p: 1.0
+ * /racecar/joint_state_controller/publish_rate: 60
+ * /racecar/joint_state_controller/type: joint_state_contr...
+ * /racecar/left_front_wheel_velocity_controller/joint: left_front_wheel_...
+ * /racecar/left_front_wheel_velocity_controller/pid/d: 0.0
+ * /racecar/left_front_wheel_velocity_controller/pid/i: 0.0
+ * /racecar/left_front_wheel_velocity_controller/pid/i_clamp: 0.0
+ * /racecar/left_front_wheel_velocity_controller/pid/p: 0.5
+ * /racecar/left_front_wheel_velocity_controller/type: velocity_controll...
+ * /racecar/left_rear_wheel_velocity_controller/joint: left_rear_wheel_j...
+ * /racecar/left_rear_wheel_velocity_controller/pid/d: 0.0
+ * /racecar/left_rear_wheel_velocity_controller/pid/i: 0.0
+ * /racecar/left_rear_wheel_velocity_controller/pid/i_clamp: 0.0
+ * /racecar/left_rear_wheel_velocity_controller/pid/p: 1.0
+ * /racecar/left_rear_wheel_velocity_controller/type: velocity_controll...
+ * /racecar/left_steering_hinge_position_controller/joint: left_steering_hin...
+12:11:47 INFO:[DeepRacerNodeMonitor]: Running nodes are {'/racecar/robot_state_publisher', '/racecar/controller_manager', '/download_params_and_roslaunch_agent_node'}
+12:11:51 INFO:[DeepRacerNodeMonitor]: Running nodes are {'/racecar/robot_state_publisher', '/gazebo', '/car_reset_node', '/racecar/controller_manager', '/download_params_and_roslaunch_agent_node'}
++ export PYTHONUNBUFFERED=1
++ PYTHONUNBUFFERED=1
++ ROLLOUT_IDX=3
++ python3 -m markov.rollout_worker --rollout_idx 3
+Publishing to KVS stream is enabled: True
+12:11:53 INFO:[DeepRacerNodeMonitor]: Running nodes are {'/racecar/robot_state_publisher', '/gazebo', '/car_reset_node', '/agents_video_editor', '/racecar/controller_manager', '/download_params_and_roslaunch_agent_node'}
+ * /racecar/left_st[INFO] [1692591107.728433, 0.000000]: Loading model XML from ros parameter /racecar/robot_description
+[INFO] [1692591107.758301, 0.000000]: Waiting for service /gazebo/spawn_urdf_model
+[INFO] [1692591113.588456, 0.000000]: Calling service /gazebo/spawn_urdf_model
+[INFO] [1692591113.818008, 0.000000]: Spawn status: SpawnModel: Successfully spawned entity
+[CameraManager]: Added <markov.cameras.handlers.follow_car_camera.FollowCarCamera object at 0x7fde60aecbe0> to camera_namespaces racecar
+[CameraManager]: Added <markov.cameras.handlers.top_camera.TopCamera object at 0x7fde60aecd68> to camera_namespaces racecar
+[CameraManager]: Removed <markov.cameras.handlers.follow_car_camera.FollowCarCamera object at 0x7fde60aecbe0> from camera_namespaces racecar
+[CameraManager]: Removed <markov.cameras.handlers.top_camera.TopCamera object at 0x7fde60aecd68> from camera_namespaces racecar
+Pausing physics after initializing the cars
+Topic [2022_march_pro//racecar/main_camera/camera_link/camera_sensor/image] is not valid.
+[0m[ INFO] [1692591111.211173144]: DeepRacerGazeboSystemPlugin: Load[0m
+[0m[ INFO] [1692591111.216070864]: DeepRacerGazeboSystemPlugin: Finished loading.[0m
+[0m[ INFO] [1692591111.384827620]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1692591111.387299965]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[ INFO] [1692591113.475388472]: DeepRacerGazeboSystemPlugin: Init Complete[0m
+[0m[ INFO] [1692591113.511004182]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[ INFO] [1692591113.571113266]: Physics dynamic reconfigure ready.[0m
+[0m[ INFO] [1692591117.238506584, 0.001000000]: Camera Plugin: Using the 'robotNamespace' param: '/racecar/'[0m
+[0m[ INFO] [1692591117.240929639, 0.001000000]: Camera Plugin (ns = /racecar/)  <tf_prefix_>, set to "/racecar"[0m
+[0m[ INFO] [1692591117.432834777, 0.001000000]: Loading gazebo_ros_control plugin[0m
+[0m[ INFO] [1692591117.432964519, 0.001000000]: Starting gazebo_ros_control plugin in namespace: /racecar[0m
+[0m[ INFO] [1692591117.433618462, 0.001000000]: gazebo_ros_control plugin is waiting for model URDF in parameter [/racecar/robot_description] on the ROS param server.[0m
+[0m[ INFO] [1692591117.762125766, 0.001000000]: Loaded gazebo_ros_control.[0m
+/usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/dtypes.py:523: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/dtypes.py:524: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/dtypes.py:532: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+S3 bucket: base-bucket-1f3pfk38sjoqu
+S3 prefix: first-model
+S3 endpoint URL: None
+[s3] Successfully downloaded reward function from s3 key gpi_model_w00/custom_files/reward_function.py to local                  ./custom_files/agent/customer_reward_function.py.
+Succeed to import user's reward function
+[CameraManager]: Added <markov.cameras.handlers.follow_car_camera.FollowCarCamera object at 0x7f24f10b5320> to camera_namespaces racecar
+[CameraManager]: Added <markov.cameras.handlers.top_camera.TopCamera object at 0x7f2517f1bd30> to camera_namespaces racecar
+[s3] Successfully downloaded model metadata                  from s3 key gpi_model_w00/custom_files/model_metadata.json to local ./custom_files/agent/model_metadata.json.
+Sensor list ['FRONT_FACING_CAMERA'], network DEEP_CONVOLUTIONAL_NETWORK_SHALLOW, simapp_version 5.0, training_algorithm clipped_ppo, action_space_type discrete lidar_config {'num_sectors': 8, 'num_values_per_sector': 8, 'clipping_dist': 2.0}
+Action space from file: [{'steering_angle': -30, 'speed': 0.6}, {'steering_angle': -15, 'speed': 0.6}, {'steering_angle': 0, 'speed': 0.6}, {'steering_angle': 15, 'speed': 0.6}, {'steering_angle': 30, 'speed': 0.6}]
+Waiting for SageMaker Redis server IP: Time elapsed: 5 seconds
+Waiting for SageMaker Redis server IP: Time elapsed: 10 seconds
+Waiting for SageMaker Redis server IP: Time elapsed: 15 seconds
+Waiting for SageMaker Redis server IP: Time elapsed: 20 seconds
+Waiting for SageMaker Redis server IP: Time elapsed: 25 seconds
+[s3] Successfully downloaded ip config from                  s3 key first-model/ip/ip.json to local ./custom_files/ip.json.
+[s3] Successfully downloaded hyperparameters from                      s3 key first-model/ip/hyperparameters.json to local ./custom_files/agent/hyperparameters.json.
+Using the following hyper-parameters
+{
+  "batch_size": 64,
+  "beta_entropy": 0.01,
+  "discount_factor": 0.95,
+  "e_greedy_value": 0.05,
+  "epsilon_steps": 10000,
+  "exploration_type": "categorical",
+  "loss_type": "huber",
+  "lr": 0.0003,
+  "num_episodes_between_training": 20,
+  "num_epochs": 10,
+  "stack_size": 1,
+  "term_cond_avg_score": 35000.0,
+  "term_cond_max_episodes": 100000
+}
+Exception when checking for DEEPRACER_JOB_TYPE_ENV 'LOCAL' is not a valid DeepRacerJobType
+s3 failed, retry after 1.6424643962949315 seconds. Re-try count: 1/5: An error occurred (404) when calling the HeadObject operation: Not Found
+s3 failed, retry after 4.295649186029647 seconds. Re-try count: 2/5: An error occurred (404) when calling the HeadObject operation: Not Found
+s3 failed, retry after 9.818457687748813 seconds. Re-try count: 3/5: An error occurred (404) when calling the HeadObject operation: Not Found
+s3 failed, retry after 16.848967505048684 seconds. Re-try count: 4/5: An error occurred (404) when calling the HeadObject operation: Not Found
+s3 failed, retry after 25.55575472174642 seconds. Re-try count: 5/5: An error occurred (404) when calling the HeadObject operation: Not Found
+s3 failed, retry after 1.7634365662716234 seconds. Re-try count: 1/5: An error occurred (404) when calling the HeadObject operation: Not Found
+s3 failed, retry after 4.768726500167698 seconds. Re-try count: 2/5: An error occurred (404) when calling the HeadObject operation: Not Found
+s3 failed, retry after 9.821252275103914 seconds. Re-try count: 3/5: An error occurred (404) when calling the HeadObject operation: Not Found
+s3 failed, retry after 16.033458893761512 seconds. Re-try count: 4/5: An error occurred (404) when calling the HeadObject operation: Not Found
+s3 failed, retry after 25.382102235832377 seconds. Re-try count: 5/5: An error occurred (404) when calling the HeadObject operation: Not Found
+s3 failed, retry after 1.9146934150935024 seconds. Re-try count: 1/5: An error occurred (404) when calling the HeadObject operation: Not Found
+s3 failed, retry after 4.095603722813113 seconds. Re-try count: 2/5: An error occurred (404) when calling the HeadObject operation: Not Found
+s3 failed, retry after 9.118322914801626 seconds. Re-try count: 3/5: An error occurred (404) when calling the HeadObject operation: Not Found
+s3 failed, retry after 16.948796097154993 seconds. Re-try count: 4/5: An error occurred (404) when calling the HeadObject operation: Not Found
+s3 failed, retry after 25.73754816535143 seconds. Re-try count: 5/5: An error occurred (404) when calling the HeadObject operation: Not Found
+[s3] Successfully downloaded 0_Step-0.ckpt.data-00000-of-00001 from                  s3 key first-model/model/0_Step-0.ckpt.data-00000-of-00001 to local checkpoint_robomaker/agent/0_Step-0.ckpt.data-00000-of-00001.
+[s3] Successfully downloaded 0_Step-0.ckpt.index from                  s3 key first-model/model/0_Step-0.ckpt.index to local checkpoint_robomaker/agent/0_Step-0.ckpt.index.
+[s3] Successfully downloaded 0_Step-0.ckpt.meta from                  s3 key first-model/model/0_Step-0.ckpt.meta to local checkpoint_robomaker/agent/0_Step-0.ckpt.meta.
+[s3] Successfully downloaded .ready from                  s3 key first-model/model/.ready to local checkpoint_robomaker/agent/.ready.
+[s3] Successfully downloaded .ready from                  s3 key first-model/model/.ready to local checkpoint_robomaker/agent/.ready.
+## Creating graph - name: MultiAgentGraphManager
+## Start physics before creating graph
+## Create graph
+## Creating agent - name: agent
+[RL] Created agent loggers
+[RL] Dynamic import of memory:  "DeepRacerMemoryParameters" {
+    "load_memory_from_file_path": null,
+    "max_size": [
+        "<MemoryGranularity.Transitions: 0>",
+        1000000
+    ],
+    "n_step": -1,
+    "shared_memory": false,
+    "train_to_eval_ratio": 1
+}
+
+[RL] Dynamically imported of memory <markov.memories.deepracer_memory.DeepRacerMemory object at 0x7f24dbd199e8>
+[RL] Setting devices
+[RL] Setting filters
+[RL] Setting filter devices: numpy
+[RL] Setting Phase
+[RL] After setting Phase
+[RL] Setting signals
+[RL] Agent init successful
+[RL] ActorCriticAgent init
+[RL] ActorCriticAgent  init successful
+## Created agent: agent
+## Stop physics after creating graph
+## Creating session
+Creating regular session
+2023-08-21 00:18:39.242264: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX512F
+Checkpoint> Restoring from path=./checkpoint_robomaker/agent/0_Step-0.ckpt
+Reset agent
+Reset agent finished
+[31m[ERROR] [1692591536.923368215, 35.346000000]: Updating ModelState: model [/sub_camera] does not exist[0m
+SIM_TRACE_LOG:0,1,0.7785,-0.3985,-3.9989,30.00,0.60,4,0.0000,False,True,0.1821,0,76.76,35.346,prepare,0.00
+
+SIM_TRACE_LOG:0,2,0.7785,-0.3986,-3.9990,30.00,0.60,4,40.0000,False,True,0.1821,0,76.76,35.386,in_progress,0.00
+
+SIM_TRACE_LOG:0,3,0.7988,-0.3899,-1.6110,30.00,0.60,4,40.0000,False,True,0.2077,1,76.76,35.501,in_progress,0.00
+
+SIM_TRACE_LOG:0,4,0.8239,-0.3765,1.7939,-15.00,0.60,1,40.0000,False,True,0.2391,1,76.76,35.637,in_progress,0.00
+
+SIM_TRACE_LOG:0,5,0.8999,-0.3788,0.5705,0.00,0.60,2,40.0000,False,True,0.3381,1,76.76,35.691,in_progress,0.00
+
+SIM_TRACE_LOG:0,6,0.9461,-0.3839,-0.7576,-30.00,0.60,0,40.0000,False,True,0.3984,1,76.76,35.77,in_progress,0.00
+
+SIM_TRACE_LOG:0,7,1.0078,-0.4026,-4.8635,0.00,0.60,2,40.0000,False,True,0.4804,1,76.76,35.863,in_progress,0.00
+
+SIM_TRACE_LOG:0,8,1.0383,-0.4135,-6.9445,-15.00,0.60,1,40.0000,False,True,0.5212,1,76.76,35.864,in_progress,0.00
+
+SIM_TRACE_LOG:0,9,1.0482,-0.4157,-7.1638,-15.00,0.60,1,40.0000,False,True,0.5342,1,76.76,35.958,in_progress,0.00
+
+SIM_TRACE_LOG:0,10,1.0970,-0.4333,-9.7341,30.00,0.60,4,60.0000,False,True,0.5994,2,76.76,36.038,in_progress,0.00
+
+SIM_TRACE_LOG:0,11,1.1562,-0.4488,-10.9569,15.00,0.60,3,60.0000,False,True,0.6779,2,76.76,36.091,in_progress,0.00
+
+SIM_TRACE_LOG:0,12,1.1854,-0.4495,-9.9463,-15.00,0.60,1,60.0000,False,True,0.7159,2,76.76,36.16,in_progress,0.00
+
+SIM_TRACE_LOG:0,13,1.2214,-0.4519,-9.0744,-30.00,0.60,0,60.0000,False,True,0.7627,2,76.76,36.231,in_progress,0.00
+
+SIM_TRACE_LOG:0,14,1.2624,-0.4610,-9.6521,-30.00,0.60,0,60.0000,False,True,0.8172,2,76.76,36.306,in_progress,0.00
+
+SIM_TRACE_LOG:0,15,1.3281,-0.4936,-13.9903,-30.00,0.60,0,60.0000,False,True,0.9060,2,76.76,36.361,in_progress,0.00
+
+SIM_TRACE_LOG:0,16,1.3617,-0.5137,-16.6984,0.00,0.60,2,60.0000,False,True,0.9518,2,76.76,36.504,in_progress,0.00
+
+SIM_TRACE_LOG:0,17,1.4279,-0.5337,-16.7748,-15.00,0.60,1,60.0000,False,True,1.0399,3,76.76,36.522,in_progress,0.00
+
+SIM_TRACE_LOG:0,18,1.4396,-0.5365,-16.5795,30.00,0.60,4,60.0000,False,True,1.0554,3,76.76,36.566,in_progress,0.00
+
+SIM_TRACE_LOG:0,19,1.4895,-0.5455,-15.2884,15.00,0.60,3,60.0000,False,True,1.1211,3,76.76,36.635,in_progress,0.00
+
+SIM_TRACE_LOG:0,20,1.5319,-0.5418,-11.8630,-30.00,0.60,0,60.0000,False,True,1.1758,3,76.76,36.683,in_progress,0.00
+
+SIM_TRACE_LOG:0,21,1.5927,-0.5458,-9.9735,15.00,0.60,3,60.0000,False,True,1.2555,3,76.76,36.761,in_progress,0.00
+
+SIM_TRACE_LOG:0,22,1.6286,-0.5496,-9.4069,15.00,0.60,3,60.0000,False,True,1.3024,3,76.76,36.826,in_progress,0.00
+
+SIM_TRACE_LOG:0,23,1.7076,-0.5354,-3.8505,0.00,0.60,2,60.0000,False,True,1.4034,4,76.76,36.946,in_progress,0.00
+
+SIM_TRACE_LOG:0,24,1.7353,-0.5269,-1.3132,15.00,0.60,3,60.0000,False,True,1.4384,4,76.76,36.965,in_progress,0.00
+
+SIM_TRACE_LOG:0,25,1.7687,-0.5157,1.5991,30.00,0.60,4,60.0000,False,True,1.4805,4,76.76,37.03,in_progress,0.00
+
+SIM_TRACE_LOG:0,26,1.8080,-0.4944,6.3550,15.00,0.60,3,60.0000,False,True,1.5291,4,76.76,37.147,in_progress,0.00
+
+SIM_TRACE_LOG:0,27,1.8634,-0.4599,12.8043,30.00,0.60,4,40.0000,False,True,1.5971,4,76.76,37.185,in_progress,0.00
+
+SIM_TRACE_LOG:0,28,1.8898,-0.4399,16.0834,0.00,0.60,2,40.0000,False,True,1.6291,4,76.76,37.232,in_progress,0.00
+
+SIM_TRACE_LOG:0,29,1.9306,-0.4156,18.9687,30.00,0.60,4,40.0000,False,True,1.6793,4,76.76,37.29,in_progress,0.00
+
+SIM_TRACE_LOG:0,30,1.9707,-0.3949,20.5371,15.00,0.60,3,40.0000,False,True,1.7289,4,76.76,37.368,in_progress,0.00
+
+SIM_TRACE_LOG:0,31,1.9893,-0.3803,22.3006,30.00,0.60,4,40.0000,False,True,1.7513,4,76.76,37.402,in_progress,0.00
+
+SIM_TRACE_LOG:0,32,2.0395,-0.3277,29.0398,-15.00,0.60,1,40.0000,False,True,1.8104,5,76.76,37.501,in_progress,0.00
+
+SIM_TRACE_LOG:0,33,2.0420,-0.3241,29.5975,-15.00,0.60,1,40.0000,False,True,1.8133,5,76.76,37.564,in_progress,0.00
+
+SIM_TRACE_LOG:0,34,2.1079,-0.2771,31.1699,30.00,0.60,4,40.0000,False,True,1.8934,5,76.76,37.697,in_progress,0.00
+
+SIM_TRACE_LOG:0,35,2.1721,-0.2403,30.8320,30.00,0.60,4,40.0000,False,True,1.9709,5,76.76,37.72,in_progress,0.00
+
+SIM_TRACE_LOG:0,36,2.1935,-0.2202,32.3235,15.00,0.60,3,40.0000,False,True,1.9963,5,76.76,37.777,in_progress,0.00
+
+SIM_TRACE_LOG:0,37,2.2161,-0.1937,34.8392,0.00,0.60,2,40.0000,False,True,2.0224,5,76.76,37.825,in_progress,0.00
+
+SIM_TRACE_LOG:0,38,2.2440,-0.1601,37.5880,0.00,0.60,2,40.0000,False,True,2.0546,5,76.76,37.906,in_progress,0.00
+
+SIM_TRACE_LOG:0,39,2.2724,-0.1280,39.5205,30.00,0.60,4,40.0000,False,True,2.0876,5,76.76,37.994,in_progress,0.00
+
+SIM_TRACE_LOG:0,40,2.3083,-0.0745,43.7646,30.00,0.60,4,40.0000,False,True,2.1276,5,76.76,38.032,in_progress,0.00
+
+SIM_TRACE_LOG:0,41,2.3335,-0.0161,49.3676,-30.00,0.60,0,40.0000,False,True,2.1533,5,76.76,38.094,in_progress,0.00
+
+SIM_TRACE_LOG:0,42,2.3485,0.0179,52.0143,0.00,0.60,2,20.0000,False,False,2.1687,6,76.76,38.17,in_progress,0.00
+
+SIM_TRACE_LOG:0,43,2.3641,0.0432,52.7668,-15.00,0.60,1,20.0000,False,False,2.1859,6,76.76,38.233,in_progress,0.00
+
+SIM_TRACE_LOG:0,44,2.3889,0.0878,54.5007,30.00,0.60,4,20.0000,False,False,2.2127,6,76.76,38.348,in_progress,0.00
+
+SIM_TRACE_LOG:0,45,2.4251,0.1909,61.2881,-30.00,0.60,0,20.0000,False,False,2.2471,6,76.76,38.429,in_progress,0.00
+
+SIM_TRACE_LOG:0,46,2.4279,0.2130,63.4221,-30.00,0.60,0,20.0000,False,False,2.2482,6,76.76,38.537,in_progress,0.00
+
+SIM_TRACE_LOG:0,47,2.4690,0.2795,61.7969,0.00,0.60,2,20.0000,True,False,2.2934,6,76.76,38.549,off_track,0.00
+
+[s3] Successfully uploaded metrics to                  s3 bucket base-bucket-1f3pfk38sjoqu with s3 key first-model/metrics/TrainingMetrics_3.json.
+Training> Name=main_level/agent, Worker=0, Episode=1, Total reward=2060.0, Steps=47, Training iteration=0
+Reset agent
+Reset agent finished
+SIM_TRACE_LOG:1,1,4.6000,-0.7583,-4.1139,15.00,0.60,3,0.0000,False,True,0.1831,13,76.76,38.758,prepare,0.00
+
+SIM_TRACE_LOG:1,2,4.5999,-0.7582,-4.0704,15.00,0.60,3,60.0000,False,True,0.1830,13,76.76,38.84,in_progress,0.00
+
+SIM_TRACE_LOG:1,3,4.6123,-0.7576,-3.7551,0.00,0.60,2,60.0000,False,True,0.1991,13,76.76,38.92,in_progress,0.00
+
+SIM_TRACE_LOG:1,4,4.6179,-0.7571,-3.4685,0.00,0.60,2,40.0000,False,True,0.2063,13,76.76,39.001,in_progress,0.00
+
+SIM_TRACE_LOG:1,5,4.6755,-0.7554,-2.2649,30.00,0.60,4,40.0000,False,True,0.2813,13,76.76,39.065,in_progress,0.00
+
+SIM_TRACE_LOG:1,6,4.6951,-0.7538,-1.7301,-30.00,0.60,0,40.0000,False,True,0.3068,14,76.76,39.097,in_progress,0.00
+
+SIM_TRACE_LOG:1,7,4.7427,-0.7514,-0.7658,30.00,0.60,4,40.0000,False,True,0.3686,14,76.76,39.214,in_progress,0.00
+
+SIM_TRACE_LOG:1,8,4.8042,-0.7510,-0.4058,-15.00,0.60,1,40.0000,False,True,0.4486,14,76.76,39.26,in_progress,0.00
+
+SIM_TRACE_LOG:1,9,4.8246,-0.7476,0.5011,15.00,0.60,3,40.0000,False,True,0.4750,14,76.76,39.298,in_progress,0.00
+
+SIM_TRACE_LOG:1,10,4.8592,-0.7444,1.1911,-15.00,0.60,1,40.0000,False,True,0.5208,14,76.76,39.363,in_progress,0.00
+
+SIM_TRACE_LOG:1,11,4.9166,-0.7332,3.4453,30.00,0.60,4,40.0000,False,True,0.5955,14,76.76,39.427,in_progress,0.00
+
+SIM_TRACE_LOG:1,12,4.9685,-0.7231,5.0011,15.00,0.60,3,40.0000,False,True,0.6630,14,76.76,39.504,in_progress,0.00
+
+SIM_TRACE_LOG:1,13,5.0136,-0.7046,8.4118,15.00,0.60,3,40.0000,False,True,0.7216,15,76.76,39.575,in_progress,0.00
+
+SIM_TRACE_LOG:1,14,5.0637,-0.6726,13.9803,30.00,0.60,4,40.0000,False,True,0.7865,15,76.76,39.656,in_progress,0.00
+
+SIM_TRACE_LOG:1,15,5.0855,-0.6553,16.7885,30.00,0.60,4,40.0000,False,True,0.8147,15,76.76,39.692,in_progress,0.00
+
+SIM_TRACE_LOG:1,16,5.1250,-0.6136,23.5360,-30.00,0.60,0,40.0000,False,True,0.8657,15,76.76,39.78,in_progress,0.00
+
+SIM_TRACE_LOG:1,17,5.2039,-0.5368,31.2935,15.00,0.60,3,40.0000,False,True,0.9794,15,76.76,39.911,in_progress,0.00
+
+SIM_TRACE_LOG:1,18,5.2347,-0.5149,31.9429,0.00,0.60,2,40.0000,False,True,1.0204,15,76.76,39.912,in_progress,0.00
+
+SIM_TRACE_LOG:1,19,5.2715,-0.4821,33.8553,-30.00,0.60,0,40.0000,False,True,1.0697,15,76.76,40.058,in_progress,0.00
+
+SIM_TRACE_LOG:1,20,5.3303,-0.4495,32.5633,0.00,0.60,2,40.0000,False,True,1.1476,16,76.76,40.138,in_progress,0.00
+
+SIM_TRACE_LOG:1,21,5.3448,-0.4430,31.9310,0.00,0.60,2,40.0000,False,True,1.1667,16,76.76,40.169,in_progress,0.00
+
+SIM_TRACE_LOG:1,22,5.3904,-0.4133,32.2131,0.00,0.60,2,40.0000,False,True,1.2272,16,76.76,40.224,in_progress,0.00
+
+SIM_TRACE_LOG:1,23,5.4150,-0.3960,32.5864,-30.00,0.60,0,40.0000,False,True,1.2600,16,76.76,40.304,in_progress,0.00
+
+SIM_TRACE_LOG:1,24,5.4640,-0.3682,32.0017,15.00,0.60,3,40.0000,False,True,1.3665,16,76.76,40.375,in_progress,0.00
+
+SIM_TRACE_LOG:1,25,5.4892,-0.3576,30.9154,15.00,0.60,3,40.0000,False,True,1.4007,16,76.76,40.533,in_progress,0.00
+
+SIM_TRACE_LOG:1,26,5.5651,-0.2812,36.6840,30.00,0.60,4,40.0000,False,True,1.5102,17,76.76,40.576,in_progress,0.00
+
+SIM_TRACE_LOG:1,27,5.5790,-0.2613,38.5413,0.00,0.60,2,40.0000,False,True,1.5312,17,76.76,40.615,in_progress,0.00
+
+SIM_TRACE_LOG:1,28,5.6406,-0.2003,40.3136,-15.00,0.60,1,20.0000,False,False,1.7278,17,76.76,40.746,in_progress,0.00
+
+SIM_TRACE_LOG:1,29,5.6591,-0.1886,39.5787,-30.00,0.60,0,20.0000,False,False,1.7551,17,76.76,40.802,in_progress,0.00
+
+SIM_TRACE_LOG:1,30,5.6847,-0.1771,37.8164,-15.00,0.60,1,20.0000,False,False,1.7912,17,76.76,40.803,in_progress,0.00
+
+SIM_TRACE_LOG:1,31,5.7022,-0.1707,36.4001,-30.00,0.60,0,20.0000,False,False,1.8154,17,76.76,40.86,in_progress,0.00
+
+SIM_TRACE_LOG:1,32,5.7455,-0.1549,33.3801,-15.00,0.60,1,20.0000,False,False,1.8752,18,76.76,40.938,in_progress,0.00
+
+SIM_TRACE_LOG:1,33,5.7970,-0.1405,29.7346,-15.00,0.60,1,20.0000,False,False,1.9448,18,76.76,41.075,in_progress,0.00
+
+SIM_TRACE_LOG:1,34,5.8716,-0.1228,24.9839,-15.00,0.60,1,20.0000,False,False,2.1676,18,76.76,41.118,in_progress,0.00
+
+SIM_TRACE_LOG:1,35,5.9064,-0.1179,22.6504,-30.00,0.60,0,20.0000,False,False,2.2113,18,76.76,41.21,in_progress,0.00
+
+SIM_TRACE_LOG:1,36,5.9693,-0.1125,18.3073,30.00,0.60,4,20.0000,False,False,2.2883,19,76.76,41.284,in_progress,0.00
+
+SIM_TRACE_LOG:1,37,6.0113,-0.0988,18.2377,15.00,0.60,3,20.0000,False,False,2.3455,19,76.76,41.328,in_progress,0.00
+
+SIM_TRACE_LOG:1,38,6.0314,-0.0861,19.5462,15.00,0.60,3,20.0000,False,False,2.3762,19,76.76,41.367,in_progress,0.00
+
+SIM_TRACE_LOG:1,39,6.0768,-0.0474,24.4191,-30.00,0.60,0,20.0000,False,False,2.5529,19,76.76,41.45,in_progress,0.00
+
+SIM_TRACE_LOG:1,40,6.0887,-0.0357,25.9082,-15.00,0.60,1,20.0000,False,False,2.5743,19,76.76,41.451,in_progress,0.00
+
+SIM_TRACE_LOG:1,41,6.1569,-0.0056,25.2076,-15.00,0.60,1,20.0000,False,False,2.6699,20,76.76,41.586,in_progress,0.00
+
+SIM_TRACE_LOG:1,42,6.1727,-0.0013,24.4762,15.00,0.60,3,20.0000,False,False,2.6900,20,76.76,41.613,in_progress,0.00
+
+SIM_TRACE_LOG:1,43,6.2191,0.0194,24.3783,-15.00,0.60,1,20.0000,False,False,2.7553,20,76.76,41.713,in_progress,0.00
+
+SIM_TRACE_LOG:1,44,6.2461,0.0335,24.8491,-15.00,0.60,1,20.0000,False,False,2.7947,20,76.76,41.793,in_progress,0.00
+
+SIM_TRACE_LOG:1,45,6.3231,0.0546,21.9263,15.00,0.60,3,20.0000,False,False,2.9633,20,76.76,41.862,in_progress,0.00
+
+SIM_TRACE_LOG:1,46,6.3350,0.0561,21.0816,15.00,0.60,3,20.0000,False,False,2.9763,20,76.76,41.925,in_progress,0.00
+
+SIM_TRACE_LOG:1,47,6.3870,0.0777,21.4673,15.00,0.60,3,20.0000,False,False,3.0461,21,76.76,41.966,in_progress,0.00
+
+SIM_TRACE_LOG:1,48,6.4146,0.0934,22.5042,30.00,0.60,4,20.0000,False,False,3.0867,21,76.76,42.016,in_progress,0.00
+
+SIM_TRACE_LOG:1,49,6.4766,0.1550,29.9124,15.00,0.60,3,20.0000,False,False,3.2003,21,76.76,42.139,in_progress,0.00
+
+SIM_TRACE_LOG:1,50,6.5048,0.1949,34.6901,30.00,0.60,4,20.0000,False,False,3.3202,21,76.76,42.212,in_progress,0.00
+
+SIM_TRACE_LOG:1,51,6.5201,0.2185,37.3058,30.00,0.60,4,20.0000,False,False,3.3562,21,76.76,42.269,in_progress,0.00
+
+SIM_TRACE_LOG:1,52,6.5429,0.2657,42.9942,0.00,0.60,2,20.0000,False,False,3.4212,21,76.76,42.316,in_progress,0.00
+
+SIM_TRACE_LOG:1,53,6.5583,0.2989,46.4314,-30.00,0.60,0,20.0000,False,False,3.4664,22,76.76,42.366,in_progress,0.00
+
+SIM_TRACE_LOG:1,54,6.5913,0.3470,48.5205,0.00,0.60,2,20.0000,False,False,3.5414,22,76.76,42.447,in_progress,0.00
+
+SIM_TRACE_LOG:1,55,6.6221,0.3793,48.1293,15.00,0.60,3,20.0000,False,False,3.6680,22,76.76,42.573,in_progress,0.00
+
+SIM_TRACE_LOG:1,56,6.6647,0.4356,49.4384,-30.00,0.60,0,20.0000,False,False,3.7600,22,76.76,42.603,in_progress,0.00
+
+SIM_TRACE_LOG:1,57,6.6743,0.4511,50.2488,-15.00,0.60,1,20.0000,False,False,3.7836,22,76.76,42.63,in_progress,0.00
+
+SIM_TRACE_LOG:1,58,6.6995,0.4823,50.4123,30.00,0.60,4,20.0000,False,False,3.8359,23,76.76,42.688,in_progress,0.00
+
+SIM_TRACE_LOG:1,59,6.7299,0.5271,51.5194,-15.00,0.60,1,20.0000,False,False,3.9063,23,76.76,42.77,in_progress,0.00
+
+SIM_TRACE_LOG:1,60,6.7497,0.5553,52.0458,15.00,0.60,3,20.0000,False,False,3.9513,23,76.76,42.832,in_progress,0.00
+
+SIM_TRACE_LOG:1,61,6.7868,0.6049,52.4187,30.00,0.60,4,20.0000,False,False,4.0989,23,76.76,42.91,in_progress,0.00
+
+SIM_TRACE_LOG:1,62,6.7950,0.6204,53.1072,15.00,0.60,3,20.0000,False,False,4.1217,23,76.76,42.939,in_progress,0.00
+
+SIM_TRACE_LOG:1,63,6.8203,0.6868,57.5285,0.00,0.60,2,20.0000,False,False,4.2128,23,76.76,43.035,in_progress,0.00
+
+SIM_TRACE_LOG:1,64,6.8410,0.7397,60.0519,-15.00,0.60,1,20.0000,False,False,4.2856,24,76.76,43.11,in_progress,0.00
+
+SIM_TRACE_LOG:1,65,6.8613,0.7722,59.7964,30.00,0.60,4,20.0000,False,False,4.3356,24,76.76,43.187,in_progress,0.00
+
+SIM_TRACE_LOG:1,66,6.8815,0.8082,59.9641,-30.00,0.60,0,20.0000,False,False,4.3892,24,76.76,43.226,in_progress,0.00
+
+SIM_TRACE_LOG:1,67,6.8941,0.8397,61.1657,0.00,0.60,2,20.0000,False,False,4.4810,24,76.76,43.274,in_progress,0.00
+
+SIM_TRACE_LOG:1,68,6.9111,0.8761,61.7422,15.00,0.60,3,20.0000,False,False,4.5333,24,76.76,43.352,in_progress,0.00
+
+SIM_TRACE_LOG:1,69,6.9280,0.9392,65.2044,15.00,0.60,3,20.0000,False,False,4.6165,25,76.76,43.452,in_progress,0.00
+
+SIM_TRACE_LOG:1,70,6.9325,0.9845,68.7038,30.00,0.60,4,20.0000,False,False,4.6716,25,76.76,43.494,in_progress,0.00
+
+SIM_TRACE_LOG:1,71,6.9308,1.0361,73.4426,15.00,0.60,3,20.0000,False,False,4.7304,25,76.76,43.579,in_progress,0.00
+
+SIM_TRACE_LOG:1,72,6.9245,1.0794,77.7740,-15.00,0.60,1,20.0000,False,False,4.8761,25,76.76,43.626,in_progress,0.00
+
+SIM_TRACE_LOG:1,73,6.9218,1.1300,80.8426,-15.00,0.60,1,20.0000,False,False,4.9369,25,76.76,43.78,in_progress,0.00
+
+SIM_TRACE_LOG:1,74,6.9393,1.2036,79.6536,-30.00,0.60,0,20.0000,False,False,5.0348,26,76.76,43.811,in_progress,0.00
+
+SIM_TRACE_LOG:1,75,6.9516,1.2417,78.4239,0.00,0.60,2,20.0000,False,False,5.0870,26,76.76,43.875,in_progress,0.00
+
+SIM_TRACE_LOG:1,76,6.9622,1.2772,77.6525,30.00,0.60,4,20.0000,False,False,5.2799,26,76.76,43.924,in_progress,0.00
+
+SIM_TRACE_LOG:1,77,6.9650,1.2918,77.6605,15.00,0.60,3,20.0000,False,False,5.2993,26,76.76,44.011,in_progress,0.00
+
+SIM_TRACE_LOG:1,78,6.9622,1.3542,81.3255,0.00,0.60,2,20.0000,False,False,5.3788,26,76.76,44.012,in_progress,0.00
+
+SIM_TRACE_LOG:1,79,6.9539,1.4029,85.0439,0.00,0.60,2,20.0000,True,False,5.4396,27,76.76,44.11,off_track,0.00
+
+[s3] Successfully uploaded metrics to                  s3 bucket base-bucket-1f3pfk38sjoqu with s3 key first-model/metrics/TrainingMetrics_3.json.
+Training> Name=main_level/agent, Worker=0, Episode=2, Total reward=2120.0, Steps=126, Training iteration=0
+Reset agent
+Reset agent finished
+SIM_TRACE_LOG:2,1,7.5635,1.0982,70.0448,-15.00,0.60,1,0.0000,False,True,0.1821,26,76.76,44.348,prepare,0.00
+
+SIM_TRACE_LOG:2,2,7.5634,1.0984,70.1236,0.00,0.60,2,60.0000,False,True,0.1824,26,76.76,44.399,in_progress,0.00
+
+SIM_TRACE_LOG:2,3,7.5641,1.1000,70.0265,-30.00,0.60,0,60.0000,False,True,0.1847,26,76.76,44.433,in_progress,0.00
+
+SIM_TRACE_LOG:2,4,7.5766,1.1144,68.4128,-15.00,0.60,1,60.0000,False,True,0.2061,26,76.76,44.52,in_progress,0.00
+
+SIM_TRACE_LOG:2,5,7.5865,1.1253,67.0950,-15.00,0.60,1,60.0000,False,True,0.2223,26,76.76,44.556,in_progress,0.00
+
+SIM_TRACE_LOG:2,6,7.6074,1.1475,64.4862,-15.00,0.60,1,60.0000,False,True,0.2553,26,76.76,44.663,in_progress,0.00
+
+SIM_TRACE_LOG:2,7,7.6500,1.1927,60.1838,-30.00,0.60,0,60.0000,False,True,0.3227,26,76.76,44.74,in_progress,0.00
+
+SIM_TRACE_LOG:2,8,7.6793,1.2194,57.3272,0.00,0.60,2,60.0000,False,True,0.3635,26,76.76,44.773,in_progress,0.00
+
+SIM_TRACE_LOG:2,9,7.6972,1.2356,55.7395,15.00,0.60,3,60.0000,False,True,0.3883,26,76.76,44.818,in_progress,0.00
+
+SIM_TRACE_LOG:2,10,7.7241,1.2729,55.4458,-15.00,0.60,1,60.0000,False,True,0.4421,27,76.76,44.91,in_progress,0.00
+
+SIM_TRACE_LOG:2,11,7.7507,1.3148,55.9076,-30.00,0.60,0,60.0000,False,True,0.5017,27,76.76,44.98,in_progress,0.00
+
+SIM_TRACE_LOG:2,12,7.7657,1.3329,55.4491,-30.00,0.60,0,60.0000,False,True,0.5283,27,76.76,45.054,in_progress,0.00
+
+SIM_TRACE_LOG:2,13,7.8280,1.3867,50.8182,15.00,0.60,3,60.0000,False,True,0.5947,27,76.76,45.08,in_progress,0.00
+
+SIM_TRACE_LOG:2,14,7.8469,1.3997,49.1757,15.00,0.60,3,60.0000,False,True,0.5947,27,76.76,45.227,in_progress,0.00
+
+SIM_TRACE_LOG:2,15,7.9113,1.4917,51.8623,-15.00,0.60,1,60.0000,False,True,0.6943,27,76.76,45.298,in_progress,0.00
+
+SIM_TRACE_LOG:2,16,7.9259,1.5240,53.9467,15.00,0.60,3,60.0000,False,True,0.7361,27,76.76,45.378,in_progress,0.00
+
+SIM_TRACE_LOG:2,17,7.9422,1.5647,56.4677,15.00,0.60,3,60.0000,False,True,0.7887,27,76.76,45.46,in_progress,0.00
+
+SIM_TRACE_LOG:2,18,7.9592,1.6282,61.1936,-30.00,0.60,0,60.0000,False,True,0.8709,28,76.76,45.531,in_progress,0.00
+
+SIM_TRACE_LOG:2,19,7.9801,1.6845,63.1188,-30.00,0.60,0,60.0000,False,True,0.9437,28,76.76,45.618,in_progress,0.00
+
+SIM_TRACE_LOG:2,20,7.9980,1.7056,61.6076,-30.00,0.60,0,60.0000,False,True,0.9709,28,76.76,45.66,in_progress,0.00
+
+SIM_TRACE_LOG:2,21,8.0127,1.7210,60.2167,-15.00,0.60,1,60.0000,False,True,0.9867,28,76.76,45.751,in_progress,0.00
+
+SIM_TRACE_LOG:2,22,8.0584,1.7683,56.6325,-30.00,0.60,0,60.0000,False,True,0.9867,28,76.76,45.793,in_progress,0.00
+
+SIM_TRACE_LOG:2,23,8.0874,1.7887,53.6867,30.00,0.60,4,60.0000,False,True,0.9867,28,76.76,45.847,in_progress,0.00
+
+SIM_TRACE_LOG:2,24,8.1097,1.8031,51.2467,15.00,0.60,3,60.0000,False,True,0.9867,28,76.76,45.905,in_progress,0.00
+
+SIM_TRACE_LOG:2,25,8.1477,1.8520,51.5555,30.00,0.60,4,40.0000,False,False,1.0341,28,76.76,46.021,in_progress,0.00
+
+SIM_TRACE_LOG:2,26,8.1705,1.9164,56.5238,15.00,0.60,3,40.0000,False,False,1.1107,28,76.76,46.069,in_progress,0.00
+
+SIM_TRACE_LOG:2,27,8.1789,1.9477,58.9994,0.00,0.60,2,40.0000,False,False,1.1487,28,76.76,46.124,in_progress,0.00
+
+SIM_TRACE_LOG:2,28,8.1892,1.9824,61.1692,-15.00,0.60,1,40.0000,False,False,1.1904,29,76.76,46.213,in_progress,0.00
+
+SIM_TRACE_LOG:2,29,8.2030,2.0144,62.0241,-15.00,0.60,1,40.0000,False,False,1.2278,29,76.76,46.229,in_progress,0.00
+
+SIM_TRACE_LOG:2,30,8.2246,2.0548,61.9900,15.00,0.60,3,40.0000,False,False,1.2741,29,76.76,46.298,in_progress,0.00
+
+SIM_TRACE_LOG:2,31,8.2397,2.0894,62.7199,30.00,0.60,4,40.0000,False,False,1.3146,29,76.76,46.375,in_progress,0.00
+
+SIM_TRACE_LOG:2,32,8.2491,2.1374,65.9383,15.00,0.60,3,40.0000,False,False,1.3736,29,76.76,46.422,in_progress,0.00
+
+SIM_TRACE_LOG:2,33,8.2566,2.1972,69.9133,15.00,0.60,3,40.0000,True,False,1.3788,29,76.76,46.493,off_track,0.00
+
+[s3] Successfully uploaded metrics to                  s3 bucket base-bucket-1f3pfk38sjoqu with s3 key first-model/metrics/TrainingMetrics_3.json.
+Training> Name=main_level/agent, Worker=0, Episode=3, Total reward=1740.0, Steps=159, Training iteration=0
+Reset agent
+Reset agent finished
+[s3] Successfully uploaded simtrace_training to              s3 bucket base-bucket-1f3pfk38sjoqu with s3 key first-model/3/training-simtrace/0-iteration.csv.
+[s3] Successfully downloaded 1_Step-1368.ckpt.data-00000-of-00001 from                  s3 key first-model/model/1_Step-1368.ckpt.data-00000-of-00001 to local checkpoint_robomaker/agent/1_Step-1368.ckpt.data-00000-of-00001.
+[s3] Successfully downloaded 1_Step-1368.ckpt.index from                  s3 key first-model/model/1_Step-1368.ckpt.index to local checkpoint_robomaker/agent/1_Step-1368.ckpt.index.
+[s3] Successfully downloaded 1_Step-1368.ckpt.meta from                  s3 key first-model/model/1_Step-1368.ckpt.meta to local checkpoint_robomaker/agent/1_Step-1368.ckpt.meta.
+[s3] Successfully downloaded .ready from                  s3 key first-model/model/.ready to local checkpoint_robomaker/agent/.ready.
+Checkpoint> Restoring from path=./checkpoint_robomaker/agent/1_Step-1368.ckpt
+Reset agent
+Reset agent finished
+SIM_TRACE_LOG:3,1,7.0585,4.8251,109.0828,15.00,0.60,3,0.0000,False,True,0.1828,39,76.76,126.697,prepare,0.00
+
+SIM_TRACE_LOG:3,2,7.0586,4.8248,109.0873,0.00,0.60,2,60.0000,False,True,0.1824,39,76.76,126.724,in_progress,0.00
+
+SIM_TRACE_LOG:3,3,7.0533,4.8417,108.9038,-15.00,0.60,1,60.0000,False,True,0.2054,39,76.76,126.835,in_progress,0.00
+
+SIM_TRACE_LOG:3,4,7.0495,4.8601,108.3217,-15.00,0.60,1,60.0000,False,True,0.2296,39,76.76,126.886,in_progress,0.00
+
+SIM_TRACE_LOG:3,5,7.0490,4.8689,107.7348,30.00,0.60,4,60.0000,False,True,0.2408,39,76.76,126.944,in_progress,0.00
+
+SIM_TRACE_LOG:3,6,7.0301,4.9223,108.2432,-15.00,0.60,1,50.0000,False,True,0.3141,39,76.76,127.009,in_progress,0.00
+
+SIM_TRACE_LOG:3,7,7.0214,4.9331,109.4232,30.00,0.60,4,50.0000,False,True,0.3314,39,76.76,127.078,in_progress,0.00
+
+SIM_TRACE_LOG:3,8,6.9853,4.9767,113.9489,30.00,0.60,4,50.0000,False,True,0.4020,39,76.76,127.148,in_progress,0.00
+
+SIM_TRACE_LOG:3,9,6.9397,5.0076,120.5649,30.00,0.60,4,50.0000,False,True,0.4622,39,76.76,127.195,in_progress,0.00
+
+SIM_TRACE_LOG:3,10,6.9069,5.0262,125.0709,30.00,0.60,4,50.0000,False,True,0.5011,40,76.76,127.245,in_progress,0.00
+
+SIM_TRACE_LOG:3,11,6.8336,5.0559,134.5553,0.00,0.60,2,50.0000,False,True,0.5738,40,76.76,127.348,in_progress,0.00
+
+SIM_TRACE_LOG:3,12,6.8091,5.0635,137.5153,-15.00,0.60,1,50.0000,False,True,0.5953,40,76.76,127.44,in_progress,0.00
+
+SIM_TRACE_LOG:3,13,6.7627,5.0884,140.4896,-30.00,0.60,0,50.0000,False,True,0.6486,40,76.76,127.5,in_progress,0.00
+
+SIM_TRACE_LOG:3,14,6.7120,5.1504,137.0156,0.00,0.60,2,50.0000,False,True,0.7743,40,76.76,127.581,in_progress,0.00
+
+SIM_TRACE_LOG:3,15,6.7060,5.1619,135.8579,0.00,0.60,2,50.0000,False,True,0.7912,40,76.76,127.635,in_progress,0.00
+
+SIM_TRACE_LOG:3,16,6.6671,5.2019,135.5729,-30.00,0.60,0,50.0000,False,True,0.8612,40,76.76,127.686,in_progress,0.00
+
+SIM_TRACE_LOG:3,17,6.6421,5.2221,136.3785,30.00,0.60,4,50.0000,False,True,0.8998,41,76.76,127.734,in_progress,0.00
+
+SIM_TRACE_LOG:3,18,6.6141,5.2441,137.1286,15.00,0.60,3,50.0000,False,True,0.9424,41,76.76,127.823,in_progress,0.00
+
+SIM_TRACE_LOG:3,19,6.5655,5.2699,140.4240,-15.00,0.60,1,50.0000,False,True,1.0022,41,76.76,127.867,in_progress,0.00
+
+SIM_TRACE_LOG:3,20,6.5045,5.3024,143.4189,15.00,0.60,3,50.0000,False,True,1.1501,41,76.76,127.968,in_progress,0.00
+
+SIM_TRACE_LOG:3,21,6.4967,5.3091,143.2410,0.00,0.60,2,50.0000,False,True,1.1632,41,76.76,128.0,in_progress,0.00
+
+SIM_TRACE_LOG:3,22,6.3948,5.3542,148.4663,-15.00,0.60,1,50.0000,False,True,1.2925,42,76.76,128.147,in_progress,0.00
+
+SIM_TRACE_LOG:3,23,6.3668,5.3683,149.1310,-15.00,0.60,1,50.0000,False,True,1.3298,42,76.76,128.194,in_progress,0.00
+
+SIM_TRACE_LOG:3,24,6.3517,5.3780,148.9852,30.00,0.60,4,50.0000,False,True,1.3520,42,76.76,128.257,in_progress,0.00
+
+SIM_TRACE_LOG:3,25,6.3088,5.4012,149.5451,-15.00,0.60,1,50.0000,False,True,1.4107,42,76.76,128.291,in_progress,0.00
+
+SIM_TRACE_LOG:3,26,6.2779,5.4149,150.6637,0.00,0.60,2,50.0000,False,True,1.5541,42,76.76,128.356,in_progress,0.00
+
+SIM_TRACE_LOG:3,27,6.2200,5.4434,151.5052,30.00,0.60,4,50.0000,False,True,1.6359,42,76.76,128.445,in_progress,0.00
+
+SIM_TRACE_LOG:3,28,6.1933,5.4543,152.1904,15.00,0.60,3,50.0000,False,True,1.6717,42,76.76,128.507,in_progress,0.00
+
+SIM_TRACE_LOG:3,29,6.1422,5.4696,154.5065,30.00,0.60,4,50.0000,False,True,1.7358,43,76.76,128.559,in_progress,0.00
+
+SIM_TRACE_LOG:3,30,6.0763,5.4684,161.2193,15.00,0.60,3,30.0000,False,False,1.8009,43,76.76,128.658,in_progress,0.00
+
+SIM_TRACE_LOG:3,31,6.0374,5.4628,165.5291,30.00,0.60,4,30.0000,False,False,1.9602,43,76.76,128.701,in_progress,0.00
+
+SIM_TRACE_LOG:3,32,6.0075,5.4574,168.7114,15.00,0.60,3,30.0000,False,False,1.9909,43,76.76,128.778,in_progress,0.00
+
+SIM_TRACE_LOG:3,33,5.9146,5.4318,177.9851,15.00,0.60,3,30.0000,False,False,2.0807,44,76.76,128.901,in_progress,0.00
+
+SIM_TRACE_LOG:3,34,5.8504,5.4076,-176.0684,15.00,0.60,3,30.0000,False,False,2.1387,44,76.76,128.986,in_progress,0.00
+
+SIM_TRACE_LOG:3,35,5.7693,5.3644,-167.9380,-30.00,0.60,0,20.0000,False,False,2.3409,44,76.76,129.046,in_progress,0.00
+
+SIM_TRACE_LOG:3,36,5.7686,5.3640,-167.8703,-15.00,0.60,1,20.0000,True,False,2.3415,44,76.76,129.089,off_track,0.00
+
+[s3] Successfully uploaded metrics to                  s3 bucket base-bucket-1f3pfk38sjoqu with s3 key first-model/metrics/TrainingMetrics_3.json.
+Training> Name=main_level/agent, Worker=0, Episode=4, Total reward=1630.0, Steps=195, Training iteration=0
+Reset agent
+Reset agent finished
+SIM_TRACE_LOG:4,1,3.8907,6.4621,174.7425,-15.00,0.60,1,0.0000,False,True,0.1824,51,76.76,129.332,prepare,0.00
+
+SIM_TRACE_LOG:4,2,3.8906,6.4621,174.6982,-30.00,0.60,0,60.0000,False,True,0.1825,51,76.76,129.416,in_progress,0.00
+
+SIM_TRACE_LOG:4,3,3.8886,6.4621,174.9451,0.00,0.60,2,60.0000,False,True,0.1851,51,76.76,129.483,in_progress,0.00
+
+SIM_TRACE_LOG:4,4,3.8768,6.4652,174.3809,30.00,0.60,4,60.0000,False,True,0.2005,51,76.76,129.644,in_progress,0.00
+
+SIM_TRACE_LOG:4,5,3.8192,6.4430,-179.2626,15.00,0.60,3,40.0000,False,True,0.2748,52,76.76,129.702,in_progress,0.00
+
+SIM_TRACE_LOG:4,6,3.7886,6.4260,-175.3291,-30.00,0.60,0,40.0000,False,True,0.3142,52,76.76,129.724,in_progress,0.00
+
+SIM_TRACE_LOG:4,7,3.7551,6.4160,-173.5854,-15.00,0.60,1,40.0000,False,True,0.3575,52,76.76,129.822,in_progress,0.00
+
+SIM_TRACE_LOG:4,8,3.7179,6.4176,-174.6208,30.00,0.60,4,40.0000,False,True,0.4059,52,76.76,129.851,in_progress,0.00
+
+SIM_TRACE_LOG:4,9,3.6180,6.4074,-174.0584,0.00,0.60,2,40.0000,False,True,0.5357,52,76.76,129.965,in_progress,0.00
+
+SIM_TRACE_LOG:4,10,3.5760,6.3946,-172.0995,-15.00,0.60,1,40.0000,False,True,0.5899,52,76.76,130.045,in_progress,0.00
+
+SIM_TRACE_LOG:4,11,3.5586,6.3906,-171.7204,30.00,0.60,4,40.0000,False,True,0.6124,53,76.76,130.101,in_progress,0.00
+
+SIM_TRACE_LOG:4,12,3.5055,6.3780,-170.6103,30.00,0.60,4,40.0000,False,True,0.6811,53,76.76,130.188,in_progress,0.00
+
+SIM_TRACE_LOG:4,13,3.4753,6.3600,-167.5441,-30.00,0.60,0,40.0000,False,True,0.7198,53,76.76,130.251,in_progress,0.00
+
+SIM_TRACE_LOG:4,14,3.4398,6.3360,-163.7141,-30.00,0.60,0,40.0000,False,True,0.7652,53,76.76,130.283,in_progress,0.00
+
+SIM_TRACE_LOG:4,15,3.4038,6.3232,-163.2022,15.00,0.60,3,40.0000,False,True,0.8114,53,76.76,130.373,in_progress,0.00
+
+SIM_TRACE_LOG:4,16,3.3052,6.2774,-159.8574,30.00,0.60,4,40.0000,False,True,0.9381,53,76.76,130.477,in_progress,0.00
+
+SIM_TRACE_LOG:4,17,3.2968,6.2715,-159.1805,-30.00,0.60,0,40.0000,False,True,0.9488,53,76.76,130.509,in_progress,0.00
+
+SIM_TRACE_LOG:4,18,3.2477,6.2492,-158.3834,-30.00,0.60,0,40.0000,False,True,1.0120,54,76.76,130.589,in_progress,0.00
+
+SIM_TRACE_LOG:4,19,3.2173,6.2441,-159.9263,15.00,0.60,3,40.0000,False,True,1.0514,54,76.76,130.645,in_progress,0.00
+
+SIM_TRACE_LOG:4,20,3.1787,6.2341,-160.8027,15.00,0.60,3,40.0000,False,True,1.1012,54,76.76,130.726,in_progress,0.00
+
+SIM_TRACE_LOG:4,21,3.1480,6.2149,-158.8858,0.00,0.60,2,40.0000,False,True,1.1406,54,76.76,130.784,in_progress,0.00
+
+SIM_TRACE_LOG:4,22,3.1115,6.1914,-156.7794,30.00,0.60,4,40.0000,False,True,1.1903,54,76.76,130.864,in_progress,0.00
+
+SIM_TRACE_LOG:4,23,3.0673,6.1611,-154.4111,-30.00,0.60,0,40.0000,False,True,1.2472,54,76.76,130.892,in_progress,0.00
+
+SIM_TRACE_LOG:4,24,3.0176,6.1283,-152.5994,0.00,0.60,2,40.0000,False,True,1.3110,54,76.76,130.98,in_progress,0.00
+
+SIM_TRACE_LOG:4,25,2.9832,6.1085,-152.2058,30.00,0.60,4,40.0000,False,True,1.3553,54,76.76,131.04,in_progress,0.00
+
+SIM_TRACE_LOG:4,26,2.9585,6.0887,-150.7928,15.00,0.60,3,40.0000,False,True,1.3870,55,76.76,131.087,in_progress,0.00
+
+SIM_TRACE_LOG:4,27,2.9371,6.0661,-148.5571,15.00,0.60,3,40.0000,False,True,1.4142,55,76.76,131.161,in_progress,0.00
+
+SIM_TRACE_LOG:4,28,2.8898,6.0082,-143.0356,-15.00,0.60,1,40.0000,False,True,1.4744,55,76.76,131.239,in_progress,0.00
+
+SIM_TRACE_LOG:4,29,2.8889,6.0064,-142.7897,-30.00,0.60,0,40.0000,False,True,1.4755,55,76.76,131.309,in_progress,0.00
+
+SIM_TRACE_LOG:4,30,2.8503,5.9727,-142.0362,15.00,0.60,3,20.0000,False,False,1.5250,55,76.76,131.366,in_progress,0.00
+
+SIM_TRACE_LOG:4,31,2.7932,5.9161,-139.9393,30.00,0.60,4,20.0000,False,False,1.6972,55,76.76,131.382,in_progress,0.00
+
+SIM_TRACE_LOG:4,32,2.7844,5.9003,-138.3514,30.00,0.60,4,20.0000,False,False,1.7110,55,76.76,131.518,in_progress,0.00
+
+SIM_TRACE_LOG:4,33,2.7630,5.8626,-135.0630,-15.00,0.60,1,20.0000,False,False,1.7443,55,76.76,131.633,in_progress,0.00
+
+SIM_TRACE_LOG:4,34,2.6884,5.7931,-136.0237,15.00,0.60,3,20.0000,False,False,2.1379,56,76.76,131.733,in_progress,0.00
+
+SIM_TRACE_LOG:4,35,2.6466,5.7527,-135.9211,-15.00,0.60,1,20.0000,False,False,2.2098,57,76.76,131.776,in_progress,0.00
+
+SIM_TRACE_LOG:4,36,2.6180,5.7228,-135.5857,0.00,0.60,2,20.0000,False,False,2.4927,57,76.76,131.844,in_progress,0.00
+
+SIM_TRACE_LOG:4,37,2.6180,5.7228,-135.5857,-15.00,0.60,1,20.0000,False,False,2.4927,57,76.76,131.862,in_progress,0.00
+
+SIM_TRACE_LOG:4,38,2.5566,5.6776,-137.9106,-30.00,0.60,0,20.0000,True,False,2.5918,58,76.76,132.056,off_track,0.00
+
+[s3] Successfully uploaded metrics to                  s3 bucket base-bucket-1f3pfk38sjoqu with s3 key first-model/metrics/TrainingMetrics_3.json.
+Training> Name=main_level/agent, Worker=0, Episode=5, Total reward=1360.0, Steps=233, Training iteration=0
+Reset agent
+Reset agent finished
+SIM_TRACE_LOG:5,1,2.0575,4.3941,-57.8856,-30.00,0.60,0,0.0000,False,True,0.1777,64,76.76,132.191,prepare,0.00
+
+SIM_TRACE_LOG:5,2,2.0576,4.3943,-57.7352,15.00,0.60,3,60.0000,False,True,0.1776,64,76.76,132.309,in_progress,0.00
+
+SIM_TRACE_LOG:5,3,2.0648,4.3875,-57.1394,-15.00,0.60,1,60.0000,False,True,0.1905,64,76.76,132.337,in_progress,0.00
+
+SIM_TRACE_LOG:5,4,2.0792,4.3557,-58.3992,15.00,0.60,3,60.0000,False,True,0.2308,64,76.76,132.441,in_progress,0.00
+
+SIM_TRACE_LOG:5,5,2.0807,4.3490,-59.0217,0.00,0.60,2,60.0000,False,True,0.2377,64,76.76,132.456,in_progress,0.00
+
+SIM_TRACE_LOG:5,6,2.0922,4.3287,-59.1663,-15.00,0.60,1,60.0000,False,True,0.2658,64,76.76,132.53,in_progress,0.00
+
+SIM_TRACE_LOG:5,7,2.1147,4.2903,-59.3138,30.00,0.60,4,60.0000,False,True,0.3198,65,76.76,132.598,in_progress,0.00
+
+SIM_TRACE_LOG:5,8,2.1425,4.2502,-58.6640,30.00,0.60,4,60.0000,False,True,0.3805,65,76.76,132.692,in_progress,0.00
+
+SIM_TRACE_LOG:5,9,2.1818,4.2114,-55.7047,-30.00,0.60,0,60.0000,False,True,0.4521,65,76.76,132.748,in_progress,0.00
+
+SIM_TRACE_LOG:5,10,2.1959,4.1968,-54.8817,-15.00,0.60,1,60.0000,False,True,0.4782,65,76.76,132.786,in_progress,0.00
+
+SIM_TRACE_LOG:5,11,2.2326,4.1142,-58.6794,-15.00,0.60,1,60.0000,False,True,0.5372,65,76.76,132.901,in_progress,0.00
+
+SIM_TRACE_LOG:5,12,2.2394,4.0928,-59.9642,0.00,0.60,2,60.0000,False,True,0.5565,65,76.76,132.965,in_progress,0.00
+
+SIM_TRACE_LOG:5,13,2.2560,4.0513,-61.4596,-15.00,0.60,1,60.0000,False,True,0.5983,65,76.76,133.018,in_progress,0.00
+
+SIM_TRACE_LOG:5,14,2.2734,4.0151,-61.9480,-30.00,0.60,0,60.0000,False,True,0.6382,65,76.76,133.06,in_progress,0.00
+
+SIM_TRACE_LOG:5,15,2.2913,3.9649,-63.7006,-15.00,0.60,1,60.0000,False,True,0.6860,65,76.76,133.162,in_progress,0.00
+
+SIM_TRACE_LOG:5,16,2.3016,3.9042,-67.6726,30.00,0.60,4,60.0000,False,True,0.7305,66,76.76,133.227,in_progress,0.00
+
+SIM_TRACE_LOG:5,17,2.3067,3.8753,-69.3400,0.00,0.60,2,60.0000,False,True,0.7519,66,76.76,133.273,in_progress,0.00
+
+SIM_TRACE_LOG:5,18,2.3254,3.8128,-70.2742,30.00,0.60,4,60.0000,False,True,0.8073,66,76.76,133.368,in_progress,0.00
+
+SIM_TRACE_LOG:5,19,2.3465,3.7661,-69.3428,-15.00,0.60,1,60.0000,False,True,0.8571,66,76.76,133.446,in_progress,0.00
+
+SIM_TRACE_LOG:5,20,2.3564,3.7444,-68.8332,0.00,0.60,2,60.0000,False,True,0.8804,66,76.76,133.482,in_progress,0.00
+
+SIM_TRACE_LOG:5,21,2.3611,3.7286,-69.1616,-30.00,0.60,0,60.0000,False,True,0.8826,66,76.76,133.55,in_progress,0.00
+
+SIM_TRACE_LOG:5,22,2.3647,3.6677,-73.4114,-15.00,0.60,1,60.0000,False,True,0.8961,66,76.76,133.592,in_progress,0.00
+
+SIM_TRACE_LOG:5,23,2.3577,3.6165,-78.4401,-15.00,0.60,1,40.0000,False,False,0.9113,66,76.76,133.662,in_progress,0.00
+
+SIM_TRACE_LOG:5,24,2.3416,3.5442,-85.1223,30.00,0.60,4,40.0000,False,False,0.9254,66,76.76,133.767,in_progress,0.00
+
+SIM_TRACE_LOG:5,25,2.3382,3.5199,-86.4664,15.00,0.60,3,40.0000,False,False,0.9327,66,76.76,133.804,in_progress,0.00
+
+SIM_TRACE_LOG:5,26,2.3392,3.4937,-86.6041,15.00,0.60,3,40.0000,False,False,0.9460,66,76.76,133.866,in_progress,0.00
+
+SIM_TRACE_LOG:5,27,2.3636,3.4137,-82.3078,0.00,0.60,2,40.0000,False,False,1.0130,66,76.76,133.966,in_progress,0.00
+
+SIM_TRACE_LOG:5,28,2.3710,3.3948,-81.1026,-15.00,0.60,1,40.0000,False,False,1.0307,66,76.76,134.002,in_progress,0.00
+
+SIM_TRACE_LOG:5,29,2.3822,3.3512,-79.9572,0.00,0.60,2,40.0000,True,False,1.0646,66,76.76,134.106,off_track,0.00
+
+[s3] Successfully uploaded metrics to                  s3 bucket base-bucket-1f3pfk38sjoqu with s3 key first-model/metrics/TrainingMetrics_3.json.
+Training> Name=main_level/agent, Worker=0, Episode=6, Total reward=1540.0, Steps=262, Training iteration=0
+Reset agent
+Reset agent finished
+[s3] Successfully uploaded simtrace_training to              s3 bucket base-bucket-1f3pfk38sjoqu with s3 key first-model/3/training-simtrace/1-iteration.csv.
+[s3] Successfully downloaded 2_Step-2411.ckpt.data-00000-of-00001 from                  s3 key first-model/model/2_Step-2411.ckpt.data-00000-of-00001 to local checkpoint_robomaker/agent/2_Step-2411.ckpt.data-00000-of-00001.
+[s3] Successfully downloaded 2_Step-2411.ckpt.index from                  s3 key first-model/model/2_Step-2411.ckpt.index to local checkpoint_robomaker/agent/2_Step-2411.ckpt.index.
+[s3] Successfully downloaded 2_Step-2411.ckpt.meta from                  s3 key first-model/model/2_Step-2411.ckpt.meta to local checkpoint_robomaker/agent/2_Step-2411.ckpt.meta.
+[s3] Successfully downloaded .ready from                  s3 key first-model/model/.ready to local checkpoint_robomaker/agent/.ready.
+Checkpoint> Restoring from path=./checkpoint_robomaker/agent/2_Step-2411.ckpt
+Reset agent
+Reset agent finished
+SIM_TRACE_LOG:6,1,3.3261,1.8487,-140.0678,-15.00,0.60,1,0.0000,False,True,0.1820,77,76.76,156.912,prepare,0.00
+
+SIM_TRACE_LOG:6,2,3.3259,1.8485,-140.0561,-30.00,0.60,0,60.0000,False,True,0.1824,77,76.76,156.941,in_progress,0.00
+
+SIM_TRACE_LOG:6,3,3.3209,1.8462,-140.3033,30.00,0.60,4,40.0000,False,True,0.1892,77,76.76,157.022,in_progress,0.00
+
+SIM_TRACE_LOG:6,4,3.3071,1.8418,-141.6318,0.00,0.60,2,40.0000,False,True,0.2080,77,76.76,157.064,in_progress,0.00
+
+SIM_TRACE_LOG:6,5,3.2783,1.8203,-141.9180,30.00,0.60,4,40.0000,False,True,0.2546,77,76.76,157.158,in_progress,0.00
+
+SIM_TRACE_LOG:6,6,3.2621,1.8012,-140.7361,15.00,0.60,3,60.0000,False,True,0.2853,77,76.76,157.213,in_progress,0.00
+
+SIM_TRACE_LOG:6,7,3.2467,1.7719,-137.5818,-15.00,0.60,1,60.0000,False,True,0.3218,77,76.76,157.267,in_progress,0.00
+
+SIM_TRACE_LOG:6,8,3.2306,1.7474,-135.8720,0.00,0.60,2,60.0000,False,True,0.3561,77,76.76,157.387,in_progress,0.00
+
+SIM_TRACE_LOG:6,9,3.1595,1.6828,-136.5699,15.00,0.60,3,60.0000,False,True,0.4783,78,76.76,157.455,in_progress,0.00
+
+SIM_TRACE_LOG:6,10,3.1386,1.6587,-135.8389,0.00,0.60,2,60.0000,False,True,0.5177,78,76.76,157.503,in_progress,0.00
+
+SIM_TRACE_LOG:6,11,3.1007,1.6174,-135.1885,30.00,0.60,4,60.0000,False,True,0.5835,78,76.76,157.504,in_progress,0.00
+
+SIM_TRACE_LOG:6,12,3.0841,1.6006,-135.1893,30.00,0.60,4,60.0000,False,True,0.5982,78,76.76,157.621,in_progress,0.00
+
+SIM_TRACE_LOG:6,13,3.0637,1.5783,-134.8413,0.00,0.60,2,60.0000,False,True,0.6336,78,76.76,157.693,in_progress,0.00
+
+SIM_TRACE_LOG:6,14,3.0088,1.5196,-134.3035,-15.00,0.60,1,60.0000,False,True,0.7279,78,76.76,157.769,in_progress,0.00
+
+SIM_TRACE_LOG:6,15,2.9941,1.5053,-134.3706,-30.00,0.60,0,60.0000,False,True,0.7526,78,76.76,157.844,in_progress,0.00
+
+SIM_TRACE_LOG:6,16,2.9649,1.4818,-135.3661,-30.00,0.60,0,60.0000,False,True,0.7990,79,76.76,157.898,in_progress,0.00
+
+SIM_TRACE_LOG:6,17,2.9105,1.4481,-138.5420,15.00,0.60,3,60.0000,False,True,0.8810,79,76.76,157.965,in_progress,0.00
+
+SIM_TRACE_LOG:6,18,2.8994,1.4418,-139.3237,-30.00,0.60,0,60.0000,False,True,0.8975,79,76.76,157.966,in_progress,0.00
+
+SIM_TRACE_LOG:6,19,2.8489,1.4083,-141.0402,15.00,0.60,3,60.0000,False,True,0.9746,79,76.76,158.074,in_progress,0.00
+
+SIM_TRACE_LOG:6,20,2.7988,1.3760,-142.4541,0.00,0.60,2,60.0000,False,True,1.0051,79,76.76,158.157,in_progress,0.00
+
+SIM_TRACE_LOG:6,21,2.7942,1.3717,-142.2828,30.00,0.60,4,60.0000,False,True,1.0122,79,76.76,158.256,in_progress,0.00
+
+SIM_TRACE_LOG:6,22,2.7393,1.3012,-137.4640,0.00,0.60,2,60.0000,False,True,1.1006,79,76.76,158.293,in_progress,0.00
+
+SIM_TRACE_LOG:6,23,2.7237,1.2758,-135.4564,-30.00,0.60,0,60.0000,False,True,1.1271,79,76.76,158.338,in_progress,0.00
+
+SIM_TRACE_LOG:6,24,2.6913,1.2366,-134.1453,-30.00,0.60,0,60.0000,False,True,1.1785,80,76.76,158.472,in_progress,0.00
+
+SIM_TRACE_LOG:6,25,2.6301,1.2023,-138.7656,-30.00,0.60,0,60.0000,False,True,1.2656,80,76.76,158.529,in_progress,0.00
+
+SIM_TRACE_LOG:6,26,2.5871,1.1887,-142.9883,-15.00,0.60,1,60.0000,False,True,1.3239,80,76.76,158.538,in_progress,0.00
+
+SIM_TRACE_LOG:6,27,2.5557,1.1797,-145.8050,0.00,0.60,2,60.0000,False,True,1.3663,80,76.76,158.617,in_progress,0.00
+
+SIM_TRACE_LOG:6,28,2.5089,1.1599,-148.0987,0.00,0.60,2,60.0000,False,True,1.3677,80,76.76,158.685,in_progress,0.00
+
+SIM_TRACE_LOG:6,29,2.5089,1.1599,-148.0987,15.00,0.60,3,60.0000,False,True,1.3677,80,76.76,158.735,in_progress,0.00
+
+SIM_TRACE_LOG:6,30,2.4449,1.1162,-147.3305,0.00,0.60,2,60.0000,False,True,1.4484,80,76.76,158.796,in_progress,0.00
+
+SIM_TRACE_LOG:6,31,2.4021,1.0819,-145.9943,-30.00,0.60,0,60.0000,False,True,1.5064,80,76.76,158.89,in_progress,0.00
+
+SIM_TRACE_LOG:6,32,2.3934,1.0750,-145.6918,-30.00,0.60,0,60.0000,False,True,1.5182,80,76.76,158.936,in_progress,0.00
+
+SIM_TRACE_LOG:6,33,2.3550,1.0529,-146.3142,-15.00,0.60,1,60.0000,False,True,1.5697,81,76.76,158.975,in_progress,0.00
+
+SIM_TRACE_LOG:6,34,2.3090,1.0332,-148.3469,-30.00,0.60,0,60.0000,False,True,1.6309,81,76.76,159.094,in_progress,0.00
+
+SIM_TRACE_LOG:6,35,2.2541,1.0114,-150.6295,0.00,0.60,2,40.0000,False,False,1.7038,81,76.76,159.138,in_progress,0.00
+
+SIM_TRACE_LOG:6,36,2.1940,0.9828,-151.6383,30.00,0.60,4,40.0000,False,False,1.7601,81,76.76,159.308,in_progress,0.00
+
+SIM_TRACE_LOG:6,37,2.1305,0.9471,-151.3526,0.00,0.60,2,40.0000,False,False,1.8104,81,76.76,159.309,in_progress,0.00
+
+SIM_TRACE_LOG:6,38,2.0887,0.9120,-148.9752,15.00,0.60,3,40.0000,False,False,1.8636,81,76.76,159.434,in_progress,0.00
+
+SIM_TRACE_LOG:6,39,2.0655,0.8928,-147.8767,0.00,0.60,2,40.0000,False,False,1.8931,81,76.76,159.525,in_progress,0.00
+
+SIM_TRACE_LOG:6,40,2.0111,0.8521,-146.7250,0.00,0.60,2,40.0000,False,False,1.9625,82,76.76,159.575,in_progress,0.00
+
+SIM_TRACE_LOG:6,41,1.9822,0.8331,-146.7435,-15.00,0.60,1,40.0000,False,False,1.9995,82,76.76,159.63,in_progress,0.00
+
+SIM_TRACE_LOG:6,42,1.9727,0.8270,-146.7544,15.00,0.60,3,40.0000,False,False,2.0116,82,76.76,159.649,in_progress,0.00
+
+SIM_TRACE_LOG:6,43,1.9151,0.7769,-144.3640,30.00,0.60,4,40.0000,True,False,2.0849,82,76.76,159.764,off_track,0.00
+
+[s3] Successfully uploaded metrics to                  s3 bucket base-bucket-1f3pfk38sjoqu with s3 key first-model/metrics/TrainingMetrics_3.json.
+Training> Name=main_level/agent, Worker=0, Episode=7, Total reward=2280.0, Steps=305, Training iteration=0
+Reset agent
+Reset agent finished
+SIM_TRACE_LOG:7,1,-0.4077,1.8783,165.1202,0.00,0.60,2,0.0000,False,True,0.1826,90,76.76,159.889,prepare,0.00
+
+SIM_TRACE_LOG:7,2,-0.4072,1.8782,165.1071,0.00,0.60,2,40.0000,False,True,0.1821,90,76.76,159.971,in_progress,0.00
+
+SIM_TRACE_LOG:7,3,-0.4150,1.8804,165.0708,30.00,0.60,4,40.0000,False,True,0.1926,90,76.76,160.008,in_progress,0.00
+
+SIM_TRACE_LOG:7,4,-0.4287,1.8822,165.5163,0.00,0.60,2,60.0000,False,True,0.2104,90,76.76,160.063,in_progress,0.00
+
+SIM_TRACE_LOG:7,5,-0.4850,1.8941,165.9891,-15.00,0.60,1,60.0000,False,True,0.2854,90,76.76,160.198,in_progress,0.00
+
+SIM_TRACE_LOG:7,6,-0.4886,1.8948,166.0512,0.00,0.60,2,60.0000,False,True,0.2901,90,76.76,160.215,in_progress,0.00
+
+SIM_TRACE_LOG:7,7,-0.5245,1.9043,165.8792,30.00,0.60,4,60.0000,False,True,0.3384,90,76.76,160.249,in_progress,0.00
+
+SIM_TRACE_LOG:7,8,-0.5693,1.9143,166.0906,0.00,0.60,2,60.0000,False,True,0.3982,90,76.76,160.284,in_progress,0.00
+
+SIM_TRACE_LOG:7,9,-0.6383,1.9052,171.9401,-15.00,0.60,1,60.0000,False,True,0.4820,90,76.76,160.43,in_progress,0.00
+
+SIM_TRACE_LOG:7,10,-0.6728,1.9027,173.7435,-30.00,0.60,0,60.0000,False,True,0.5246,91,76.76,160.481,in_progress,0.00
+
+SIM_TRACE_LOG:7,11,-0.6952,1.9053,173.7652,-15.00,0.60,1,60.0000,False,True,0.5537,91,76.76,160.514,in_progress,0.00
+
+SIM_TRACE_LOG:7,12,-0.7420,1.9177,172.0443,-30.00,0.60,0,60.0000,False,True,0.6168,91,76.76,160.622,in_progress,0.00
+
+SIM_TRACE_LOG:7,13,-0.8089,1.9406,169.0762,30.00,0.60,4,60.0000,False,True,0.7080,91,76.76,160.692,in_progress,0.00
+
+SIM_TRACE_LOG:7,14,-0.8677,1.9532,168.8270,30.00,0.60,4,60.0000,False,True,0.7860,91,76.76,160.778,in_progress,0.00
+
+SIM_TRACE_LOG:7,15,-0.9045,1.9527,170.6523,15.00,0.60,3,60.0000,False,True,0.8322,91,76.76,160.828,in_progress,0.00
+
+SIM_TRACE_LOG:7,16,-0.9409,1.9455,173.7789,30.00,0.60,4,60.0000,False,True,0.8752,91,76.76,160.856,in_progress,0.00
+
+SIM_TRACE_LOG:7,17,-0.9621,1.9390,175.9403,-15.00,0.60,1,60.0000,False,True,0.8996,92,76.76,160.931,in_progress,0.00
+
+SIM_TRACE_LOG:7,18,-1.0196,1.9250,-179.9676,0.00,0.60,2,60.0000,False,True,0.9668,92,76.76,161.03,in_progress,0.00
+
+SIM_TRACE_LOG:7,19,-1.0823,1.9209,-178.8602,-30.00,0.60,0,60.0000,False,True,1.0440,92,76.76,161.105,in_progress,0.00
+
+SIM_TRACE_LOG:7,20,-1.1425,1.9333,177.9913,30.00,0.60,4,60.0000,False,True,1.1021,92,76.76,161.17,in_progress,0.00
+
+SIM_TRACE_LOG:7,21,-1.1529,1.9375,176.9077,15.00,0.60,3,60.0000,False,True,1.1167,92,76.76,161.268,in_progress,0.00
+
+SIM_TRACE_LOG:7,22,-1.2673,1.9272,-179.2529,30.00,0.60,4,60.0000,False,True,1.2494,92,76.76,161.36,in_progress,0.00
+
+SIM_TRACE_LOG:7,23,-1.3384,1.8923,-172.0067,15.00,0.60,3,60.0000,False,True,1.3177,93,76.76,161.474,in_progress,0.00
+
+SIM_TRACE_LOG:7,24,-1.3574,1.8804,-169.7574,30.00,0.60,4,60.0000,False,True,1.3346,93,76.76,161.526,in_progress,0.00
+
+SIM_TRACE_LOG:7,25,-1.3905,1.8590,-166.1246,0.00,0.60,2,60.0000,False,True,1.3639,93,76.76,161.559,in_progress,0.00
+
+SIM_TRACE_LOG:7,26,-1.4172,1.8427,-163.7766,15.00,0.60,3,60.0000,False,True,1.3879,93,76.76,161.66,in_progress,0.00
+
+SIM_TRACE_LOG:7,27,-1.4660,1.8215,-162.2218,30.00,0.60,4,60.0000,False,True,1.4363,93,76.76,161.698,in_progress,0.00
+
+SIM_TRACE_LOG:7,28,-1.5367,1.7778,-157.8168,0.00,0.60,2,60.0000,False,True,1.4692,93,76.76,161.776,in_progress,0.00
+
+SIM_TRACE_LOG:7,29,-1.5367,1.7778,-157.8168,30.00,0.60,4,60.0000,False,True,1.4692,93,76.76,161.8,in_progress,0.00
+
+SIM_TRACE_LOG:7,30,-1.5780,1.7558,-156.7540,30.00,0.60,4,60.0000,False,True,1.4692,93,76.76,161.879,in_progress,0.00
+
+SIM_TRACE_LOG:7,31,-1.6417,1.7064,-152.1593,-30.00,0.60,0,40.0000,False,False,1.4692,93,76.76,161.942,in_progress,0.00
+
+SIM_TRACE_LOG:7,32,-1.6545,1.6933,-150.5610,-15.00,0.60,1,40.0000,False,False,1.4692,93,76.76,161.992,in_progress,0.00
+
+SIM_TRACE_LOG:7,33,-1.6863,1.6744,-150.3029,0.00,0.60,2,40.0000,False,False,1.4692,93,76.76,162.074,in_progress,0.00
+
+SIM_TRACE_LOG:7,34,-1.7546,1.6461,-152.3731,30.00,0.60,4,40.0000,False,False,1.4692,93,76.76,162.162,in_progress,0.00
+
+SIM_TRACE_LOG:7,35,-1.7641,1.6434,-152.9477,15.00,0.60,3,40.0000,False,False,1.4692,93,76.76,162.201,in_progress,0.00
+
+SIM_TRACE_LOG:7,36,-1.8025,1.6247,-153.1719,15.00,0.60,3,40.0000,False,False,1.4692,93,76.76,162.283,in_progress,0.00
+
+SIM_TRACE_LOG:7,37,-1.8420,1.5952,-151.1955,15.00,0.60,3,40.0000,False,False,1.4692,93,76.76,162.34,in_progress,0.00
+
+SIM_TRACE_LOG:7,38,-1.8908,1.5468,-146.9915,15.00,0.60,3,40.0000,True,False,1.4692,93,76.76,162.445,off_track,0.00
+
+[s3] Successfully uploaded metrics to                  s3 bucket base-bucket-1f3pfk38sjoqu with s3 key first-model/metrics/TrainingMetrics_3.json.
+Training> Name=main_level/agent, Worker=0, Episode=8, Total reward=2020.0, Steps=343, Training iteration=0
+Reset agent
+Reset agent finished
+SIM_TRACE_LOG:8,1,-0.6964,4.6410,67.0869,15.00,0.60,3,0.0000,False,True,0.1831,102,76.76,162.627,prepare,0.00
+
+SIM_TRACE_LOG:8,2,-0.6966,4.6409,67.1118,15.00,0.60,3,60.0000,False,True,0.1828,102,76.76,162.682,in_progress,0.00
+
+SIM_TRACE_LOG:8,3,-0.6932,4.6473,66.9152,0.00,0.60,2,60.0000,False,True,0.1923,103,76.76,162.762,in_progress,0.00
+
+SIM_TRACE_LOG:8,4,-0.6872,4.6659,67.3243,-15.00,0.60,1,60.0000,False,True,0.2176,103,76.76,162.811,in_progress,0.00
+
+SIM_TRACE_LOG:8,5,-0.6837,4.6743,67.3396,0.00,0.60,2,60.0000,False,True,0.2295,103,76.76,162.898,in_progress,0.00
+
+SIM_TRACE_LOG:8,6,-0.6515,4.7564,67.7111,0.00,0.60,2,60.0000,False,True,0.3444,103,76.76,162.993,in_progress,0.00
+
+SIM_TRACE_LOG:8,7,-0.6515,4.7564,67.7111,0.00,0.60,2,60.0000,False,True,0.3444,103,76.76,163.039,in_progress,0.00
+
+SIM_TRACE_LOG:8,8,-0.6305,4.8197,68.7324,15.00,0.60,3,60.0000,False,True,0.4319,103,76.76,163.096,in_progress,0.00
+
+SIM_TRACE_LOG:8,9,-0.6255,4.8369,69.1076,-30.00,0.60,0,60.0000,False,True,0.4546,103,76.76,163.153,in_progress,0.00
+
+SIM_TRACE_LOG:8,10,-0.6068,4.8836,68.9456,30.00,0.60,4,60.0000,False,True,0.5163,103,76.76,163.205,in_progress,0.00
+
+SIM_TRACE_LOG:8,11,-0.5904,4.9197,68.4232,15.00,0.60,3,60.0000,False,True,0.5641,103,76.76,163.268,in_progress,0.00
+
+SIM_TRACE_LOG:8,12,-0.5780,4.9786,70.6801,-30.00,0.60,0,60.0000,False,True,0.6415,104,76.76,163.351,in_progress,0.00
+
+SIM_TRACE_LOG:8,13,-0.5690,5.0219,72.0312,-30.00,0.60,0,60.0000,False,True,0.6983,104,76.76,163.417,in_progress,0.00
+
+SIM_TRACE_LOG:8,14,-0.5504,5.0690,71.3303,30.00,0.60,4,60.0000,False,True,0.7607,104,76.76,163.49,in_progress,0.00
+
+SIM_TRACE_LOG:8,15,-0.5368,5.1006,70.5561,15.00,0.60,3,60.0000,False,True,0.7712,104,76.76,163.541,in_progress,0.00
+
+SIM_TRACE_LOG:8,16,-0.5280,5.1407,71.7330,0.00,0.60,2,60.0000,False,True,0.8125,104,76.76,163.614,in_progress,0.00
+
+SIM_TRACE_LOG:8,17,-0.5219,5.1897,73.9702,-15.00,0.60,1,60.0000,False,True,0.8718,104,76.76,163.713,in_progress,0.00
+
+SIM_TRACE_LOG:8,18,-0.5095,5.2397,74.4435,15.00,0.60,3,60.0000,False,True,0.9300,104,76.76,163.748,in_progress,0.00
+
+SIM_TRACE_LOG:8,19,-0.5013,5.2972,76.1603,-15.00,0.60,1,60.0000,False,True,0.9992,105,76.76,163.834,in_progress,0.00
+
+SIM_TRACE_LOG:8,20,-0.4964,5.3322,77.1640,30.00,0.60,4,60.0000,False,True,1.0413,105,76.76,163.891,in_progress,0.00
+
+SIM_TRACE_LOG:8,21,-0.4906,5.3651,77.5353,0.00,0.60,2,60.0000,False,True,1.0805,105,76.76,163.938,in_progress,0.00
+
+SIM_TRACE_LOG:8,22,-0.4860,5.4291,79.6322,0.00,0.60,2,60.0000,False,True,1.1590,105,76.76,164.029,in_progress,0.00
+
+SIM_TRACE_LOG:8,23,-0.4800,5.4827,80.4620,15.00,0.60,3,60.0000,False,True,1.1625,105,76.76,164.112,in_progress,0.00
+
+SIM_TRACE_LOG:8,24,-0.4790,5.5006,80.9278,15.00,0.60,3,60.0000,False,True,1.1743,105,76.76,164.172,in_progress,0.00
+
+SIM_TRACE_LOG:8,25,-0.4805,5.5416,82.8198,15.00,0.60,3,60.0000,False,True,1.2223,105,76.76,164.22,in_progress,0.00
+
+SIM_TRACE_LOG:8,26,-0.4960,5.6250,88.4542,-15.00,0.60,1,60.0000,False,True,1.3278,105,76.76,164.326,in_progress,0.00
+
+SIM_TRACE_LOG:8,27,-0.5015,5.6468,90.0043,-15.00,0.60,1,60.0000,False,True,1.3562,105,76.76,164.358,in_progress,0.00
+
+SIM_TRACE_LOG:8,28,-0.5050,5.6718,90.8740,30.00,0.60,4,60.0000,False,True,1.3871,106,76.76,164.445,in_progress,0.00
+
+SIM_TRACE_LOG:8,29,-0.5230,5.7376,94.6106,15.00,0.60,3,60.0000,False,True,1.4738,106,76.76,164.493,in_progress,0.00
+
+SIM_TRACE_LOG:8,30,-0.5324,5.7573,96.5521,30.00,0.60,4,60.0000,False,True,1.5022,106,76.76,164.595,in_progress,0.00
+
+SIM_TRACE_LOG:8,31,-0.5698,5.8181,103.3718,-15.00,0.60,1,60.0000,False,True,1.5548,106,76.76,164.619,in_progress,0.00
+
+SIM_TRACE_LOG:8,32,-0.5845,5.8392,105.7721,-30.00,0.60,0,60.0000,False,True,1.5643,106,76.76,164.697,in_progress,0.00
+
+SIM_TRACE_LOG:8,33,-0.6206,5.9488,106.5182,0.00,0.60,2,60.0000,False,True,1.7070,106,76.76,164.815,in_progress,0.00
+
+SIM_TRACE_LOG:8,34,-0.6207,5.9591,105.7937,0.00,0.60,2,60.0000,False,True,1.7180,106,76.76,164.854,in_progress,0.00
+
+SIM_TRACE_LOG:8,35,-0.6397,6.0340,105.3882,-15.00,0.60,1,60.0000,False,True,1.8111,107,76.76,164.949,in_progress,0.00
+
+SIM_TRACE_LOG:8,36,-0.6510,6.0853,104.7743,15.00,0.60,3,60.0000,False,True,1.8735,107,76.76,165.029,in_progress,0.00
+
+SIM_TRACE_LOG:8,37,-0.6560,6.1128,104.2394,30.00,0.60,4,60.0000,False,True,1.9062,107,76.76,165.11,in_progress,0.00
+
+SIM_TRACE_LOG:8,38,-0.6688,6.1523,104.8501,15.00,0.60,3,60.0000,False,True,1.9466,107,76.76,165.147,in_progress,0.00
+
+SIM_TRACE_LOG:8,39,-0.6977,6.1994,108.4851,-15.00,0.60,1,60.0000,False,True,1.9466,107,76.76,165.225,in_progress,0.00
+
+SIM_TRACE_LOG:8,40,-0.7242,6.2314,112.1216,-30.00,0.60,0,60.0000,False,True,1.9559,107,76.76,165.288,in_progress,0.00
+
+SIM_TRACE_LOG:8,41,-0.7428,6.2783,111.9774,-30.00,0.60,0,40.0000,False,False,2.0145,107,76.76,165.345,in_progress,0.00
+
+SIM_TRACE_LOG:8,42,-0.7455,6.3004,110.5726,-30.00,0.60,0,40.0000,False,False,2.0361,107,76.76,165.437,in_progress,0.00
+
+SIM_TRACE_LOG:8,43,-0.7559,6.3658,107.6695,-30.00,0.60,0,40.0000,False,False,2.1027,107,76.76,165.475,in_progress,0.00
+
+SIM_TRACE_LOG:8,44,-0.7549,6.4115,104.2438,0.00,0.60,2,40.0000,False,False,2.1410,107,76.76,165.581,in_progress,0.00
+
+SIM_TRACE_LOG:8,45,-0.7529,6.4432,101.8803,-30.00,0.60,0,40.0000,False,False,2.1664,108,76.76,165.586,in_progress,0.00
+
+SIM_TRACE_LOG:8,46,-0.7594,6.4968,100.8695,0.00,0.60,2,40.0000,False,False,2.2190,108,76.76,165.669,in_progress,0.00
+
+SIM_TRACE_LOG:8,47,-0.7671,6.5523,100.1694,-30.00,0.60,0,40.0000,False,False,2.2742,108,76.76,165.748,in_progress,0.00
+
+SIM_TRACE_LOG:8,48,-0.7748,6.5871,100.5618,15.00,0.60,3,40.0000,False,False,2.3118,108,76.76,165.804,in_progress,0.00
+
+SIM_TRACE_LOG:8,49,-0.8079,6.6646,104.5054,-30.00,0.60,0,40.0000,True,False,2.3384,108,76.76,165.906,off_track,0.00
+
+[s3] Successfully uploaded metrics to                  s3 bucket base-bucket-1f3pfk38sjoqu with s3 key first-model/metrics/TrainingMetrics_3.json.
+Training> Name=main_level/agent, Worker=0, Episode=9, Total reward=2700.0, Steps=392, Training iteration=0
+Reset agent
+Reset agent finished
