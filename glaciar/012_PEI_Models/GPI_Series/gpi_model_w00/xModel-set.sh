@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export MODEL_NAME=gpi_model_w01
+export MODEL_NAME=gpi_model_w00
 export MODEL_PATH=~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/GPI_Series/$MODEL_NAME
 
 cp ${MODEL_PATH}/hyperparameters.json   ~/deepracer-on-the-spot-pei/custom-files
