@@ -354,9 +354,9 @@ Resources:
                     docker cp deepracer_checkpoints.json $ID:/usr/share/nginx/html/ > /dev/null 2>&1
                     docker cp ~/deepracer-for-cloud/run.env $ID:/usr/share/nginx/html/run.env.txt > /dev/null 2>&1
                     docker cp ~/deepracer-for-cloud/system.env $ID:/usr/share/nginx/html/system.env.txt > /dev/null 2>&1
-                    docker cp ~/deepracer-for-cloud/custom_files/hyperparameters.json $ID:/usr/share/nginx/html/ > /dev/null 2>&1
-                    docker cp ~/deepracer-for-cloud/custom_files/model_metadata.json $ID:/usr/share/nginx/html/ > /dev/null 2>&1
-                    docker cp ~/deepracer-for-cloud/custom_files/reward_function.py $ID:/usr/share/nginx/html/reward_function.py.txt > /dev/null 2>&1
+                    docker cp ~/deepracer-for-cloud/custom-files/hyperparameters.json $ID:/usr/share/nginx/html/ > /dev/null 2>&1
+                    docker cp ~/deepracer-for-cloud/custom-files/model_metadata.json $ID:/usr/share/nginx/html/ > /dev/null 2>&1
+                    docker cp ~/deepracer-for-cloud/custom-files/reward_function.py $ID:/usr/share/nginx/html/reward_function.py.txt > /dev/null 2>&1
                     docker cp /home/ubuntu/bin/menu.html $ID:/usr/share/nginx/html/ > /dev/null 2>&1
                     #Update training analysis
                     ANALYSIS_ID=$(docker ps --filter name=deepracer-analysis --format "{{.ID}}")

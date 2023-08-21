@@ -9,7 +9,7 @@ Entrenado?
 -- Actualizar ~/ 
 
 cp ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/GPI_Series/gpi_model_w01  \
-   ~/deepracer-on-the-spot-pei/custom_files
+   ~/deepracer-on-the-spot-pei/custom-files
 
 ---------------------
 SPOT
