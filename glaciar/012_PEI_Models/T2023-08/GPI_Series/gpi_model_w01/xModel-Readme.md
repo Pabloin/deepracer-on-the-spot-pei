@@ -8,7 +8,7 @@ Entrenado?
 -----------------------
 -- Actualizar ~/ 
 
-cp ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/GPI_Series/gpi_model_w01  \
+cp ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-08/GPI_Series/gpi_model_w01  \
    ~/deepracer-on-the-spot-pei/custom-files
 
 ---------------------

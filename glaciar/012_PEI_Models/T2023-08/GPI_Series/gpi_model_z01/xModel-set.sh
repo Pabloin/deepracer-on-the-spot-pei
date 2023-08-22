@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 export MODEL_NAME=gpi_model_z01
-export MODEL_PATH=~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/GPI_Series/$MODEL_NAME
+export MODEL_PATH=~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-08/GPI_Series/$MODEL_NAME
 
 
 rm ~/deepracer-on-the-spot-pei/custom-files/*.json 
