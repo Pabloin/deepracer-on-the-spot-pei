@@ -89,3 +89,27 @@ Respecto a w01
             "low":  0.7
          }
       }, 
+
+   - Pruebo con los Hiperparametro de AWS Academy Educate 
+
+      {
+         "batch_size": 128,
+         "beta_entropy": 0.01,
+         "discount_factor": 0.999,
+         "e_greedy_value": 0.05,
+         "epsilon_steps": 10000,
+         "exploration_type": "categorical",
+         "loss_type": "huber",
+         "lr": 0.0003,
+         "num_episodes_between_training": 20,
+         "num_epochs": 10,
+         "stack_size": 1,
+         "term_cond_avg_score": 100000.0,
+         "term_cond_max_episodes": 100000
+      }
+
+
+   =- Implica... listo para Spot 
+
+         Deberían ser tiempos parecidos al de Educator con entrenamiento de 60 minutos ... 
+         
