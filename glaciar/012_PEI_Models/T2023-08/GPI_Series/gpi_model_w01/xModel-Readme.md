@@ -71,3 +71,9 @@ Respecto a w00d
    "sensor": ["FRONT_FACING_CAMERA"],
    "neural_network": "DEEP_CONVOLUTIONAL_NETWORK_SHALLOW"
    }
+
+
+   -------------------------
+Respecto a w01
+
+   - Saco el SAC
