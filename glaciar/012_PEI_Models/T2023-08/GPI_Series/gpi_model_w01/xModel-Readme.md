@@ -77,3 +77,15 @@ Respecto a w00d
 Respecto a w01
 
    - Saco el SAC
+   - Arreglo los hiperparametros a algo coherente o que conozco
+
+     "action_space": {
+         "steering_angle": {
+            "high": 25.0,
+            "low": -25.0
+         },
+         "speed": {
+            "high": 3.0,
+            "low":  0.7
+         }
+      }, 
