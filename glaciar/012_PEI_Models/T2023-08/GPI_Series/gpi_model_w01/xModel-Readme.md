@@ -112,4 +112,16 @@ Respecto a w01
    =- Implica... listo para Spot 
 
          Deberían ser tiempos parecidos al de Educator con entrenamiento de 60 minutos ... 
+
+   - Estamos en WIP ... 60 mintos 
+
+         ./create-spot-instance.sh base gpimodel-w01 60
+
+         17:05 a donde ...  
          
+
+
+   - Objetivos:
+
+      w01 de DOTS mismo tiempo que DR-RogueR-a01       (aprox 2.48) 
+      z01 de DOTS mismo tiempo que DR-Academy-EDU z01  (aprox 2.48) 
