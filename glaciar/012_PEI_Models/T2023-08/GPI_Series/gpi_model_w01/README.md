@@ -13,3 +13,7 @@
 * `stack_size`: Default is `1`.
 * `term_cond_avg_score`: Values between `35000.0` and `100000.0`.
 * `term_cond_max_episodes`: Default is `100000`.
+
+
+
+# Este es Igual a W00 ... por ahora no cambié nada ni envié a entrenar ... 

@@ -1,5 +1,15 @@
 import math
 
+################## DATA ######################################
+
+    # Rogue Raceway  aka  2022_march_pro
+    #                     (76.76m) 
+
+    # PRO - 
+    #    OBJ CW -- Clockwise 
+    #       Time TBS
+    #       vuelta 1 - TBD   (0 off)
+    #       vuelta 2 - TBD   (? off   zona 3) 
 
 ################## HELPER STATIC FUNCTIONS ###################
 

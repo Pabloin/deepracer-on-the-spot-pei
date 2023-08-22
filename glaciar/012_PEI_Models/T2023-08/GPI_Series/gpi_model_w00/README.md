@@ -13,3 +13,14 @@
 * `stack_size`: Default is `1`.
 * `term_cond_avg_score`: Values between `35000.0` and `100000.0`.
 * `term_cond_max_episodes`: Default is `100000`.
+
+
+
+# Este modelo era para probar DOTS el ciclo completo (Publica y Entrenar)
+# Ese Resultado esta OK
+# Aunque fué un desastre la Rewar Function 
+... no se porque ...
+
+... DUDA ... ¿Y la SAC? ¿Hiperoaranetris de SAC que hacen ?
+
+

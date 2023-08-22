@@ -38,7 +38,7 @@ Esto esta en WIP
 
 
 -------------------------
-Respecto a w01
+Respecto a w00d
 
    Agrego
    Siguiendo a 
