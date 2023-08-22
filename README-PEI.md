@@ -17,4 +17,4 @@ http://3.87.87.207:8100/menu.html
 **This will run for around 3 minutes.**
 
 
-`./create-spot-instance.sh base GPI-Model-w00b 30`
+`./create-spot-instance.sh base gpimodel-w00c 60`
