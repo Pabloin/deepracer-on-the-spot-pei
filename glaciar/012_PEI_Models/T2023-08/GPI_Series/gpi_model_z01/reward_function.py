@@ -786,7 +786,7 @@ class MyRewardClassZ01:
             print("Optimal speed: %f" % optimals[2])
             # print("Speed difference: %f" % speed_diff)
             # print("=== Speed reward (w/out multiple): %f ===" % speed_reward)
-            p# rint("Direction difference: %f" % direction_diff)
+            # print("Direction difference: %f" % direction_diff)
             print("Predicted time: %f" % projected_time)
             # print("=== Steps reward: %f ===" % steps_reward)
             # print("=== Finish reward: %f ===" % finish_reward)
