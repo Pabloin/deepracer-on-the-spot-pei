@@ -13,3 +13,8 @@ cp ${MODEL_PATH}/reward_function.py     ~/deepracer-on-the-spot-pei/custom-files
 cp ${MODEL_PATH}/run.env                ~/deepracer-on-the-spot-pei/custom-files
 cp ${MODEL_PATH}/system.env             ~/deepracer-on-the-spot-pei/custom-files
 
+
+ls -la   ~/deepracer-on-the-spot-pei/custom-files
+cat      ~/deepracer-on-the-spot-pei/custom-files/run.env  
+
+
