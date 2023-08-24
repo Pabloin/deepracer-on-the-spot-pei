@@ -176,6 +176,7 @@ def projected_time(first_index, closest_index, step_count, times_list):
 
 
 
+
 class MyRewardClassZ01:
 
     def __init__(self, verbose=False):
@@ -183,7 +184,7 @@ class MyRewardClassZ01:
         self.verbose = verbose
 
 
-    def reward_function_z01(self, params):
+    def reward_function_z01(self, True, params):
 
        
         ################## INPUT PARAMETERS ###################
@@ -487,7 +488,7 @@ class MyRewardClassZ01:
             racing_track, [x, y])
 
         # Get optimal [x, y, speed, time] for closest and second closest index
-        optimals = racing_track[closest_index]
+        optimals        = racing_track[closest_index]
         optimals_second = racing_track[second_closest_index]
 
         # Save first racingpoint of episode for later
@@ -500,20 +501,27 @@ class MyRewardClassZ01:
 
 
         ################ REWARD AND PUNISHMENT ################
-  
+        #
+        # 0.001   	1m (mili)	10^-3   1e-3 
+        # 1,000	    1k (kilo)	10^3	1e3
+        #
+
+        ZERO_VALUE = 1e-3
+
+
         ## Define the default reward ##
         reward = 1
 
         ## Reward if car goes close to optimal racing line ##
         DISTANCE_MULTIPLE = 1
         dist = dist_to_racing_line(optimals[0:2], optimals_second[0:2], [x, y])
-        distance_reward = max(1e-3, 1 - (dist/(track_width*0.5)))
+        distance_reward = max(ZERO_VALUE, 1 - (dist/(track_width*0.5)))
         reward += distance_reward * DISTANCE_MULTIPLE
 
 
         ## Zero reward if off track ##
         if all_wheels_on_track == False:
-            reward = 1e-3
+            reward = ZERO_VALUE
             
         ####################### VERBOSE #######################
         
@@ -537,7 +545,7 @@ class MyRewardClassZ01:
 myRewardObject = MyRewardClassZ01() 
 
 def reward_function(params):
-    return myRewardObject.reward_function_z01(params)
+    return myRewardObject.reward_function_z01(params, True)
     
     
     
