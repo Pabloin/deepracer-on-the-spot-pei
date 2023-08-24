@@ -184,7 +184,7 @@ class MyRewardClassZ01:
         self.verbose = verbose
 
 
-    def reward_function_z01(self, True, params):
+    def reward_function_z01(self, params):
 
        
         ################## INPUT PARAMETERS ###################
