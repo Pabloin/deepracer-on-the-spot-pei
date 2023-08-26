@@ -1,64 +1,70 @@
 import math
 
-#-----------[  DATA  ]------------------------------------
+################## DATA ######################################
 
     # Rogue Raceway  aka  2022_march_pro
     #                     (76.76m) 
 
     # PRO - 
     #    OBJ CW -- Clockwise 
+    #       Time TBS
+    #       vuelta 1 - TBD   (0 off)
+    #       vuelta 2 - TBD   (? off   zona 3) 
 
-
-#-----------[  HELPER STATIC FUNCTIONS  ]-------------------
+################## HELPER STATIC FUNCTIONS ###################
 
 
 #----------------------------------------------------------------------------------------------------
-# Calcula distancias entre dos puntos.
+# Calculate distances between two points
 def dist_2_points(x1, x2, y1, y2):
     return abs(abs(x1-x2)**2 + abs(y1-y2)**2)**0.5
 
 
 
 #----------------------------------------------------------------------------------------------------
-# Indice de los 2 raicepoints más cercanos
-def closest_2_racing_points_index(racing_coords, coord_auto):
+# closest 2 racing points index
+def closest_2_racing_points_index(racing_coords, car_coords):
 
-    # Calcular todas las distancias a los puntos de carrera.
+    # Calculate all distances to racing points
     distances = []
     for i in range(len(racing_coords)):
-        distance = dist_2_points(x1=racing_coords[i][0], x2=coord_auto[0],
-                                 y1=racing_coords[i][1], y2=coord_auto[1])
+        distance = dist_2_points(x1=racing_coords[i][0], x2=car_coords[0],
+                                        y1=racing_coords[i][1], y2=car_coords[1])
         distances.append(distance)
 
-    # Obtener índice del punto de carrera más cercano
+    # Get index of the closest racing point
     closest_index = distances.index(min(distances))
 
-    # Obtener índice del segundo punto de carrera más cercano
+    # Get index of the second closest racing point
     distances_no_closest = distances.copy()
     distances_no_closest[closest_index] = 999
-    closest_index_second = distances_no_closest.index(min(distances_no_closest))
+    second_closest_index = distances_no_closest.index(min(distances_no_closest))
 
-    return [closest_index, closest_index_second]
+    return [closest_index, second_closest_index]
 
 
 
 #----------------------------------------------------------------------------------------------------
-# Distancia a la racing line
-def dist_to_racing_line(coord_closest, coord_closest_next, coord_auto):
+# Distance to racing line
+def dist_to_racing_line(closest_coords, second_closest_coords, car_coords):
     
-    # Calcula las distancias entre 2 puntos de carrera más cercanos
-    a = abs(dist_2_points(x1=coord_closest[0], x2=coord_closest_next[0],
-                          y1=coord_closest[1], y2=coord_closest_next[1]))
+    # Calculate the distances between 2 closest racing points
+    a = abs(dist_2_points(x1=closest_coords[0],
+                            x2=second_closest_coords[0],
+                            y1=closest_coords[1],
+                            y2=second_closest_coords[1]))
 
-    # Distancias entre el coche y el punto de carrera más cercano 
-    #                           y el segundo más cercano
-    b = abs(dist_2_points(x1=coord_auto[0], x2=coord_closest[0],
-                          y1=coord_auto[1], y2=coord_closest[1]))
-    
-    c = abs(dist_2_points(x1=coord_auto[0], x2=coord_closest_next[0],
-                          y1=coord_auto[1], y2=coord_closest_next[1]))
+    # Distances between car and closest and second closest racing point
+    b = abs(dist_2_points(x1=car_coords[0],
+                            x2=closest_coords[0],
+                            y1=car_coords[1],
+                            y2=closest_coords[1]))
+    c = abs(dist_2_points(x1=car_coords[0],
+                            x2=second_closest_coords[0],
+                            y1=car_coords[1],
+                            y2=second_closest_coords[1]))
 
-    # Calcular la distancia entre el coche y la línea de carrera.
+    # Calculate distance between car and racing line
     # (goes through 2 closest racing points)
     # try-except in case a=0 (rare bug in DeepRacer)
     try:
@@ -70,23 +76,120 @@ def dist_to_racing_line(coord_closest, coord_closest_next, coord_auto):
     return distance
 
 
-#-----------[  HELPER STATIC FUNCTIONS - END  ]-------------------
+
+#----------------------------------------------------------------------------------------------------
+# Calculate which one of the closest racing points is the next one and which one the previous one
+def next_prev_racing_point(closest_coords, second_closest_coords, car_coords, heading):
+
+    # Virtually set the car more into the heading direction
+    heading_vector = [math.cos(math.radians(
+        heading)), math.sin(math.radians(heading))]
+    new_car_coords = [car_coords[0]+heading_vector[0],
+                        car_coords[1]+heading_vector[1]]
+
+    # Calculate distance from new car coords to 2 closest racing points
+    distance_closest_coords_new = dist_2_points(x1=new_car_coords[0],
+                                                x2=closest_coords[0],
+                                                y1=new_car_coords[1],
+                                                y2=closest_coords[1])
+    distance_second_closest_coords_new = dist_2_points(x1=new_car_coords[0],
+                                                        x2=second_closest_coords[0],
+                                                        y1=new_car_coords[1],
+                                                        y2=second_closest_coords[1])
+
+    if distance_closest_coords_new <= distance_second_closest_coords_new:
+        next_point_coords = closest_coords
+        prev_point_coords = second_closest_coords
+    else:
+        next_point_coords = second_closest_coords
+        prev_point_coords = closest_coords
+
+    return [next_point_coords, prev_point_coords]
+
+
+
+
+#----------------------------------------------------------------------------------------------------
+# Racing direction diff
+def racing_direction_diff(closest_coords, second_closest_coords, car_coords, heading):
+
+    # Calculate the direction of the center line based on the closest waypoints
+    next_point, prev_point = next_prev_racing_point(closest_coords,
+                                                    second_closest_coords,
+                                                    car_coords,
+                                                    heading)
+
+    # Calculate the direction in radius, arctan2(dy, dx), the result is (-pi, pi) in radians
+    track_direction = math.atan2(
+        next_point[1] - prev_point[1], next_point[0] - prev_point[0])
+
+    # Convert to degree
+    track_direction = math.degrees(track_direction)
+
+    # Calculate the difference between the track direction and the heading direction of the car
+    direction_diff = abs(track_direction - heading)
+    if direction_diff > 180:
+        direction_diff = 360 - direction_diff
+
+    return direction_diff
+
+
+
+#----------------------------------------------------------------------------------------------------
+# Gives back indexes that lie between start and end index of a cyclical list 
+# (start index is included, end index is not)
+def indexes_cyclical(start, end, array_len):
+
+    if end < start:
+        end += array_len
+
+    return [index % array_len for index in range(start, end)]
+
+
+
+#----------------------------------------------------------------------------------------------------
+# Calculate how long car would take for entire lap, if it continued like it did until now
+def projected_time(first_index, closest_index, step_count, times_list):
+
+    # Calculate how much time has passed since start
+    current_actual_time = (step_count-1) / 15
+
+    # Calculate which indexes were already passed
+    indexes_traveled = indexes_cyclical(first_index, closest_index, len(times_list))
+
+    # Calculate how much time should have passed if car would have followed optimals
+    current_expected_time = sum([times_list[i] for i in indexes_traveled])
+
+    # Calculate how long one entire lap takes if car follows optimals
+    total_expected_time = sum(times_list)
+
+    # Calculate how long car would take for entire lap, if it continued like it did until now
+    try:
+        projected_time = (current_actual_time/current_expected_time) * total_expected_time
+    except:
+        projected_time = 9999
+
+    return projected_time
+    
+
+################## HELPER STATIC FUNCTIONS - END ###################
 
 
 
 
 class MyRewardClassZ01:
 
-    def __init__(self, logInfo=False):
+    def __init__(self, verbose=False):
         self.first_racingpoint_index = None
-        self.logInfo = logInfo
+        self.verbose = verbose
 
 
     def reward_function_z01(self, params):
 
        
-        #-----------[ INPUT PARAMETERS] -------------------
+        ################## INPUT PARAMETERS ###################
 
+        # Read all input parameters
         x = params['x']
         y = params['y']
 
@@ -105,11 +208,11 @@ class MyRewardClassZ01:
         waypoints            = params['waypoints']
         closest_waypoints    = params['closest_waypoints']
 
+        ############### OPTIMAL X,Y,SPEED,TIME ################
 
 
 
-
-        #-----------[  RACING LINE  ]-------------------
+        #################### RACING LINE ######################
 
         # Rogue Raceway  aka  2022_march_pro
         # Optimal racing line, debería ser:
@@ -374,22 +477,22 @@ class MyRewardClassZ01:
             [1.14351, -0.41894, 4.0, 0.06324]
         ]
 
-        #-----------[  RACING LINE - END  ]-------------------
+        #################### RACING LINE - END ######################
 
 
 
 
 
-        # Obtiene los índices más cercanos para la línea de carrera (y distancias a todos los puntos en la línea de carrera)
-        closest_index, closest_index_second = closest_2_racing_points_index(
+        # Get closest indexes for racing line (and distances to all points on racing line)
+        closest_index, second_closest_index = closest_2_racing_points_index(
             racing_track, [x, y])
 
-        # Obtenga [x, y, velocidad, tiempo] óptimo para el índice más cercano y el segundo más cercano
+        # Get optimal [x, y, speed, time] for closest and second closest index
         optimals        = racing_track[closest_index]
-        optimals_second = racing_track[closest_index_second]
+        optimals_second = racing_track[second_closest_index]
 
-        # Guarda el primer punto de carrera del episodio para más tarde
-        if self.logInfo == True:
+        # Save first racingpoint of episode for later
+        if self.verbose == True:
             self.first_racingpoint_index = 0 # this is just for testing purposes
         if steps == 1:
             self.first_racingpoint_index = closest_index
@@ -397,7 +500,7 @@ class MyRewardClassZ01:
 
 
 
-        #-----------[  Escala de Recompensas ]-------------------
+        ################ REWARD AND PUNISHMENT ################
         #
         # 0.001   	1m (mili)	10^-3   1e-3 
         # 1,000	    1k (kilo)	10^3	1e3
@@ -406,23 +509,23 @@ class MyRewardClassZ01:
         ZERO_VALUE = 1e-3
 
 
-        ## Recompensa predeterminada ##
+        ## Define the default reward ##
         reward = 1
 
-        ## Recompensa si el auto se acerca a la línea de carrera óptima ##
+        ## Reward if car goes close to optimal racing line ##
         DISTANCE_MULTIPLE = 1
         dist = dist_to_racing_line(optimals[0:2], optimals_second[0:2], [x, y])
         distance_reward = max(ZERO_VALUE, 1 - (dist/(track_width*0.5)))
         reward += distance_reward * DISTANCE_MULTIPLE
 
 
-        ## Zero recompensa si off track ##
+        ## Zero reward if off track ##
         if all_wheels_on_track == False:
             reward = ZERO_VALUE
             
-        #-----------[  Logs ]------------------
+        ####################### VERBOSE #######################
         
-        if self.logInfo == True:
+        if self.verbose == True:
             print("Closest index: %i" % closest_index)
             print("Distance to racing line: %f" % dist)
             print("=== Distance reward (w/out multiple): %f ===" % (distance_reward))
@@ -430,12 +533,11 @@ class MyRewardClassZ01:
             # print("Speed difference: %f" % speed_diff)
             # print("=== Speed reward(w/out multiple): %f ===" % speed_reward)
             # print("Direction difference: %f" % direction_diff)
-
+            print("Predicted time: %f" % projected_time)
             # print("=== Steps reward: %f ===" % steps_reward)
             # print("=== Finish reward: %f ===" % finish_reward)
             
-        #-----------------------------------------
-
+        #################### RETURN REWARD ####################
         return float(reward)
 
 
@@ -443,7 +545,7 @@ class MyRewardClassZ01:
 myRewardObject = MyRewardClassZ01() 
 
 def reward_function(params):
-    return myRewardObject.reward_function_z01(params)
+    return myRewardObject.reward_function_z01(params, True)
     
     
     
