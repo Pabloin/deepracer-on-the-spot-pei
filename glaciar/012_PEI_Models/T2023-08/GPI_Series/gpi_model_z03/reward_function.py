@@ -9,7 +9,6 @@ VALUE_MAX_ = 1e3
 VALUE_ZERO = 1e-3
 AJUSTE_K = 1
 
-LOG_INFO=True
 
 #-----------[ UTILS ]-------------------
 class Util:
@@ -376,29 +375,6 @@ class MyDeepRacerClass:
 
         #-----------[ Distancia a la Racing Line] -------------------
 
-
-        ####################### VERBOSE #######################
-        
-        logInfo = " x {}, y {}, Step {}, speed {}, head {}, prog {}, isLC {}, disC {}, tw {}, wp{}, cwp{}, angle{}".format(
-                        x, y,
-                        steps, 
-                        speed, 
-                        heading, 
-                        progress, 
-                        is_left_of_center,
-                        distance_from_center,
-                        track_width,
-                        waypoints, 
-                        closest_waypoints,
-                        steering_angle
-                    )
-        
-        if LOG_INFO == True:
-            print(logInfo)
-            
-        #################### RETURN REWARD ####################
-
-
         racingLine = MyRacingLine.RACING_LINE
 
         cercaUno, cercaDos = Util.racingPointsCercanos([x, y], racingLine)
@@ -412,40 +388,19 @@ class MyDeepRacerClass:
         REWARD += wp_reward
 
 
+
+        ## Le sumo el reward por menor gap
         speed_deseada = cercaUno[2]
         gap = abs(1-speed/speed_deseada)
         rrr = 1-gap
 
-        ## Le sumo el reward por menor gap
         REWARD += rrr
-
-        logInfo = " x {}, y {}, cercaUno {}, cercaDos {}, dist {}, REWARD {}, wp_rew {}, speed {}, speedDe {}, gap {}, rrr {}".format(
-                        x, 
-                        y,
-                        cercaUno, 
-                        cercaDos, 
-                        dist, 
-                        REWARD,
-                        wp_reward,
-                        speed,
-                        speed_deseada,
-                        gap,
-                        rrr
-                    )  
-
-
-        if LOG_INFO == True:
-            print(logInfo)
 
 
         ## Zero recompensa si off track ##
         if all_wheels_on_track == False:
             REWARD = VALUE_ZERO
-        
-
-
-
-
+            
         return float(REWARD)
 
 

@@ -19,4 +19,3 @@ TODO:
     - Puedo traerme los hiperparámetros de la Tesis ... 
 
 _____________________________
-
