@@ -11,11 +11,14 @@ Z01 con Waypoints
 Enviados 
 
     - z02 Expectativa: IDEM z01 y z02
-     pero con reward de velocidad  
+        pero con reward de velocidad                (OK)  
         
     - Traer también a la funcion...
-        Que continue del entrenamiento anterior ... 
+        Que continue del entrenamiento anterior ... (OK)
 
+
+        ¿Puedo hacer algo por laps? 
+        Saber en que lap estoy ...
 
         run.env
         DR_LOCAL_S3_PRETRAINED=True
@@ -67,7 +70,7 @@ Entrenamiento 1:
             a) Bajar los Logs de la Fase I
 
                 aws s3 sync s3://base-bucket-1f3pfk38sjoqu/gpi_model_z03/ \ 
-                                                  .logsTmp/gpi_model_z03/FASE-01
+                                                  .logsTmp/gpi_model_z03/
 
                 Ok
 
@@ -86,15 +89,13 @@ Entrenamiento 1:
 
 voclabs/user1587290=PABLO_EZEQUIEL_INCHAUSTI
 
-aws s3 cp .logsTmp/  \ 
-    s3://dr-models-glaciar-dots/  \ 
-    --recursive  \ 
+aws s3 sync s3://base-bucket-1f3pfk38sjoqu/gpi_model_z03/ \
+    .logsTmp/gpi_model_z03/  
+
+aws s3 sync .logsTmp/gpi_model_z03/  \
+    s3://dr-models-glaciar-dots/gpi_model_z03/  \
     --profile voclabs/user1587290=PABLO_EZEQUIEL_INCHAUSTI 
 
-
-aws s3 sync .logsTmp/gpi_model_z03/  \ 
-    s3://dr-models-glaciar-dots/gpi_model_z03/  \ 
-    --profile voclabs/user1587290=PABLO_EZEQUIEL_INCHAUSTI 
 
 
 
@@ -161,13 +162,35 @@ Entrenamiento 1:
               (Seccion Anterior)
 
 Entrenamiento 2:
-    Inicia - 27 Aug 2023 23:50:35
-             ./create-spot-instance.sh base gpi-model-z03a 180
+    Inicia - 28 Aug 2023 00:36:35
+             ./create-spot-instance.sh base gpi-model-z03b 180
+
+    Finalizara... - 28 Aug 2023 03:36:35
 
                 OJO! 
                 Agergaue                 
                 #DR_LOCAL_S3_PRETRAINED=False
                 DR_LOCAL_S3_PRETRAINED=True
+
+                Siguiendo a:
+                https://finlaymacrae.medium.com/easy-start-guide-for-deepracer-on-cloud-in-aws-4206db2ac6d0
+
+                DR_LOCAL_S3_MODEL_PREFIX=gpi_model_z03/DOTS-model-z03b
+                DR_LOCAL_S3_PRETRAINED=True
+                DR_LOCAL_S3_PRETRAINED_PREFIX=gpi_model_z03/DOTS-model-z03a
+
+                    1. If the instance is terminated, re-pull the instance and continue the last training
+                    Please do the following #### ①. Modify the run.env file and modify the following parameters
+
+                    DR_LOCAL_S3_MODEL_PREFIX=<The directory where the S3 bucket is stored for this training>
+                    DR_LOCAL_S3_PRETRAINED=True
+                    DR_LOCAL_S3_PRETRAINED_PREFIX=<The directory where the last training S3 bucket is stored>
+                    DR_LOCAL_S3_PRETRAINED_CHECKPOINT=best
+
+                https://segmentfault.com/a/1190000041988531/en
+
+                (Esto implica ... que no necesito las fases (1,2,3 etc ... ))
+
 
              3 horas ...  
 

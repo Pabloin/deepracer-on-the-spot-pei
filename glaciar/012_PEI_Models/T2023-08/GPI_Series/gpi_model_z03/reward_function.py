@@ -4,6 +4,8 @@
     # PRO - Clockwise (76.76m) 
 
 
+LAP_LENGHT = 76.76
+LAP_WIDTH  = 01.07
 
 VALUE_MAX_ = 1e3
 VALUE_ZERO = 1e-3
@@ -12,6 +14,18 @@ AJUSTE_K = 1
 
 #-----------[ UTILS ]-------------------
 class Util:
+
+    #----------------------------------------------------------------------------------------------------
+    # Dice si es Lap 1, dos o tres
+    @staticmethod
+    def isLapUno(track_length):
+
+        isLap_n1 =                                    track_length <= LAP_LENGHT * 1
+        isLap_n2 = track_length >  LAP_LENGHT * 1 and track_length <= LAP_LENGHT * 2
+        isLap_n3 = track_length >  LAP_LENGHT * 2 and track_length <= LAP_LENGHT * 3
+
+        return [isLap_n1, isLap_n2, isLap_n3]
+    
 
     #----------------------------------------------------------------------------------------------------
     # Distancia a la racing line
@@ -371,6 +385,10 @@ class MyDeepRacerClass:
         track_width          = params['track_width']
         waypoints            = params['waypoints']
         closest_waypoints    = params['closest_waypoints']
+        track_length         = params['track_length']
+        
+
+        isLap_n1, isLap_n2, isLap_n3 = Util.isLapUno(track_length):
 
 
         #-----------[ Distancia a la Racing Line] -------------------
