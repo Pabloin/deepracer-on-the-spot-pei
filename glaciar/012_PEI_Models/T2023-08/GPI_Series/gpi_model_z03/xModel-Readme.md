@@ -16,6 +16,10 @@ Enviados
     - Traer también a la funcion...
         Que continue del entrenamiento anterior ... 
 
+
+        run.env
+        DR_LOCAL_S3_PRETRAINED=True
+
         DeepRacer On The Spot - Increment Training
         https://www.youtube.com/watch?v=9y5wx7fQUgc&list=PL9qmHoKq77dTFS59WjHciNb0a0n0dE8iF
 
