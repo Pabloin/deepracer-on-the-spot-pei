@@ -7,6 +7,18 @@ Z01 con Waypoints
  ./create-spot-instance.sh base gpi-model-z01 60
 
 
+
+------------------------
+[AGOTADO]
+    ALLv1-21047-Educator
+    AWS Academy Learner Lab - Educator
+
+[WIP]
+    voclabs/user2410571=Test_Student
+    AWS Academy Learner Lab [32691]
+    Used $89.7 of $100
+
+
 -----------------------
 Enviados 
 
@@ -96,6 +108,16 @@ aws s3 sync .logsTmp/gpi_model_z03/  \
     s3://dr-models-glaciar-dots/gpi_model_z03/  \
     --profile voclabs/user1587290=PABLO_EZEQUIEL_INCHAUSTI 
 
+---------------------------------------
+[WIP]
+    voclabs/user2410571=Test_Student
+    AWS Academy Learner Lab [32691]
+    Used $89.7 of $100
+
+
+aws s3 sync .logsTmp/gpi_model_z03/  \
+    s3://dr-models-glaciar-dots-std571/gpi_model_z03/  \
+    --profile voclabs/user2410571=Test_Student
 
 
 
@@ -111,14 +133,58 @@ echo ""
 
 
 
+
 # Ejemplo OK
 
  aws deepracer import-model \
     --type REINFORCEMENT_LEARNING \
-    --name F01-DOTS-model-z03a  \
-    --model-artifacts-s3-path s3://dr-models-glaciar-dots/gpi_model_z03/FASE-01/DOTS-model-z03a \
+    --name DOTS-model-z03a  \
+    --model-artifacts-s3-path s3://dr-models-glaciar-dots/gpi_model_z03/DOTS-model-z03a \
     --role-arn arn:aws:iam::983552762508:role/LabRole  \
     --profile voclabs/user1587290=PABLO_EZEQUIEL_INCHAUSTI
+
+
+ aws deepracer import-model \
+    --type REINFORCEMENT_LEARNING \
+    --name DOTS-model-z03b  \
+    --model-artifacts-s3-path s3://dr-models-glaciar-dots/gpi_model_z03/DOTS-model-z03b \
+    --role-arn arn:aws:iam::983552762508:role/LabRole  \
+    --profile voclabs/user1587290=PABLO_EZEQUIEL_INCHAUSTI
+
+ aws deepracer import-model \
+    --type REINFORCEMENT_LEARNING \
+    --name DOTS-model-z03c  \
+    --model-artifacts-s3-path s3://dr-models-glaciar-dots/gpi_model_z03/DOTS-model-z03c \
+    --role-arn arn:aws:iam::983552762508:role/LabRole  \
+    --profile voclabs/user1587290=PABLO_EZEQUIEL_INCHAUSTI
+
+
+ aws deepracer import-model \
+    --type REINFORCEMENT_LEARNING \
+    --name DOTS-model-z03cBis2  \
+    --model-artifacts-s3-path s3://dr-models-glaciar-dots/gpi_model_z03/DOTS-model-z03c \
+    --role-arn arn:aws:iam::983552762508:role/LabRole  \
+    --profile voclabs/user1587290=PABLO_EZEQUIEL_INCHAUSTI
+
+
+---------------------------------------
+[WIP]
+    voclabs/user2410571=Test_Student
+    AWS Academy Learner Lab [32691]
+    Used $89.7 of $100
+    arn:aws:iam::001726842821:role/LabRole
+
+
+aws s3 sync .logsTmp/gpi_model_z03/  \
+    s3://dr-models-glaciar-dots-std571/gpi_model_z03/  \
+    --profile voclabs/user2410571=Test_Student
+
+ aws deepracer import-model \
+    --type REINFORCEMENT_LEARNING \
+    --name DOTS-model-z03c  \
+    --model-artifacts-s3-path s3://dr-models-glaciar-dots-std571/gpi_model_z03/DOTS-model-z03c \
+    --role-arn arn:aws:iam::001726842821:role/LabRole \
+    --profile voclabs/user2410571=Test_Student
 
 
         Inicia Ealuacion: (la consola)  (Aca tengo que evaluar nada mas... no tengo que entrenar...)
@@ -165,6 +231,10 @@ Entrenamiento 2:
     Inicia - 28 Aug 2023 00:36:35
              ./create-spot-instance.sh base gpi-model-z03b 180
 
+             ./create-spot-instance.sh base gpi-model-z03c 240
+
+
+
     Finalizara... - 28 Aug 2023 03:36:35
 
                 OJO! 
@@ -198,3 +268,68 @@ Entrenamiento 2:
 
              ... la preocupacion es que me lo den.. 
 
+
+***************************************************************************************************
+Entrenamiento 1:
+
+    Inicia - 27 Aug 2023 21:31:35
+             ./create-spot-instance.sh base gpi-model-z03a 60 
+              (Seccion Anterior)
+
+Entrenamiento 2:
+    Inicia - 28 Aug 2023 00:36:35
+             ./create-spot-instance.sh base gpi-model-z03b 180
+
+                    DOTS-model-z03b
+
+                    Trial
+                    Time (MM:SS.mmm)
+                    Trial results (% track completed)
+                    Status
+                    Off-track
+                    Off-track penalty
+                    Crashes
+                    Crash penalty
+                    1	01:17.733	100%	Lap complete	15	30 seconds	0	--
+                    2	01:26.811	100%	Lap complete	18	36 seconds	0	--
+                    3	01:10.662	100%	Lap complete	14	28 seconds	0	--
+
+
+
+Entrenamiento 3:
+    Inicia - 28 Aug 2023 11:47:00
+             ./create-spot-instance.sh base gpi-model-z03c 120
+
+                    DOTS-model-z03cBis
+
+                    Trial
+                    Time (MM:SS.mmm)
+                    Trial results (% track completed)
+                    Status
+                    Off-track
+                    Off-track penalty
+                    Crashes
+                    Crash penalty
+                    1	01:11.526	100%	Lap complete	11	22 seconds	0	--
+                    2	01:11.412	100%	Lap complete	11	22 seconds	0	--
+                    3	01:17.877	100%	Lap complete	14	28 seconds	0	--
+
+
+                    DOTS-model-z03cBis2
+                    Trial
+                    Time (MM:SS.mmm)
+                    Trial results (% track completed)
+                    Status
+                    Off-track
+                    Off-track penalty
+                    Crashes
+                    Crash penalty
+                    1	01:19.633	100%	Lap complete	14	28 seconds	0	--
+                    2	01:19.193	100%	Lap complete	14	28 seconds	0	--
+                    3	01:08.137	100%	Lap complete	10	20 seconds	0	--
+
+
+
+Entrenamiento 4:
+    ./create-spot-instance.sh base gpi-model-z03d 180
+    }    Inicia - 28 Aug 2023 14:08:00
