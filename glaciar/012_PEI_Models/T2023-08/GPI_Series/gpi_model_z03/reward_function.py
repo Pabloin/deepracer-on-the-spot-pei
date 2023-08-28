@@ -590,13 +590,13 @@ class MyDeepRacerClass:
 
         #-----[RECTAS]---------------------------------------------------------
 
-        ## Lo premio por estar mas cercano a vel Max (entre 3.3 y 3.7)
+        ## Lo Castigo si el gap esta muy lejos de 4.0 hasta 3.1
         isRectaFin   = MyDrTrack.isRectaFin(closest_waypoints)
         if isRectaFin and isLap_n3:
             speed_deseada = 4.0
-            gap = (speed_deseada-speed)/10
-            if gap > 0.3:
-               REWARD += gap
+            gap = (speed_deseada-speed)
+            if gap > 0.9:
+                REWARD *= 0.8
 
 
         #-----[Rectas]]--------------------------------------------------------
