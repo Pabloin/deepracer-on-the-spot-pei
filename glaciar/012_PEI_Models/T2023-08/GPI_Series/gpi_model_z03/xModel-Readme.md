@@ -123,7 +123,9 @@ echo ""
         Inicia Ealuacion: (la consola)  (Aca tengo que evaluar nada mas... no tengo que entrenar...)
 
             23:42 min ...   
-
+            23:52 min ...     (las tres laps)
+            23:52 min ...     (las tres laps)
+            
 
             c) Medir:
 
@@ -135,6 +137,17 @@ echo ""
 
 
 
+            Trial
+            Time (MM:SS.mmm)
+            Trial results (% track completed)
+            Status
+            Off-track
+            Off-track penalty
+            Crashes
+            Crash penalty
+            1	01:11.654	100%	Lap complete	10	20 seconds	0	--
+            2	01:06.061	100%	Lap complete	8	16 seconds	0	--
+            3	01:09.995	100%	Lap complete	10	20 seconds	0	--
 
 
 ***************************************************************************************************
@@ -148,15 +161,17 @@ Entrenamiento 1:
               (Seccion Anterior)
 
 Entrenamiento 2:
-    Inicia - 27 Aug 2023 23:44:35
+    Inicia - 27 Aug 2023 23:50:35
              ./create-spot-instance.sh base gpi-model-z03a 180
 
                 OJO! 
                 Agergaue                 
                 #DR_LOCAL_S3_PRETRAINED=False
                 DR_LOCAL_S3_PRETRAINED=True
-                
+
              3 horas ...  
 
-             ... SPOT Creado OK! (En virginia)
+             ... SPOT  .... en virginia....
+
+             ... la preocupacion es que me lo den.. 
 
