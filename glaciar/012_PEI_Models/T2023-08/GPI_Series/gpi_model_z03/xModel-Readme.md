@@ -23,6 +23,16 @@ Enviados
         DeepRacer On The Spot - Increment Training
         https://www.youtube.com/watch?v=9y5wx7fQUgc&list=PL9qmHoKq77dTFS59WjHciNb0a0n0dE8iF
 
+
+
+    Duda:
+        ¿Como si si entreno 
+            Track direction
+            Select the direction in which you wish to race.
+            Clockwise
+            Counterclockwise
+
+            ... los debería tener en en los logs de Fase 1
 _____________________________
 TODO:
 
@@ -100,6 +110,7 @@ echo ""
 
 
 
+# Ejemplo OK
 
  aws deepracer import-model \
     --type REINFORCEMENT_LEARNING \
@@ -109,15 +120,9 @@ echo ""
     --profile voclabs/user1587290=PABLO_EZEQUIEL_INCHAUSTI
 
 
+        Inicia Ealuacion: (la consola)  (Aca tengo que evaluar nada mas... no tengo que entrenar...)
 
-# Ejemplo OK
-# aws deepracer import-model 
-#   --type REINFORCEMENT_LEARNING       
-#   --name DOTS-model-z02c  
-#   --model-artifacts-s3-path s3://dr-models-glaciar-dots-box2/gpi_model_z02c/DOTS-model-z02c   
-#   --role-arn arn:aws:iam::305834167779:role/LabRole  
-#   --profile voclabs/user2481293=Test_Student
-
+            23:42 min ...   
 
 
             c) Medir:
@@ -135,4 +140,23 @@ echo ""
 ***************************************************************************************************
 
 
+***************************************************************************************************
+Entrenamiento 1:
+
+    Inicia - 27 Aug 2023 21:31:35
+             ./create-spot-instance.sh base gpi-model-z03a 60 
+              (Seccion Anterior)
+
+Entrenamiento 2:
+    Inicia - 27 Aug 2023 23:44:35
+             ./create-spot-instance.sh base gpi-model-z03a 180
+
+                OJO! 
+                Agergaue                 
+                #DR_LOCAL_S3_PRETRAINED=False
+                DR_LOCAL_S3_PRETRAINED=True
+                
+             3 horas ...  
+
+             ... SPOT Creado OK! (En virginia)
 
