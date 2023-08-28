@@ -357,7 +357,7 @@ class MyDrTrack:
         [255,254,253,252,251,250,249,248],
         [247,246,245,244,243,242,241,240],
 
-        # 2
+        #2 (C1L)
         [239,238,237,236,235,234,233],
         [232,231,230,229,228,227,226],
 
@@ -366,7 +366,7 @@ class MyDrTrack:
         [220,219,218,217,216,215],
         [214,213,212,211,210,209,208,207,206,205,204,203,202],
 
-        #7
+        #7 (C2R)
         [201,200,199,198,197,196,195],
         [194,193,192,191,190,189,188],
         
@@ -375,7 +375,7 @@ class MyDrTrack:
         [176,175,174,173,172,171,170,169,168,167],
         [166,165,164,163,162,161,160],
 
-        #12
+        #12 
         [159,158,157,156,155,154,153,152,151],
         [150,149,148,147,146,145,144,143,142],
 
@@ -384,15 +384,19 @@ class MyDrTrack:
         [131,130,129,128,127,126,125,124],
         [123,122,121,120,119,118,117],
 
-        # 17
+        #17 (C3R)
         [116,115,114,113,112,111],
         [110,109,108,107,106,105,104],
         [103,102,101,100],
 
-        # 20
+        # 20 (C4L)
         [99,98,97,96,95,94],
         [93,92,91,90,89,88,87,86],
+
+        # 22
         [85,84,83,82,81,80,79,78],
+
+        # 24 (C5L)
         [77,76,75,74,73,72],
         [71,70,69,68],
 
@@ -409,7 +413,7 @@ class MyDrTrack:
         [27,26,25,24,23],
         [22,21,20,19,18],
 
-        # 35 (Rf)
+        # 34 (Rf)
         [17,16,15,14,13,12,11,10],
         [9,8,7,6,5],
         [4,3,2,1]
@@ -433,14 +437,14 @@ class MyDrTrack:
     #----------------------------------------------------------------------------------------------------
     # Dice si es Recta Final
     @staticmethod
-    def isRectaFin(wp):
+    def isRectaFinal(wp):
         recta = MyDrTrack.Zones[34] + MyDrTrack.Zones[35] + MyDrTrack.Zones[36]
         return (wp in recta)
     
     #----------------------------------------------------------------------------------------------------
     # Dice si es Recta Inicial
     @staticmethod
-    def isRectaIni(wp):
+    def isRectaInicial(wp):
         recta = MyDrTrack.Zones[0] + MyDrTrack.Zones[1] 
         return (wp in recta) 
 
@@ -448,71 +452,22 @@ class MyDrTrack:
     # Dice si es Recta Dos
     @staticmethod
     def isRecta2(wp):
-        recta = MyDrTrack.Zones[4] + MyDrTrack.Zones[5] + MyDrTrack.Zones[6] 
+        recta = MyDrTrack.Zones[0] + MyDrTrack.Zones[1] 
         return (wp in recta) 
 
     #----------------------------------------------------------------------------------------------------
     # Dice si es Recta Tres
     @staticmethod
     def isRecta3(wp):
-        recta = MyDrTrack.Zones[9] + MyDrTrack.Zones[10] + MyDrTrack.Zones[11] 
+        recta = MyDrTrack.Zones[0] + MyDrTrack.Zones[1] 
         return (wp in recta)
     
     #----------------------------------------------------------------------------------------------------
-    # Dice si es una Recta
+    # Dice si es Recta Cuatro
     @staticmethod
-    def isRecta(wp):
-        return (MyDrTrack.isRectaIni(wp) or 
-                MyDrTrack.isRectaFin(wp) or 
-                MyDrTrack.isRecta2(wp)   or 
-                MyDrTrack.isRecta3(wp)   or 
-                MyDrTrack.isRecta4(wp))
-
-
-    #----------------------------------------------------------------------------------------------------
-    # Dice si es Curva 1 Left
-    @staticmethod
-    def isCurva1L(wp):
-        curva = MyDrTrack.Zones[2] + MyDrTrack.Zones[3] 
-        return (wp in curva) 
-
-
-    #----------------------------------------------------------------------------------------------------
-    # Dice si es Curva 2 Right
-    @staticmethod
-    def isCurva2R(wp):
-        curva = MyDrTrack.Zones[7] + MyDrTrack.Zones[8] + MyDrTrack.Zones[16] 
-        return (wp in curva) 
-    
-
-    #----------------------------------------------------------------------------------------------------
-    # Dice si es Curva 3 Right
-    @staticmethod
-    def isCurva3R(wp):
-        curva = MyDrTrack.Zones[17] + MyDrTrack.Zones[18] + MyDrTrack.Zones[19] 
-        return (wp in curva) 
-
-    #----------------------------------------------------------------------------------------------------
-    # Dice si es Curva 4 Left
-    @staticmethod
-    def isCurva4L(wp):
-        curva = MyDrTrack.Zones[20] + MyDrTrack.Zones[21] 
-        return (wp in curva)
-    
-    #----------------------------------------------------------------------------------------------------
-    # Dice si es Curva 5 Left
-    @staticmethod
-    def isCurva5L(wp):
-        curva = MyDrTrack.Zones[23] + MyDrTrack.Zones[24] 
-        return (wp in curva) 
-
-    #----------------------------------------------------------------------------------------------------
-    # Dice si es Curva 6 Right
-    @staticmethod
-    def isCurva6R(wp):
-        curva = MyDrTrack.Zones[28] + MyDrTrack.Zones[29]
-        return (wp in curva) 
-    
+    def isRecta3(wp):
+        recta = MyDrTrack.Zones[0] + MyDrTrack.Zones[1] 
+        return (wp in recta) 
 
 #----------------------------------------
 # Version z02
@@ -572,17 +527,20 @@ class MyDeepRacerClass:
 
         #-----[RECTAS]---------------------------------------------------------
 
+        isRectaFinal   = MyDrTrack.isRectaFinal(closest_waypoints)
+        isRectaInicial = MyDrTrack.isRectaInicial(closest_waypoints)
+        isRectas = isRectaInicial or isRectaFinal
+
         ## Lo premio por estar mas cercano a vel Max (entre 3.3 y 3.7)
-        isRectaFin   = MyDrTrack.isRectaFin(closest_waypoints)
-        if isRectaFin and isLap_n3:
+        if isRectaFinal and isLap_n3:
             speed_deseada = 4.0
             gap = (speed_deseada-speed)/10
             if gap > 0.3:
                REWARD += gap
 
 
-        ## REctas
-        if MyDrTrack.isRecta(closest_waypoints):
+        ## REcta Inicial
+        if isRectas:
             # Steering penality threshold, change the number based on your action space setting
             ABS_STEERING_THRESHOLD = 15
 
