@@ -599,17 +599,26 @@ class MyDeepRacerClass:
                REWARD += gap
 
 
-        ## REctas
+        #-----[Rectas]]--------------------------------------------------------
+        # Penalize reward if the car is steering too much (abs(steering_angle))
         if MyDrTrack.isRecta(closest_waypoints):
-            # Steering penality threshold, change the number based on your action space setting
-            ABS_STEERING_THRESHOLD = 15
-
-            # Penalize reward if the car is steering too much
-            steering = abs(params['steering_angle']) # Only need the absolute steering angle
-            if steering > ABS_STEERING_THRESHOLD:
+            STEERING_THRESHOLD_ABS   =  15
+            steering = abs(steering_angle) 
+            if steering > STEERING_THRESHOLD_ABS:
                 REWARD *= 0.8
 
 
+        #-----[Curvas Left]---------------------------------------------------
+        # Penalize reward if the car va a la Derecha ( > 0)
+        if MyDrTrack.isCurvaLeft(closest_waypoints):
+            if steering_angle > 0:
+                REWARD *= 0.8
+
+        #-----[Curvas Right]---------------------------------------------------
+        # Penalize reward if the car va a la Izquierda ( < 0)
+        if MyDrTrack.isCurvaRight(closest_waypoints):
+            if steering_angle < 0:
+                REWARD *= 0.8
 
         ## Zero recompensa si off track ##
         if all_wheels_on_track == False:
