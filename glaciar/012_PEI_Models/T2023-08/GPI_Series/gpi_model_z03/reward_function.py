@@ -388,7 +388,7 @@ class MyDeepRacerClass:
         track_length         = params['track_length']
         
 
-        isLap_n1, isLap_n2, isLap_n3 = Util.isLapUno(track_length):
+        isLap_n1, isLap_n2, isLap_n3 = Util.isLapUno(track_length)
 
 
         #-----------[ Distancia a la Racing Line] -------------------
