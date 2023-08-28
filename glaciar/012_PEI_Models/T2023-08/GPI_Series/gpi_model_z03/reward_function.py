@@ -459,6 +459,13 @@ class MyDrTrack:
         return (wp in recta)
     
     #----------------------------------------------------------------------------------------------------
+    # Dice si es Recta Cuatro
+    @staticmethod
+    def isRecta4(wp):
+        recta = MyDrTrack.Zones[14] + MyDrTrack.Zones[15] + MyDrTrack.Zones[16] 
+        return (wp in recta)
+    
+    #----------------------------------------------------------------------------------------------------
     # Dice si es Curva 1 Left
     @staticmethod
     def isCurva1L(wp):
