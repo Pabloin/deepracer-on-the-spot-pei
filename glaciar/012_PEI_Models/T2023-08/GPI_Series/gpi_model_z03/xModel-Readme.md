@@ -29,3 +29,110 @@ TODO:
     - Los hiperparametros discretos también 
       fueron calculados por la tesis ... 
 _____________________________
+
+**********************************
+Logs
+
+    base-bucket-1f3pfk38sjoqu
+    gpi_model_z03/
+    s3://base-bucket-1f3pfk38sjoqu/gpi_model_z03/
+
+
+    aws s3 sync s3://base-bucket-1f3pfk38sjoqu/gpi_model_z03/ .logsTmp/gpi_model_z03
+
+***************************************************************************************************
+Entrenamiento 1:
+
+    Inicia - 27 Aug 2023 21:31:35
+             ./create-spot-instance.sh base gpi-model-z03a 60 
+
+             SPOT Creado OK! (En virginia)
+
+
+    Finaliza - 27 Aug 2023 21:31:35
+            
+             Deleting in Progress...
+    Luego:
+
+            a) Bajar los Logs de la Fase I
+
+                aws s3 sync s3://base-bucket-1f3pfk38sjoqu/gpi_model_z03/ \ 
+                                                  .logsTmp/gpi_model_z03/FASE-01
+
+                Ok
+
+            b) Bajar Modelo y evaluar en Academy de PEI (lo hago fruta dentro de poco ... )
+
+                Upload S3 Academy
+
+                export AWS_EDU_PROFILE_STD=voclabs/user2481293=Test_Student
+                export AWS_EDU_PROFILE_PEI=voclabs/user1587290=PABLO_EZEQUIEL_INCHAUSTI
+                export AWS_EDU_PROFILE=TBD
+
+                export AWS_EDU_LABROLE_STD=arn:aws:iam::305834167779:role/LabRole
+                export AWS_EDU_LABROLE_PEI=arn:aws:iam::983552762508:role/LabRole
+                export AWS_EDU_LABROLE=TBD
+
+
+voclabs/user1587290=PABLO_EZEQUIEL_INCHAUSTI
+
+aws s3 cp .logsTmp/  \ 
+    s3://dr-models-glaciar-dots/  \ 
+    --recursive  \ 
+    --profile voclabs/user1587290=PABLO_EZEQUIEL_INCHAUSTI 
+
+
+aws s3 sync .logsTmp/gpi_model_z03/  \ 
+    s3://dr-models-glaciar-dots/gpi_model_z03/  \ 
+    --profile voclabs/user1587290=PABLO_EZEQUIEL_INCHAUSTI 
+
+
+
+echo "Siguiente Comando (Copy Paste):"
+echo ""
+echo " aws deepracer import-model   \ "
+echo "         --type REINFORCEMENT_LEARNING   \ "
+echo "         --name ${MODEL_VERSION}         \ "
+echo "         --model-artifacts-s3-path s3://${S3_REPO_TARGET}/${MODEL}/${MODEL_VERSION} \   "
+echo "         --role-arn ${AWS_EDU_LABROLE}   \ "
+echo "         --profile  ${AWS_EDU_PROFILE}     "
+echo ""
+
+
+
+
+ aws deepracer import-model \
+    --type REINFORCEMENT_LEARNING \
+    --name F01-DOTS-model-z03a  \
+    --model-artifacts-s3-path s3://dr-models-glaciar-dots/gpi_model_z03/FASE-01/DOTS-model-z03a \
+    --role-arn arn:aws:iam::983552762508:role/LabRole  \
+    --profile voclabs/user1587290=PABLO_EZEQUIEL_INCHAUSTI
+
+
+
+# Ejemplo OK
+# aws deepracer import-model 
+#   --type REINFORCEMENT_LEARNING       
+#   --name DOTS-model-z02c  
+#   --model-artifacts-s3-path s3://dr-models-glaciar-dots-box2/gpi_model_z02c/DOTS-model-z02c   
+#   --role-arn arn:aws:iam::305834167779:role/LabRole  
+#   --profile voclabs/user2481293=Test_Student
+
+
+
+            c) Medir:
+
+                    - Darle otra vuelta de entrenamiento (de 5 horas?)
+                    - Ojo con el Nohup ... 
+
+                        -  Igual ... creo que Nohup no hay problema en DOTS porque el que entrena 
+                                     es el Terraform ... 
+
+
+
+
+
+***************************************************************************************************
+
+
+
