@@ -459,17 +459,6 @@ class MyDrTrack:
         return (wp in recta)
     
     #----------------------------------------------------------------------------------------------------
-    # Dice si es una Recta
-    @staticmethod
-    def isRecta(wp):
-        return (MyDrTrack.isRectaIni(wp) or 
-                MyDrTrack.isRectaFin(wp) or 
-                MyDrTrack.isRecta2(wp)   or 
-                MyDrTrack.isRecta3(wp)   or 
-                MyDrTrack.isRecta4(wp))
-
-
-    #----------------------------------------------------------------------------------------------------
     # Dice si es Curva 1 Left
     @staticmethod
     def isCurva1L(wp):
@@ -513,6 +502,35 @@ class MyDrTrack:
         curva = MyDrTrack.Zones[28] + MyDrTrack.Zones[29]
         return (wp in curva) 
     
+
+    #----------------------------------------------------------------------------------------------------
+    # Dice si es una Recta
+    @staticmethod
+    def isRecta(wp):
+        return (MyDrTrack.isRectaIni(wp) or 
+                MyDrTrack.isRectaFin(wp) or 
+                MyDrTrack.isRecta2(wp)   or 
+                MyDrTrack.isRecta3(wp)   or 
+                MyDrTrack.isRecta4(wp))
+
+    #----------------------------------------------------------------------------------------------------
+    # Dice si es una Curva Left
+    @staticmethod
+    def isCurvaLeft(wp):
+        return (MyDrTrack.isCurva1L(wp) or 
+                MyDrTrack.isCurva4L(wp) or 
+                MyDrTrack.isCurva5L(wp))
+
+    #----------------------------------------------------------------------------------------------------
+    # Dice si es una Curva Right
+    @staticmethod
+    def isCurvaRight(wp):
+        return (MyDrTrack.isCurva2R(wp) or 
+                MyDrTrack.isCurva3R(wp) or 
+                MyDrTrack.isCurva6R(wp))
+
+
+
 
 #----------------------------------------
 # Version z02
