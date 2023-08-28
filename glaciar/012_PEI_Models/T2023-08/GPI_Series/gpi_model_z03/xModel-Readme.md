@@ -10,12 +10,18 @@ Z01 con Waypoints
 -----------------------
 Enviados 
 
-    - z02 Expectativa: IDEM z01 pero con reward de velocidad  
+    - z02 Expectativa: IDEM z01 y z02
+     pero con reward de velocidad  
         
+    - Traer también a la funcion...
+        Que continue del entrenamiento anterior ... 
+
+        DeepRacer On The Spot - Increment Training
+        https://www.youtube.com/watch?v=9y5wx7fQUgc&list=PL9qmHoKq77dTFS59WjHciNb0a0n0dE8iF
 
 _____________________________
 TODO:
 
-    - Puedo traerme los hiperparámetros de la Tesis ... 
-
+    - Los hiperparametros discretos también 
+      fueron calculados por la tesis ... 
 _____________________________
