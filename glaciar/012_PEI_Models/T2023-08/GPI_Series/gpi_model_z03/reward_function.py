@@ -459,7 +459,7 @@ class MyDrTrack:
         return (wp in recta)
     
     #----------------------------------------------------------------------------------------------------
-    # Dice si es Recta Cuatro
+    # Dice si es Recta Cuatro.
     @staticmethod
     def isRecta4(wp):
         recta = MyDrTrack.Zones[14] + MyDrTrack.Zones[15] + MyDrTrack.Zones[16] 
