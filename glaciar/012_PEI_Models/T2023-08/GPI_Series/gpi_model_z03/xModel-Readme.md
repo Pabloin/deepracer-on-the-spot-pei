@@ -339,8 +339,10 @@ Entrenamiento 4:
 
     
 
-    ./create-spot-instance.sh base gpi-model-z03d 180^
+    ./create-spot-instance.sh base gpi-model-z03d 180
         Inicia: Mon Aug 28 19:30:54 
+        Fin 22:48
 
 
-        
+    ./create-spot-instance.sh base gpi-model-z03e 120
+
