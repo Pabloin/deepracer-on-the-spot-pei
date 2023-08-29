@@ -167,24 +167,6 @@ echo ""
     --profile voclabs/user1587290=PABLO_EZEQUIEL_INCHAUSTI
 
 
----------------------------------------
-[WIP]
-    voclabs/user2410571=Test_Student
-    AWS Academy Learner Lab [32691]
-    Used $89.7 of $100
-    arn:aws:iam::001726842821:role/LabRole
-
-
-aws s3 sync .logsTmp/gpi_model_z03/  \
-    s3://dr-models-glaciar-dots-std571/gpi_model_z03/  \
-    --profile voclabs/user2410571=Test_Student
-
- aws deepracer import-model \
-    --type REINFORCEMENT_LEARNING \
-    --name DOTS-model-z03c  \
-    --model-artifacts-s3-path s3://dr-models-glaciar-dots-std571/gpi_model_z03/DOTS-model-z03c \
-    --role-arn arn:aws:iam::001726842821:role/LabRole \
-    --profile voclabs/user2410571=Test_Student
 
 
         Inicia Ealuacion: (la consola)  (Aca tengo que evaluar nada mas... no tengo que entrenar...)
@@ -328,21 +310,70 @@ Entrenamiento 3:
                     2	01:19.193	100%	Lap complete	14	28 seconds	0	--
                     3	01:08.137	100%	Lap complete	10	20 seconds	0	--
 
+                    DOTS-model-z03c1
+                    Trial
+                    Time (MM:SS.mmm)
+                    Trial results (% track completed)
+                    Status
+                    Off-track
+                    Off-track penalty
+                    Crashes
+                    Crash penalty
+                    1	01:08.008	100%	Lap complete	10	20 seconds	0	--
+                    2	01:19.727	100%	Lap complete	14	28 seconds	0	--
+                    3	01:21.073	100%	Lap complete	15	30 seconds	0	--
 
 
 Entrenamiento 4:
     ./create-spot-instance.sh base gpi-model-z03d 180
     }    Inicia - 28 Aug 2023 14:08:00
 
-        Error creo que por las spot
 
-
-    
 
     ./create-spot-instance.sh base gpi-model-z03d 180
         Inicia: Mon Aug 28 19:30:54 
         Fin 22:48
 
 
+                    Trial
+                    Time (MM:SS.mmm)
+                    Trial results (% track completed)
+                    Status
+                    Off-track
+                    Off-track penalty
+                    Crashes
+                    Crash penalty
+                    1	01:03.877	100%	Lap complete	7	14 seconds	0	--
+                    2	00:58.932	100%	Lap complete	5	10 seconds	0	--
+                    3	01:01.323	100%	Lap complete	6	12 seconds	0	--
+
+
+                    Buenisimo!!!
+
     ./create-spot-instance.sh base gpi-model-z03e 120
 
+            ubuntu@ip-172-31-34-103:~/deepracer-on-the-spot-pei$ ./create-spot-instance.sh base gpi-model-z03e 120
+            Tue Aug 29 01:50:13 UTC 2023
+
+
+
+---------------------------------------
+[WIP]
+    voclabs/user2410571=Test_Student
+    AWS Academy Learner Lab [32691]
+    Used $89.7 of $100
+    arn:aws:iam::001726842821:role/LabRole
+
+aws s3 sync s3://base-bucket-1f3pfk38sjoqu/gpi_model_z03/ \
+    .logsTmp/gpi_model_z03/  
+    
+aws s3 sync .logsTmp/gpi_model_z03/  \
+    s3://dr-models-glaciar-dots-std571/gpi_model_z03/  \
+    --profile voclabs/user2410571=Test_Student
+
+ aws deepracer import-model \
+    --type REINFORCEMENT_LEARNING \
+    --name DOTS-model-z03eWIP  \
+    --model-artifacts-s3-path s3://dr-models-glaciar-dots-std571/gpi_model_z03/DOTS-model-z03e \
+    --role-arn arn:aws:iam::001726842821:role/LabRole \
+    --profile voclabs/user2410571=Test_Student

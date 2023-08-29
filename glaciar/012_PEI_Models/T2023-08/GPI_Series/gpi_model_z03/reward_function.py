@@ -588,12 +588,40 @@ class MyDeepRacerClass:
 
 
         ## Le sumo el reward por menor gap
+        # speed_deseada = cercaUno[2]
+        # gap = abs(1-speed/speed_deseada)
+        # rrr = 1-gap
+
+        # REWARD += rrr
+
         speed_deseada = cercaUno[2]
-        gap = abs(1-speed/speed_deseada)
-        rrr = 1-gap
+        gap = abs(speed_deseada-speed)
 
-        REWARD += rrr
+        gapVel = [
+              #min  max   rew
+            [ 0.0,  0.1,  1.00 ],
+            [ 0.1,  0.2,  1.00 ],
+            [ 0.2,  0.3,  0.90 ],
+            [ 0.3,  0.4,  0.80 ],
+            [ 0.4,  0.5,  0.70 ],
+            [ 0.5,  0.6,  0.70 ],
+            [ 0.6,  0.7,  0.60 ],
+            [ 0.7,  0.8,  0.60 ],
+            [ 0.8,  0.9,  0.50 ],
+            [ 0.9,  1.0,  0.50 ],
+            [ 1.0,  1.1,  0.40 ],
+            [ 1.1,  1.2,  0.40 ],
+            [ 1.2,  1.3,  0.30 ],
+            [ 1.3,  1.4,  0.30 ],
+            [ 1.4,  1.5,  0.20 ],
+            [ 1.5,  1.6,  0.20 ],
+            [ 1.6,  1.9,  0.10 ],
+            [ 2.1,  4.0,  0.00 ],
+        ]        
 
+        for e in gapVel:
+            if  gap  >= e[0] and gap  < e[1]:
+                REWARD *= e[2]
 
         #-----[RECTAS]---------------------------------------------------------
 
@@ -602,7 +630,7 @@ class MyDeepRacerClass:
         if isRectaFin and isLap_n3:
             speed_deseada = 4.0
             gap = (speed_deseada-speed)
-            if gap > 0.9:
+            if gap > 1.2:
                 REWARD *= 0.8
 
 
