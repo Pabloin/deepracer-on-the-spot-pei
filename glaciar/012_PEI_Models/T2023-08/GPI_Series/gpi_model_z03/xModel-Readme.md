@@ -333,3 +333,14 @@ Entrenamiento 3:
 Entrenamiento 4:
     ./create-spot-instance.sh base gpi-model-z03d 180
     }    Inicia - 28 Aug 2023 14:08:00
+
+        Error creo que por las spot
+
+
+    
+
+    ./create-spot-instance.sh base gpi-model-z03d 180^
+        Inicia: Mon Aug 28 19:30:54 
+
+
+        
