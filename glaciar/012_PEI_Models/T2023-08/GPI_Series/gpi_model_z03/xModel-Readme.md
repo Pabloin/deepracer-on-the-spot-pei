@@ -334,7 +334,7 @@ Entrenamiento 4:
         Inicia: Mon Aug 28 19:30:54 
         Fin 22:48
 
-
+                    DOTS-model-z03eWIP
                     Trial
                     Time (MM:SS.mmm)
                     Trial results (% track completed)
@@ -350,7 +350,7 @@ Entrenamiento 4:
 
                     Buenisimo!!!
 
-
+}                    DOTS-model-z03eWIP2
                     Trial
                     Time (MM:SS.mmm)
                     Trial results (% track completed)
