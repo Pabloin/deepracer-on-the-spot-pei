@@ -350,6 +350,23 @@ Entrenamiento 4:
 
                     Buenisimo!!!
 
+
+                    Trial
+                    Time (MM:SS.mmm)
+                    Trial results (% track completed)
+                    Status
+                    Off-track
+                    Off-track penalty
+                    Crashes
+                    Crash penalty
+                    1	00:57.808	100%	Lap complete	5	10 seconds	0	--
+                    2	00:56.844	100%	Lap complete	5	10 seconds	0	--
+                    3	00:59.523	100%	Lap complete	5	10 seconds	0	--
+
+
+                    ... Mejor ... (y está en wip)
+
+
     ./create-spot-instance.sh base gpi-model-z03e 120
 
             ubuntu@ip-172-31-34-103:~/deepracer-on-the-spot-pei$ ./create-spot-instance.sh base gpi-model-z03e 120
@@ -373,7 +390,7 @@ aws s3 sync .logsTmp/gpi_model_z03/  \
 
  aws deepracer import-model \
     --type REINFORCEMENT_LEARNING \
-    --name DOTS-model-z03eWIP  \
+    --name DOTS-model-z03eWIP2  \
     --model-artifacts-s3-path s3://dr-models-glaciar-dots-std571/gpi_model_z03/DOTS-model-z03e \
     --role-arn arn:aws:iam::001726842821:role/LabRole \
     --profile voclabs/user2410571=Test_Student
