@@ -14,7 +14,7 @@ Z01 con Waypoints
     AWS Academy Learner Lab - Educator
 
 [WIP]
-    voclabs/user2410571=Test_Student
+    voclabs/user2415006=Test_Student
     AWS Academy Learner Lab [32691]
     Used $89.7 of $100
 
@@ -110,14 +110,14 @@ aws s3 sync .logsTmp/gpi_model_z03/  \
 
 ---------------------------------------
 [WIP]
-    voclabs/user2410571=Test_Student
+    voclabs/user2415006=Test_Student
     AWS Academy Learner Lab [32691]
     Used $89.7 of $100
 
 
 aws s3 sync .logsTmp/gpi_model_z03/  \
-    s3://dr-models-glaciar-dots-std571/gpi_model_z03/  \
-    --profile voclabs/user2410571=Test_Student
+    s3://dr-models-glaciar-dots-std006/gpi_model_z03/  \
+    --profile voclabs/user2415006=Test_Student
 
 
 
@@ -334,6 +334,15 @@ Entrenamiento 4:
         Inicia: Mon Aug 28 19:30:54 
         Fin 22:48
 
+
+
+    ./create-spot-instance.sh base gpi-model-z03e 120
+
+            ubuntu@ip-172-31-34-103:~/deepracer-on-the-spot-pei$ ./create-spot-instance.sh base gpi-model-z03e 120
+            Tue Aug 29 01:50:13 UTC 2023
+
+
+
                     DOTS-model-z03eWIP
                     Trial
                     Time (MM:SS.mmm)
@@ -367,30 +376,106 @@ Entrenamiento 4:
                     ... Mejor ... (y está en wip)
 
 
-    ./create-spot-instance.sh base gpi-model-z03e 120
+                    DOTS-model-z03e
 
-            ubuntu@ip-172-31-34-103:~/deepracer-on-the-spot-pei$ ./create-spot-instance.sh base gpi-model-z03e 120
-            Tue Aug 29 01:50:13 UTC 2023
+                    Trial
+                    Time (MM:SS.mmm)
+                    Trial results (% track completed)
+                    Status
+                    Off-track
+                    Off-track penalty
+                    Crashes
+                    Crash penalty
+                    1	00:49.829	100%	Lap complete	2	4 seconds	0	--
+                    2	01:01.130	100%	Lap complete	6	12 seconds	0	--
+                    3	00:56.389	100%	Lap complete	4	8 seconds	0	--
 
+
+                        12 off  (24 seg)
+                         2:48             potencial (2:24 hs ... estoy en 2:13 ... )
+
+    ./create-spot-instance.sh base gpi-model-z03f 120
+                    29-08
+                    Empezo 10:54
+
+    ./create-spot-instance.sh base gpi-model-z03f 120
+
+                    baseResourcesStackName=base
+                    30-08
+                    Empezo 00:21
+
+
+
+    ./create-spot-instance.sh base gpi-model-z03g 120
 
 
 ---------------------------------------
-[WIP]
-    voclabs/user2410571=Test_Student
+[Chau]
+    voclabs/user2415006=Test_Student
     AWS Academy Learner Lab [32691]
     Used $89.7 of $100
-    arn:aws:iam::001726842821:role/LabRole
+    arn:aws:iam::764531084004:role/LabRole
+
+[WIP]
+    AWS Academy Learner Lab [40078]
+    Used $0.0 of $100
+    arn:aws:iam::764531084004:role/LabRole
+    voclabs/user2415006=Test_Student
 
 aws s3 sync s3://base-bucket-1f3pfk38sjoqu/gpi_model_z03/ \
     .logsTmp/gpi_model_z03/  
     
+
+
+
 aws s3 sync .logsTmp/gpi_model_z03/  \
-    s3://dr-models-glaciar-dots-std571/gpi_model_z03/  \
-    --profile voclabs/user2410571=Test_Student
+    s3://dr-models-glaciar-dots-std006/gpi_model_z03/  \
+    --profile voclabs/user2415006=Test_Student
 
  aws deepracer import-model \
     --type REINFORCEMENT_LEARNING \
-    --name DOTS-model-z03eWIP2  \
-    --model-artifacts-s3-path s3://dr-models-glaciar-dots-std571/gpi_model_z03/DOTS-model-z03e \
-    --role-arn arn:aws:iam::001726842821:role/LabRole \
-    --profile voclabs/user2410571=Test_Student
+    --name DOTS-model-z03f  \
+    --model-artifacts-s3-path s3://dr-models-glaciar-dots-std006/gpi_model_z03/DOTS-model-z03f \
+    --role-arn arn:aws:iam::764531084004:role/LabRole \
+    --profile voclabs/user2415006=Test_Student
+
+
+
+
+
+
+# Para AFRICA
+aws s3 sync s3://base-bucket-1f3pfk38sjoqu/gpi_model_z03/        \
+            s3://base-africa-bucket-1biww6bqp62tb/gpi_model_z03/ --region af-south-1 --source-region us-east-1 
+    
+
+            copy: s3://base-bucket-1f3pfk38sjoqu/gpi_model_z03/DOTS-model-z03a/2/training-simtrace/3-iteration.csv 
+        to s3://base-africa-bucket-1biww6bqp62tb/gpi_model_z03/DOTS-model-z03a/2/training-simtrace/3-iteration.csv
+            etc ok
+
+
+
+
+            ./create-spot-instance.sh base-africa gpi-model-z03f-africa 120
+
+
+                                ROLLBACK_IN_PROGRESS
+                    The following resource(s) failed to create: [LaunchTemplate, LambdaFunctionRole]. Rollback requested by user.
+                    2023-08-29 12:44:49 UTC-0300	LambdaFunctionRole	
+                    CREATE_FAILED
+                    Resource creation cancelled
+                    2023-08-29 12:44:49 UTC-0300	LaunchTemplate	
+                    CREATE_FAILED
+                    Resource handler returned message: 
+                    
+                    "The image ID 'null' is not valid. 
+                    The expected format is ami-xxxxxxxx or ami-xxxxxxxxxxxxxxxxx. (Service: AmazonEC2; 
+                    Status Code: 400; Error Code: InvalidAMIID.Malformed; 
+
+                       Request ID: 7fcffd02-ee33-49fa-adcd-0ededf21d485; Proxy: null)" 
+                    (RequestToken: d2990da0-7f53-e364-a60a-a4485ee69fe1, HandlerErrorCode: GeneralServiceException)
+
+
+
+
+                    ./scripts/create-spot-instance.sh base-africa gpi-model-z03f-africa 120
