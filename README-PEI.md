@@ -22,6 +22,15 @@ http://3.87.87.207:8100/menu.html
 
 
 #--------------------------------
+    Why does ssh'ing to my EC2 instances take so long?
+    Just put in your EC2's /etc/ssh/sshd_config:
+
+    UseDNS no
+
+    sudo systemctl restart systemd-logind 
+
+#--------------------------------
+
 
 
                 NOTE: 

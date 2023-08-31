@@ -55,6 +55,17 @@ TODO:
       fueron calculados por la tesis ... 
 _____________________________
 
+
+SSH lento
+That's usually caused by ssh'ing from an IP that has no reverse DNS. So your EC2 instance is trying a DNS reverse lookup so it can log that info.
+
+Just put in your EC2's /etc/ssh/sshd_config:
+
+UseDNS no
+
+Or config reverse DNS for your IP you are logging in from.
+
+
 **********************************
 Logs
 
@@ -404,9 +415,47 @@ Entrenamiento 4:
                     30-08
                     Empezo 00:21
 
+                    Trial
+                    Time (MM:SS.mmm)
+                    Trial results (% track completed)
+                    Status
+                    Off-track
+                    Off-track penalty
+                    Crashes
+                    Crash penalty
+                    1	00:49.403	100%	Lap complete	3	6 seconds	0	--
+                    2	00:54.143	100%	Lap complete	4	8 seconds	0	--
+                    3	00:53.013	100%	Lap complete	4	8 seconds	0	--
+                    4	00:55.541	100%	Lap complete	5	10 seconds	0	--
+                    5	00:49.272	100%	Lap complete	3	6 seconds	0	--
+
+--
+
+                        11 off 
+                         2:36             potencial (2:24 hs ... estoy en 2:13 ... )
 
 
-    ./create-spot-instance.sh base gpi-model-z03g 120
+
+    ./create-spot-instance.sh base gpi-model-z03g 360
+
+    ./create-standard-instance.sh base gpi-model-z03gEC2 120
+
+
+                Trial
+                Time (MM:SS.mmm)
+                Trial results (% track completed)
+                Status
+                Off-track
+                Off-track penalty
+                Crashes
+                Crash penalty
+                1	00:50.057	100%	Lap complete	3    6 seconds	0	--
+                2	00:59.862	100%	Lap complete	7	14 seconds	0	--
+                3	00:48.000	100%	Lap complete	3	 6 seconds	0	--
+
+
+
+
 
 
 ---------------------------------------
