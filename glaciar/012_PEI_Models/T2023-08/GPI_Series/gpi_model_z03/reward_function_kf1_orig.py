@@ -16,6 +16,18 @@ AJUSTE_K = 1
 class Util:
 
     #----------------------------------------------------------------------------------------------------
+    # Dice si es Lap 1, dos o tres
+    @staticmethod
+    def isLapUno(track_length):
+
+        isLap_n1 =                                    track_length <= LAP_LENGHT * 1
+        isLap_n2 = track_length >  LAP_LENGHT * 1 and track_length <= LAP_LENGHT * 2
+        isLap_n3 = track_length >  LAP_LENGHT * 2 and track_length <= LAP_LENGHT * 3
+
+        return [isLap_n1, isLap_n2, isLap_n3]
+    
+
+    #----------------------------------------------------------------------------------------------------
     # Distancia a la racing line
     # - (ww) Calcula las distancias entre 2 puntos de carrera más cercanos
     # - (cw) Distancias entre el coche y el punto de carrera más cercano 
@@ -346,211 +358,6 @@ class MyRacingLine:
 
 
 
-class MyDrTrack:
-
-    # RogueRaceway  aka  2022_march_pro
-    # PRO - Clockwise (76.76m) 
-
-    Zones = [
-
-        # 0 (Ri)
-        [255,254,253,252,251,250,249,248],
-        [247,246,245,244,243,242,241,240],
-
-        # 2
-        [239,238,237,236,235,234,233],
-        [232,231,230,229,228,227,226],
-
-        #4 (R2)
-        [225,224,223,222,221],
-        [220,219,218,217,216,215],
-        [214,213,212,211,210,209,208,207,206,205,204,203,202],
-
-        #7
-        [201,200,199,198,197,196,195],
-        [194,193,192,191,190,189,188],
-        
-        #9 (R3)
-        [187,186,185,184,183,182,181,180,179,178,177],
-        [176,175,174,173,172,171,170,169,168,167],
-        [166,165,164,163,162,161,160],
-
-        #12
-        [159,158,157,156,155,154,153,152,151],
-        [150,149,148,147,146,145,144,143,142],
-
-        #14 (R4)
-        [141,140,139,138,137,136,135,134,133,132],
-        [131,130,129,128,127,126,125,124],
-        [123,122,121,120,119,118,117],
-
-        # 17
-        [116,115,114,113,112,111],
-        [110,109,108,107,106,105,104],
-        [103,102,101,100],
-
-        # 20
-        [99,98,97,96,95,94],
-        [93,92,91,90,89,88,87,86],
-        [85,84,83,82,81,80,79,78],
-        [77,76,75,74,73,72],
-        [71,70,69,68],
-
-        # 25
-        [67,66,65,64,63],
-        [62,61,60,59,58],
-        [57,56,55,54,53,52,51],
-        [50,49,48,47,46,45],
-        [39,38,37,36,39],
-
-        # 30
-        [35,34,33,32],
-        [31,30,29,28],
-        [27,26,25,24,23],
-        [22,21,20,19,18],
-
-        # 35 (Rf)
-        [17,16,15,14,13,12,11,10],
-        [9,8,7,6,5],
-        [4,3,2,1]
-        # 36
-
-    ]
-
-    Zones_recta_R3 = [180, 160]
-    Zones_recta_R4 = [144, 116]
-
-    @staticmethod
-    def isRectaVelozR3(wp):
-        return MyDrTrack.isRectaVeloz(wp, MyDrTrack.Zones_recta_R3)
-
-    @staticmethod
-    def isRectaVelozR4(wp):
-        return MyDrTrack.isRectaVeloz(wp, MyDrTrack.Zones_recta_R4)
-
-    @staticmethod
-    def isRectaVeloz(wp, recta):
-        return (wp[0] >= recta[0] and wp[0] <= recta[1])
-    
-    #----------------------------------------------------------------------------------------------------
-    # Dice si es Lap 1, dos o tres
-    @staticmethod
-    def isLap(track_length):
-
-        isLap_n1 =                                    track_length <= LAP_LENGHT * 1
-        isLap_n2 = track_length >  LAP_LENGHT * 1 and track_length <= LAP_LENGHT * 2
-        isLap_n3 = track_length >  LAP_LENGHT * 2 and track_length <= LAP_LENGHT * 3
-
-        return [isLap_n1, isLap_n2, isLap_n3]
-    
-    #----------------------------------------------------------------------------------------------------
-    # Dice si es Recta Final
-    @staticmethod
-    def isRectaFin(wp):
-        recta = MyDrTrack.Zones[34] + MyDrTrack.Zones[35] + MyDrTrack.Zones[36]
-        return (wp in recta)
-    
-    #----------------------------------------------------------------------------------------------------
-    # Dice si es Recta Inicial
-    @staticmethod
-    def isRectaIni(wp):
-        recta = MyDrTrack.Zones[0] + MyDrTrack.Zones[1] 
-        return (wp in recta) 
-
-    #----------------------------------------------------------------------------------------------------
-    # Dice si es Recta Dos
-    @staticmethod
-    def isRecta2(wp):
-        recta = MyDrTrack.Zones[4] + MyDrTrack.Zones[5] + MyDrTrack.Zones[6] 
-        return (wp in recta) 
-
-    #----------------------------------------------------------------------------------------------------
-    # Dice si es Recta Tres
-    @staticmethod
-    def isRecta3(wp):
-        recta = MyDrTrack.Zones[9] + MyDrTrack.Zones[10] + MyDrTrack.Zones[11] 
-        return (wp in recta)
-    
-    #----------------------------------------------------------------------------------------------------
-    # Dice si es Recta Cuatro.
-    @staticmethod
-    def isRecta4(wp):
-        recta = MyDrTrack.Zones[14] + MyDrTrack.Zones[15] + MyDrTrack.Zones[16] 
-        return (wp in recta)
-    
-    #----------------------------------------------------------------------------------------------------
-    # Dice si es Curva 1 Left
-    @staticmethod
-    def isCurva1L(wp):
-        curva = MyDrTrack.Zones[2] + MyDrTrack.Zones[3] 
-        return (wp in curva) 
-
-
-    #----------------------------------------------------------------------------------------------------
-    # Dice si es Curva 2 Right
-    @staticmethod
-    def isCurva2R(wp):
-        curva = MyDrTrack.Zones[7] + MyDrTrack.Zones[8] + MyDrTrack.Zones[16] 
-        return (wp in curva) 
-    
-
-    #----------------------------------------------------------------------------------------------------
-    # Dice si es Curva 3 Right
-    @staticmethod
-    def isCurva3R(wp):
-        curva = MyDrTrack.Zones[17] + MyDrTrack.Zones[18] + MyDrTrack.Zones[19] 
-        return (wp in curva) 
-
-    #----------------------------------------------------------------------------------------------------
-    # Dice si es Curva 4 Left
-    @staticmethod
-    def isCurva4L(wp):
-        curva = MyDrTrack.Zones[20] + MyDrTrack.Zones[21] 
-        return (wp in curva)
-    
-    #----------------------------------------------------------------------------------------------------
-    # Dice si es Curva 5 Left
-    @staticmethod
-    def isCurva5L(wp):
-        curva = MyDrTrack.Zones[23] + MyDrTrack.Zones[24] 
-        return (wp in curva) 
-
-    #----------------------------------------------------------------------------------------------------
-    # Dice si es Curva 6 Right
-    @staticmethod
-    def isCurva6R(wp):
-        curva = MyDrTrack.Zones[28] + MyDrTrack.Zones[29]
-        return (wp in curva) 
-    
-
-    #----------------------------------------------------------------------------------------------------
-    # Dice si es una Recta
-    @staticmethod
-    def isRecta(wp):
-        return (MyDrTrack.isRectaIni(wp) or 
-                MyDrTrack.isRectaFin(wp) or 
-                MyDrTrack.isRecta2(wp)   or 
-                MyDrTrack.isRecta3(wp)   or 
-                MyDrTrack.isRecta4(wp))
-
-    #----------------------------------------------------------------------------------------------------
-    # Dice si es una Curva Left
-    @staticmethod
-    def isCurvaLeft(wp):
-        return (MyDrTrack.isCurva1L(wp) or 
-                MyDrTrack.isCurva4L(wp) or 
-                MyDrTrack.isCurva5L(wp))
-
-    #----------------------------------------------------------------------------------------------------
-    # Dice si es una Curva Right
-    @staticmethod
-    def isCurvaRight(wp):
-        return (MyDrTrack.isCurva2R(wp) or 
-                MyDrTrack.isCurva3R(wp) or 
-                MyDrTrack.isCurva6R(wp))
-
-
-
 
 #----------------------------------------
 # Version z02
@@ -581,9 +388,9 @@ class MyDeepRacerClass:
         track_length         = params['track_length']
         
 
-        isLap_n1, isLap_n2, isLap_n3 = MyDrTrack.isLap(track_length)
+        isLap_n1, isLap_n2, isLap_n3 = Util.isLapUno(track_length)
 
-        
+
         #-----------[ Distancia a la Racing Line] -------------------
 
         racingLine = MyRacingLine.RACING_LINE
@@ -601,89 +408,12 @@ class MyDeepRacerClass:
 
 
         ## Le sumo el reward por menor gap
-        # speed_deseada = cercaUno[2]
-        # gap = abs(1-speed/speed_deseada)
-        # rrr = 1-gap
-
-        # REWARD += rrr
-
         speed_deseada = cercaUno[2]
-        gap = abs(speed_deseada-speed)
+        gap = abs(1-speed/speed_deseada)
+        rrr = 1-gap
 
-        gapVel = [
-              #min  max   rew
-            [ 0.0,  0.1,  1.00 ],
-            [ 0.1,  0.2,  1.00 ],
-            [ 0.2,  0.3,  0.90 ],
-            [ 0.3,  0.4,  0.80 ],
-            [ 0.4,  0.5,  0.70 ],
-            [ 0.5,  0.6,  0.70 ],
-            [ 0.6,  0.7,  0.60 ],
-            [ 0.7,  0.8,  0.60 ],
-            [ 0.8,  0.9,  0.50 ],
-            [ 0.9,  1.0,  0.50 ],
-            [ 1.0,  1.1,  0.40 ],
-            [ 1.1,  1.2,  0.40 ],
-            [ 1.2,  1.3,  0.30 ],
-            [ 1.3,  1.4,  0.30 ],
-            [ 1.4,  1.5,  0.20 ],
-            [ 1.5,  1.6,  0.20 ],
-            [ 1.6,  1.9,  0.10 ],
-            [ 2.1,  4.0,  0.00 ],
-        ]        
+        REWARD += rrr
 
-        for e in gapVel:
-            if  gap  >= e[0] and gap  < e[1]:
-                REWARD *= e[2]
-
-        #-----[RECTAS]---------------------------------------------------------
-
-        ## Lo Castigo si el gap esta muy lejos de 4.0 hasta 3.1
-        isRectaFin   = MyDrTrack.isRectaFin(closest_waypoints)
-        if isRectaFin and isLap_n3:
-            speed_deseada = 4.0
-            gap = (speed_deseada-speed)
-            if gap > 0.9:
-                REWARD *= 0.8
-
-
-        #-----[Rectas]--------------------------------------------------------
-        # Penalize reward if the car is steering too much (abs(steering_angle))
-        if MyDrTrack.isRecta(closest_waypoints):
-            STEERING_THRESHOLD_ABS   =  15
-            steering = abs(steering_angle) 
-            if steering > STEERING_THRESHOLD_ABS:
-                REWARD *= 0.8
-
-
-        # #-----[Curvas Left]---------------------------------------------------
-        # # Penalize reward if the car va a la Derecha ( > 0)
-        # if MyDrTrack.isCurvaLeft(closest_waypoints):
-        #     if steering_angle > 0:
-        #         REWARD *= 0.8
-
-        # #-----[Curvas Right]---------------------------------------------------
-        # # Penalize reward if the car va a la Izquierda ( < 0)
-        # if MyDrTrack.isCurvaRight(closest_waypoints):
-        #     if steering_angle < 0:
-        #         REWARD *= 0.8
-
-
-        #-----[Recta Veloz]---------------------------------------------------
-        # Recta veloz R3
-        if MyDrTrack.isRectaVelozR3(closest_waypoints):
-            speed_deseada = 2.8
-            gap = (speed_deseada-speed)
-            if gap > 0.3:
-                REWARD *= 0.7
-    
-        #-----[Recta Veloz]---------------------------------------------------
-        # Recta veloz R4
-        if MyDrTrack.isRectaVelozR4(closest_waypoints):
-            speed_deseada = 3.4
-            gap = (speed_deseada-speed)
-            if gap > 0.3:
-                REWARD *= 0.7
 
         ## Zero recompensa si off track ##
         if all_wheels_on_track == False:

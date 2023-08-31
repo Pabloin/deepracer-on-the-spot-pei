@@ -642,31 +642,33 @@ class MyDeepRacerClass:
         isRectaFin   = MyDrTrack.isRectaFin(closest_waypoints)
         if isRectaFin and isLap_n3:
             speed_deseada = 4.0
-            gap = (speed_deseada-speed)
-            if gap > 0.9:
-                REWARD *= 0.8
+            gap = abs(speed_deseada-speed)
 
+            gapVel = [
+                #min  max   rew
+                [ 0.0,  0.1,  1.00 ],
+                [ 0.1,  0.2,  1.00 ],
+                [ 0.2,  0.3,  0.90 ],
+                [ 0.3,  0.4,  0.80 ],
+                [ 0.4,  0.5,  0.70 ],
+                [ 0.5,  0.6,  0.70 ],
+                [ 0.6,  0.7,  0.60 ],
+                [ 0.7,  0.8,  0.60 ],
+                [ 0.8,  0.9,  0.50 ],
+                [ 0.9,  1.0,  0.50 ],
+                [ 1.0,  1.1,  0.40 ],
+                [ 1.1,  1.2,  0.40 ],
+                [ 1.2,  1.3,  0.30 ],
+                [ 1.3,  1.4,  0.30 ],
+                [ 1.4,  1.5,  0.20 ],
+                [ 1.5,  1.6,  0.20 ],
+                [ 1.6,  1.9,  0.10 ],
+                [ 2.1,  4.0,  0.00 ],
+            ]        
 
-        #-----[Rectas]--------------------------------------------------------
-        # Penalize reward if the car is steering too much (abs(steering_angle))
-        if MyDrTrack.isRecta(closest_waypoints):
-            STEERING_THRESHOLD_ABS   =  15
-            steering = abs(steering_angle) 
-            if steering > STEERING_THRESHOLD_ABS:
-                REWARD *= 0.8
-
-
-        # #-----[Curvas Left]---------------------------------------------------
-        # # Penalize reward if the car va a la Derecha ( > 0)
-        # if MyDrTrack.isCurvaLeft(closest_waypoints):
-        #     if steering_angle > 0:
-        #         REWARD *= 0.8
-
-        # #-----[Curvas Right]---------------------------------------------------
-        # # Penalize reward if the car va a la Izquierda ( < 0)
-        # if MyDrTrack.isCurvaRight(closest_waypoints):
-        #     if steering_angle < 0:
-        #         REWARD *= 0.8
+            for e in gapVel:
+                if  gap  >= e[0] and gap  < e[1]:
+                    REWARD *= e[2]
 
 
         #-----[Recta Veloz]---------------------------------------------------

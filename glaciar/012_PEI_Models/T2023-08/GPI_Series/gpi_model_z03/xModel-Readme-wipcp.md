@@ -16,7 +16,7 @@ aws s3 sync s3://base-bucket-1f3pfk38sjoqu/gpi_model_z03/ \
 
 # WINDOWS
 aws s3 sync s3://base-bucket-1f3pfk38sjoqu/gpi_model_z03/  .logsTmp/gpi_model_z03/  
-    
+aws s3 sync .logsTmp/gpi_model_z03/  s3://base-bucket-1f3pfk38sjoqu/gpi_model_z03/     
 
 aws s3 sync .logsTmp/gpi_model_z03/  \
     s3://dr-models-glaciar-dots-std006/gpi_model_z03/  \
@@ -28,6 +28,23 @@ aws s3 sync .logsTmp/gpi_model_z03/  \
     --model-artifacts-s3-path s3://dr-models-glaciar-dots-std006/gpi_model_z03/DOTS-model-z03g \
     --role-arn arn:aws:iam::764531084004:role/LabRole \
     --profile voclabs/user2415006=Test_Student
+
+
+ aws deepracer import-model \
+    --type REINFORCEMENT_LEARNING \
+    --name DOTS-model-z03iMode  \
+    --model-artifacts-s3-path s3://dr-models-glaciar-dots-std006/gpi_model_z03/DOTS-model-z03i/model \
+    --role-arn arn:aws:iam::764531084004:role/LabRole \
+    --profile voclabs/user2415006=Test_Student
+
+ aws deepracer import-model \
+    --type REINFORCEMENT_LEARNING \
+    --name WebX-mKF3-v00aBis  \
+    --model-artifacts-s3-path s3://dr-models-glaciar-dots-std006/gpi_model_z03/WebX-mKF3-v00a/model \
+    --role-arn arn:aws:iam::764531084004:role/LabRole \
+    --profile voclabs/user2415006=Test_Student
+
+
 
 
  aws deepracer import-model \
@@ -85,8 +102,40 @@ aws deepracer import-model \
 
 
 
+aws s3 sync s3://deepracer-forcloud-glaciar/DR-RogueR-zE02-c3d-KF1/  .logsGlaciar/DR-RogueR-zE02-c3d-KF1/  
+aws s3 sync s3://deepracer-forcloud-glaciar/DR-RogueR-zE02-c3d-KF3/  .logsGlaciar/DR-RogueR-zE02-c3d-KF3/
+aws s3 sync s3://deepracer-forcloud-glaciar/DR-RogueR-zE02-c3d/      .logsGlaciar/DR-RogueR-zE02-c3d/
+
+DR-RogueR-zE02-c3d-KF1
+DR-RogueR-zE02-c3d-KF3
+DR-RogueR-zE02-c3d/
 
 
+aws s3 sync s3://deepracer-forcloud-glaciar/DR-RogueR-zE02-c3d-KF1/  .logsGlaciar/DR-RogueR-zE02-c3d-KF1/  
+aws s3 sync s3://deepracer-forcloud-glaciar/DR-RogueR-zE02-c3d-KF3/  .logsGlaciar/DR-RogueR-zE02-c3d-KF3/
+aws s3 sync s3://deepracer-forcloud-glaciar/DR-RogueR-zE02-c3d/      .logsGlaciar/DR-RogueR-zE02-c3d/
+
+.logsGlaciar/
+├── DR-RogueR-zE02-c3d
+│   └── DR-zE02-c3d-ROOT
+├── DR-RogueR-zE02-c3d-KF1
+│   └── DR-zE02-c3d-KF1-ROOT
+└── DR-RogueR-zE02-c3d-KF3
+    └── DR-zE02-c3d-KF3-ROOT
+
+
+aws s3 sync .logsGlaciar/DR-RogueR-zE02-c3d-KF1/  s3://deepracer-forcloud-glaciar/DR-RogueR-zE02-c3d-KF1/  
+aws s3 sync .logsGlaciar/DR-RogueR-zE02-c3d-KF3/  s3://deepracer-forcloud-glaciar/DR-RogueR-zE02-c3d-KF3/  
+aws s3 sync .logsGlaciar/DR-RogueR-zE02-c3d/      s3://deepracer-forcloud-glaciar/DR-RogueR-zE02-c3d/    
+
+
+aws s3 sync s3://deepracer-forcloud-glaciar/DR-RogueR-zE02-c3d-KF1/  .logsGlaciar/DR-RogueR-zE02-c3d-KF1/  
+aws s3 sync s3://deepracer-forcloud-glaciar/DR-RogueR-zE02-c3d-KF3/  .logsGlaciar/DR-RogueR-zE02-c3d-KF3/
+aws s3 sync s3://deepracer-forcloud-glaciar/DR-RogueR-zE02-c3d/      .logsGlaciar/DR-RogueR-zE02-c3d/
+
+aws s3 sync s3://deepracer-forcloud-glaciar/DR-RogueR-zE02-c3d/DR-zE02-c3d-ROOT/     .logsGlaciar/DR-RogueR-zE02-c3d/DR-zE02-c3d-ROOT
+aws s3 sync s3://deepracer-forcloud-glaciar/DR-RogueR-zE02-c3d-KF1/DR-zE02-c3d-KF1-ROOT/ .logsGlaciar/DR-RogueR-zE02-c3d-KF1/DR-zE02-c3d-KF1-ROOT
+aws s3 sync s3://deepracer-forcloud-glaciar/DR-RogueR-zE02-c3d-KF3/DR-zE02-c3d-KF3-ROOT/ .logsGlaciar/DR-RogueR-zE02-c3d-KF3/DR-zE02-c3d-KF3-ROOT
 
 
 ubuntu@ip-172-31-34-103:~/deepracer-on-the-spot-pei$ ./create-standard-instance.sh base gpi-model-z03gEC2 120
