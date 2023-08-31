@@ -7,11 +7,26 @@ Es para Spot
 
     ./create-standard-instance.sh base gpi-model-z13b 120  
 
-    
 
 a las 3:22
 
 .... 8 horas ...  480 minutos ... 6 workers de GPU ... ¿Debería Servir ... ?
+
+
+
+    ./create-standard-instance.sh base gpi-model-z13c 160  
+
+    a las 17:30 hs 
+
+        18:30
+        19:30
+        20:30
+
+        Necesito 3 hs ... y quedan 4 horas con esto ... 
+
+
+        
+
 
 
 
