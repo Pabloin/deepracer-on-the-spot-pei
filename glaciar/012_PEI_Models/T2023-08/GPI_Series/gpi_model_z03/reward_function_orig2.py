@@ -417,21 +417,8 @@ class MyDrTrack:
 
     ]
 
-    Zones_recta_R3 = [180, 160]
-    Zones_recta_R4 = [144, 116]
 
-    @staticmethod
-    def isRectaVelozR3(wp):
-        return MyDrTrack.isRectaVeloz(wp, MyDrTrack.Zones_recta_R3)
 
-    @staticmethod
-    def isRectaVelozR4(wp):
-        return MyDrTrack.isRectaVeloz(wp, MyDrTrack.Zones_recta_R4)
-
-    @staticmethod
-    def isRectaVeloz(wp, recta):
-        return (wp[0] >= recta[0] and wp[0] <= recta[1])
-    
     #----------------------------------------------------------------------------------------------------
     # Dice si es Lap 1, dos o tres
     @staticmethod
@@ -643,11 +630,11 @@ class MyDeepRacerClass:
         if isRectaFin and isLap_n3:
             speed_deseada = 4.0
             gap = (speed_deseada-speed)
-            if gap > 0.9:
+            if gap > 1.2:
                 REWARD *= 0.8
 
 
-        #-----[Rectas]--------------------------------------------------------
+        #-----[Rectas]]--------------------------------------------------------
         # Penalize reward if the car is steering too much (abs(steering_angle))
         if MyDrTrack.isRecta(closest_waypoints):
             STEERING_THRESHOLD_ABS   =  15
@@ -656,34 +643,17 @@ class MyDeepRacerClass:
                 REWARD *= 0.8
 
 
-        # #-----[Curvas Left]---------------------------------------------------
-        # # Penalize reward if the car va a la Derecha ( > 0)
-        # if MyDrTrack.isCurvaLeft(closest_waypoints):
-        #     if steering_angle > 0:
-        #         REWARD *= 0.8
+        #-----[Curvas Left]---------------------------------------------------
+        # Penalize reward if the car va a la Derecha ( > 0)
+        if MyDrTrack.isCurvaLeft(closest_waypoints):
+            if steering_angle > 0:
+                REWARD *= 0.8
 
-        # #-----[Curvas Right]---------------------------------------------------
-        # # Penalize reward if the car va a la Izquierda ( < 0)
-        # if MyDrTrack.isCurvaRight(closest_waypoints):
-        #     if steering_angle < 0:
-        #         REWARD *= 0.8
-
-
-        #-----[Recta Veloz]---------------------------------------------------
-        # Recta veloz R3
-        if MyDrTrack.isRectaVelozR3(closest_waypoints):
-            speed_deseada = 2.8
-            gap = (speed_deseada-speed)
-            if gap > 0.3:
-                REWARD *= 0.7
-    
-        #-----[Recta Veloz]---------------------------------------------------
-        # Recta veloz R3
-        if MyDrTrack.isRectaVelozR4(closest_waypoints):
-            speed_deseada = 3.4
-            gap = (speed_deseada-speed)
-            if gap > 0.3:
-                REWARD *= 0.7
+        #-----[Curvas Right]---------------------------------------------------
+        # Penalize reward if the car va a la Izquierda ( < 0)
+        if MyDrTrack.isCurvaRight(closest_waypoints):
+            if steering_angle < 0:
+                REWARD *= 0.8
 
         ## Zero recompensa si off track ##
         if all_wheels_on_track == False:

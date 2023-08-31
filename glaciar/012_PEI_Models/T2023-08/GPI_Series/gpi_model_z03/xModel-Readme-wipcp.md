@@ -73,7 +73,7 @@ aws s3 sync .logsTmp/gpi_model_z03/  \
 
 
 
-
+./create-standard-instance.sh base gpi-model-z03iEc2-xCCW 90
 
 
 
