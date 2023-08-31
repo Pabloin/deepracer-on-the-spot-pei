@@ -455,7 +455,18 @@ Entrenamiento 4:
 
 
 
-
+                DOTS-model-z03gEC2-CCW
+                Trial
+                Time (MM:SS.mmm)
+                Trial results (% track completed)
+                Status
+                Off-track
+                Off-track penalty
+                Crashes
+                Crash penalty
+                1	00:51.093	100%	Lap complete	4	8 seconds	0	--
+                2	00:48.737	100%	Lap complete	3	6 seconds	0	--
+                3	00:49.931	100%	Lap complete	4	8 seconds	0	--
 
 
 ---------------------------------------

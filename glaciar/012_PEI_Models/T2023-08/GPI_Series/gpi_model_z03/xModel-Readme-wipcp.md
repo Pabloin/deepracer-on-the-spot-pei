@@ -66,7 +66,20 @@ aws s3 sync .logsTmp/gpi_model_z03/  \
 
 
 
-./create-standard-instance.sh base gpi-model-z03hEC2_DIRECTION 15
+./create-standard-instance.sh base gpi-model-z03hEC2-WhatDir 15
+
+
+        21:05
+
+
+
+
+
+
+
+
+
+
 
 
 
