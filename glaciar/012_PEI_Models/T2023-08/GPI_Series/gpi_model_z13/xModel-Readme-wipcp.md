@@ -4,6 +4,9 @@ Es para Spot
 
     ./create-standard-instance.sh base gpi-model-z13a 480  
 
+
+    ./create-standard-instance.sh base gpi-model-z13b 120  
+
     
 
 a las 3:22

@@ -586,7 +586,7 @@ class MyDrTrack:
 
 
     #----------------------------------------------------------------------------------------------------
-    # Speed Premio
+    # Speed Castigo
     @staticmethod
     def xSpeedPremio(speed, speed_deseada):
 
@@ -623,16 +623,7 @@ class MyDrTrack:
 
         return 1
 
-    #----------------------------------------------------------------------------------------------------
-    # Steering Castigo
-    @staticmethod
-    def xSteeringCastigo(steering_angle):
-        STEERING_THRESHOLD_ABS   =  15
-        steering = abs(steering_angle) 
-        if steering > STEERING_THRESHOLD_ABS:
-            return 0.8
-        return 1
-            
+
 #----------------------------------------
 # Version z02
 #
@@ -706,12 +697,27 @@ class MyDeepRacerClass:
         
 
         ## Le sumo el reward por menor gap
-        
-        speed_deseada = cercaUno[2]
-        if MyDrTrack.isRectaVelozR3(closest_waypoints) or MyDrTrack.isRectaVelozR4(closest_waypoints):
-            speed_deseada *= 1.15
+        # speed_deseada = cercaUno[2]
+        # gap = abs(1-speed/speed_deseada)
+        # rrr = 1-gap
 
-        REWARD *= MyDrTrack.xSpeedCastigo(speed, speed_deseada)        
+        # REWARD += rrr
+
+        speed_deseada = cercaUno[2]
+        REWARD *= MyDrTrack.xSpeedCastigo(speed, speed_deseada)
+
+
+        # #-----[Recta Veloz]---------------------------------------------------
+        # # Recta veloz R3
+        # if MyDrTrack.isRectaVelozR3(closest_waypoints):
+        #     speed_deseada = 2.8
+        #     REWARD *= MyDrTrack.xSpeedPremio(speed, speed_deseada)
+    
+        # #-----[Recta Veloz]---------------------------------------------------
+        # # Recta veloz R4
+        # if MyDrTrack.isRectaVelozR4(closest_waypoints):
+        #     speed_deseada = 3.4
+        #     REWARD *= MyDrTrack.xSpeedPremio(speed, speed_deseada)
 
 
         #-----[Recta Final]---------------------------------------------------
@@ -720,33 +726,15 @@ class MyDeepRacerClass:
         if isRectaFin and isLap_n3:
             speed_deseada = 4.0
             REWARD *= MyDrTrack.xSpeedCastigo(speed, speed_deseada)
-            REWARD *= MyDrTrack.xSteeringCastigo(steering_angle)
 
 
-
-        #-----[Recta Veloz]---------------------------------------------------
-        # Recta veloz R3
-        if MyDrTrack.isRectaVelozR3(closest_waypoints):
-            speed_deseada = 2.8
-            REWARD *= MyDrTrack.xSpeedPremio(speed, speed_deseada)
-            REWARD *= MyDrTrack.xSteeringCastigo(steering_angle)
-    
-        #-----[Recta Veloz]---------------------------------------------------
-        # Recta veloz R4
-        if MyDrTrack.isRectaVelozR4(closest_waypoints):
-            speed_deseada = 3.4
-            REWARD *= MyDrTrack.xSpeedPremio(speed, speed_deseada)
-            REWARD *= MyDrTrack.xSteeringCastigo(steering_angle)
-
-
-                
         ## Zero recompensa si off track ##
         if all_wheels_on_track == False:
             REWARD = VALUE_ZERO
             
         return float(REWARD)
 
-#20230831 con G4DN
+
 myDR = MyDeepRacerClass()
 
 def reward_function(params):
