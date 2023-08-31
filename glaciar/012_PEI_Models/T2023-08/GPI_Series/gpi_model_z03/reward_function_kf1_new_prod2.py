@@ -671,30 +671,7 @@ class MyDeepRacerClass:
         REWARD += wp_reward
 
 
-        #-----[Rectas]--------------------------------------------------------
-        # Penalize reward if the car is steering too much (abs(steering_angle))
-        if MyDrTrack.isRecta(closest_waypoints):
-            STEERING_THRESHOLD_ABS   =  15
-            steering = abs(steering_angle) 
-            if steering > STEERING_THRESHOLD_ABS:
-                REWARD *= 0.8
-
-
-        #-----[Curvas Left]---------------------------------------------------
-        # Penalize reward if the car va a la Derecha ( > 0)
-        if MyDrTrack.isCurvaLeft(closest_waypoints):
-            if steering_angle > 0:
-                REWARD *= 0.8
-
-        #-----[Curvas Right]---------------------------------------------------
-        # Penalize reward if the car va a la Izquierda ( < 0)
-        if MyDrTrack.isCurvaRight(closest_waypoints):
-            if steering_angle < 0:
-                REWARD *= 0.8
-
-
-
-        
+        #-----[Velocidad]---------------------------------------------------------
 
         ## Le sumo el reward por menor gap
         # speed_deseada = cercaUno[2]
@@ -707,26 +684,25 @@ class MyDeepRacerClass:
         REWARD *= MyDrTrack.xSpeedCastigo(speed, speed_deseada)
 
 
-        # #-----[Recta Veloz]---------------------------------------------------
-        # # Recta veloz R3
-        # if MyDrTrack.isRectaVelozR3(closest_waypoints):
-        #     speed_deseada = 2.8
-        #     REWARD *= MyDrTrack.xSpeedPremio(speed, speed_deseada)
-    
-        # #-----[Recta Veloz]---------------------------------------------------
-        # # Recta veloz R4
-        # if MyDrTrack.isRectaVelozR4(closest_waypoints):
-        #     speed_deseada = 3.4
-        #     REWARD *= MyDrTrack.xSpeedPremio(speed, speed_deseada)
-
-
-        #-----[Recta Final]---------------------------------------------------
-        ## Lo Castigo si el gap esta muy lejos de 4.0 en la recta final
+        ## Lo Castigo si el gap esta muy lejos de 4.0 hasta 3.1
         isRectaFin   = MyDrTrack.isRectaFin(closest_waypoints)
         if isRectaFin and isLap_n3:
             speed_deseada = 4.0
             REWARD *= MyDrTrack.xSpeedCastigo(speed, speed_deseada)
 
+
+
+        #-----[Recta Veloz]---------------------------------------------------
+        # Recta veloz R3
+        if MyDrTrack.isRectaVelozR3(closest_waypoints):
+            speed_deseada = 2.8
+            REWARD *= MyDrTrack.xSpeedPremio(speed, speed_deseada)
+    
+        #-----[Recta Veloz]---------------------------------------------------
+        # Recta veloz R4
+        if MyDrTrack.isRectaVelozR4(closest_waypoints):
+            speed_deseada = 3.4
+            REWARD *= MyDrTrack.xSpeedPremio(speed, speed_deseada)
 
         ## Zero recompensa si off track ##
         if all_wheels_on_track == False:
