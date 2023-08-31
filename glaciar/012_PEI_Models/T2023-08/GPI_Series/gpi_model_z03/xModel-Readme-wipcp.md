@@ -76,6 +76,12 @@ aws s3 sync .logsTmp/gpi_model_z03/  \
 ./create-standard-instance.sh base gpi-model-z03iEc2-xCCW 90
 
 
+aws deepracer import-model \
+    --type REINFORCEMENT_LEARNING \
+    --name DOTS-model-z03h-CCW  \
+    --model-artifacts-s3-path s3://dr-models-glaciar-dots-std006/gpi_model_z03/DOTS-model-z0h \
+    --role-arn arn:aws:iam::764531084004:role/LabRole \
+    --profile voclabs/user2415006=Test_Student
 
 
 
