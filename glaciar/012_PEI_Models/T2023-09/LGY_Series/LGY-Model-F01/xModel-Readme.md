@@ -35,7 +35,8 @@ Z01 con Waypoints
 
     ./create-spot-instance.sh     base lgy-model-f01a  60
     ./create-standard-instance.sh base lgy-model-f01a 120  
-
+    
+    ./create-standard-instance.sh base lgy-model-f01b 240 
 
 
  aws deepracer import-model \

@@ -560,8 +560,8 @@ class MyDeepRacerClass:
         #     REWARD *= Track.xSpeedPremio(speed, speed_deseada)
         
 
-
-        # reward += ( params["speed"] / 8 )
+        # 20% de premio por velocidad
+        reward += ( speed / 8 )
         
         ## Zero recompensa si off track ##
         if all_wheels_on_track == False:
