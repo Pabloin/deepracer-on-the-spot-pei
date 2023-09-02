@@ -735,7 +735,8 @@ class MyDeepRacerClass:
             
         return float(REWARD)
 
-#20230831
+#20230831 f01
+#20230901 f01a
 myDR = MyDeepRacerClass()
 
 def reward_function(params):

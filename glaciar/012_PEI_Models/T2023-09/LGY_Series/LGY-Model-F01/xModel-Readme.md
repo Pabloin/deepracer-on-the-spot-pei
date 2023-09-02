@@ -2,12 +2,22 @@ Model pei
 
 ----------------------------------------------------------------------------------
 
-    DR_LOCAL_S3_PRETRAINED_PREFIX=gpi_model_z13/lgy-model-f01c
+    DR_LOCAL_S3_PRETRAINED_PREFIX=LGY-Model-F01/lgy-model-f01c
     DR_LOCAL_S3_PRETRAINED=True
 
     DR_LOCAL_S3_CUSTOM_FILES_PREFIX=LGY-Model-F01/custom_files
     DR_LOCAL_S3_MODEL_PREFIX=LGY-Model-F01/lgy-model-f01a
 
+
+----------------------------------------------------------------------------------
+
+La liga en Twitch
+
+    https://www.twitch.tv/aws/clip/CuteRealFriseeAllenHuhu-94aCfSfGjC7DIR0h?lang=el
+
+
+
+    s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F01/lgy-model-f01a/
 
 ----------------------------------------------------------------------------------
 
@@ -24,7 +34,7 @@ Z01 con Waypoints
 
 
     ./create-spot-instance.sh     base lgy-model-f01a  60
-    ./create-standard-instance.sh base lgy-model-f01a 480  
+    ./create-standard-instance.sh base lgy-model-f01a 120  
 
 
 
@@ -43,7 +53,7 @@ Z01 con Waypoints
     --profile voclabs/user2415006=Test_Student
 
     
-    s3://base-bucket-1f3pfk38sjoqu/gpi_model_z13/lgy-model-f01a/
+    s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F01/lgy-model-f01a/
 
 
 aws s3 sync s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F01/ \
@@ -51,23 +61,24 @@ aws s3 sync s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F01/ \
 
 ------------
 
-s3://base-bucket-1f3pfk38sjoqu/gpi_model_z13/
-s3://base-bucket-1f3pfk38sjoqu/gpi_model_z13/lgy-model-f01a/
+s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F01/
+s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F01/lgy-model-f01a/
 
 
-aws s3 sync s3://base-bucket-1f3pfk38sjoqu/gpi_model_z13/ \
-    .logsTmp/gpi_model_z13/  
+aws s3 sync s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F01/ \
+    .logsTmp/LGY-Model-F01/  
     
-aws s3 sync .logsTmp/gpi_model_z13/  \
-    s3://dr-models-glaciar-dots-std006/gpi_model_z13/  \
+
+aws s3 sync .logsTmp/LGY-Model-F01/  \
+    s3://dr-models-glaciar-dots-std006/LGY-Model-F01/  \
     --profile voclabs/user2415006=Test_Student
 
 ---------------
 
  aws deepracer import-model \
     --type REINFORCEMENT_LEARNING \
-    --name lgy-model-f01aBis  \
-    --model-artifacts-s3-path s3://dr-models-glaciar-dots-std006/gpi_model_z13/lgy-model-f01a \
+    --name lgy-model-f01a  \
+    --model-artifacts-s3-path s3://dr-models-glaciar-dots-std006/LGY-Model-F01/lgy-model-f01a \
     --role-arn arn:aws:iam::764531084004:role/LabRole \
     --profile voclabs/user2415006=Test_Student
 
@@ -76,3 +87,7 @@ aws s3 sync .logsTmp/gpi_model_z13/  \
 
 
 
+
+--------------------------
+
+To win physical prizes, show us your skills by racing in one of the AWS monthly qualifiers, becoming a Pro by finishing in the top 10% of an Open race leaderboard, or
