@@ -563,9 +563,9 @@ class MyDeepRacerClass:
         # 20% de premio por velocidad
         # reward += ( speed / 8 )
         
-        ## Zero recompensa si off track ##
-        # if all_wheels_on_track == False:
-        #    REWARD = VALUE_ZERO
+        # Zero recompensa si off track ##
+        if all_wheels_on_track == False:
+           REWARD = VALUE_ZERO
             
         return float(REWARD)
 
