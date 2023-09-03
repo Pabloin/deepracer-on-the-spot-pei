@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 ls -la   ~/deepracer-on-the-spot-pei/custom-files
+rm -r    ~/deepracer-on-the-spot-pei/custom-files
+
 mkdir -p ~/deepracer-on-the-spot-pei/custom-files
 
 ## De esta config
