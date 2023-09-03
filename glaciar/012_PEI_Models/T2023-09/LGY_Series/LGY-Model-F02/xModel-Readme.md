@@ -1,12 +1,19 @@
 Model pei
 
 ----------------------------------------------------------------------------------
+F02 es un Modelo entrenado desde cero .... 
 
-    DR_LOCAL_S3_PRETRAINED_PREFIX=LGY-Model-F01/lgy-model-f01c
+    1) Discreto
+    2) Waypoints
+    3) Que no se mueva mucho ... 
+
+    4) No importa la velocidad
+
+    DR_LOCAL_S3_PRETRAINED_PREFIX=LGY-Model-F02/lgy-model-f02c
     DR_LOCAL_S3_PRETRAINED=True
 
-    DR_LOCAL_S3_CUSTOM_FILES_PREFIX=LGY-Model-F01/custom_files
-    DR_LOCAL_S3_MODEL_PREFIX=LGY-Model-F01/lgy-model-f01a
+    DR_LOCAL_S3_CUSTOM_FILES_PREFIX=LGY-Model-F02/custom_files
+    DR_LOCAL_S3_MODEL_PREFIX=LGY-Model-F02/lgy-model-f02a
 
 
 ----------------------------------------------------------------------------------
@@ -17,7 +24,7 @@ La liga en Twitch
 
 
 
-    s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F01/lgy-model-f01a/
+    s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F02/lgy-model-f02a/
 
 ----------------------------------------------------------------------------------
 
@@ -33,53 +40,53 @@ DR_WORLD_NAME=2022_september_pro_cw
 Z01 con Waypoints
 
 
-    ./create-spot-instance.sh     base lgy-model-f01a  60
-    ./create-standard-instance.sh base lgy-model-f01a 120  
+    ./create-spot-instance.sh     base lgy-model-f02a  60
+    ./create-standard-instance.sh base lgy-model-f02a 120  
     
-    ./create-standard-instance.sh base lgy-model-f01b 300 
+    ./create-standard-instance.sh base lgy-model-f02b 300 
 
 
  aws deepracer import-model \
     --type REINFORCEMENT_LEARNING \
-    --name lgy-model-f01a  \
-    --model-artifacts-s3-path s3://dr-models-glaciar-dots-std006/LGY-Model-F01/lgy-model-f01a \
+    --name lgy-model-f02a  \
+    --model-artifacts-s3-path s3://dr-models-glaciar-dots-std006/LGY-Model-F02/lgy-model-f02a \
     --role-arn arn:aws:iam::764531084004:role/LabRole \
     --profile voclabs/user2415006=Test_Student
 
  aws deepracer import-model \
     --type REINFORCEMENT_LEARNING \
-    --name lgy-model-f01b  \
-    --model-artifacts-s3-path s3://dr-models-glaciar-dots-std006/LGY-Model-F01/lgy-model-f01b \
+    --name lgy-model-f02b  \
+    --model-artifacts-s3-path s3://dr-models-glaciar-dots-std006/LGY-Model-F02/lgy-model-f02b \
     --role-arn arn:aws:iam::764531084004:role/LabRole \
     --profile voclabs/user2415006=Test_Student
 
     
-    s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F01/lgy-model-f01a/
+    s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F02/lgy-model-f02a/
 
 
-aws s3 sync s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F01/ \
-    .logsTmp/LGY-Model-F01/  
+aws s3 sync s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F02/ \
+    .logsTmp/LGY-Model-F02/  
 
 ------------
 
-s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F01/
-s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F01/lgy-model-f01a/
+s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F02/
+s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F02/lgy-model-f02a/
 
 
-aws s3 sync s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F01/ \
-    .logsTmp/LGY-Model-F01/  
+aws s3 sync s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F02/ \
+    .logsTmp/LGY-Model-F02/  
     
 
-aws s3 sync .logsTmp/LGY-Model-F01/  \
-    s3://dr-models-glaciar-dots-std006/LGY-Model-F01/  \
+aws s3 sync .logsTmp/LGY-Model-F02/  \
+    s3://dr-models-glaciar-dots-std006/LGY-Model-F02/  \
     --profile voclabs/user2415006=Test_Student
 
 ---------------
 
  aws deepracer import-model \
     --type REINFORCEMENT_LEARNING \
-    --name lgy-model-f01a  \
-    --model-artifacts-s3-path s3://dr-models-glaciar-dots-std006/LGY-Model-F01/lgy-model-f01a \
+    --name lgy-model-f02a  \
+    --model-artifacts-s3-path s3://dr-models-glaciar-dots-std006/LGY-Model-F02/lgy-model-f02a \
     --role-arn arn:aws:iam::764531084004:role/LabRole \
     --profile voclabs/user2415006=Test_Student
 
