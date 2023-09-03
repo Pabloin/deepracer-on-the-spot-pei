@@ -70,7 +70,6 @@ function drSync() {
 
 function drImport() {
 
-
     aws deepracer list-models --model-type REINFORCEMENT_LEARNING  \
                  --query 'Models[].ModelName[] '  \
                  --profile voclabs/user2415006=Test_Student 
@@ -129,11 +128,6 @@ function aws.ec2.run() {
     aws ec2 describe-instances --filters Name=instance-state-name,Values=running  \
           --query 'Reservations[].Instances[*].{InstanceType: InstanceType, InstanceId: InstanceId, State: State.Name}'  \
           --output table
-
-    aws ec2 describe-instances --filters Name=instance-state-name,Values=running  \
-          --query 'Reservations[].Instances[*].{InstanceType: InstanceType, InstanceId: InstanceId, State: State.Name}'  \
-          --output table
-
 }
 
 
