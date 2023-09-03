@@ -71,10 +71,13 @@ function drSync() {
 function drImport() {
 
     aws deepracer list-models --model-type REINFORCEMENT_LEARNING  \
-                 --query 'Models[].ModelName[] '  \
+                 --query 'Models[].{ModelArn: ModelArn, ModelName: ModelName} '  \
+                 --profile voclabs/user2415006=Test_Student     \
+                 --output table
+
+
+    aws s3 ls s3://dr-models-glaciar-dots-std006/LGY-Model-${MODEL}/  \
                  --profile voclabs/user2415006=Test_Student 
-                 
-    aws s3 ls s3://dr-models-glaciar-dots-std006/LGY-Model-${MODEL}/  --profile voclabs/user2415006=Test_Student 
 
     read -p "¿Codigo del Modelo?  (Ejemplo: "lgy-model-NNN" "f01a"? " MODEL_VERSION
 
@@ -97,29 +100,6 @@ function drImport() {
 }
 
 
-export MODEL=F02
-
-function menu() {
-   echo "menu, $1!"
-   echo "estoy en  /home/ubuntu/deepracer-on-the-spot-pei/glaciar/030_Scriptsc  "
-   echo ""
-   
-   echo ""
-   echo " - prof      |   "
-   echo " - drSync    | drDown     | drUp  "
-   echo " - drImport  |   "
-   echo ""
-   echo " - aws.ec2.run | aws.ec2.all "
-   echo ""
-   
-   
-   echo ""
-   echo " alias -  H | F01 | F02  "
-
-   echo " MODEL = ${MODEL}  "
-}
-
-menu
 
 
 ##--------------------
@@ -154,3 +134,28 @@ export -f drDown
 export -f drUp
 
 
+export MODEL=F02
+
+##----------------------------
+
+function menu() {
+   echo "menu, $1!"
+   echo "estoy en  /home/ubuntu/deepracer-on-the-spot-pei/glaciar/030_Scriptsc  "
+   echo ""
+   
+   echo ""
+   echo " - prof      |   "
+   echo " - drSync    | drDown     | drUp  "
+   echo " - drImport  |   "
+   echo ""
+   echo " - aws.ec2.run | aws.ec2.all "
+   echo ""
+   
+   
+   echo ""
+   echo " alias -  H | F01 | F02  "
+
+   echo " MODEL = ${MODEL}  "
+}
+
+menu

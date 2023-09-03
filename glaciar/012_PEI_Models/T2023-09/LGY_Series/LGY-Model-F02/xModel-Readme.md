@@ -43,14 +43,8 @@ Z01 con Waypoints
     ./create-standard-instance.sh base lgy-model-f02a 120  
     
     ./create-standard-instance.sh base lgy-model-f02b  60 
+    ./create-spot-instance.sh     base lgy-model-f02b  60
 
-
- aws deepracer import-model \
-    --type REINFORCEMENT_LEARNING \
-    --name lgy-model-f02a  \
-    --model-artifacts-s3-path s3://dr-models-glaciar-dots-std006/LGY-Model-F02/lgy-model-f02a \
-    --role-arn arn:aws:iam::764531084004:role/LabRole \
-    --profile voclabs/user2415006=Test_Student
 
  aws deepracer import-model \
     --type REINFORCEMENT_LEARNING \
