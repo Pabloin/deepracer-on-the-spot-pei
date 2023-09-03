@@ -70,8 +70,12 @@ function drSync() {
 
 function drImport() {
 
-    aws s3 ls s3://dr-models-glaciar-dots-std006/LGY-Model-${MODEL}/  --profile voclabs/user2415006=Test_Student 
 
+    aws deepracer list-models --model-type REINFORCEMENT_LEARNING  \
+                 --query 'Models[].ModelName[] '  \
+                 --profile voclabs/user2415006=Test_Student 
+                 
+    aws s3 ls s3://dr-models-glaciar-dots-std006/LGY-Model-${MODEL}/  --profile voclabs/user2415006=Test_Student 
 
     read -p "¿Codigo del Modelo?  (Ejemplo: "lgy-model-NNN" "f01a"? " MODEL_VERSION
 
@@ -106,7 +110,7 @@ function menu() {
    echo " - drSync    | drDown     | drUp  "
    echo " - drImport  |   "
    echo ""
-   echo " - ec2Running | "
+   echo " - aws.ec2.run | aws.ec2.all "
    echo ""
    
    
@@ -120,7 +124,11 @@ menu
 
 
 ##--------------------
-function ec2Running() {
+function aws.ec2.run() {
+
+    aws ec2 describe-instances --filters Name=instance-state-name,Values=running  \
+          --query 'Reservations[].Instances[*].{InstanceType: InstanceType, InstanceId: InstanceId, State: State.Name}'  \
+          --output table
 
     aws ec2 describe-instances --filters Name=instance-state-name,Values=running  \
           --query 'Reservations[].Instances[*].{InstanceType: InstanceType, InstanceId: InstanceId, State: State.Name}'  \
@@ -128,6 +136,16 @@ function ec2Running() {
 
 }
 
+
+function aws.ec2.all() {
+  REGIONS=`aws ec2 describe-regions --region us-east-1 --output text --query Regions[*].[RegionName]`
+  for REGION in $REGIONS
+  do
+    echo -e "\nInstances in '$REGION'..";
+    aws ec2 describe-instances --region $REGION | \
+      jq '.Reservations[].Instances[] | "EC2: \(.InstanceId): \(.State.Name)"'
+  done
+}
 
 ##----------------------------
 alias F01="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-f01"
