@@ -134,6 +134,10 @@ function aws.ec2.run() {
 function aws.ec2.all() {
   REGIONS=`aws ec2 describe-regions --region us-east-1 --output text --query Regions[*].[RegionName]`
   for REGION in $REGIONS
+
+  REGIONS_PEI='us-east-1 af-south-1 sa-east-1  '
+  for REGION in $REGIONS_PEI
+
   do
     echo -e "\nInstances in '$REGION'..";
     aws ec2 describe-instances --region $REGION | \
