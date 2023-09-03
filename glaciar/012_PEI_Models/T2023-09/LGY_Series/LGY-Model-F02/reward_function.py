@@ -526,7 +526,7 @@ class MyDeepRacerClass:
         #-----------[ Stearing ] -------------------
         # Rotado, cero
         STEERING_ABS_THRESHOLD    =  15
-        STEERING_ABS_ROTACION     =  90
+        STEERING_ABS_ROTACION     =  75
 
         REWARD *= Track.xSteeringCastigo(steering_angle, STEERING_ABS_THRESHOLD 0.8)
         REWARD *= Track.xSteeringCastigo(steering_angle, STEERING_ABS_ROTACION    0)

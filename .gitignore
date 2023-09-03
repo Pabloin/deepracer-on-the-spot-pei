@@ -16,3 +16,8 @@
 
 nohup.* 
 
+
+
+.logsTmp
+.logsGlaciar
+.logsEval
