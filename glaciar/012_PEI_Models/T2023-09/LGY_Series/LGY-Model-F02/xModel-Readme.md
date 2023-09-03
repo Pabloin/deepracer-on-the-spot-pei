@@ -40,7 +40,7 @@ DR_WORLD_NAME=2022_september_pro_cw
 Z01 con Waypoints
 
 
-    ./create-spot-instance.sh     base lgy-model-f02a  60
+    ./create-spot-instance.sh     base lgy-model-f02a 120
     ./create-standard-instance.sh base lgy-model-f02a 120  
     
     ./create-standard-instance.sh base lgy-model-f02b 300 

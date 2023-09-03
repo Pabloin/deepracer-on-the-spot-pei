@@ -1,0 +1,127 @@
+
+
+
+function prof() {
+
+    source ~/.profile
+}
+
+export BASH_DOTS=~/deepracer-on-the-spot-pei/glaciar/030_Scripts
+function dots() {
+	source  "$BASH_DOTS/.bashDotsRc"
+}
+
+function drDown() {
+
+    echo "                                                                 "
+    echo "  cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-${MODEL}   "    
+    echo "                                                                 "
+    echo "  aws s3 sync s3://base-bucket-1f3pfk38sjoqu/LGY-Model-${MODEL}/ \    "
+    echo "                                    .logsTmp/LGY-Model-${MODEL}/      "
+    echo "                                                                 "
+    echo "  cd ~/deepracer-on-the-spot-pei                                 "    
+    echo "                                                                 "
+    
+    
+    read -p "Hacemos DOWN? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
+
+    cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-${MODEL}
+
+    aws s3 sync s3://base-bucket-1f3pfk38sjoqu/LGY-Model-${MODEL}/ \
+                                      .logsTmp/LGY-Model-${MODEL}/   
+
+    cd ~/deepracer-on-the-spot-pei
+
+}
+
+function drUp() {
+
+    echo "                                                                 "
+    echo "  cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-${MODEL}   "    
+    echo "                                                                 "
+    echo "  aws s3 sync                       .logsTmp/LGY-Model-${MODEL}/  \   "
+    echo "          s3://dr-models-glaciar-dots-std006/LGY-Model-${MODEL}/  \   "
+    echo "                 --profile voclabs/user2415006=Test_Student      "
+    echo "                                                                 "
+    echo "  cd ~/deepracer-on-the-spot-pei "    
+    echo "                                                                 "
+        
+    read -p "Hacemos UP? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
+
+    cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-${MODEL}
+                                                                
+    aws s3 sync                       .logsTmp/LGY-Model-${MODEL}/  \
+            s3://dr-models-glaciar-dots-std006/LGY-Model-${MODEL}/  \
+                    --profile voclabs/user2415006=Test_Student   
+
+    
+    cd ~/deepracer-on-the-spot-pei
+
+}
+
+
+function drSync() {
+
+    echo "hola"
+    drDown
+    drUp
+}
+
+
+function drImport() {
+
+    aws s3 ls s3://dr-models-glaciar-dots-std006/LGY-Model-${MODEL}/  --profile voclabs/user2415006=Test_Student 
+
+
+    read -p "¿Codigo del Modelo?  (Ejemplo: "lgy-model-NNN" "f01a"? " MODEL_VERSION
+
+    echo "   "
+    echo "  aws deepracer import-model \                 "
+    echo "      --type REINFORCEMENT_LEARNING \          "
+    echo "      --name lgy-model-${MODEL_VERSION}  \                 "
+    echo "      --model-artifacts-s3-path s3://dr-models-glaciar-dots-std006/LGY-Model-${MODEL}/lgy-model-${MODEL_VERSION} \ "
+    echo "      --role-arn arn:aws:iam::764531084004:role/LabRole \      "
+    echo "      --profile voclabs/user2415006=Test_Student               "
+    echo "   "
+
+    aws deepracer import-model \
+        --type REINFORCEMENT_LEARNING \
+        --name lgy-model-${MODEL_VERSION}  \
+        --model-artifacts-s3-path s3://dr-models-glaciar-dots-std006/LGY-Model-${MODEL}/lgy-model-${MODEL_VERSION} \
+        --role-arn arn:aws:iam::764531084004:role/LabRole \
+        --profile voclabs/user2415006=Test_Student               
+   
+}
+
+
+export MODEL=F02
+
+function menu() {
+   echo "menu, $1!"
+   echo "estoy en  /home/ubuntu/deepracer-on-the-spot-pei/glaciar/030_Scriptsc  "
+   echo ""
+   
+   echo ""
+   echo " - prof      |   "
+   echo " - drSync    | drDown     | drUp  "
+   echo " - drImport  |   "
+   
+   echo ""
+   echo " alias -  H | F01 | F02  "
+
+   echo " MODEL = ${MODEL}  "
+}
+
+menu
+
+
+alias F01="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-f01"
+alias F02="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-F02"
+alias   H="cd ~/deepracer-on-the-spot-pei/"
+
+export -f menu
+export -f drSync
+export -f drDown
+export -f drUp
+
+

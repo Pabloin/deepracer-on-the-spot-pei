@@ -215,5 +215,25 @@ ubuntu@ip-172-31-34-103:~$ aws ec2 describe-images --image-id ami-027fc0bd0d2474
 
 
 
-        ./create-base-resources.sh  africa-base   181.164.84.94
+        ./create-base-resources.sh  base-africa   181.164.84.94
 
+        ./create-base-resources.sh  deepracer-africa-dots   181.164.84.94
+
+
+
+
+*******************
+AFRICA de nuevo:
+
+    3/9/2023
+
+    If you wish to run your own AMI, or run in a region other than us-east-1, 
+    use ./create-image-builder.sh to create the daily refreshing pipeline and update 
+    your spot/standard instance bash scripts to use your AMI.
+
+
+
+    cloudformation deploy --stack-name deepracer-africa-dots   \
+                          --template image-builder-africa.yaml  \ 
+                          --capabilities AdministratorAccess --parameter-overrides \
+                          ResourcesStackName=imagen-dots-africa
