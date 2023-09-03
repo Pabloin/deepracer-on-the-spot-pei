@@ -7,13 +7,12 @@ F02 es un Modelo entrenado desde cero ....
     2) Waypoints
     3) Que no se mueva mucho ... 
 
+    3) Que no se vaya de pusta
+
+    ----
+
     4) No importa la velocidad
 
-    DR_LOCAL_S3_PRETRAINED_PREFIX=LGY-Model-F02/lgy-model-f02c
-    DR_LOCAL_S3_PRETRAINED=True
-
-    DR_LOCAL_S3_CUSTOM_FILES_PREFIX=LGY-Model-F02/custom_files
-    DR_LOCAL_S3_MODEL_PREFIX=LGY-Model-F02/lgy-model-f02a
 
 
 ----------------------------------------------------------------------------------
@@ -43,7 +42,7 @@ Z01 con Waypoints
     ./create-spot-instance.sh     base lgy-model-f02a 120
     ./create-standard-instance.sh base lgy-model-f02a 120  
     
-    ./create-standard-instance.sh base lgy-model-f02b 300 
+    ./create-standard-instance.sh base lgy-model-f02b  60 
 
 
  aws deepracer import-model \

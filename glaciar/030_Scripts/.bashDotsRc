@@ -105,6 +105,10 @@ function menu() {
    echo " - prof      |   "
    echo " - drSync    | drDown     | drUp  "
    echo " - drImport  |   "
+   echo ""
+   echo " - ec2Running | "
+   echo ""
+   
    
    echo ""
    echo " alias -  H | F01 | F02  "
@@ -115,6 +119,17 @@ function menu() {
 menu
 
 
+##--------------------
+function ec2Running() {
+
+    aws ec2 describe-instances --filters Name=instance-state-name,Values=running  \
+          --query 'Reservations[].Instances[*].{InstanceType: InstanceType, InstanceId: InstanceId, State: State.Name}'  \
+          --output table
+
+}
+
+
+##----------------------------
 alias F01="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-f01"
 alias F02="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-F02"
 alias   H="cd ~/deepracer-on-the-spot-pei/"
