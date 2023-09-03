@@ -119,7 +119,7 @@ function aws.ec2.all() {
   do
     echo -e "\nInstances in '$REGION'..";
     aws ec2 describe-instances --region $REGION | \
-      jq '.Reservations[].Instances[] | "EC2: \(.InstanceId): \(.State.Name)"'
+      jq '.Reservations[].Instances[] | "EC2: \(.InstanceId): \(.InstanceType) \(.State.Name)"'
   done
 }
 
