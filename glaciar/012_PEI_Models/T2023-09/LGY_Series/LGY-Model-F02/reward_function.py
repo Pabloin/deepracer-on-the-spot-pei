@@ -526,10 +526,7 @@ class MyDeepRacerClass:
         #-----------[ Stearing ] -------------------
         # Rotado, cero
         STEERING_ABS_THRESHOLD    =  15
-        STEERING_ABS_ROTACION     =  75
-
-        REWARD *= Track.xSteeringCastigo(steering_angle, STEERING_ABS_THRESHOLD 0.8)
-        REWARD *= Track.xSteeringCastigo(steering_angle, STEERING_ABS_ROTACION    0)
+        REWARD *= Track.xSteeringCastigo(steering_angle, STEERING_ABS_THRESHOLD, 0.8)
 
         #-----[Velocidad]---------------------------------------------------------
         ## Le sumo el reward por menor gap
@@ -574,9 +571,12 @@ class MyDeepRacerClass:
 
 
 
+# Continuos
+#20230933 f02Ca (en WIP)
+
+# Discreta
 #20230933 f02a
 #20230933 f0ba
-#20230933 f02Dc (en WIP)
 myDR = MyDeepRacerClass()
 
 def reward_function(params):
