@@ -11,6 +11,9 @@ VALUE_ZERO = 1e-3
 AJUSTE_K = 1
 
 
+MODE_DEBUG = True
+
+
 #-----------[ UTILS ]-------------------
 class Util:
 
@@ -74,6 +77,7 @@ class Util:
     @staticmethod
     def _diffWP(w1, w2):
         return 2*(w1**2)*(w2**2) - (w1**4)
+
 
 
 class MyRacingLine:
@@ -475,7 +479,48 @@ class Track:
         return 1
             
 
-                    
+    #----------------------------------------------------------------------------------------------------
+    # Direction de la Pista en Grados
+    # - Calculate la direccion de la pista en grados (atan2)
+    # - the direction in radius, arctan2(dy, dx), the result is (-pi, pi) in radians
+    # ... Podría calcular los xy para la direccion de la racing line ... 
+    @staticmethod
+    def _direccionPista(params):
+       
+        import math
+
+        waypoints         = params['waypoints']
+        closest_waypoints = params['closest_waypoints']
+
+        wpNext = waypoints[closest_waypoints[1]]
+        wpPrev = waypoints[closest_waypoints[0]]
+
+        dirPista = math.degrees(math.atan2(wpNext[1] - wpPrev[1], 
+                                           wpNext[0] - wpPrev[0]))
+
+        return dirPista
+
+    #----------------------------------------------------------------------------------------------------
+    # Castigo por Heading vs DirPista
+    @staticmethod
+    def xHeadingCastigo(params, DIRECCION_ABS_VAL, castigo=0.5):
+       
+        heading = params['heading']
+
+        dirPista = Track._direccionPista(params) 
+
+        dirDiff = abs(dirPista - heading)
+        if dirDiff > DIRECCION_ABS_VAL:
+            return castigo
+
+
+        #-------------------------------------------------------------
+        if MODE_DEBUG:
+            print("   dirPista: ", dirPista,  " - dirDiff: ", dirDiff, " - heading: ", heading ) 
+        
+
+        return 1
+            
 #----------------------------------------
 # Version z02
 #
@@ -508,12 +553,15 @@ class MyDeepRacerClass:
 
         isLap_n1, isLap_n2, isLap_n3 = Track.isLap(track_length)
 
-        next_point = waypoints[closest_waypoints[1]]
-        prev_point = waypoints[closest_waypoints[0]]
+        wpNext = waypoints[closest_waypoints[1]]
+        wpPrev = waypoints[closest_waypoints[0]]
 
-        print("   next_point: ", ' '.join(map(str, next_point)), 
-              " - prev_point: ", ' '.join(map(str, prev_point)), ) 
 
+        #-------------------------------------------------------------
+        if MODE_DEBUG:
+            print("   wpNext: ", ' '.join(map(str, wpNext)), 
+                  " - wpPrev: ", ' '.join(map(str, wpPrev)), ) 
+        
         #-----------[ Distancia a la Racing Line] -------------------
 
         racingLine = MyRacingLine.RACING_LINE
@@ -532,19 +580,22 @@ class MyDeepRacerClass:
         #-----------[ Stearing ] -------------------
         # Rotado, cero
         STEERING_ABS_THRESHOLD    =  15
+        DIRECCION_ABS_VAL         =  20
+
         REWARD *= Track.xSteeringCastigo(steering_angle, STEERING_ABS_THRESHOLD, 0.8)
+        REWARD *= Track.xHeadingCastigo(params, DIRECCION_ABS_VAL, castigo=0.5)
 
         #-----[Velocidad]---------------------------------------------------------
         ## Le sumo el reward por menor gap
         
         # speed_deseada = cercaUno[2]
-        # if Track.isz(RECTA_03, next_point) or Track.isz(RECTA_04, next_point):
+        # if Track.isz(RECTA_03, wpNext) or Track.isz(RECTA_04, wpNext):
         #     speed_deseada *= 1.15
 
         # REWARD *= Track.xSpeedCastigo(speed, speed_deseada)        
 
         ## Lo Castigo si el gap esta muy lejos de 4.0 hasta 3.1
-        # isRectaFin   = Track.isz(RECTA_FIN, next_point)
+        # isRectaFin   = Track.isz(RECTA_FIN, wpNext)
         # if isRectaFin and isLap_n3:
         #     speed_deseada = 4.0
         #     REWARD *= Track.xSpeedCastigo(speed, speed_deseada)
@@ -554,14 +605,14 @@ class MyDeepRacerClass:
 
         # #-----[Recta Veloz]---------------------------------------------------
         # # Recta veloz R3
-        # if Track.isRecta(next_point):
+        # if Track.isRecta(wpNext):
         #     speed_deseada = 2.8
         #     REWARD *= Track.xSpeedPremio(speed, speed_deseada)
         
     
         # #-----[Recta Veloz]---------------------------------------------------
         # # Recta veloz R4
-        # if Track.isRecta(next_point):
+        # if Track.isRecta(wpNext):
         #     speed_deseada = 3.4
         #     REWARD *= Track.xSpeedPremio(speed, speed_deseada)
         
@@ -575,20 +626,7 @@ class MyDeepRacerClass:
         if is_offtrack == True:
            REWARD = VALUE_ZERO
             
-        ####################### VERBOSE #######################
-        
-        # print("Closest index: %i" % closest_index)
-        # print("Distance to racing line: %f" % dist)
-        # print("=== Distance reward (w/out multiple): %f ===" % (distance_reward))
-        # print("Optimal speed: %f" % optimals[2])
-        # # print("Speed difference: %f" % speed_diff)
-        # # print("=== Speed reward(w/out multiple): %f ===" % speed_reward)
-        # # print("Direction difference: %f" % direction_diff)
-        # print("Predicted time: %f" % projected_time)
-        # # print("=== Steps reward: %f ===" % steps_reward)
-        # # print("=== Finish reward: %f ===" % finish_reward)
             
-        #################### RETURN REWARD ####################
            
         return float(REWARD)
 
