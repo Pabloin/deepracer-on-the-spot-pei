@@ -511,6 +511,9 @@ class MyDeepRacerClass:
         next_point = waypoints[closest_waypoints[1]]
         prev_point = waypoints[closest_waypoints[0]]
 
+        print("   next_point: ", ' '.join(map(str, next_point)), 
+              " - prev_point: ", ' '.join(map(str, prev_point)), ) 
+
         #-----------[ Distancia a la Racing Line] -------------------
 
         racingLine = MyRacingLine.RACING_LINE
@@ -572,7 +575,20 @@ class MyDeepRacerClass:
         if is_offtrack == True:
            REWARD = VALUE_ZERO
             
+        ####################### VERBOSE #######################
+        
+        # print("Closest index: %i" % closest_index)
+        # print("Distance to racing line: %f" % dist)
+        # print("=== Distance reward (w/out multiple): %f ===" % (distance_reward))
+        # print("Optimal speed: %f" % optimals[2])
+        # # print("Speed difference: %f" % speed_diff)
+        # # print("=== Speed reward(w/out multiple): %f ===" % speed_reward)
+        # # print("Direction difference: %f" % direction_diff)
+        # print("Predicted time: %f" % projected_time)
+        # # print("=== Steps reward: %f ===" % steps_reward)
+        # # print("=== Finish reward: %f ===" % finish_reward)
             
+        #################### RETURN REWARD ####################
            
         return float(REWARD)
 

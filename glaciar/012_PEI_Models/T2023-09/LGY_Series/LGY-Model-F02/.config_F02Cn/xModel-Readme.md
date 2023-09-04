@@ -1,7 +1,7 @@
 Empieza en zero
 
 
-    ./create-spot-instance.sh     base lgy-model-f02Ca    120  (Wip)
+    ./create-spot-instance.sh     base lgy-model-f02Ca    120  (Dio Error...)  
     ./create-spot-instance.sh     base lgy-model-f02CaBis 120  (Wip)
 
 
