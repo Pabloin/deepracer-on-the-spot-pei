@@ -76,6 +76,7 @@ class Util:
         return 2*(w1**2)*(w2**2) - (w1**4)
 
 
+
 class MyRacingLine:
 
     # sept 2023,Roger Super Raceway	60.17m	Clockwise  (2022_september_pro_cw)
@@ -475,7 +476,42 @@ class Track:
         return 1
             
 
-                    
+    #----------------------------------------------------------------------------------------------------
+    # Direction de la Pista en Grados
+    # - Calculate la direccion de la pista en grados (atan2)
+    # - the direction in radius, arctan2(dy, dx), the result is (-pi, pi) in radians
+    # ... Podría calcular los xy para la direccion de la racing line ... 
+    @staticmethod
+    def _direccionPista(params):
+       
+        import math
+
+        waypoints         = params['waypoints']
+        closest_waypoints = params['closest_waypoints']
+
+        wpNext = waypoints[closest_waypoints[1]]
+        wpPrev = waypoints[closest_waypoints[0]]
+
+        dirPista = math.degrees(math.atan2(wpNext[1] - wpPrev[1], 
+                                           wpNext[0] - wpPrev[0]))
+
+        return dirPista
+
+    #----------------------------------------------------------------------------------------------------
+    # Castigo por Heading vs DirPista
+    @staticmethod
+    def xHeadingCastigo(params, DIRECCION_ABS_VAL, castigo=0.5):
+       
+        heading = params['heading']
+
+        dirPista = Track._direccionPista(params) 
+
+        dirDiff = abs(dirPista - heading)
+        if dirDiff > DIRECCION_ABS_VAL:
+            return castigo
+        
+        return 1
+            
 #----------------------------------------
 # Version z02
 #
@@ -529,7 +565,10 @@ class MyDeepRacerClass:
         #-----------[ Stearing ] -------------------
         # Rotado, cero
         STEERING_ABS_THRESHOLD    =  15
+        DIRECCION_ABS_VAL         =  20
+
         REWARD *= Track.xSteeringCastigo(steering_angle, STEERING_ABS_THRESHOLD, 0.8)
+        REWARD *= Track.xHeadingCastigo(params, DIRECCION_ABS_VAL, castigo=0.5)
 
         #-----[Velocidad]---------------------------------------------------------
         ## Le sumo el reward por menor gap
