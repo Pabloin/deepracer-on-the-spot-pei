@@ -4,3 +4,6 @@ Empieza en zero
 
     ./create-spot-instance.sh     base lgy-model-f02Wc  120   (WIP)
     ./create-standard-instance.sh base lgy-model-f02Wc  120   (WIP)  
+
+
+    ./create-spot-instance.sh     base lgy-model-f02Wc  60

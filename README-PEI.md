@@ -252,189 +252,24 @@ aws cloudformation update-stack
 
 
 
+-------------------------
 
 
+        i-031e1c3f26b40a8f7
 
+-------------------
 
+#add tags to the SSM parameter
 
+ssm_client.add_tags_to_resource(ResourceType='Parameter', 
 
+ResourceId=ssm_parameter_name, Tags=[ { 'Key': 'Source', 'Value': 'Image Builder' } ] )
 
+return None
 
 
 
 
 
-Timestamp
-Logical ID
-Status
-Status reason
-Timestamp
-Logical ID
-Status
-Status reason
-2023-09-04 01:32:16 UTC-0300	deepracer-africa-dots	
-DELETE_COMPLETE
--
-2023-09-04 01:32:14 UTC-0300	deepracer-africa-dots	
-DELETE_IN_PROGRESS
-User Initiated
 
 
-2023-09-03 04:54:31 UTC-0300	deepracer-africa-dots	
-ROLLBACK_COMPLETE
--
-
-
-2023-09-03 04:54:30 UTC-0300	InterruptionNotification	
-DELETE_COMPLETE
--
-
-
-2023-09-03 04:54:15 UTC-0300	EFS	
-DELETE_COMPLETE
--
-
-
-2023-09-03 04:52:07 UTC-0300	Bucket	
-DELETE_COMPLETE
--
-
-
-2023-09-03 04:52:07 UTC-0300	NACLEntry	
-DELETE_COMPLETE
--
-
-
-2023-09-03 04:52:07 UTC-0300	TerminationLambdaRole	
-DELETE_COMPLETE
--
-
-
-2023-09-03 04:52:07 UTC-0300	SecurityGroup	
-DELETE_COMPLETE
--
-
-
-2023-09-03 04:52:07 UTC-0300	Bucket	
-DELETE_IN_PROGRESS
--
-
-
-2023-09-03 04:52:07 UTC-0300	InstanceRole	
-DELETE_COMPLETE
--
-
-
-2023-09-03 04:52:07 UTC-0300	FutureTimeCronExpressionLambdaRole	
-DELETE_COMPLETE
--
-
-
-2023-09-03 04:52:04 UTC-0300	deepracer-africa-dots	
-ROLLBACK_IN_PROGRESS
-The following resource(s) failed to create: [InstanceRole, FutureTimeCronExpressionLambdaRole, InterruptionNotification, Bucket, TerminationLambdaRole, NACLEntry, EFS, SecurityGroup]. Rollback requested by user.
-
-
-2023-09-03 04:52:04 UTC-0300	Bucket	
-CREATE_FAILED
-Resource creation cancelled
-
-
-2023-09-03 04:52:03 UTC-0300	InstanceRole	
-CREATE_FAILED
-API: iam:CreateRole User: arn:aws:sts::845305768689:assumed-role/DeepRacerRole/i-031e1c3f26b40a8f7 is not authorized to perform: iam:CreateRole on resource: arn:aws:iam::845305768689:role/deepracer-africa-dots-InstanceRole-12W0I7649LJB6 because no identity-based policy allows the iam:CreateRole action
-
-
-2023-09-03 04:52:03 UTC-0300	FutureTimeCronExpressionLambdaRole	
-CREATE_FAILED
-API: iam:CreateRole User: arn:aws:sts::845305768689:assumed-role/DeepRacerRole/i-031e1c3f26b40a8f7 is not authorized to perform: iam:CreateRole on resource: arn:aws:iam::845305768689:role/deepracer-africa-dots-FutureTimeCronExpressionLamb-15VC2890L2Z6W because no identity-based policy allows the iam:CreateRole action
-
-
-2023-09-03 04:52:03 UTC-0300	EFS	
-CREATE_FAILED
-Resource creation cancelled
-
-
-2023-09-03 04:52:03 UTC-0300	TerminationLambdaRole	
-CREATE_FAILED
-API: iam:CreateRole User: arn:aws:sts::845305768689:assumed-role/DeepRacerRole/i-031e1c3f26b40a8f7 is not authorized to perform: iam:CreateRole on resource: arn:aws:iam::845305768689:role/deepracer-africa-dots-TerminationLambdaRole-1OYM3QSVR18ZL because no identity-based policy allows the iam:CreateRole action
-
-
-2023-09-03 04:52:03 UTC-0300	InterruptionNotification	
-CREATE_FAILED
-Resource creation cancelled
-
-
-2023-09-03 04:52:03 UTC-0300	InstanceRole	
-CREATE_IN_PROGRESS
-Did not have IAM permissions to process tags on AWS::IAM::Role resource.
-
-
-2023-09-03 04:52:03 UTC-0300	NACLEntry	
-CREATE_FAILED
-API: ec2:CreateNetworkAclEntry You are not authorized to perform this operation. Encoded authorization failure message: xSZnBYVLyOqdw9wPWrhQIuDOjMzSjzu0PAKUlaHhU97ZlcXC_Xp5uqThSVjLzTw3H_x3-TgAlcvhYrdIEFbUTQWPFMIisG2B7A2txo88Sw4e2LKTMa8LmkQsiRXhMxlPnq5jVX-PihJwbISSvVb3DRoCPN1ywM1wd4bgxpk5gGd0Y8ako2CXIcT_49-zygynS0DZSBvtfmObUbLJ79-3SVbvL9F922C8RRpIHppAuwTpYtx1u1pC4VWCgW0KQ-Z07ftazfbc43_T1BH6WtnDhv_Y9wqH0DlJdo2I5f5H5zr-HZbGogRuqG9os12KMn-RUhzi90vbV2h7t0-P8-6n2DGyOQle2JU73Oc_ZkdtxSUV1qoDJid4Weskv_Ha2OoOs44raOLyr_gUft0XYWbG62a5VqGsgyfzO6vc6bs21dh03RDHq0fkuKjPRG8uXDEUrtcKTcaPpq3zJ3F9re3E2W93imSokfDc9BrisSjkuQJPO9lO--iDN3Nb_uJjfVBQjF3-hyHI9WcZ-2mfmKwnIPY5_fn9dFd_uhgG3jDdfhTXLrSIl5QMPnI26J8Dx5WZ4MpGiX172rmrJtrHQGR8cmvvIvVM8nHr1Gkjsu6Q0opuvNSbuCwghhk5
-
-
-2023-09-03 04:52:03 UTC-0300	FutureTimeCronExpressionLambdaRole	
-CREATE_IN_PROGRESS
-Did not have IAM permissions to process tags on AWS::IAM::Role resource.
-
-
-2023-09-03 04:52:03 UTC-0300	TerminationLambdaRole	
-CREATE_IN_PROGRESS
-Did not have IAM permissions to process tags on AWS::IAM::Role resource.
-
-
-2023-09-03 04:52:03 UTC-0300	SecurityGroup	
-CREATE_FAILED
-API: ec2:CreateSecurityGroup You are not authorized to perform this operation. Encoded authorization failure message: kOXkBBNz-KLtwqG1i1945Qa9NLCGeLcm7EEB1iHtn_mo9iwzrgRoDQa5964Fn0D9qSB7gizA9gk7wOMBam8a3xNkYy061MlrJLPY9xrG-UIN7DbNuTbUp4ZJ5QLDlQyOb2A2F5PcZVeGPU8cb-W7_ueAIaLRpLSbSx5b5RTuVnBYXDA_Xk-I_S8EftnlM2fO0v4Qx59nlo7hpPy_z5me84NmwA7CGyEHWeolaGrlZYs-yevLJOuN4hI7z5OPe9UZl5OXQIt6NRxGkWSREkMbOXUvIiQCGey7lNRjQwP-y4-M2uIaGUP2HHb2I2U3BU7qT_RwhJUuHzFlpavg45rcDjlfnVrQkZVKyTdOcc6vE7TPVgbXHvAuDXwWPPqgSMs8WEz9ydZQpZt0BKpOYbyy4aqgRPOLF4oz5agkDafBWnjcFGmVnPbJnEsO_qXAJ6PosGzAvtDyJHi4rUq0DtCO7jDBKssbeBCbWFO1AZQA7jDG4gZJ-C3v7mYDdBdWZDeNZpRZRpVYXNwFbRGwjs9CVE8_1Peie9D_jh-g3E1F5_c58CHXSQ
-
-
-2023-09-03 04:52:02 UTC-0300	NACLEntry	
-CREATE_IN_PROGRESS
--
-
-
-2023-09-03 04:52:02 UTC-0300	InstanceRole	
-CREATE_IN_PROGRESS
--
-
-
-2023-09-03 04:52:02 UTC-0300	InterruptionNotification	
-CREATE_IN_PROGRESS
--
-
-
-2023-09-03 04:52:02 UTC-0300	FutureTimeCronExpressionLambdaRole	
-CREATE_IN_PROGRESS
--
-
-
-2023-09-03 04:52:02 UTC-0300	EFS	
-CREATE_IN_PROGRESS
--
-
-
-2023-09-03 04:52:02 UTC-0300	Bucket	
-CREATE_IN_PROGRESS
--
-
-
-2023-09-03 04:52:02 UTC-0300	SecurityGroup	
-CREATE_IN_PROGRESS
--
-
-
-2023-09-03 04:52:02 UTC-0300	TerminationLambdaRole	
-CREATE_IN_PROGRESS
--
-
-
-2023-09-03 04:51:59 UTC-0300	deepracer-africa-dots	
-CREATE_IN_PROGRESS
-User Initiated
-
-
-2023-09-03 04:51:54 UTC-0300	deepracer-africa-dots	
-REVIEW_IN_PROGRESS
-User Initiated

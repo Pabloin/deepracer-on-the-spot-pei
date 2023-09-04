@@ -13,16 +13,19 @@ aws cloudformation deploy \
        --stack-name $stackName  \
        --template image-builder-africa.yaml  \
        --capabilities CAPABILITY_IAM  \
-       --parameter-overrides ResourcesStackName=$resourcesStackName
+       --parameter-overrides ResourcesStackName=$resourcesStackName  \
+       --role-arn arn:aws:iam::845305768689:role/DeepRacerDOT
 
- # ./create-image-builder-africa.sh deepracer-ami-africa  base-africa
 
-# aws cloudformation deploy 
-#      --stack-name deepracer-ami-resource 
-#      --template image-builder-africa.yaml
-#      --capabilities CAPABILITY_IAM 
-#      --parameter-overrides ResourcesStackName=deepracer-ami-africa
-#
+# aws cloudformation deploy \
+#        --stack-name base-africa-ami \
+#        --template image-builder-africa.yaml  \
+#        --capabilities CAPABILITY_IAM  \
+#        --parameter-overrides ResourcesStackName=base-africa
+
+
+# ./create-image-builder-africa.sh deepracer-ami-africa  base-africa
+
 
 # aws cloudformation deploy --stack-name $stackName --template image-builder-africa.yaml --capabilities CAPABILITY_IAM --parameter-overrides ResourcesStackName=$resourcesStackName
 

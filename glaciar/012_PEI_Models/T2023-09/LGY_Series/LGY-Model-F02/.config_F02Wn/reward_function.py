@@ -644,6 +644,10 @@ class MyDeepRacerClass:
 # Discreta
 #20230933 f02a
 #20230933 f0ba
+
+
+# WAYP
+#20230933 f02Wb
 myDR = MyDeepRacerClass()
 
 def reward_function(params):
