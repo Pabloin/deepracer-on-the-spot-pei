@@ -11,6 +11,9 @@ VALUE_ZERO = 1e-3
 AJUSTE_K = 1
 
 
+MODE_DEBUG = False
+
+
 #-----------[ UTILS ]-------------------
 class Util:
 
@@ -509,7 +512,13 @@ class Track:
         dirDiff = abs(dirPista - heading)
         if dirDiff > DIRECCION_ABS_VAL:
             return castigo
+
+
+        #-------------------------------------------------------------
+        if MODE_DEBUG:
+            print("   dirPista: ", dirPista,  " - dirDiff: ", dirDiff, " - heading: ", heading ) 
         
+
         return 1
             
 #----------------------------------------
@@ -544,9 +553,15 @@ class MyDeepRacerClass:
 
         isLap_n1, isLap_n2, isLap_n3 = Track.isLap(track_length)
 
-        next_point = waypoints[closest_waypoints[1]]
-        prev_point = waypoints[closest_waypoints[0]]
+        wpNext = waypoints[closest_waypoints[1]]
+        wpPrev = waypoints[closest_waypoints[0]]
 
+
+        #-------------------------------------------------------------
+        if MODE_DEBUG:
+            print("   wpNext: ", ' '.join(map(str, wpNext)), 
+                  " - wpPrev: ", ' '.join(map(str, wpPrev)), ) 
+        
         #-----------[ Distancia a la Racing Line] -------------------
 
         racingLine = MyRacingLine.RACING_LINE
@@ -574,13 +589,13 @@ class MyDeepRacerClass:
         ## Le sumo el reward por menor gap
         
         # speed_deseada = cercaUno[2]
-        # if Track.isz(RECTA_03, next_point) or Track.isz(RECTA_04, next_point):
+        # if Track.isz(RECTA_03, wpNext) or Track.isz(RECTA_04, wpNext):
         #     speed_deseada *= 1.15
 
         # REWARD *= Track.xSpeedCastigo(speed, speed_deseada)        
 
         ## Lo Castigo si el gap esta muy lejos de 4.0 hasta 3.1
-        # isRectaFin   = Track.isz(RECTA_FIN, next_point)
+        # isRectaFin   = Track.isz(RECTA_FIN, wpNext)
         # if isRectaFin and isLap_n3:
         #     speed_deseada = 4.0
         #     REWARD *= Track.xSpeedCastigo(speed, speed_deseada)
@@ -590,14 +605,14 @@ class MyDeepRacerClass:
 
         # #-----[Recta Veloz]---------------------------------------------------
         # # Recta veloz R3
-        # if Track.isRecta(next_point):
+        # if Track.isRecta(wpNext):
         #     speed_deseada = 2.8
         #     REWARD *= Track.xSpeedPremio(speed, speed_deseada)
         
     
         # #-----[Recta Veloz]---------------------------------------------------
         # # Recta veloz R4
-        # if Track.isRecta(next_point):
+        # if Track.isRecta(wpNext):
         #     speed_deseada = 3.4
         #     REWARD *= Track.xSpeedPremio(speed, speed_deseada)
         
