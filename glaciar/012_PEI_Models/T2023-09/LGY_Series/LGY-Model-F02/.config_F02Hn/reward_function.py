@@ -1,3 +1,5 @@
+import math
+
 #-----------[  DATA  ]------------------------------------
 
     # # sept 2023	Roger Super Raceway	60.17m	Clockwise  (2022_september_pro_cw)
@@ -487,8 +489,6 @@ class Track:
     @staticmethod
     def _direccionPista(params):
        
-        import math
-
         waypoints         = params['waypoints']
         closest_waypoints = params['closest_waypoints']
 
