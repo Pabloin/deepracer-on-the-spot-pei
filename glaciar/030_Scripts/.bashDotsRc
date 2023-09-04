@@ -129,6 +129,7 @@ alias F02="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Se
 alias F02C="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-F02/.config_F02Cn"
 alias F02D="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-F02/.config_F02Dn"
 alias F02H="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-F02/.config_F02Hn"
+alias F02W="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-F02/.config_F02Wn"
 alias   H="cd ~/deepracer-on-the-spot-pei/"
 
 export -f menu
@@ -156,7 +157,7 @@ function menu() {
    
    
    echo ""
-   echo " alias -  H | F01 | F02 | F02C,D,H "
+   echo " alias -  H | F01 | F02 | F02C,D,H,W "
 
    echo " MODEL = ${MODEL}  "
 }
