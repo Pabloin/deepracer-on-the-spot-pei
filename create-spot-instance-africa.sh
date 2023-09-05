@@ -20,6 +20,10 @@ BUCKET=$(aws cloudformation describe-stacks --stack-name $baseResourcesStackName
 amiId=$(aws ec2 describe-images --owners 845305768689 --filters "Name=state,Values=available" "Name=is-public,Values=true" --query 'sort_by(Images, &CreationDate)[-1].ImageId' | tr -d '"')
 set +xa
 
+
+echo "Africa Imagen: $amiId"
+read -p "Esta Ok Africa? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
+
 chmod +x ./validation.sh
 
 ./validation.sh
