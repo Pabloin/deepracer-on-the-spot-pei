@@ -130,6 +130,7 @@ alias F02C="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_S
 alias F02D="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-F02/.config_F02Dn"
 alias F02H="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-F02/.config_F02Hn"
 alias F02W="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-F02/.config_F02Wn"
+alias F02W="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-F02/.config_F02Tn"
 alias   H="cd ~/deepracer-on-the-spot-pei/"
 
 export -f menu
