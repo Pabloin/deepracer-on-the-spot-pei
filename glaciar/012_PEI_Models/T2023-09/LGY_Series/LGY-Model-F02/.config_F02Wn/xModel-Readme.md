@@ -7,3 +7,11 @@ Empieza en zero
 
 
     ./create-spot-instance.sh     base lgy-model-f02Wc  60
+
+
+
+
+    --------
+    Nota 1:
+
+        Le puedo dar dos horas o 6 horas ... y es lo mismo ... 

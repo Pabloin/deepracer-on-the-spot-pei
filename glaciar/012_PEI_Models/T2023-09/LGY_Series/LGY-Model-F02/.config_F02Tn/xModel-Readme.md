@@ -8,3 +8,8 @@ Empieza en zero
 
 
     ./create-spot-instance.sh     base lgy-model-f02Tc  60
+
+
+
+
+    ./create-spot-instance-africa.sh     base lgy-model-f02TaAfrica  360  africa (...)

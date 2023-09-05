@@ -29,6 +29,14 @@ aws cloudformation deploy \
 
 # aws cloudformation deploy --stack-name $stackName --template image-builder-africa.yaml --capabilities CAPABILITY_IAM --parameter-overrides ResourcesStackName=$resourcesStackName
 
+
+
+# Resultado:
+#
+# 	arn:aws:imagebuilder:af-south-1:845305768689:image/ubuntuserverfordeepracer-base-africa-ami/0.0.2
+#
+
+
 echo "Image pipeline will run daily at midnight. "
 echo "If you want to train a model now, go to 'EC2 Image Builder' and "
 echo "   run the pipeline manually by selecting actions > run pipeline. " 
