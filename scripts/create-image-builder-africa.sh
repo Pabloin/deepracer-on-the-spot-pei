@@ -13,8 +13,7 @@ aws cloudformation deploy \
        --stack-name $stackName  \
        --template image-builder-africa.yaml  \
        --capabilities CAPABILITY_IAM  \
-       --parameter-overrides ResourcesStackName=$resourcesStackName  \
-       --role-arn arn:aws:iam::845305768689:role/DeepRacerDOT
+       --parameter-overrides ResourcesStackName=$resourcesStackName 
 
 
 # aws cloudformation deploy \
