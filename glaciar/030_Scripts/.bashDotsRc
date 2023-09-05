@@ -11,13 +11,17 @@ function dots() {
 	source  "$BASH_DOTS/.bashDotsRc"
 }
 
+
+
+
+
 function drDown() {
 
     echo "                                                                 "
     echo "  cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-${MODEL}   "    
     echo "                                                                 "
-    echo "  aws s3 sync s3://base-bucket-1f3pfk38sjoqu/LGY-Model-${MODEL}/ \    "
-    echo "                                    .logsTmp/LGY-Model-${MODEL}/      "
+    echo "  aws s3 sync s3://${S3_BUCKET_SOURCE}/LGY-Model-${MODEL}/ \    "
+    echo "                       .logsTmp/LGY-Model-${MODEL}/      "
     echo "                                                                 "
     echo "  cd ~/deepracer-on-the-spot-pei                                 "    
     echo "                                                                 "
@@ -27,8 +31,8 @@ function drDown() {
 
     cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-${MODEL}
 
-    aws s3 sync s3://base-bucket-1f3pfk38sjoqu/LGY-Model-${MODEL}/ \
-                                      .logsTmp/LGY-Model-${MODEL}/   
+    aws s3 sync s3://${S3_BUCKET_SOURCE}/LGY-Model-${MODEL}/ \
+                         .logsTmp/LGY-Model-${MODEL}/   
 
     cd ~/deepracer-on-the-spot-pei
 
@@ -40,7 +44,7 @@ function drUp() {
     echo "  cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-${MODEL}   "    
     echo "                                                                 "
     echo "  aws s3 sync                       .logsTmp/LGY-Model-${MODEL}/  \   "
-    echo "          s3://dr-models-glaciar-dots-std006/LGY-Model-${MODEL}/  \   "
+    echo "          s3://${S3_BUCKET_TARGET}/LGY-Model-${MODEL}/  \   "
     echo "                 --profile voclabs/user2415006=Test_Student      "
     echo "                                                                 "
     echo "  cd ~/deepracer-on-the-spot-pei "    
@@ -51,11 +55,12 @@ function drUp() {
     cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-${MODEL}
                                                                 
     aws s3 sync                       .logsTmp/LGY-Model-${MODEL}/  \
-            s3://dr-models-glaciar-dots-std006/LGY-Model-${MODEL}/  \
+            s3://${S3_BUCKET_TARGET}/LGY-Model-${MODEL}/  \
                     --profile voclabs/user2415006=Test_Student   
 
     
     cd ~/deepracer-on-the-spot-pei
+    
 
 }
 
@@ -76,7 +81,7 @@ function drImport() {
                  --output table
 
 
-    aws s3 ls s3://dr-models-glaciar-dots-std006/LGY-Model-${MODEL}/  \
+    aws s3 ls s3://${S3_BUCKET_TARGET}/LGY-Model-${MODEL}/  \
                  --profile voclabs/user2415006=Test_Student 
 
     read -p "¿Codigo del Modelo?  (Ejemplo: "lgy-model-NNN" "f01a"? " MODEL_VERSION
@@ -85,7 +90,7 @@ function drImport() {
     echo "  aws deepracer import-model \                 "
     echo "      --type REINFORCEMENT_LEARNING \          "
     echo "      --name lgy-model-${MODEL_VERSION}  \                 "
-    echo "      --model-artifacts-s3-path s3://dr-models-glaciar-dots-std006/LGY-Model-${MODEL}/lgy-model-${MODEL_VERSION} \ "
+    echo "      --model-artifacts-s3-path s3://${S3_BUCKET_TARGET}/LGY-Model-${MODEL}/lgy-model-${MODEL_VERSION} \ "
     echo "      --role-arn arn:aws:iam::764531084004:role/LabRole \      "
     echo "      --profile voclabs/user2415006=Test_Student               "
     echo "   "
@@ -93,7 +98,7 @@ function drImport() {
     aws deepracer import-model \
         --type REINFORCEMENT_LEARNING \
         --name lgy-model-${MODEL_VERSION}  \
-        --model-artifacts-s3-path s3://dr-models-glaciar-dots-std006/LGY-Model-${MODEL}/lgy-model-${MODEL_VERSION} \
+        --model-artifacts-s3-path s3://${S3_BUCKET_TARGET}/LGY-Model-${MODEL}/lgy-model-${MODEL_VERSION} \
         --role-arn arn:aws:iam::764531084004:role/LabRole \
         --profile voclabs/user2415006=Test_Student               
    
@@ -141,6 +146,23 @@ export -f drUp
 
 export MODEL=F02
 
+export S3_BUCKET_SOURCE_VIR=base-bucket-1f3pfk38sjoqu
+export S3_BUCKET_SOURCE_AFR=base-africa-bucket-hg5d4pvkbc7l
+export S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_VIR}
+
+export S3_BUCKET_TARGET_ACADEMY=dr-models-glaciar-dots-std006
+export S3_BUCKET_TARGET=${S3_BUCKET_TARGET_ACADEMY}
+
+##----------------------------
+
+function goAfrica() {
+    S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_AFR}
+}
+
+function goVirginia() {
+    S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_VIR}
+}
+
 ##----------------------------
 
 function menu() {
@@ -152,6 +174,7 @@ function menu() {
    echo " - prof      |   "
    echo " - drSync    | drDown     | drUp  "
    echo " - drImport  |   "
+   echo " - goAfrica  |  goVirginia "
    echo ""
    echo " - aws.ec2.run | aws.ec2.all "
    echo ""
