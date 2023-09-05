@@ -158,7 +158,7 @@ function menu() {
    
    
    echo ""
-   echo " alias -  H | F01 | F02 | F02C,D,H,W "
+   echo " alias -  H | F01 | F02 | F02C,D,H,T,W "
 
    echo " MODEL = ${MODEL}  "
 }
