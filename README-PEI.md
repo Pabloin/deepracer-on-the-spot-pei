@@ -222,9 +222,13 @@ ubuntu@ip-172-31-34-103:~$ aws ec2 describe-images --image-id ami-027fc0bd0d2474
 *******************
 Creo la AMI  en MIAMI (Virginia)
 
-        ./create-base-resources.sh       base-miami   181.164.84.94
+        ./create-base-resources.sh   base-miami   181.164.84.94
 
-        ./create-image-builder-africa.sh base-miami   base-miami-ami
+        ./create-image-builder.sh    base-miami   base-miami-ami
+
+        
+         ./create-spot-instance-miami.sh   base-miami   gpimodel-w00c 60
+
 
 *******************
 AFRICA de nuevo:

@@ -19,6 +19,8 @@ Empieza en zero
     ./create-spot-instance-africa.sh     base lgy-model-f02TaAfrica  360  africa (...)
 
 
+    ./create-spot-instance-miami.sh      base-miami   lgy-model-f02TaMiami  30
+
 
 al fimal -...
 
