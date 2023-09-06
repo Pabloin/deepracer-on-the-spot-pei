@@ -147,8 +147,9 @@ export -f drUp
 export MODEL=F02
 
 export S3_BUCKET_SOURCE_VIR=base-bucket-1f3pfk38sjoqu
-export S3_BUCKET_SOURCE_AFR=base-africa-bucket-hg5d4pvkbc7l
 export S3_BUCKET_SOURCE_MIA=base-miami-bucket-1dhaicc3lxjy4
+export S3_BUCKET_SOURCE_AFR=base-africa-bucket-eqt69ynz6hf4
+export S3_BUCKET_SOURCE_ORE=TBD
 export S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_VIR}
 
 export S3_BUCKET_TARGET_ACADEMY=dr-models-glaciar-dots-std006
@@ -176,10 +177,10 @@ function menu() {
    echo ""
    
    echo ""
-   echo " - prof      |   "
-   echo " - drSync    |  drDown      | drUp  "
-   echo " - drImport  |   "
-   echo " - goAfrica  |  goVirginia  | goMiami"
+   echo " - prof       |   "
+   echo " - drSync     |  drDown     | drUp  "
+   echo " - drImport   |   "
+   echo " - goVirginia - goMiami     | goAfrica  |  goOregon   "
    echo ""
    echo " - aws.ec2.run | aws.ec2.all "
    echo ""
