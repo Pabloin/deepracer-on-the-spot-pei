@@ -17,13 +17,13 @@ aws cloudformation deploy \
 
 
 # aws cloudformation deploy \
-#        --stack-name base-africa-ami \
+#        --stack-name base-africa \
 #        --template image-builder-africa.yaml  \
 #        --capabilities CAPABILITY_IAM  \
-#        --parameter-overrides ResourcesStackName=base-africa
+#        --parameter-overrides ResourcesStackName=base-africa-AMIParameter
 
 
-# ./create-image-builder-africa.sh deepracer-ami-africa  base-africa
+# ./create-image-builder-africa.sh  base-africa  deepracer-ami-africa 
 
 
 # aws cloudformation deploy --stack-name $stackName --template image-builder-africa.yaml --capabilities CAPABILITY_IAM --parameter-overrides ResourcesStackName=$resourcesStackName
