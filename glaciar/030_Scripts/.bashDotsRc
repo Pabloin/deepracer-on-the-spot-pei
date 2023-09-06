@@ -192,10 +192,10 @@ function _setRegion() {
     echo "region = ${REGION}" >> ~/.aws/config
 }
 
-alias oregon=export REGION=${REGION_ORE}; _setRegion
-alias miami=export REGION=${REGION_MIA}; _setRegion
-alias aftca=export REGION=${REGION_AFR}; _setRegion
-alias virgi=exportvv REGION=${REGION_VIR}; _setRegion
+alias oregon=export REGION=${REGION_ORE}; _setRegion; region;
+alias miami=export  REGION=${REGION_MIA}; _setRegion; region;
+alias aftca=export  REGION=${REGION_AFR}; _setRegion; region;
+alias virgi=exportv REGION=${REGION_VIR}; _setRegion; region;
 alias region=cat ~/.aws/config
 
 ##----------------------------
