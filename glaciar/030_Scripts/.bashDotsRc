@@ -196,7 +196,7 @@ alias region=cat ~/.aws/config
 alias oregon=export REGION=${REGION_ORE}; _setRegion; cat ~/.aws/config;
 alias miami=export  REGION=${REGION_MIA}; _setRegion; cat ~/.aws/config;
 alias aftca=export  REGION=${REGION_AFR}; _setRegion; cat ~/.aws/config;
-alias virgi=exportv REGION=${REGION_VIR}; _setRegion; cat ~/.aws/config;
+alias virgi=export  REGION=${REGION_VIR}; _setRegion; cat ~/.aws/config;
 
 ##----------------------------
 
