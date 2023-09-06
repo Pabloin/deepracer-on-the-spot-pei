@@ -188,15 +188,14 @@ function goOregon() {
 }
 
 function _setRegion() {
+
+    echo "Region: ${REGION}"
+    
     echo "[default]"           > ~/.aws/config
     echo "region = ${REGION}" >> ~/.aws/config
+     cat ~/.aws/config
 }
 
-alias region=cat ~/.aws/config
-alias oregon=export REGION=${REGION_ORE}; _setRegion; cat ~/.aws/config;
-alias miami=export  REGION=${REGION_MIA}; _setRegion; cat ~/.aws/config;
-alias aftca=export  REGION=${REGION_AFR}; _setRegion; cat ~/.aws/config;
-alias virgi=export  REGION=${REGION_VIR}; _setRegion; cat ~/.aws/config;
 
 ##----------------------------
 
@@ -209,8 +208,7 @@ function menu() {
    echo " - prof       |   "
    echo " - drSync     |  drDown     | drUp  "
    echo " - drImport   |   "
-   echo " - goVirginia - goMiami     | goAfrica  |  goOregon | _setRegion  "
-   echo " -   virginia -   miami     |   africa  |    oregon |     region  "   
+   echo " - goVirginia - goMiami     | goAfrica  |  goOregon | _setRegion  " 
    echo ""
    echo " - aws.ec2.run | aws.ec2.all "
    echo ""
