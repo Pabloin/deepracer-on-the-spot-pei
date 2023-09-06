@@ -203,7 +203,7 @@ function menu() {
    echo " - prof       |   "
    echo " - drSync     |  drDown     | drUp  "
    echo " - drImport   |   "
-   echo " - goVirginia - goMiami     | goAfrica  |  goOregon   "
+   echo " - goVirginia - goMiami     | goAfrica  |  goOregon | _setRegion  "
    echo ""
    echo " - aws.ec2.run | aws.ec2.all "
    echo ""
