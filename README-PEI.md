@@ -227,8 +227,8 @@ Creo la AMI  en MIAMI (Virginia)
         ./create-image-builder.sh    base-miami   base-miami-ami
 
         
-         ./create-spot-instance-miami.sh   base-miami   gpimodel-w00c 60
-
+         ./create-spot-instance-miami.sh    base-miami    gpimodel-w00c 60
+         ./create-spot-instance-africa.sh   base-africa   gpimodel-w00c 60
 
 *******************
 AFRICA de nuevo:

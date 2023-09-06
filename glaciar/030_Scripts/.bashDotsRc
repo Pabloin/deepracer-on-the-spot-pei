@@ -155,18 +155,37 @@ export S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_VIR}
 export S3_BUCKET_TARGET_ACADEMY=dr-models-glaciar-dots-std006
 export S3_BUCKET_TARGET=${S3_BUCKET_TARGET_ACADEMY}
 
+export REGION_VIR=us-east-1
+export REGION_MIA=us-east-1
+export REGION_ORE=us-west-1
+export REGION_AFR=af-south-1
+export REGION=${REGION_VIR}
+
 ##----------------------------
 
 function goAfrica() {
-    S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_AFR}
+    S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_AFR}}
+    REGION=${REGION_AFR}
 }
 
 function goVirginia() {
     S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_VIR}
+    REGION=${REGION_VIR}
 }
 
 function goMiami() {
     S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_MIA}
+    REGION=${REGION_MIA}
+}
+
+function goOregon() {
+    S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_ORE}
+    REGION=${REGION_ORE}
+}
+
+function setRegion() {
+    echo "[default]" > ~/.aws/config
+    echo "region = ${REGION}" >> ~/.aws/config
 }
 
 ##----------------------------
