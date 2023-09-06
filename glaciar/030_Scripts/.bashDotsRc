@@ -166,7 +166,7 @@ export REGION=${REGION_VIR}
 function goAfrica() {
     REGION=${REGION_AFR}
     _setRegion
-    S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_AFR}}
+    S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_AFR}
 }
 
 function goVirginia() {
