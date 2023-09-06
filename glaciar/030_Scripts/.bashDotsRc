@@ -164,26 +164,30 @@ export REGION=${REGION_VIR}
 ##----------------------------
 
 function goAfrica() {
-    S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_AFR}}
     REGION=${REGION_AFR}
+    _setRegion
+    S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_AFR}}
 }
 
 function goVirginia() {
-    S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_VIR}
     REGION=${REGION_VIR}
+    _setRegion
+    S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_VIR}
 }
 
 function goMiami() {
-    S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_MIA}
     REGION=${REGION_MIA}
+    _setRegion
+    S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_MIA}
 }
 
 function goOregon() {
-    S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_ORE}
     REGION=${REGION_ORE}
+    _setRegion
+    S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_ORE}
 }
 
-function setRegion() {
+function _setRegion() {
     echo "[default]" > ~/.aws/config
     echo "region = ${REGION}" >> ~/.aws/config
 }
