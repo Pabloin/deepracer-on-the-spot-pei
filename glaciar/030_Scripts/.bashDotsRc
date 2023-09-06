@@ -188,15 +188,15 @@ function goOregon() {
 }
 
 function _setRegion() {
-    echo "[default]" > ~/.aws/config
+    echo "[default]"           > ~/.aws/config
     echo "region = ${REGION}" >> ~/.aws/config
 }
 
 alias region=cat ~/.aws/config
-alias oregon=export REGION=${REGION_ORE}; _setRegion; region;
-alias miami=export  REGION=${REGION_MIA}; _setRegion; region;
-alias aftca=export  REGION=${REGION_AFR}; _setRegion; region;
-alias virgi=exportv REGION=${REGION_VIR}; _setRegion; region;
+alias oregon=export REGION=${REGION_ORE}; _setRegion; cat ~/.aws/config;
+alias miami=export  REGION=${REGION_MIA}; _setRegion; cat ~/.aws/config;
+alias aftca=export  REGION=${REGION_AFR}; _setRegion; cat ~/.aws/config;
+alias virgi=exportv REGION=${REGION_VIR}; _setRegion; cat ~/.aws/config;
 
 ##----------------------------
 
