@@ -196,6 +196,10 @@ function _setRegion() {
      cat ~/.aws/config
 }
 
+function _getRegion() {
+    echo "Region: ${REGION}"
+    cat ~/.aws/config
+}
 
 ##----------------------------
 
@@ -208,7 +212,7 @@ function menu() {
    echo " - prof       |   "
    echo " - drSync     |  drDown     | drUp  "
    echo " - drImport   |   "
-   echo " - goVirginia - goMiami     | goAfrica  |  goOregon | _setRegion  " 
+   echo " - goVirginia - goMiami     | goAfrica  |  goOregon | _set _getRegion " 
    echo ""
    echo " - aws.ec2.run | aws.ec2.all "
    echo ""
