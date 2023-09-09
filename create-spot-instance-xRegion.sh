@@ -22,7 +22,6 @@ BUCKET=$(aws cloudformation describe-stacks --stack-name $baseResourcesStackName
 amiId=$(aws ec2 describe-images --owners 845305768689 --filters "Name=state,Values=available"                               --query 'sort_by(Images, &CreationDate)[-1].ImageId' | tr -d '"')
 set +xa
 
-
 MY_REGION=$(curl -s http://169.254.169.254/latest/meta-data/placement/region)
 
 echo "Region: ${MY_REGION} con  Imagen: ${amiId} y BUCKET ${BUCKET}"

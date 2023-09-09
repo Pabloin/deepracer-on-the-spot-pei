@@ -11,22 +11,22 @@ shift
 
 aws cloudformation deploy \
        --stack-name $stackName  \
-       --template image-builder-africa.yaml  \
+       --template image-builder.yaml  \
        --capabilities CAPABILITY_IAM  \
        --parameter-overrides ResourcesStackName=$resourcesStackName 
 
 
 # aws cloudformation deploy \
 #        --stack-name base-africa \
-#        --template image-builder-africa.yaml  \
+#        --template image-builder.yaml  \
 #        --capabilities CAPABILITY_IAM  \
 #        --parameter-overrides ResourcesStackName=base-africa-AMIParameter
 
 
-# ./create-image-builder-africa.sh  base-africa  deepracer-ami-africa 
+# ./create-image-builder.sh  base-africa  deepracer-ami-africa 
 
 
-# aws cloudformation deploy --stack-name $stackName --template image-builder-africa.yaml --capabilities CAPABILITY_IAM --parameter-overrides ResourcesStackName=$resourcesStackName
+# aws cloudformation deploy --stack-name $stackName --template image-builder.yaml --capabilities CAPABILITY_IAM --parameter-overrides ResourcesStackName=$resourcesStackName
 
 
 
