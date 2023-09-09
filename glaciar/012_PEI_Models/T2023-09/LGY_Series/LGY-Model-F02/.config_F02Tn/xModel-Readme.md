@@ -6,20 +6,19 @@ Empieza en zero
     ./create-spot-instance.sh        base        lgy-model-f02TAa  120     (wip)
     ./create-spot-instance-africa.sh base-africa lgy-model-f02TAa  360     (wip)
 
-    ./create-spot-instance.sh     base lgy-model-f02Ta  120   (...)
+    ./create-spot-instance.sh        base lgy-model-f02Ta  120   (...)
     
-    ./create-standard-instance.sh base lgy-model-f02Tc  120   (WIP)  
-
-
-    ./create-spot-instance.sh     base lgy-model-f02Tc  60
-
-
-
+    ./create-standard-instance.sh    base lgy-model-f02Tc  120   (WIP)  
+    ./create-spot-instance.sh        base lgy-model-f02Tc  60
 
     ./create-spot-instance-africa.sh     base lgy-model-f02TaAfrica  360  africa (...)
 
 
     ./create-spot-instance-miami.sh      base-miami   lgy-model-f02TaMiami  30
+
+
+
+    ./create-spot-instance-xRegion.sh   base-africa lgy-model-f02TAaAfrica1 15
 
 
 al fimal -...
