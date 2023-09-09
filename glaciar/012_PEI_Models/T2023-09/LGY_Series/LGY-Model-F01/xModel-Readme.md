@@ -92,3 +92,13 @@ aws s3 sync .logsTmp/LGY-Model-F01/  \
 --------------------------
 
 To win physical prizes, show us your skills by racing in one of the AWS monthly qualifiers, becoming a Pro by finishing in the top 10% of an Open race leaderboard, or
+
+
+
+
++ BUCKET=base-africa-bucket-eqt69ynz6hf4
+++ aws ec2 describe-images --owners 845305768689 --filters Name=state,Values=available --query 'sort_by(Images, &CreationDate)[-1].ImageId'
+++ tr -d '"'
++ amiId=ami-0b335fb14aa1ebe4d
++ set +xa
+Africa Imagen: ami-0b335fb14aa1ebe4d

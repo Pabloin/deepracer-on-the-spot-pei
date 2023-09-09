@@ -130,9 +130,9 @@ Waiting for changeset to be created..
 
 -------------------------
 
-
+        ./create-base-resources.sh  base-africa   181.164.84.94
                             
-        ./create-base-resources.sh  africa-base   181.164.84.94
+        ./create-base-resources.sh  base-oregon   181.164.84.94
 
                 If you wish to run your own AMI, 
                     or run in a region other than us-east-1, 

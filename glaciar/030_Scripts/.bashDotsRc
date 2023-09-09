@@ -149,7 +149,7 @@ export MODEL=F02
 export S3_BUCKET_SOURCE_VIR=base-bucket-1f3pfk38sjoqu
 export S3_BUCKET_SOURCE_MIA=base-miami-bucket-1dhaicc3lxjy4
 export S3_BUCKET_SOURCE_AFR=base-africa-bucket-eqt69ynz6hf4
-export S3_BUCKET_SOURCE_ORE=TBD
+export S3_BUCKET_SOURCE_ORE=base-oregon-bucket-178248g6e17yk
 export S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_VIR}
 
 export S3_BUCKET_TARGET_ACADEMY=dr-models-glaciar-dots-std006

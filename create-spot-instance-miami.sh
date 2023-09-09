@@ -26,8 +26,8 @@ amiId=$(aws ec2 describe-images --owners 845305768689 --filters "Name=state,Valu
 set +xa
 
 
-echo "Africa Imagen: $amiId"
-read -p "Esta Ok Africa? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
+echo "Africa Imagen: ${amiId} y BUCKET ${BUCKET}"
+read -p "Esta Ok Miami? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
 
 chmod +x ./validation.sh
 
