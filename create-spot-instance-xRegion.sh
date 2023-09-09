@@ -17,17 +17,16 @@ if [[ -n "$DEEPRACER_INSTANCE_TYPE" ]]; then
     instanceTypeConfig="InstanceType=$DEEPRACER_INSTANCE_TYPE"
 fi
 BUCKET=$(aws cloudformation describe-stacks --stack-name $baseResourcesStackName | jq '.Stacks | .[] | .Outputs | .[] | select(.OutputKey=="Bucket") | .OutputValue' | tr -d '"')
-
-
 #amiId=$(aws ec2 describe-images --owners 747447086422 --filters "Name=state,Values=available" "Name=is-public,Values=true" --query 'sort_by(Images, &CreationDate)[-1].ImageId' | tr -d '"')
 #amiId=$(aws ec2 describe-images --owners 845305768689 --filters "Name=state,Values=available" "Name=is-public,Values=true" --query 'sort_by(Images, &CreationDate)[-1].ImageId' | tr -d '"')
 amiId=$(aws ec2 describe-images --owners 845305768689 --filters "Name=state,Values=available"                               --query 'sort_by(Images, &CreationDate)[-1].ImageId' | tr -d '"')
-
 set +xa
 
 
-echo "Africa Imagen: ${amiId} y BUCKET ${BUCKET}"
-read -p "Esta Ok Miami? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
+MY_REGION=$(curl -s http://169.254.169.254/latest/meta-data/placement/region)
+
+echo "Region: ${MY_REGION} con  Imagen: ${amiId} y BUCKET ${BUCKET}"
+read -p "Esta Ok la REgion? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
 
 chmod +x ./validation.sh
 
