@@ -597,22 +597,7 @@ Resources:
               group: ubuntu
             /home/ubuntu/deepracer-for-cloud/Training_progress.py:     
               content: |
-                # ---
-                # jupyter:
-                #   jupytext:
-                #     formats: ipynb,py:light
-                #     text_representation:
-                #       extension: .py
-                #       format_name: light
-                #       format_version: '1.5'
-                #       jupytext_version: 1.14.1
-                #   kernelspec:
-                #     display_name: Python 3 (ipykernel)
-                #     language: python
-                #     name: python3
-                # ---
-
-                # +
+                # PEI Borrando Comentarios
                 #Import block to bring in dependencies
                 import pandas as pd
                 import matplotlib.pyplot as plt
@@ -662,22 +647,7 @@ Resources:
               group: ubuntu
             /home/ubuntu/deepracer-for-cloud/Quintiles.py:     
               content: |
-                # ---
-                # jupyter:
-                #   jupytext:
-                #     formats: ipynb,py:light
-                #     text_representation:
-                #       extension: .py
-                #       format_name: light
-                #       format_version: '1.5'
-                #       jupytext_version: 1.14.1
-                #   kernelspec:
-                #     display_name: Python 3 (ipykernel)
-                #     language: python
-                #     name: python3
-                # ---
-
-                # +
+                # PEI Borrando Comentarios
                 #Import block to bring in dependencies
                 import pandas as pd
                 import matplotlib.pyplot as plt
