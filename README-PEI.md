@@ -247,6 +247,8 @@ Creo la AMI  en MIAMI (Virginia)
         ./create-spot-instance.sh    base-africa-s3pei   lgy-model-f02WaAfricano 15
 
 
+         ./create-spot-instance-africa.sh   base-africa-s3pei   lgy-model-f02WaAfricano 15
+
     Buckets Exported:
 
             Bucket	base-africa-bucket-pei	            S3 Bucket	base-africa-bucket-pei
@@ -256,6 +258,11 @@ Creo la AMI  en MIAMI (Virginia)
 
      ./create-spot-instance.sh base lgy-model-f02WaV  120    (wip)   f02Wa + Velocidad
 
+
+*******************************
+tar and zip
+
+        tar -zcvf archive-name.tar.gz   bin 
 
 *******************************
         aws s3 cp s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F02/lgy-model-f02Ta/ "c:\Users @ Data Disco D\code\deepracer-log-analysis-pei\Glaciar-DOTS\lgy-model-f02Ta" --recursive 
