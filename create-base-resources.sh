@@ -47,7 +47,7 @@ aws cloudformation deploy --template ./base-resources.yaml \
 						  --parameter-overrides ${subnetsConfig} \
 						   VPC=$vpc MyIPAddress=$ip NetworkAclId=$nacl RuleNumber=$ruleN  \
 						   ShouldCreateBucketInputParameter="false" \
-						   MyBucketName ${MyBucketName} \
+						   MyBucketName=${MyBucketName} \
 						  --capabilities CAPABILITY_IAM
 
 
