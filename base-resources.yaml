@@ -56,10 +56,19 @@ Outputs:
 
   Bucket:
     Description: S3 Bucket
+    Condition: CreateS3Bucket
     Value: !Ref Bucket
     Export:
       Name:
         !Sub '${AWS::StackName}-Bucket'
+
+  Bucket:
+    Description: S3 Bucket
+    Condition: NotCreateS3Bucket
+    Value: !Ref MyBucketName
+    Export:
+      Name:
+        !Sub '${MyBucketName}'
 
   SecurityGroup:
     Description: Security Group
@@ -122,6 +131,9 @@ Conditions:
   CreateS3Bucket: !Equals
     - !Ref 'ShouldCreateBucketInputParameter'
     - 'true'
+
+  NotCreateS3Bucket:
+    !Not [Condition: CreateS3Bucket]
 
   HasSubnet0: !Not
     - !Equals [!Ref Subnet0, '']
