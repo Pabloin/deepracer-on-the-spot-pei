@@ -247,8 +247,11 @@ Creo la AMI  en MIAMI (Virginia)
         ./create-spot-instance.sh    base-africa-s3pei   lgy-model-f02WaAfricano 15
 
 
-         ./create-spot-instance-africa.sh   base-africa-s3pei   lgy-model-f02WaAfricanoDos  45
-         ./create-spot-instance-africa.sh   base-africa         lgy-model-f02WaAfricanoTres 45
+         ./create-spot-instance-africa.sh   base-africa-s3pei   lgy-model-f02WaAfricanoDos   45
+         ./create-spot-instance-africa.sh   base-africa         lgy-model-f02WaAfricanoTres  45
+
+
+         ./create-spot-instance-africa.sh   base-africa-s3pei   lgy-model-f02WaAfricaCuatro  20
 
     Buckets Exported:
 
