@@ -577,6 +577,11 @@ class MyDeepRacerClass:
         REWARD += wp_reward
 
 
+        #-------------------------------------------------------------
+        if MODE_DEBUG:
+            print("   cercaUno: ", cercaUno, 
+                  " - cercaDos: ", cercaDos) 
+
 
         #-----------[ Stearing ] -------------------
         # Rotado, cero
@@ -589,21 +594,11 @@ class MyDeepRacerClass:
         #-----[Velocidad]---------------------------------------------------------
         ## Le sumo el reward por menor gap
         
-        speed_deseada = cercaUno[2]
-        REWARD *= Track.xSpeedCastigo(speed, speed_deseada)        
-        
-                #-------------------------------------------------------------
-        if MODE_DEBUG:
-            print("   cercaUno: ", cercaUno, 
-                  " - cercaDos: ", cercaDos, 
-                  " - speed: ", speed, 
-                  " - speed_deseada: ", speed_deseada), 
-            
-
-
+        # speed_deseada = cercaUno[2]
         # if Track.isz(RECTA_03, wpNext) or Track.isz(RECTA_04, wpNext):
         #     speed_deseada *= 1.15
 
+        # REWARD *= Track.xSpeedCastigo(speed, speed_deseada)        
 
         ## Lo Castigo si el gap esta muy lejos de 4.0 hasta 3.1
         # isRectaFin   = Track.isz(RECTA_FIN, wpNext)
