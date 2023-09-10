@@ -241,6 +241,10 @@ Creo la AMI  en MIAMI (Virginia)
             --region af-south-1 \
             --create-bucket-configuration LocationConstraint=af-south-1
 
+        
+        ./create-base-resources.sh   base-africa-s3-pei   181.164.84.94  base-africa-bucket-pei
+
+
 *******************************
 AFRICA de nuevo:
 
