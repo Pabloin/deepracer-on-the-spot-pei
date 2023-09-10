@@ -242,9 +242,15 @@ Creo la AMI  en MIAMI (Virginia)
             --create-bucket-configuration LocationConstraint=af-south-1
 
         
-        ./create-base-resources.sh   base-africa-s3-pei-v3   181.164.84.94  base-africa-bucket-pei
+        ./create-base-resources.sh   base-africa-s3pei   181.164.84.94  base-africa-bucket-pei
  
-        ./create-spot-instance.sh    base-africa-s3-pei-v3   lgy-model-f02WaAfricano 15
+        ./create-spot-instance.sh    base-africa-s3pei   lgy-model-f02WaAfricano 15
+
+
+    Buckets Exported:
+
+            Bucket	base-africa-bucket-pei	            S3 Bucket	base-africa-bucket-pei
+            Bucket	base-africa-bucket-eqt69ynz6hf4	    S3 Bucket	base-africa-Bucket
 
 
 

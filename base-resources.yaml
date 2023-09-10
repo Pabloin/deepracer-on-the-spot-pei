@@ -69,14 +69,6 @@ Outputs:
       Name:
         !Sub '${AWS::StackName}-Bucket'
 
-  Bucket:
-    Description: S3 Bucket
-    Condition: NotCreateS3Bucket
-    Value: !Ref MyBucketName
-    Export:
-      Name:
-        !Sub '${MyBucketName}'
-
   SecurityGroup:
     Description: Security Group
     Value: !GetAtt SecurityGroup.GroupId
