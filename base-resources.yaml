@@ -169,7 +169,7 @@ Resources:
     Type: 'AWS::S3::BucketPolicy'
     Properties:
       # Bucket: !Ref Bucket
-      Bucket: 'arn:aws:s3:::base-africa-bucket-pei'
+      Bucket: 'base-africa-bucket-pei'
       PolicyDocument:
         Version: '2012-10-17'
         Statement:
