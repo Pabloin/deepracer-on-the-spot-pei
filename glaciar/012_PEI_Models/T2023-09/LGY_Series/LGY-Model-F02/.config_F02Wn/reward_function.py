@@ -294,28 +294,30 @@ class MyRacingLine:
     #-----------[  RACING LINE - END  ]-------------------
 
 
-RECTA_01     = 'RECTA_01'
-RECTA_02     = 'RECTA_02'
-RECTA_03     = 'RECTA_03'
-RECTA_04     = 'RECTA_04'
+RECTA_01           = 'RECTA_01'
+RECTA_02           = 'RECTA_02'
+RECTA_03           = 'RECTA_03'
+RECTA_04           = 'RECTA_04'
 
-RECTA_INI     = 'RECTA_INI'
-RECTA_FIN     = 'RECTA_FIN'
+RECTA_INI          = 'RECTA_INI'
+RECTA_FIN          = 'RECTA_FIN'
 
-CURVA_01_RR  = 'CURVA_01_RR'
-CURVA_02_RR  = 'CURVA_02_RR'
-CURVA_03_LL  = 'CURVA_03_LL'
-CURVA_04_RR  = 'CURVA_04_RR'
-CURVA_05_RR  = 'CURVA_05_RR'
-CURVA_06_LL  = 'CURVA_06_LL'
-CURVA_07_RR  = 'CURVA_07_RR'
-CURVA_08_RR  = 'CURVA_08_RR'
+CURVA_01_RR        = 'CURVA_01_RR'
+CURVA_02_RR        = 'CURVA_02_RR'
+CURVA_03_LL        = 'CURVA_03_LL'
+CURVA_03_LL_ZONA   = 'CURVA_03_LL_ZONA'
+CURVA_04_RR        = 'CURVA_04_RR'
+CURVA_05_RR        = 'CURVA_05_RR'
+CURVA_06_LL        = 'CURVA_06_LL'
+CURVA_06_LL_ZONA   = 'CURVA_06_LL_ZONA'
+CURVA_07_RR        = 'CURVA_07_RR'
+CURVA_08_RR        = 'CURVA_08_RR'
 
-PATH_01      = 'PATH_01'
-PATH_02      = 'PATH_02'
-PATH_03      = 'PATH_03'
-PATH_04      = 'PATH_04'
-PATH_05      = 'PATH_05'
+PATH_01            = 'PATH_01'
+PATH_02            = 'PATH_02'
+PATH_03            = 'PATH_03'
+PATH_04            = 'PATH_04'
+PATH_05            = 'PATH_05'
 
 class Track:
 
@@ -323,29 +325,36 @@ class Track:
     # PRO - Clockwise (76.76m) 
     Zones = [
 
-        [RECTA_01        , 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22, RECTA_INI],
-        [CURVA_01_RR     , 23,24,25,26,27,28],
-        [RECTA_02        , 29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48],
-        [CURVA_02_RR     , 49,50,51,52],
+        [RECTA_01           , 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22, RECTA_INI],
+        [CURVA_01_RR        , 23,24,25,26,27,28],
+        [RECTA_02           , 29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48],
+        [CURVA_02_RR        , 49,50,51,52],
 
-        [PATH_01         , 53,54,55,56,57,58,59,60],
-        [CURVA_03_LL     , 61,62,63,64,65,66],
+        [PATH_01            , 53,54,55,56,57,58,59,60],
+        [CURVA_03_LL        , 61,62,63,64,65,66],
         
-        [PATH_02         , 67,68,69,70,71,72,73],
-        [CURVA_04_RR     , 74,75,76,77,78],
-        
-        [PATH_03         , 79,80,81,82,83,84,85,86,87,88],
-        [CURVA_05_RR     , 89,90,91,92,93],
+        [CURVA_03_LL_ZONA   , 58,59,60,61,62,63,64,65,66,67,68,69],
 
-        [RECTA_03        , 94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120],
-        [CURVA_06_LL     , 121,122,123,124,125,126],
+
+        [PATH_02            , 67,68,69,70,71,72,73],
+        [CURVA_04_RR        , 74,75,76,77,78],
         
-        [PATH_04         , 127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144],
-        [CURVA_07_RR     , 145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163],
+        [PATH_03            , 79,80,81,82,83,84,85,86,87,88],
+        [CURVA_05_RR        , 89,90,91,92,93],
+
+        [RECTA_03           , 94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120],
+        [CURVA_06_LL        , 121,122,123,124,125,126],
         
-        [PATH_05         , 164,165,166,167,168,169],
-        [CURVA_08_RR     , 170,171,172,173,174,175,176,177,178,179,180],
-        [RECTA_04        , 181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200, RECTA_FIN]
+
+        [CURVA_06_LL_ZONA   , 117,118,119,120,  121,122,123,124,125,126,  127,128],
+
+
+        [PATH_04            , 127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144],
+        [CURVA_07_RR        , 145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163],
+        
+        [PATH_05            , 164,165,166,167,168,169],
+        [CURVA_08_RR        , 170,171,172,173,174,175,176,177,178,179,180],
+        [RECTA_04           , 181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200, RECTA_FIN]
 
     ]
 
@@ -542,7 +551,6 @@ class MyDeepRacerClass:
         distance_from_center = params['distance_from_center']
         all_wheels_on_track  = params['all_wheels_on_track']
         is_offtrack          = params['is_offtrack']
-
     
         steering_angle       = params['steering_angle']
         track_width          = params['track_width']
@@ -611,6 +619,13 @@ class MyDeepRacerClass:
         #     speed_deseada = 4.0
         #     REWARD *= Track.xSpeedCastigo(speed, speed_deseada)
             
+
+        # Fix de Cruva Tres y Seis
+        isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, wpNext)
+        isZonaCurvaSeis   = Track.isz(CURVA_06_LL_ZONA, wpNext)
+
+        if (isZonaCurvaTres or isZonaCurvaSeis) and is_left_of_center:
+            REWARD *= 1.2
 
 
 

@@ -274,7 +274,7 @@ tar and zip
         tar -zcvf archive-name.tar.gz   bin 
 
 
-        tar -zcvf  dots-drfc-africa-f02WaAfricanoDos.tar.gz   deepracer-for-cloud/  bin/  
+        tar -zcvf  dots-drfc-africa-02WaAfricanoQuatroA.tar.gz   deepracer-for-cloud/  bin/  
 
         Para Download... mágicamente botón derecho del mouse sobre el SSH de VS Code y pumba! En Windows .... 
 
