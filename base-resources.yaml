@@ -64,6 +64,13 @@ Outputs:
 
   Bucket:
     Description: S3 Bucket
+    Value: !Ref MyBucketName
+    Export:
+      Name:
+        !Sub '${AWS::StackName}-Bucket'
+
+  Bucket:
+    Description: S3 Bucket
     Condition: NotCreateS3Bucket
     Value: !Ref MyBucketName
     Export:

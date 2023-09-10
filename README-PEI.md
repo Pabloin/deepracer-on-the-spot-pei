@@ -242,7 +242,20 @@ Creo la AMI  en MIAMI (Virginia)
             --create-bucket-configuration LocationConstraint=af-south-1
 
         
-        ./create-base-resources.sh   base-africa-s3-pei   181.164.84.94  base-africa-bucket-pei
+        ./create-base-resources.sh   base-africa-s3-pei-v3   181.164.84.94  base-africa-bucket-pei
+ 
+        ./create-spot-instance.sh    base-africa-s3-pei-v3   lgy-model-f02WaAfricano 15
+
+
+
+     ./create-spot-instance.sh base lgy-model-f02WaV  120    (wip)   f02Wa + Velocidad
+
+
+*******************************
+        aws s3 cp s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F02/lgy-model-f02Ta/ "c:\Users @ Data Disco D\code\deepracer-log-analysis-pei\Glaciar-DOTS\lgy-model-f02Ta" --recursive 
+
+        aws s3 cp s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F02/lgy-model-f02TAaVirginia/ "c:\Users @ Data Disco D\code\deepracer-log-analysis-pei\Glaciar-DOTS\lgy-model-f02TAaVirginia/" --recursive 
+
 
 
 *******************************
