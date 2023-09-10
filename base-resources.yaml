@@ -169,7 +169,7 @@ Resources:
     Type: 'AWS::S3::BucketPolicy'
     Properties:
       # Bucket: !Ref Bucket
-      Bucket: 'base-africa-bucket-pei'
+      Bucket: !Ref MyBucketName
       PolicyDocument:
         Version: '2012-10-17'
         Statement:
