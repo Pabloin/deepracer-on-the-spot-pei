@@ -247,7 +247,8 @@ Creo la AMI  en MIAMI (Virginia)
         ./create-spot-instance.sh    base-africa-s3pei   lgy-model-f02WaAfricano 15
 
 
-         ./create-spot-instance-africa.sh   base-africa-s3pei   lgy-model-f02WaAfricano 15
+         ./create-spot-instance-africa.sh   base-africa-s3pei   lgy-model-f02WaAfricanoDos  45
+         ./create-spot-instance-africa.sh   base-africa         lgy-model-f02WaAfricanoTres 45
 
     Buckets Exported:
 
@@ -255,14 +256,26 @@ Creo la AMI  en MIAMI (Virginia)
             Bucket	base-africa-bucket-eqt69ynz6hf4	    S3 Bucket	base-africa-Bucket
 
 
-
      ./create-spot-instance.sh base lgy-model-f02WaV  120    (wip)   f02Wa + Velocidad
+
+
+
+*******************************
+
+    aws configure set default.region af-south-1
 
 
 *******************************
 tar and zip
 
         tar -zcvf archive-name.tar.gz   bin 
+
+
+        tar -zcvf  dots-drfc-africa-f02WaAfricanoDos.tar.gz   deepracer-for-cloud/  bin/  
+
+        Para Download... mágicamente botón derecho del mouse sobre el SSH de VS Code y pumba! En Windows .... 
+
+
 
 *******************************
         aws s3 cp s3://base-bucket-1f3pfk38sjoqu/LGY-Model-F02/lgy-model-f02Ta/ "c:\Users @ Data Disco D\code\deepracer-log-analysis-pei\Glaciar-DOTS\lgy-model-f02Ta" --recursive 

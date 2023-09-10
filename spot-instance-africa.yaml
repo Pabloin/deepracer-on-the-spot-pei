@@ -434,6 +434,10 @@ Resources:
             /home/ubuntu/bin/start_training.sh:
               content: |
                 #!/bin/bash
+                
+                # PEI Default Region
+                aws configure set default.region $DEEPRACER_REGION
+
                 source /etc/profile.d/my_custom_files.sh
                 aws sns publish --topic-arn $MY_SNS_TOPIC --message "Training has initiated on a new instance.  The new url to monitor progress is http://$PUBLIC_IP:8100/menu.html" --region $DEEPRACER_REGION
                 cd ~/deepracer-for-cloud
