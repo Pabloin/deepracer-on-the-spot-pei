@@ -231,6 +231,17 @@ Creo la AMI  en MIAMI (Virginia)
          ./create-spot-instance-africa.sh   base-africa   gpimodel-w00c 60
 
 *******************
+        
+        export REGION_AFR=af-south-1
+        export S3_BUCKET_SOURCE_AFR=base-africa-bucket-eqt69ynz6hf4
+        export S3_BUCKET_SOURCE_AFR=base-africa-bucket-eqt69ynz6hf4
+
+        aws s3api create-bucket \
+            --bucket base-africa-bucket-pei \
+            --region af-south-1 \
+            --create-bucket-configuration LocationConstraint=af-south-1
+
+*******************************
 AFRICA de nuevo:
 
     3/9/2023

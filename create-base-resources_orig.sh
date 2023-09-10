@@ -8,10 +8,6 @@ shift
 ip=$1
 shift
 
-MyBucketName=$1
-shift
-
-
 function generate_rule_number() {
         existing_rule_numbers=$(aws ec2 describe-network-acls | grep RuleNumber | tr -d ' ' | awk -F ':' '{ print $2 }' | sort -u)
 	rule_number_candidate=$(shuf -i 1-32000 -n 1)
@@ -42,12 +38,4 @@ done
 
 nacl=$(aws ec2 describe-network-acls --filters Name=vpc-id,Values=$vpc --query 'NetworkAcls[*].NetworkAclId' --output text)
 
-aws cloudformation deploy --template ./base-resources.yaml \
-                          --stack-name $stackName \
-						  --parameter-overrides ${subnetsConfig} \
-						   VPC=$vpc MyIPAddress=$ip NetworkAclId=$nacl RuleNumber=$ruleN  \
-						   ShouldCreateBucketInputParameter="false" \
-						   MyBucketName ${MyBucketName} \
-						  --capabilities CAPABILITY_IAM
-
-
+aws cloudformation deploy --template ./base-resources.yaml --stack-name $stackName --parameter-overrides ${subnetsConfig} VPC=$vpc MyIPAddress=$ip NetworkAclId=$nacl RuleNumber=$ruleN --capabilities CAPABILITY_IAM
