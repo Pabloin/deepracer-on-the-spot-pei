@@ -565,11 +565,7 @@ class MyDeepRacerClass:
         wpPrev = waypoints[closest_waypoints[0]]
 
 
-        #-------------------------------------------------------------
-        if MODE_DEBUG:
-            print("   wpNext: ", ' '.join(map(str, wpNext)), 
-                  " - wpPrev: ", ' '.join(map(str, wpPrev)), ) 
-        
+
         #-----------[ Distancia a la Racing Line] -------------------
 
         racingLine = MyRacingLine.RACING_LINE
@@ -584,12 +580,35 @@ class MyDeepRacerClass:
         wp_reward = max(1 - (dist/(track_width*0.5)), VALUE_ZERO)
         REWARD += wp_reward
 
+        #-------------------------------------------------------------
+        if MODE_DEBUG:
+            print("x:", x, "y:", y, "reward: " , wp_reward,
+                  "   wpNext: ", ' '.join(map(str, wpNext)), 
+                  " - wpPrev: ", ' '.join(map(str, wpPrev)),
+                   " - dist:", dist, "track_width: ", track_width,
+                    " - speed: ", speed, 
+                  " - speed_deseada: ", speed_deseada, 
+                  "steering_angle: ", steering_angle,
+                  "heading: ", heading,
+                  "distance_from_center: ", distance_from_center,
+                  "progress: ",  progress 
+                      ) 
+        
 
+        
+        # Mar recompensa en Cruva Tres y Seis
+        isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, wpNext)
+        isZonaCurvaSeis   = Track.isz(CURVA_06_LL_ZONA, wpNext)
+
+        if (isZonaCurvaTres or isZonaCurvaSeis):
+            REWARD += wp_reward
 
         #-----------[ Stearing ] -------------------
         # Rotado, cero
         # STEERING_ABS_THRESHOLD    =  15
         # DIRECCION_ABS_VAL         =  20
+
+        
 
         # REWARD *= Track.xSteeringCastigo(steering_angle, STEERING_ABS_THRESHOLD, 0.8)
         # REWARD *= Track.xHeadingCastigo(params, DIRECCION_ABS_VAL, castigo=0.5)
@@ -600,12 +619,12 @@ class MyDeepRacerClass:
         speed_deseada = cercaUno[2]
         # REWARD *= Track.xSpeedCastigo(speed, speed_deseada)        
         
-                #-------------------------------------------------------------
-        if MODE_DEBUG:
-            print("   cercaUno: ", cercaUno, 
-                  " - cercaDos: ", cercaDos, 
-                  " - speed: ", speed, 
-                  " - speed_deseada: ", speed_deseada), 
+        #         #-------------------------------------------------------------
+        # if MODE_DEBUG:
+        #     print("   cercaUno: ", cercaUno, 
+        #           " - cercaDos: ", cercaDos, 
+        #           " - speed: ", speed, 
+        #           " - speed_deseada: ", speed_deseada), 
             
 
 
@@ -620,12 +639,6 @@ class MyDeepRacerClass:
         #     REWARD *= Track.xSpeedCastigo(speed, speed_deseada)
             
 
-        # Fix de Cruva Tres y Seis
-        isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, wpNext)
-        isZonaCurvaSeis   = Track.isz(CURVA_06_LL_ZONA, wpNext)
-
-        if (isZonaCurvaTres or isZonaCurvaSeis) and is_left_of_center:
-            REWARD *= 1.2
 
 
 
