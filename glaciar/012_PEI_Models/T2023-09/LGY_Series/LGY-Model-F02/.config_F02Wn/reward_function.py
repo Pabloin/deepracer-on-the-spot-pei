@@ -564,6 +564,22 @@ class MyDeepRacerClass:
         wpNext = waypoints[closest_waypoints[1]]
         wpPrev = waypoints[closest_waypoints[0]]
 
+        if MODE_DEBUG:
+            try:
+                print("waypoints:",  waypoints)
+                print("waypoints:", ' '.join(map(str, waypoints)))
+
+                print("closest_waypoints:",    closest_waypoints)
+                print("closest_waypoints[1]:", closest_waypoints[1])
+                print("closest_waypoints[0]:", closest_waypoints[0])
+
+                print("closest_waypoints:",    ' '.join(map(str, closest_waypoints))    )
+                print("closest_waypoints[1]:", ' '.join(map(str, closest_waypoints[1])) )
+                print("closest_waypoints[0]:", ' '.join(map(str, closest_waypoints[0])) )
+
+            except Exception as e:
+                print("Excepcion e:", e)
+
 
 
         #-----------[ Distancia a la Racing Line] -------------------
@@ -603,7 +619,8 @@ class MyDeepRacerClass:
         isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, wpNext)
         isZonaCurvaSeis   = Track.isz(CURVA_06_LL_ZONA, wpNext)
 
-        if (isZonaCurvaTres or isZonaCurvaSeis):
+        if (isZonaCurvaTres or isZonaCurvaSeis) and is_left_of_center:
+            print("Entra alguna vez aca ...?") 
             REWARD += wp_reward
 
         #-----------[ Stearing ] -------------------
