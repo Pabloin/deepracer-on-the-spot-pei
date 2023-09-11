@@ -572,8 +572,6 @@ class MyDeepRacerClass:
 
         cercaUno, cercaDos = Util.racingPointsCercanos([x, y], racingLine)
 
-        speed_deseada = cercaUno[2]
-
         dist = Util.distanciaRacingLine([x, y], cercaUno, cercaDos)
 
         REWARD = 1
@@ -584,18 +582,17 @@ class MyDeepRacerClass:
 
         #-------------------------------------------------------------
         if MODE_DEBUG:
-            print("x:", x, "y:", y, 
-                    "reward: " , wp_reward,
-                    "   wpNext: ", ' '.join(map(str, wpNext)), 
-                    " - wpPrev: ", ' '.join(map(str, wpPrev)),
-                    " - dist:", dist, "track_width: ", track_width,
+            print("x:", x, "y:", y, "reward: " , wp_reward,
+                  "   wpNext: ", ' '.join(map(str, wpNext)), 
+                  " - wpPrev: ", ' '.join(map(str, wpPrev)),
+                   " - dist:", dist, "track_width: ", track_width,
                     " - speed: ", speed, 
-                    " - speed_deseada: ", speed_deseada, 
-                    "steering_angle: ", steering_angle,
-                    "heading: ", heading,
-                    "distance_from_center: ", distance_from_center,
-                    "progress: ",  progress 
-                    ) 
+                  " - speed_deseada: ", speed_deseada, 
+                  "steering_angle: ", steering_angle,
+                  "heading: ", heading,
+                  "distance_from_center: ", distance_from_center,
+                  "progress: ",  progress 
+                      ) 
         
 
         
@@ -619,7 +616,7 @@ class MyDeepRacerClass:
         #-----[Velocidad]---------------------------------------------------------
         ## Le sumo el reward por menor gap
         
-  
+        speed_deseada = cercaUno[2]
         # REWARD *= Track.xSpeedCastigo(speed, speed_deseada)        
         
         #         #-------------------------------------------------------------
