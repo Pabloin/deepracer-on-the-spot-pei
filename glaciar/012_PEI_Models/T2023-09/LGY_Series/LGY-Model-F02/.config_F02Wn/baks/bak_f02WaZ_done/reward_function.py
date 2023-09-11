@@ -598,7 +598,7 @@ class MyDeepRacerClass:
         ## Le sumo el reward por menor gap
         
         speed_deseada = cercaUno[2]
-        # REWARD *= Track.xSpeedCastigo(speed, speed_deseada)        
+        REWARD *= Track.xSpeedCastigo(speed, speed_deseada)        
         
                 #-------------------------------------------------------------
         if MODE_DEBUG:
