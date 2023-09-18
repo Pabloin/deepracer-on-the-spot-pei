@@ -287,6 +287,18 @@ tar and zip
 
 
 
+
+aws iam list-policies \
+--filters "PolicyName" \
+--query 'Policies[?starts_with(PolicyName,`policynamexxx`)]'
+
+
+ aws iam  delete-policy
+--policy-arn <value>
+
+
+1692755300895
+
 *******************************
 AFRICA de nuevo:
 
