@@ -74,6 +74,7 @@ function drSync() {
 
 function drImportGlaciar() {
 
+
     aws deepracer list-models --model-type REINFORCEMENT_LEARNING  \
                  --query 'Models[].{ModelArn: ModelArn, ModelName: ModelName} '  \
                  --output table
@@ -86,17 +87,21 @@ function drImportGlaciar() {
 
     read -p "¿Modelo Version Name?  (Ejemplo: "lgy-model-NNN" o "aws-beast-nnn"? " MODEL_VERSION_NAME
 
+    export ROL_ARN=arn:aws:iam::845305768689:role/service-role/AWSDeepRacerModelImportRole_1693523720352
+    
     echo "   "
     echo "  aws deepracer import-model \                 "
     echo "      --type REINFORCEMENT_LEARNING \          "
     echo "      --name ${MODEL_VERSION_NAME}  \                 "
-    echo "      --model-artifacts-s3-path s3://${S3_BUCKET_SOURCE}/${KEY_MODEL}/${MODEL_VERSION_NAME} "
+    echo "      --model-artifacts-s3-path s3://${S3_BUCKET_SOURCE}/${KEY_MODEL}/${MODEL_VERSION_NAME}  \   "                
+    echo "      --role-arn ${ROL_ARN}  "
     echo "   "
 
     aws deepracer import-model \
         --type REINFORCEMENT_LEARNING \
         --name ${MODEL_VERSION_NAME}  \
-        --model-artifacts-s3-path s3://${S3_BUCKET_SOURCE}/${KEY_MODEL}/${MODEL_VERSION_NAME}   
+        --model-artifacts-s3-path s3://${S3_BUCKET_SOURCE}/${KEY_MODEL}/${MODEL_VERSION_NAME}   \
+        --role-arn ${ROL_ARN}  
 
 }
 
