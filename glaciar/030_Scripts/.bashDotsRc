@@ -80,25 +80,29 @@ function drImport() {
                  --profile voclabs/user2415006=Test_Student     \
                  --output table
 
+    echo "  "
+    echo "  aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \               "
+    echo "               --profile voclabs/user2415006=Test_Student           "
+    echo "  "
 
     aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
                  --profile voclabs/user2415006=Test_Student 
 
-    read -p "¿Codigo del Modelo?  (Ejemplo: "lgy-model-NNN" "f01a"? " MODEL_VERSION
+    read -p "¿Modelo Version Name?  (Ejemplo: "lgy-model-NNN" o "aws-beast-nnn"? " MODEL_VERSION_NAME
 
     echo "   "
     echo "  aws deepracer import-model \                 "
     echo "      --type REINFORCEMENT_LEARNING \          "
-    echo "      --name lgy-model-${MODEL_VERSION}  \                 "
-    echo "      --model-artifacts-s3-path s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/lgy-model-${MODEL_VERSION} \ "
+    echo "      --name ${MODEL_VERSION_NAME}  \                 "
+    echo "      --model-artifacts-s3-path s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_VERSION_NAME} \ "
     echo "      --role-arn arn:aws:iam::764531084004:role/LabRole \      "
     echo "      --profile voclabs/user2415006=Test_Student               "
     echo "   "
 
     aws deepracer import-model \
         --type REINFORCEMENT_LEARNING \
-        --name lgy-model-${MODEL_VERSION}  \
-        --model-artifacts-s3-path s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/lgy-model-${MODEL_VERSION} \
+        --name ${MODEL_VERSION_NAME}  \
+        --model-artifacts-s3-path s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/${MODEL_VERSION_NAME} \
         --role-arn arn:aws:iam::764531084004:role/LabRole \
         --profile voclabs/user2415006=Test_Student               
    
@@ -232,6 +236,8 @@ function menu() {
    echo ""
    echo " alias -  H | B01 | F01 | F02 | F02C,D,H,T,W   "
 
+
+   echo " SERIE = ${KEY_SERIES}  "
    echo " MODEL = ${KEY_MODEL}  "
 }
 
