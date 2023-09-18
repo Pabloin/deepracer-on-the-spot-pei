@@ -18,10 +18,10 @@ function dots() {
 function drDown() {
 
     echo "                                                                 "
-    echo "  cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-${MODEL}   "    
+    echo "  cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/${KEY_MODEL}   "    
     echo "                                                                 "
-    echo "  aws s3 sync s3://${S3_BUCKET_SOURCE}/LGY-Model-${MODEL}/ \    "
-    echo "                       .logsTmp/LGY-Model-${MODEL}/      "
+    echo "  aws s3 sync s3://${S3_BUCKET_SOURCE}/${KEY_MODEL}/ \    "
+    echo "                       .logsTmp/${KEY_MODEL}/      "
     echo "                                                                 "
     echo "  cd ~/deepracer-on-the-spot-pei                                 "    
     echo "                                                                 "
@@ -29,10 +29,10 @@ function drDown() {
     
     read -p "Hacemos DOWN? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
 
-    cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-${MODEL}
+    cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/${KEY_MODEL}
 
-    aws s3 sync s3://${S3_BUCKET_SOURCE}/LGY-Model-${MODEL}/ \
-                         .logsTmp/LGY-Model-${MODEL}/   
+    aws s3 sync s3://${S3_BUCKET_SOURCE}/${KEY_MODEL}/ \
+                         .logsTmp/${KEY_MODEL}/   
 
     cd ~/deepracer-on-the-spot-pei
 
@@ -41,10 +41,10 @@ function drDown() {
 function drUp() {
 
     echo "                                                                 "
-    echo "  cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-${MODEL}   "    
+    echo "  cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/${KEY_MODEL}   "    
     echo "                                                                 "
-    echo "  aws s3 sync                       .logsTmp/LGY-Model-${MODEL}/  \   "
-    echo "          s3://${S3_BUCKET_TARGET}/LGY-Model-${MODEL}/  \   "
+    echo "  aws s3 sync                       .logsTmp/${KEY_MODEL}/  \   "
+    echo "          s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \   "
     echo "                 --profile voclabs/user2415006=Test_Student      "
     echo "                                                                 "
     echo "  cd ~/deepracer-on-the-spot-pei "    
@@ -52,10 +52,10 @@ function drUp() {
         
     read -p "Hacemos UP? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
 
-    cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-${MODEL}
+    cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/${KEY_MODEL}
                                                                 
-    aws s3 sync                       .logsTmp/LGY-Model-${MODEL}/  \
-            s3://${S3_BUCKET_TARGET}/LGY-Model-${MODEL}/  \
+    aws s3 sync                       .logsTmp/${KEY_MODEL}/  \
+            s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
                     --profile voclabs/user2415006=Test_Student   
 
     
@@ -81,7 +81,7 @@ function drImport() {
                  --output table
 
 
-    aws s3 ls s3://${S3_BUCKET_TARGET}/LGY-Model-${MODEL}/  \
+    aws s3 ls s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
                  --profile voclabs/user2415006=Test_Student 
 
     read -p "¿Codigo del Modelo?  (Ejemplo: "lgy-model-NNN" "f01a"? " MODEL_VERSION
@@ -90,7 +90,7 @@ function drImport() {
     echo "  aws deepracer import-model \                 "
     echo "      --type REINFORCEMENT_LEARNING \          "
     echo "      --name lgy-model-${MODEL_VERSION}  \                 "
-    echo "      --model-artifacts-s3-path s3://${S3_BUCKET_TARGET}/LGY-Model-${MODEL}/lgy-model-${MODEL_VERSION} \ "
+    echo "      --model-artifacts-s3-path s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/lgy-model-${MODEL_VERSION} \ "
     echo "      --role-arn arn:aws:iam::764531084004:role/LabRole \      "
     echo "      --profile voclabs/user2415006=Test_Student               "
     echo "   "
@@ -98,7 +98,7 @@ function drImport() {
     aws deepracer import-model \
         --type REINFORCEMENT_LEARNING \
         --name lgy-model-${MODEL_VERSION}  \
-        --model-artifacts-s3-path s3://${S3_BUCKET_TARGET}/LGY-Model-${MODEL}/lgy-model-${MODEL_VERSION} \
+        --model-artifacts-s3-path s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/lgy-model-${MODEL_VERSION} \
         --role-arn arn:aws:iam::764531084004:role/LabRole \
         --profile voclabs/user2415006=Test_Student               
    
@@ -148,7 +148,10 @@ export -f drDown
 export -f drUp
 
 
-export MODEL=F02
+export KEY_MODEL_F02=AWS-Beast-B01
+export KEY_MODEL_AWS=AWS-Beast-B01
+export KEY_MODEL=${KEY_MODEL_AWS}
+
 
 export S3_BUCKET_SOURCE_VIR=base-bucket-1f3pfk38sjoqu
 export S3_BUCKET_SOURCE_MIA=base-miami-bucket-1dhaicc3lxjy4
@@ -225,7 +228,7 @@ function menu() {
    echo ""
    echo " alias -  H | B01 | F01 | F02 | F02C,D,H,T,W   "
 
-   echo " MODEL = ${MODEL}  "
+   echo " MODEL = ${KEY_MODEL}  "
 }
 
 menu
