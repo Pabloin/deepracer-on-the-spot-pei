@@ -153,8 +153,8 @@ export KEY_MODEL_F02=LGY-Model-F02
 export KEY_MODEL_AWS=AWS-Beast-B01
 export KEY_MODEL=${KEY_MODEL_AWS}
 
-export KEY_SERIES_LGY=LGY-Series
-export KEY_SERIES_AWS=AWS-Series
+export KEY_SERIES_LGY=LGY_Series
+export KEY_SERIES_AWS=AWS_Series
 export KEY_SERIES=${KEY_SERIES_AWS}
 
 export S3_BUCKET_SOURCE_VIR=base-bucket-1f3pfk38sjoqu
