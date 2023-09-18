@@ -7,7 +7,7 @@
       "speed": {
         "high": 4.0,
         "low":  1.25
-      }
+      } 
     },
   "sensor": ["FRONT_FACING_CAMERA"],
   "neural_network": "DEEP_CONVOLUTIONAL_NETWORK_SHALLOW",

@@ -1,5 +1,5 @@
 # Hyperparameter Values
-
+ 
 * `batch_size`: `34`, `64`, `128`, `256` or `512`. Default is `64`.
 * `beta_entropy`: Real number between `0` and `1` (inclusive). Default is `0.01`.
 * `discount_factor`: Real number between `0` and `1` (inclusive). Default is `0.999`.

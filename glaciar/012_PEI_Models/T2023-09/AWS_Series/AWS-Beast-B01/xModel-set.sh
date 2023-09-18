@@ -14,4 +14,3 @@ cp   ./system.env             ~/deepracer-on-the-spot-pei/custom-files
 ls   -la   ~/deepracer-on-the-spot-pei/custom-files
 head -40   ~/deepracer-on-the-spot-pei/custom-files/run.env  
 
-
