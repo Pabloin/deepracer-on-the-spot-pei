@@ -156,10 +156,7 @@ class Track:
 
         for e in gapVel:
             if  gap  >= e[0] and gap  < e[1]:
-                try:
-                    print(" xSpeedCastigo(", speed, ",", speed_deseada, "): gap=", gap, " -> [", e[0], ",", e[1], ",", e[2], "]" )
-                except Exception as e:
-                    print("Excepcion e:", e)
+                print(" xSpeedCastigo(", speed, ",", speed_deseada, "): gap=", gap, " -> [", e[0], ",", e[1], ",", e[2], "]" )
                 return e[2]
 
         return 1
@@ -320,11 +317,12 @@ def reward_function(params):
     # Give a very low reward by default
     reward = 1e-3
 
-    # Se le da recompensa si el agente no está Off Track pero dentro de los bordes
-    if not is_offtrack and (0.5*track_width - distance_from_center) >= 0.05:
+    # Give a high reward if no wheels go off the track and
+    # the agent is somewhere in between the track borders
+    if all_wheels_on_track and (0.5*track_width - distance_from_center) >= 0.05:
         reward = 1.0
 
-    # Para las curvas quier más control y que frene
+
     if isZonaCurvaTres or isZonaCurvaSeis:
         speed_deseada = 1.25
         REWARD *= Track.xSpeedCastigo(speed, speed_deseada)
