@@ -7,11 +7,14 @@ Model The Beast ...
 
               Mal experimento ... 
 
-      ./create-spot-instance.sh base aws-beast-b01       60   
-          ./create-spot-instance.sh base aws-beast-b01B      60 
-          ./create-spot-instance.sh base aws-beast-b01C      60 
-          ./create-spot-instance.sh base aws-beast-b01D      60 
-              ./create-spot-instance.sh base aws-beast-b01E      60 
+   ./create-spot-instance.sh base aws-beast-b01       60   
+       ./create-spot-instance.sh base aws-beast-b01B      60 
+       ./create-spot-instance.sh base aws-beast-b01C      60 
+       ./create-spot-instance.sh base aws-beast-b01D      60 
+           ./create-spot-instance.sh base aws-beast-b01E      60
+       ./create-spot-instance.sh base aws-beast-b01F      60 
+           ./create-spot-instance.sh     base       aws-beast-b01FA      60 
+           ./create-standard-instance.sh base-miami aws-beast-b01FA     120 
 
 ------------------------------------------------
 
