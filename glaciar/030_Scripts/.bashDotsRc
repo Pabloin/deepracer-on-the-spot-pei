@@ -180,6 +180,7 @@ alias B01D="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_S
 
 
 alias   H="cd ~/deepracer-on-the-spot-pei/"
+alias   C="vim ~/.aws/credentials"
 
 export -f menu
 export -f drSync
@@ -269,7 +270,7 @@ function menu() {
    
    
    echo ""
-   echo " alias -  H | B01 (B,C,D) | F01 | F02 | F02C,D,H,T,W   "
+   echo " alias -  H | C | B01 (B,C,D) | F01 | F02 | F02C,D,H,T,W   "
 
 
    echo " SERIE = ${KEY_SERIES}  "
