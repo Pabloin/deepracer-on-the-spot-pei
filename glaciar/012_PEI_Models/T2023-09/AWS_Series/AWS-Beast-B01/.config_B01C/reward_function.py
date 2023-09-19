@@ -301,11 +301,13 @@ def reward_function(params):
             print("x:", x, "y:", y, 
                     "   wpNext: ", ' '.join(map(str, wpNext)), 
                     " - wpPrev: ", ' '.join(map(str, wpPrev)),
-                    " - speed: ", speed, 
-                    "steering_angle: ", steering_angle,
+                    " - speed: ", speed) 
+             
+            print("steering_angle: ", steering_angle,
                     "heading: ", heading,
-                    "distance_from_center: ", distance_from_center,
-                    "curva3", isZonaCurvaTres, "curva6", isZonaCurvaSeis,
+                    "distance_from_center: ", distance_from_center)
+             
+            print("curva3", isZonaCurvaTres, "curva6", isZonaCurvaSeis,
                     "progress: ",  progress 
                     ) 
             
