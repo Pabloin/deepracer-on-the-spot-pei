@@ -174,10 +174,21 @@ alias F02W="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_S
 alias F02T="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-F02/.config_F02Tn"
 
 alias B01="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01"
-alias B01D="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01B"
+alias B01B="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01B"
 alias B01C="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01C"
 alias B01D="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01D"
 
+alias B01E="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01E"
+alias B01F="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01F"
+alias B01G="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01G"
+alias B01H="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01H"
+alias B01I="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01I"
+alias B01J="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01J"
+alias B01K="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01K"
+alias B01L="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01L"
+alias B01M="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01M"
+alias B01N="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01N"
+alias B01O="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01O"
 
 alias   H="cd ~/deepracer-on-the-spot-pei/"
 alias   C="vim ~/.aws/credentials"
