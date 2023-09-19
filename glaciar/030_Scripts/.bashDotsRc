@@ -173,8 +173,11 @@ alias F02H="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_S
 alias F02W="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-F02/.config_F02Wn"
 alias F02T="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/LGY_Series/LGY-Model-F02/.config_F02Tn"
 
-
 alias B01="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01"
+alias B01D="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01B"
+alias B01C="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01C"
+alias B01D="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01D"
+
 
 alias   H="cd ~/deepracer-on-the-spot-pei/"
 
