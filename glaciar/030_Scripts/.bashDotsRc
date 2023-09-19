@@ -269,7 +269,7 @@ function menu() {
    
    
    echo ""
-   echo " alias -  H | B01 | F01 | F02 | F02C,D,H,T,W   "
+   echo " alias -  H | B01 (B,C,D) | F01 | F02 | F02C,D,H,T,W   "
 
 
    echo " SERIE = ${KEY_SERIES}  "
