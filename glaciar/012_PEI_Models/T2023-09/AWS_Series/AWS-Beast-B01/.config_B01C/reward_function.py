@@ -290,9 +290,6 @@ def reward_function(params):
 
     if MODE_DEBUG:
         try:
-            print("waypoints:",  waypoints)
-            print("waypoints:", ' '.join(map(str, waypoints)))
-
             print("closest_waypoints:",    closest_waypoints)
             print("closest_waypoints[1]:", closest_waypoints[1])
             print("closest_waypoints[0]:", closest_waypoints[0])
