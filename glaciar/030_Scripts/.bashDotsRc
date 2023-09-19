@@ -192,6 +192,7 @@ alias B01O="cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_S
 
 alias   H="cd ~/deepracer-on-the-spot-pei/"
 alias   C="vim ~/.aws/credentials"
+alias   X="chmod +x x*sh "
 
 export -f menu
 export -f drSync
