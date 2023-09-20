@@ -272,7 +272,7 @@ function _getRegion() {
 
 function menu() {
    echo "menu, $1!"
-   echo "estoy en  /home/ubuntu/deepracer-on-the-spot-pei/glaciar/030_Scriptsc  "
+   echo "estoy en  /home/ubuntu/deepracer-on-the-spot-pei/glaciar/030_Scripts  "
    echo ""
    
    echo ""
