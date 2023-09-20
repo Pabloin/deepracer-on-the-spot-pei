@@ -230,6 +230,10 @@ export REGION=${REGION_VIR}
 function goAfrica() {
     S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_AFR}
     REGION=${REGION_AFR}
+
+    KEY_SERIES=${KEY_SERIES_AWS}
+    KEY_MODEL=${KEY_MODEL_AFRICA}
+
     _setRegion
 }
 
@@ -289,9 +293,13 @@ function menu() {
    echo ""
    echo " alias -  H | C | B01 (B,C,D) | F01 | F02 | F02C,D,H,T,W   "
 
-
+   echo ""
+   echo "--------------------------------------------------------" 
+   echo "S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE}"
    echo " SERIE = ${KEY_SERIES}  "
    echo " MODEL = ${KEY_MODEL}  "
+
+   cat ~/.aws/config
 }
 
 menu
