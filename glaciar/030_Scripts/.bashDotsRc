@@ -206,7 +206,12 @@ export REGION=${REGION_VIR}
 
 function goAfricaPEI() {
     S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_AFR_PEI}
-    goAfrica
+    REGION=${REGION_AFR}
+
+    KEY_SERIES=${KEY_SERIES_AWS}
+    KEY_MODEL=${KEY_MODEL_AFRICA}
+
+    _setRegion
 }
 
 function goAfrica() {
