@@ -3,6 +3,30 @@
 
 export MODEL_PATH=~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models
 
+alias F01="cd ${MODEL_PATH}/T2023-09/LGY_Series/LGY-Model-f01"
+alias F02="cd ${MODEL_PATH}/T2023-09/LGY_Series/LGY-Model-F02"
+alias F02C="cd ${MODEL_PATH}/T2023-09/LGY_Series/LGY-Model-F02/.config_F02Cn"
+alias F02D="cd ${MODEL_PATH}/T2023-09/LGY_Series/LGY-Model-F02/.config_F02Dn"
+alias F02H="cd ${MODEL_PATH}/T2023-09/LGY_Series/LGY-Model-F02/.config_F02Hn"
+alias F02W="cd ${MODEL_PATH}/T2023-09/LGY_Series/LGY-Model-F02/.config_F02Wn"
+alias F02T="cd ${MODEL_PATH}/T2023-09/LGY_Series/LGY-Model-F02/.config_F02Tn"
+
+alias B01="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01"
+alias B01B="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01B"
+alias B01C="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01C"
+alias B01D="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01D"
+
+alias B01E="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01E"
+alias B01F="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01F"
+alias B01G="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01G"
+alias B01H="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01H"
+alias B01I="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01I"
+alias B01J="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01J"
+alias B01K="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01K"
+alias B01L="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01L"
+alias B01M="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01M"
+alias B01N="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01N"
+alias B01O="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01O"
 
 
 ##----------------------------
