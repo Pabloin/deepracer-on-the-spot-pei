@@ -10,6 +10,11 @@ alias A01b="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Africa-A01/.config_A01b"
 alias A01c="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Africa-A01/.config_A01c"
 
 
+alias A02a="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Africa-A01/.config_A02a"
+alias A02b="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Africa-A01/.config_A02b"
+alias A02c="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Africa-A01/.config_A02c"
+
+
 clear
 goAfrica
 menu
