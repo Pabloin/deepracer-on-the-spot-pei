@@ -1,16 +1,16 @@
 Model The Africa Beast ... 
 
 
-       ./create-spot-instance.sh     base-africa aws-africa-a01      120  
-       ./create-standard-instance.sh base-africa aws-africa-a01      120
+       ./create-spot-instance-africa.sh     base-africa aws-africa-A01      120  
+       ./create-standard-instance.sh base-africa aws-africa-A01      120
 
 ------------------------------------------------
+AFRICA-A01:
+       ./create-spot-instance-africa.sh     base-africa       aws-africa-A01a    120    (WIP)
 
-       ./create-spot-instance.sh base-africa aws-africa-a01a    120
 
-
-
-       ./create-spot-instance.sh base-africa aws-africa-a02a    120
+AFRICA-A02:
+       ./create-standard-instance.sh base-africa-s3pei aws-africa-A02a    120
 
 
 ------------------------------------------------
@@ -25,3 +25,14 @@ Africa (Cape Town) af-south-1
 
 
        idea .. Entrenar cada pista ... 
+
+
+---------------------
+Ultima instancia OK en Africa:
+
+.0.2/13 	AMI	Sep 11, 2023 9:00 PM	Available	
+-
+arn:aws:imagebuilder:af-south-1:845305768689:image/ubuntuserverfordeepracer-base-africa-ami/0.0.2/13	
+
+/aws/imagebuilder/UbuntuServerForDeepRacer-base-africa-ami/0.0.2/13 
+
