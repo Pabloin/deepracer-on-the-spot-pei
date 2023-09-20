@@ -71,6 +71,9 @@ Resources:
             2-mount-fstab:
               command: "bash -c 'mount /home/ubuntu/efs'"
 
+            3-previo-pei-cfn:
+              command: "aws configure set default.region ${AWS::Region}"
+
             3-signal-cfn:
               command:
                       !Sub "bash -c '/usr/local/bin/cfn-signal -s true -e 0 --stack ${AWS::StackName} --resource Instance --region ${AWS::Region}'"
