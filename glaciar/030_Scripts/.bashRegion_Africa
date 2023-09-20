@@ -10,9 +10,8 @@ alias A01B="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Africa-A01/.config_A01b"
 alias A01C="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Africa-A01/.config_A01c"
 
 
-export KEY_MODEL=${KEY_MODEL_AFRICA}
-
 clear
+goAfrica
 menu
 ##----------------------------
 

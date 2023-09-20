@@ -205,7 +205,7 @@ export KEY_MODEL_F02=LGY-Model-F02
 export KEY_MODEL_AWS=AWS-Beast-B01
 export KEY_MODEL_AFRICA=AWS-Africa-A01
 export KEY_MODEL=${KEY_MODEL_AWS}
-
+    
 export KEY_SERIES_LGY=LGY_Series
 export KEY_SERIES_AWS=AWS_Series
 export KEY_SERIES=${KEY_SERIES_AWS}
@@ -240,18 +240,30 @@ function goAfrica() {
 function goVirginia() {
     S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_VIR}
     REGION=${REGION_VIR}
+
+    KEY_SERIES=${KEY_SERIES_AWS}
+    KEY_MODEL=${KEY_MODEL_AWS}
+
     _setRegion
 }
 
 function goMiami() {
     S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_MIA}
     REGION=${REGION_MIA}
+
+    KEY_SERIES=${KEY_SERIES_AWS}
+    KEY_MODEL=${KEY_MODEL_AWS}
+
     _setRegion
 }
 
 function goOregon() {
     S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE_ORE}
     REGION=${REGION_ORE}
+
+    KEY_SERIES=${KEY_SERIES_AWS}
+    KEY_MODEL=${KEY_MODEL_AWS}
+
     _setRegion
     
 }
