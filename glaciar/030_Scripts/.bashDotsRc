@@ -303,7 +303,7 @@ function menu() {
    
    
    echo ""
-   echo " alias -  H | C | B01 (B,C,D) | F01 | F02 | F02C,D,H,T,W   "
+   echo " alias -  H | C | B01 (B,C,D) | F01 | F02 | F02C,D,H,T,W | A01 a,b,c,d..  "
 
    echo ""
    echo "--------------------------------------------------------" 
