@@ -7,9 +7,18 @@ Model The Africa Beast ...
 ------------------------------------------------
 AFRICA-A01:
        ./create-spot-instance-africa.sh         base-africa          aws-africa-A01a    120    (WIP)
+              Este no paso al stack ... se quedo esperando ... 
 
        ./create-standard-instance-africa.sh     base-africa-s3pei    aws-africa-A02a    120    (WIP)
+              Este completo el stack CFN pero despues no generaba logs ni modelos ni nada ... 
 AFRICA-A02:
+
+
+       Podria probar cruzado:
+
+              ./create-standard-instance-africa.sh       base-africa          aws-africa-A01aTest    30
+
+
 
 ------------------------------------------------
 
