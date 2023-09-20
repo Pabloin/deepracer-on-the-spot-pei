@@ -6,12 +6,10 @@ Model The Africa Beast ...
 
 ------------------------------------------------
 AFRICA-A01:
-       ./create-spot-instance-africa.sh     base-africa       aws-africa-A01a    120    (WIP)
+       ./create-spot-instance-africa.sh         base-africa          aws-africa-A01a    120    (WIP)
 
-
+       ./create-standard-instance-africa.sh     base-africa-s3pei    aws-africa-A02a    120    (WIP)
 AFRICA-A02:
-       ./create-standard-instance.sh base-africa-s3pei aws-africa-A02a    120
-
 
 ------------------------------------------------
 
