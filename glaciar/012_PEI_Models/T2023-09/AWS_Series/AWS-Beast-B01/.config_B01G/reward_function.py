@@ -575,8 +575,7 @@ def reward_function(params):
             print("closest_waypoints[0]:", closest_waypoints[0])
 
             print("closest_waypoints:",    ' '.join(map(str, closest_waypoints))    )
-            print("closest_waypoints[1]:", ' '.join(map(str, closest_waypoints[1])) )
-            print("closest_waypoints[0]:", ' '.join(map(str, closest_waypoints[0])) )
+ 
 
             print("x:", x, "y:", y, 
                     "   wpNext: ", ' '.join(map(str, wpNext)), 
