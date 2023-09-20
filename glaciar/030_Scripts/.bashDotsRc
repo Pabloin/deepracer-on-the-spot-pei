@@ -203,6 +203,7 @@ export -f drUp
 export KEY_MODEL_F01=LGY-Model-F01
 export KEY_MODEL_F02=LGY-Model-F02
 export KEY_MODEL_AWS=AWS-Beast-B01
+export KEY_MODEL_AFRICA=AWS-Africa-A01
 export KEY_MODEL=${KEY_MODEL_AWS}
 
 export KEY_SERIES_LGY=LGY_Series
