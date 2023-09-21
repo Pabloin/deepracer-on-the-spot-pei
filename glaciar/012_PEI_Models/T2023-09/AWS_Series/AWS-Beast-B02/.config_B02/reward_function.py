@@ -560,33 +560,28 @@ def reward_function(params):
 
     isLap_n1, isLap_n2, isLap_n3 = Track.isLap(track_length)
 
-    wpNext = waypoints[closest_waypoints[1]]
-    wpPrev = waypoints[closest_waypoints[0]]
+    prev_wp = closest_waypoints[0]
+    next_wp = closest_waypoints[1]
 
     # Mar recompensa en Cruva Tres y Seis
-    isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, wpNext)
-    isZonaCurvaSeis   = Track.isz(CURVA_06_LL_ZONA, wpNext)
+    isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, next_wp)
+    isZonaCurvaSeis   = Track.isz(CURVA_06_LL_ZONA, next_wp)
 
 
     if MODE_DEBUG:
         try:
-            print("closest_waypoints:",    closest_waypoints)
-            print("closest_waypoints[1]:", closest_waypoints[1])
-            print("closest_waypoints[0]:", closest_waypoints[0])
+            if (next_wp < 5):
+                print("waypoints=", waypoints)
 
-            print("closest_waypoints:",    ' '.join(map(str, closest_waypoints))    )
- 
+            print("closest_waypoints=",    closest_waypoints)
 
-            print("x:", x, "y:", y, 
-                    "   wpNext: ", ' '.join(map(str, wpNext)), 
-                    " - wpPrev: ", ' '.join(map(str, wpPrev)),
-                    " - speed: ", speed) 
+            print("x=", x, "y=", y, "speed=", speed) 
              
             print("steering_angle: ", steering_angle,
                     "heading: ", heading,
                     "distance_from_center: ", distance_from_center)
              
-            print("curva3", isZonaCurvaTres, "curva6", isZonaCurvaSeis,
+            print("curva3=", isZonaCurvaTres, "curva6=", isZonaCurvaSeis,
                     "progress: ",  progress 
                     ) 
             
