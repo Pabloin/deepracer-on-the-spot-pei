@@ -573,40 +573,18 @@ def reward_function(params):
             if (next_wp < 5):
                 print("waypoints=", waypoints)
 
-            print("closest_waypoints=", closest_waypoints)
+            print("curva3=", isZonaCurvaTres, "curva6=", isZonaCurvaSeis)
 
-            print("x=", x, "y=", y, "speed=", speed) 
+            print("closest_waypoints=", closest_waypoints, "x=", x, "y=", y, "speed=", speed) 
              
-            print("steering_angle: ", steering_angle,
-                    "heading=", heading,
-                    "distance_from_center=", distance_from_center)
-             
-            print("curva3=", isZonaCurvaTres, "curva6=", isZonaCurvaSeis,
-                    "progress: ",  progress 
-                    ) 
+            print("steering_angle=", steering_angle, "heading=", heading,
+                    "distance_from_center=", distance_from_center, "progress=",  progress)
             
         except Exception as e:
             print("Excepcion e:", e)
 
     
-    #-------------------------------------------------------------
-    #                "reward: " , wp_reward,
-    #                " - speed_deseada: ", speed_deseada)
-    if MODE_DEBUG:
-        try:
-            print("OTRA: x:", x, "y:", y, 
-                    "   wpNext: ", ' '.join(map(str, wpNext)), 
-                    " - wpPrev: ", ' '.join(map(str, wpPrev)),
-                    " - speed: ", speed) 
-            
-            print("OTRA: steering_angle: ", steering_angle,
-                    "heading: ", heading,
-                    "distance_from_center: ", distance_from_center,
-                    "progress: ",  progress 
-                    )
-            
-        except Exception as e:
-            print("Excepcion e:", e)
+
 
 
     # Por defaul, la menor recompensa
