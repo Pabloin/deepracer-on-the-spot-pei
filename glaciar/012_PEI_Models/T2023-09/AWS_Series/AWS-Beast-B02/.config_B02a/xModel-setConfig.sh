@@ -6,7 +6,7 @@ rm -r    ~/deepracer-on-the-spot-pei/custom-files
 mkdir -p ~/deepracer-on-the-spot-pei/custom-files
 
 ## De esta config
-cp   ./run.env                 ~/deepracer-on-the-spot-pei/custom-files
+cp   ./run.env                 ~/deepracer-on-the-spot-pei/custom-files/run.env
 cp   ./reward_function.py      ~/deepracer-on-the-spot-pei/custom-files
 
 ## De la Base
