@@ -370,12 +370,15 @@ class Track:
 
         return [isLap_n1, isLap_n2, isLap_n3]
     
-     #----------------------------------------------------------------------------------------------------
+    #----------------------------------------------------------------------------------------------------
     # Dice la zona
     @staticmethod
     def isz(z, wp):
-        zona = Track.Zones[0] 
-        return (wp in zona and z in zona ) 
+        isInZone = False
+        for zone in Track.Zones:
+            if (wp in zone and z in zone):
+                return True
+        return isInZone 
     
 
     #----------------------------------------------------------------------------------------------------
