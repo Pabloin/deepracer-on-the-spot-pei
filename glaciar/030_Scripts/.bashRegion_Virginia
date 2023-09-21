@@ -31,3 +31,28 @@ alias B01O="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01O"
 
 ##----------------------------
 
+alias B02= "cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02"
+alias B02a="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02a"
+alias B02b="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02b"
+alias B02c="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02c"
+alias B02d="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02d"
+alias B02e="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02e"
+alias B02f="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02f"
+alias B02g="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02g"
+alias B02h="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02h"
+
+
+##----------------------------
+
+alias B03= "cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B03/.config_B03"
+alias B03a="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B03/.config_B03a"
+alias B03b="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B03/.config_B03b"
+alias B03c="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B03/.config_B03c"
+alias B03d="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B03/.config_B03d"
+alias B03e="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B03/.config_B03e"
+alias B03f="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B03/.config_B03f"
+alias B03g="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B03/.config_B03g"
+alias B03h="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B03/.config_B03h"
+
+
+
