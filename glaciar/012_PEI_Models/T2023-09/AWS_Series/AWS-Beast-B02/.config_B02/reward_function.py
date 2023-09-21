@@ -573,13 +573,13 @@ def reward_function(params):
             if (next_wp < 5):
                 print("waypoints=", waypoints)
 
-            print("closest_waypoints=",    closest_waypoints)
+            print("closest_waypoints=", closest_waypoints)
 
             print("x=", x, "y=", y, "speed=", speed) 
              
             print("steering_angle: ", steering_angle,
-                    "heading: ", heading,
-                    "distance_from_center: ", distance_from_center)
+                    "heading=", heading,
+                    "distance_from_center=", distance_from_center)
              
             print("curva3=", isZonaCurvaTres, "curva6=", isZonaCurvaSeis,
                     "progress: ",  progress 
