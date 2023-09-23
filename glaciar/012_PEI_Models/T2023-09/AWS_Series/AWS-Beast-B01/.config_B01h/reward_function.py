@@ -16,9 +16,9 @@ class Util:
     @staticmethod
     def distanciaRacingLine(auto, wCerca, wCerca_next):
         
-        cl = abs(Util._distAB(auto[0],   wCerca_next[0], auto[1],   wCerca_next[1] ))
-        cw = abs(Util._distAB(auto[0],   wCerca[0],      auto[1],   wCerca[1]      ))
-        ww = abs(Util._distAB(wCerca[0], wCerca_next[0], wCerca[1], wCerca_next[1] ))
+        cl = abs(Util._distXY(auto[0],   auto[1],   wCerca_next[0],  wCerca_next[1] ))
+        cw = abs(Util._distXY(auto[0],   auto[1],   wCerca[0],       wCerca[1]      ))
+        ww = abs(Util._distXY(wCerca[0], wCerca[1], wCerca_next[0],  wCerca_next[1] ))
         
         try:
             distancia = abs(Util._diffWP(ww, cw) + Util._diffWP(ww, cl) + Util._diffWP(cw, cl))**0.5 / (2*ww)
@@ -37,7 +37,7 @@ class Util:
         dDos = []
 
         for i in range(len(racingLine)):
-            dist = Util._distAB(racingLine[i][0], wp[0],  racingLine[i][1], wp[1])
+            dist = Util._distXY(racingLine[i][0], racingLine[i][1], wp[0],  wp[1])
             dUno.append(dist)
             dDos.append(dist)
 
@@ -55,14 +55,14 @@ class Util:
     
 
     #----------------------------------------------------------------------------------------------------
-    # _distAB: Distancias entre los puntos A y B
+    # _distXY: Distancias entre los puntos A y B
     # _diffWP: Diferencia entre los waypoints W1 y W2
 
-    _distAB = lambda a1, a2, b1, b2 : abs(abs(a1-a2)**2 + abs(b1-b2)**2)**0.5
+    _distXY = lambda x1, y1, x2, y2 : abs(abs(x1-x2)**2 + abs(y1-y2)**2)**0.5
 
     _diffWP = lambda w1, w2 : 2*(w1**2)*(w2**2) - (w1**4)
 
-
+    
 
 class MyRacingLine:
 
@@ -333,7 +333,7 @@ class Track:
         [PATH_01            , 53,54,55,56,57,58,59,60],
         [CURVA_03_LL        , 61,62,63,64,65,66],
         
-        [CURVA_03_LL_ZONA   , 58,59,60,61,62,63,64,65,66,67,68,69],
+        [CURVA_03_LL_ZONA   , 57,58,59,60,61,62,63,64],   # Vel 1.45 - 1.3
 
 
         [PATH_02            , 67,68,69,70,71,72,73],
@@ -565,13 +565,20 @@ def reward_function(params):
     isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, next_wp)
     isZonaCurvaSeis   = Track.isz(CURVA_06_LL_ZONA, next_wp)
 
+    xw = MyRacingLine.wpX(next_wp)
+    yw = MyRacingLine.wpY(next_wp)
+
+    dist = Util._distXY(x, y, xw, yw)
 
     if MODE_DEBUG:
         try:
             if (next_wp < 5):
                 print("waypoints=", waypoints)
 
-            print("closest_waypoints=", closest_waypoints, "(x, y, speed)=[", x, y, speed, "] ","curva3=", isZonaCurvaTres, "curva6=", isZonaCurvaSeis) 
+            print("closest_waypoints=", closest_waypoints, "(x, y, speed)=[", x, ",", y, ",", speed, "]", 
+                              "dist=", dist,
+                            "curva3=", isZonaCurvaTres, 
+                            "curva6=", isZonaCurvaSeis) 
              
             print("steering_angle=", steering_angle, "heading=", heading,
                     "distance_from_center=", distance_from_center, "progress=",  progress)
@@ -589,6 +596,14 @@ def reward_function(params):
     # Se le da recompensa si el agente no está Off Track pero dentro de los bordes
     if all_wheels_on_track and (0.5*track_width - distance_from_center) >= 0.05:
         reward = 1.0
+
+
+    # Si es la curva tres bajar la velocidad deseada a la de la referencia
+    if isZonaCurvaTres or isZonaCurvaSeis:
+        speed_deseada = MyRacingLine.wpS(next_wp)
+        reward *= Track.xSpeedCastigo(speed, speed_deseada)
+
+    
 
 
     return float(reward)

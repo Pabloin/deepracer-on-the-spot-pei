@@ -22,10 +22,10 @@ print('Hola')
 # closest_waypoints: 1 2
 
 
-# x: 4.5960888763624235 y: -4.3378093609562995    wpNext:  4.429752826690674 -4.417214512825012  - wpPrev:  4.654623508453369 -4.217042446136475  - speed:  1.25
+# x: 4.5960888763624235 y: -4.3378093609562995    next_wp:  4.429752826690674 -4.417214512825012  - wpPrev:  4.654623508453369 -4.217042446136475  - speed:  1.25
 # steering_angle:  30.0 heading:  -125.8884993664113 distance_from_center:  0.05128566786655362
 # curva3 False curva6 False progress:  0.7063766453562026
-# OTRA: x: 4.5960888763624235 y: -4.3378093609562995    wpNext:  4.429752826690674 -4.417214512825012  - wpPrev:  4.654623508453369 -4.217042446136475  - speed:  1.25
+# OTRA: x: 4.5960888763624235 y: -4.3378093609562995    next_wp:  4.429752826690674 -4.417214512825012  - wpPrev:  4.654623508453369 -4.217042446136475  - speed:  1.25
 # OTRA: steering_angle:  30.0 heading:  -125.8884993664113 distance_from_center:  0.05128566786655362 progress:  0.7063766453562026
 # SIM_TRACE_LOG:0,7,4.5961,-4.3378,-125.8885,30.00,1.25,[30.0, 1.25],1.0000,False,True,0.7064,1,60.18,42.173,in_progress,0.00
 
@@ -34,45 +34,53 @@ print('Hola')
 # 
 # 0,60.18,38.842,prepare,0.00
 
-# wpNext = waypoints[closest_waypoints[1]]
+# next_wp = waypoints[closest_waypoints[1]]
 # wpPrev = waypoints[closest_waypoints[0]]
 
 closest_waypoints = [1, 2]
 
-wpNext = [4.429752826690674, -4.417214512825012]    
+next_wp = [4.429752826690674, -4.417214512825012]    
 wpPrev = [4.654623508453369, -4.217042446136475]    
 
 # Mar recompensa en Cruva Tres y Seis
-isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, wpNext)
+isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, next_wp)
 
-isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, wpNext)
-print("isZonaCurvaTres(", CURVA_03_LL_ZONA, ",", wpNext, ") = ", isZonaCurvaTres )
-
-
-wpNext=12
-isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, wpNext)
-print("isZonaCurvaTres(", CURVA_03_LL_ZONA, ",", wpNext, ") = ", isZonaCurvaTres )
+isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, next_wp)
+print("isZonaCurvaTres(", CURVA_03_LL_ZONA, ",", next_wp, ") = ", isZonaCurvaTres )
 
 
-wpNext=61
-isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, wpNext)
-print("isZonaCurvaTres(", CURVA_03_LL_ZONA, ",", wpNext, ") = ", isZonaCurvaTres )
+next_wp=12
+isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, next_wp)
+print("isZonaCurvaTres(", CURVA_03_LL_ZONA, ",", next_wp, ") = ", isZonaCurvaTres )
 
 
-isZonaCurvaSeis   = Track.isz(CURVA_06_LL_ZONA, wpNext)
+next_wp=61
+isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, next_wp)
+print("isZonaCurvaTres(", CURVA_03_LL_ZONA, ",", next_wp, ") = ", isZonaCurvaTres )
 
 
-wpNext=61
-print("MyRacingLine[",wpNext,"]", MyRacingLine.wp(wpNext))
-print("MyRacingLine[",wpNext,"]", MyRacingLine.wpX(wpNext))
-print("MyRacingLine[",wpNext,"]", MyRacingLine.wpY(wpNext))
-print("MyRacingLine[",wpNext,"]", MyRacingLine.wpS(wpNext))
-print("MyRacingLine[",wpNext,"]", MyRacingLine.wpT(wpNext))
+isZonaCurvaSeis   = Track.isz(CURVA_06_LL_ZONA, next_wp)
+
+
+next_wp=61
+print("MyRacingLine[",next_wp,"]", MyRacingLine.wp(next_wp))
+print("MyRacingLine[",next_wp,"]", MyRacingLine.wpX(next_wp))
+print("MyRacingLine[",next_wp,"]", MyRacingLine.wpY(next_wp))
+print("MyRacingLine[",next_wp,"]", MyRacingLine.wpS(next_wp))
+print("MyRacingLine[",next_wp,"]", MyRacingLine.wpT(next_wp))
 # curva3 False curva6 False
 
+# renglon 61 = (-6.041717529296875, -0.9397014677524567), 
+# renglon 61 = [-6.4463, -1.5, 1.3, 0.20338],
+
+next_wp=61
+x = -6.041717529296875
+y = -0.9397014677524567
+b1 = MyRacingLine.wpX(next_wp)
+b2 = MyRacingLine.wpY(next_wp)
 
 
-
-
-
+print("_distXY: ",  Util._distXY(x, y, b1, b2) )
+print("_distXY: ",  Util._distXY(x, y, x, y) )
+print("_distXY: ",  Util._distXY(b1, b2, x, y) )
 
