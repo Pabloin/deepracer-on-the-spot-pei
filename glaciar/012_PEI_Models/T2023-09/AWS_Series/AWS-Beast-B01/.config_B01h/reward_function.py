@@ -55,22 +55,23 @@ class Util:
     
 
     #----------------------------------------------------------------------------------------------------
-    # Distancias entre los puntos A y B
-    @staticmethod
-    def _distAB(a1, a2, b1, b2):
-        return abs(abs(a1-a2)**2 
-                 + abs(b1-b2)**2)**0.5
+    # _distAB: Distancias entre los puntos A y B
+    # _diffWP: Diferencia entre los waypoints W1 y W2
 
-    #----------------------------------------------------------------------------------------------------
-    # Diferencia entre los waypoints W1 y W2
-    @staticmethod
-    def _diffWP(w1, w2):
-        return 2*(w1**2)*(w2**2) - (w1**4)
+    _distAB = lambda a1, a2, b1, b2 : abs(abs(a1-a2)**2 + abs(b1-b2)**2)**0.5
+
+    _diffWP = lambda w1, w2 : 2*(w1**2)*(w2**2) - (w1**4)
 
 
 
 class MyRacingLine:
 
+    wp  = lambda wp : MyRacingLine.RACING_LINE[wp]
+    wpX = lambda wp : MyRacingLine.RACING_LINE[wp][0]
+    wpY = lambda wp : MyRacingLine.RACING_LINE[wp][1]
+    wpS = lambda wp : MyRacingLine.RACING_LINE[wp][2]
+    wpT = lambda wp : MyRacingLine.RACING_LINE[wp][3]
+       
     # sept 2023,Roger Super Raceway	60.17m	Clockwise  (2022_september_pro_cw)
     # Optimal racing line (x, y, velocidad)
     RACING_LINE = [
@@ -383,30 +384,24 @@ class Track:
 
     #----------------------------------------------------------------------------------------------------
     # Dice si es una Recta
-    @staticmethod
-    def isRecta(wp):
-        return (Track.isz(RECTA_01, wp) or 
-                Track.isz(RECTA_02, wp) or 
-                Track.isz(RECTA_03, wp) or 
-                Track.isz(RECTA_04, wp))
+    isRecta = lambda wp : (Track.isz(RECTA_01, wp) or 
+                           Track.isz(RECTA_02, wp) or 
+                           Track.isz(RECTA_03, wp) or 
+                           Track.isz(RECTA_04, wp))
 
     #----------------------------------------------------------------------------------------------------
     # Dice si es una Curva Left
-    @staticmethod
-    def isCurvaLeft(wp):
-        return (Track.isz(CURVA_03_LL, wp) or 
-                Track.isz(CURVA_06_LL, wp))
+    isCurvaLeft  = lambda wp : (Track.isz(CURVA_03_LL, wp) or 
+                                Track.isz(CURVA_06_LL, wp))
 
     #----------------------------------------------------------------------------------------------------
     # Dice si es una Curva Right
-    @staticmethod
-    def isCurvaRight(wp):
-        return (Track.isz(CURVA_01_RR, wp) or 
-                Track.isz(CURVA_02_RR, wp) or 
-                Track.isz(CURVA_04_RR, wp) or 
-                Track.isz(CURVA_05_RR, wp) or 
-                Track.isz(CURVA_07_RR, wp) or 
-                Track.isz(CURVA_08_RR, wp))
+    isCurvaRight = lambda wp : (Track.isz(CURVA_01_RR, wp) or 
+                                Track.isz(CURVA_02_RR, wp) or 
+                                Track.isz(CURVA_04_RR, wp) or 
+                                Track.isz(CURVA_05_RR, wp) or 
+                                Track.isz(CURVA_07_RR, wp) or 
+                                Track.isz(CURVA_08_RR, wp))
 
     #----------------------------------------------------------------------------------------------------
     # Speed Castigo
@@ -576,7 +571,7 @@ def reward_function(params):
             if (next_wp < 5):
                 print("waypoints=", waypoints)
 
-            print("closest_waypoints=", closest_waypoints, "x=", x, "y=", y, "speed=", speed, "curva3=", isZonaCurvaTres, "curva6=", isZonaCurvaSeis) 
+            print("closest_waypoints=", closest_waypoints, "(x, y, speed)=[", x, y, speed, "] ","curva3=", isZonaCurvaTres, "curva6=", isZonaCurvaSeis) 
              
             print("steering_angle=", steering_angle, "heading=", heading,
                     "distance_from_center=", distance_from_center, "progress=",  progress)
