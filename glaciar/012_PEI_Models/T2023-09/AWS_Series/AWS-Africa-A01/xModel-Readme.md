@@ -20,6 +20,37 @@ AFRICA-A02:
 
 
 
+
+********************
+Update 23/09/2023
+
+       - El problema que tengo con Africa es que, no se porqué... me dejaron de funcionar los pipelines...
+       - Capaz era por el error de la region dentro del YAML que no permitira escribir o acceder a s3 pero eso creo que ya lo solucione...
+
+              - Entocnes debería lanzaro con el tiempo suficiente para hacer debug ...
+              - O sea... 
+                     Capaz una o dos horas (total después cancelo a CF)
+                     y debería acceder a la instancia spot para ver los dockers ... 
+                     eso creo que sería ..
+                            - aunque primero revisar a que es lo que estoy lanzando ... 
+                            - Duda ...
+                                   ¿En el proyecto... Logré tener una instancia de africa funcionando... ?
+                                   ¿Cuando se rompio?
+                                   Cre que cuando detuve al pipeline.... 
+                                   Igual, a la última imagen disponible la tengo ...       
+
+
+a) Ejecutamos:
+
+
+
+       ./create-standard-instance-africa.sh       base-africa          aws-africa-A01aTest    30
+
+
+
+********************
+
+
 ------------------------------------------------
 
 Africa (Cape Town) af-south-1	

@@ -182,7 +182,7 @@ export KEY_MODEL_AWS=AWS-Beast-B01
 export KEY_MODEL_AWS2=AWS-Beast-B02
 export KEY_MODEL_AWS3=AWS-Beast-B03
 export KEY_MODEL_AFRICA=AWS-Africa-A01
-export KEY_MODEL=${KEY_MODEL_AWS3}
+export KEY_MODEL=${KEY_MODEL_AWS}
     
 export KEY_SERIES_LGY=LGY_Series
 export KEY_SERIES_AWS=AWS_Series
