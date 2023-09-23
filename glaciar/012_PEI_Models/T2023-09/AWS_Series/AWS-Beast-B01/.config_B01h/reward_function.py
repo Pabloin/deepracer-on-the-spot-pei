@@ -600,12 +600,23 @@ def reward_function(params):
 
     # Si es la curva tres bajar la velocidad deseada a la de la referencia
     if isZonaCurvaTres or isZonaCurvaSeis:
+        
         speed_deseada = MyRacingLine.wpS(next_wp)
         reward *= Track.xSpeedCastigo(speed, speed_deseada)
 
+        distReward = lambda d : 1 - dist/LAP_WIDTH
+        reward *= 1 - distReward
+
     
 
+    if dist == 0: 
+        reward *= 1
+        dist = Util._distXY(x, y, xw, yw)
+    else:
+        reward *= 1
+        dist = Util._distXY(x, y, xw, yw)
 
+    
     return float(reward)
 
 

@@ -84,3 +84,22 @@ print("_distXY: ",  Util._distXY(x, y, b1, b2) )
 print("_distXY: ",  Util._distXY(x, y, x, y) )
 print("_distXY: ",  Util._distXY(b1, b2, x, y) )
 
+dist = Util._distXY(b1, b2, x, y) 
+
+rr = lambda d : dist / LAP_WIDTH
+
+print("dist reward (",dist,"):", rr(dist), "reward: ", 1 - rr(dist) )
+
+dist = 0.47
+print("dist reward (",dist,"):", rr(dist), "reward: ", 1 - rr(dist) )
+
+dist = 0.75
+print("dist reward (",dist,"):", rr(dist), "reward: ", 1 - rr(dist) )
+
+
+dist = 0.03
+print("dist reward (",dist,"):", rr(dist), "reward: ", 1 - rr(dist) )
+
+
+dist = 0.0
+print("dist reward (",dist,"):", rr(dist), "reward: ", 1 - rr(dist) )
