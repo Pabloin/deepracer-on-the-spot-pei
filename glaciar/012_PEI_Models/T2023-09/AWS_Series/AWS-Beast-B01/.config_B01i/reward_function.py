@@ -434,7 +434,10 @@ class Track:
 
         for e in gapVel:
             if  gap  >= e[0] and gap  < e[1]:
-                print(" xSpeedCastigo(", speed, ",", speed_deseada, "): gap=", gap, " -> [", e[0], ",", e[1], ",", e[2], "]" )
+                try:
+                    print(" xSpeedCastigo(", speed, ",", speed_deseada, "): gap=", gap, " -> [", e[0], ",", e[1], ",", e[2], "]" )
+                except Exception as e:
+                    print("Excepcion e:", e)
                 return e[2]
 
         return 1
@@ -523,8 +526,10 @@ class Track:
 
         #-------------------------------------------------------------
         if MODE_DEBUG:
-            print("   dirPista: ", dirPista,  " - dirDiff: ", dirDiff, " - heading: ", heading ) 
-        
+            try:
+                print("   dirPista: ", dirPista,  " - dirDiff: ", dirDiff, " - heading: ", heading ) 
+            except Exception as e:
+                print("Excepcion e:", e)
 
         return 1
 
@@ -570,6 +575,10 @@ def reward_function(params):
 
     dist = Util._distXY(x, y, xw, yw)
 
+
+    dirPista = Track._direccionPista(params) 
+
+
     if MODE_DEBUG:
         try:
             if (next_wp < 5):
@@ -580,7 +589,7 @@ def reward_function(params):
                             "curva3=", isZonaCurvaTres, 
                             "curva6=", isZonaCurvaSeis) 
              
-            print("steering_angle=", steering_angle, "heading=", heading,
+            print("steering_angle=", steering_angle, "heading=", heading, "dirPista=", dirPista,
                     "distance_from_center=", distance_from_center, "progress=",  progress)
             
         except Exception as e:
@@ -607,7 +616,15 @@ def reward_function(params):
         distReward = lambda d : 1 - dist/LAP_WIDTH
         reward *= 1 - distReward
 
-    
+
+
+    # Si la diferencia con el angulo de la pista es mayor a 30 lo dejo en cero
+    # Evitaría trompos
+    reward *= Track.xHeadingCastigo(params, 30, 1e-3)
+
+
+
+
 
     if dist == 0: 
         reward *= 1
