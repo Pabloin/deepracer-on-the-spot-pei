@@ -44,7 +44,7 @@ a) Ejecutamos:
 
 
 
-       ./create-standard-instance-africa.sh       base-africa          aws-africa-A01aTest    30
+       ./create-standard-instance-africa.sh       base-africa          aws-africa-A01aDoa    60
 
 
 

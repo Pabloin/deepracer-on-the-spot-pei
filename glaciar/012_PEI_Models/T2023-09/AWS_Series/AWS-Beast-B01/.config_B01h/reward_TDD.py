@@ -42,6 +42,9 @@ closest_waypoints = [1, 2]
 next_wp = [4.429752826690674, -4.417214512825012]    
 wpPrev = [4.654623508453369, -4.217042446136475]    
 
+
+
+#------------
 # Mar recompensa en Cruva Tres y Seis
 isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, next_wp)
 
@@ -103,3 +106,23 @@ print("dist reward (",dist,"):", rr(dist), "reward: ", 1 - rr(dist) )
 
 dist = 0.0
 print("dist reward (",dist,"):", rr(dist), "reward: ", 1 - rr(dist) )
+
+
+#-----------
+next_wp=17
+isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, next_wp)
+print("isZonaCurvaTres(", CURVA_03_LL_ZONA, ",", next_wp, ") = ", isZonaCurvaTres )
+
+
+# closest_waypoints= [16, 17] (x, y, speed)=[ 0.7215891450030298 , -6.820596359742561 , 1.25 ] dist= 0.5185205832994217 curva3= False curva6= False
+# steering_angle= -30.0 heading= -135.45509757850553 distance_from_center= 0.12350333943277318 progress= 3.340266933267724
+
+eee = [ 0.7215891450030298 , -6.820596359742561 , 1.25 ]
+x = eee[0]
+y = eee[1]
+b1 = MyRacingLine.wpX(next_wp)
+b2 = MyRacingLine.wpY(next_wp)
+
+dist = Util._distXY(b1, b2, x, y) 
+
+print("dist reward (",next_wp,"",dist,"):", rr(dist), "reward: ", 1 - rr(dist) )
