@@ -434,7 +434,10 @@ class Track:
 
         for e in gapVel:
             if  gap  >= e[0] and gap  < e[1]:
-                print(" xSpeedCastigo(", speed, ",", speed_deseada, "): gap=", gap, " -> [", e[0], ",", e[1], ",", e[2], "]" )
+                try:
+                    print(" xSpeedCastigo(", speed, ",", speed_deseada, "): gap=", gap, " -> [", e[0], ",", e[1], ",", e[2], "]" )
+                except Exception as e:
+                    print("Excepcion e:", e)
                 return e[2]
 
         return 1
@@ -523,8 +526,10 @@ class Track:
 
         #-------------------------------------------------------------
         if MODE_DEBUG:
-            print("   dirPista: ", dirPista,  " - dirDiff: ", dirDiff, " - heading: ", heading ) 
-        
+            try:
+                print("   dirPista: ", dirPista,  " - dirDiff: ", dirDiff, " - heading: ", heading ) 
+            except Exception as e:
+                print("Excepcion e:", e)
 
         return 1
 

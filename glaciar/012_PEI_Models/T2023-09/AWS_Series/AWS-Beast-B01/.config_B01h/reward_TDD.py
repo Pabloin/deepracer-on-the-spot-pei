@@ -1,3 +1,5 @@
+import math
+
 from reward_function import \
          LAP_LENGHT, LAP_WIDTH,  \
          VALUE_MAX_, VALUE_ZERO, \
@@ -12,6 +14,8 @@ from reward_function import \
 from reward_function import Util
 from reward_function import MyRacingLine
 from reward_function import Track
+from reward_TDD_params import params
+
 
 print('Hola')
 
@@ -126,3 +130,23 @@ b2 = MyRacingLine.wpY(next_wp)
 dist = Util._distXY(b1, b2, x, y) 
 
 print("dist reward (",next_wp,"",dist,"):", rr(dist), "reward: ", 1 - rr(dist) )
+
+
+# heading = params['heading']
+
+
+
+closest_waypoints = [16, 17]
+wpNext = params.waypoints[closest_waypoints[1]]
+wpPrev = params.waypoints[closest_waypoints[0]]
+
+dirPista = math.degrees(math.atan2(wpNext[1] - wpPrev[1], 
+                                   wpNext[0] - wpPrev[0]))
+
+
+
+heading= -135.45509757850553
+
+dirDiff = abs(dirPista - heading)
+
+print("distPista (",closest_waypoints, "):", dirPista, "heading=",heading,"dirDiff=", dirDiff )
