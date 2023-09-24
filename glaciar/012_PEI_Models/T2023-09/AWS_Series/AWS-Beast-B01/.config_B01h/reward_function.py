@@ -575,6 +575,10 @@ def reward_function(params):
 
     dist = Util._distXY(x, y, xw, yw)
 
+
+    dirPista = Track._direccionPista(params) 
+
+
     if MODE_DEBUG:
         try:
             if (next_wp < 5):
@@ -585,7 +589,7 @@ def reward_function(params):
                             "curva3=", isZonaCurvaTres, 
                             "curva6=", isZonaCurvaSeis) 
              
-            print("steering_angle=", steering_angle, "heading=", heading,
+            print("steering_angle=", steering_angle, "heading=", heading, "dirPista=", dirPista,
                     "distance_from_center=", distance_from_center, "progress=",  progress)
             
         except Exception as e:
