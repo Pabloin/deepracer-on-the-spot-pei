@@ -1,19 +1,6 @@
 import math
 
-#-----------[  DATA  ]------------------------------------
 
-    # # sept 2023	Roger Super Raceway	60.17m	Clockwise  (2022_september_pro_cw)
-
-
-LAP_LENGHT = 60.17
-LAP_WIDTH  = 01.07
-
-VALUE_MAX_ = 1e3
-VALUE_ZERO = 1e-3
-AJUSTE_K = 1
-
-
-MODE_DEBUG = True
 
 
 #-----------[ UTILS ]-------------------
@@ -29,9 +16,9 @@ class Util:
     @staticmethod
     def distanciaRacingLine(auto, wCerca, wCerca_next):
         
-        cl = abs(Util._distAB(auto[0],   wCerca_next[0], auto[1],   wCerca_next[1] ))
-        cw = abs(Util._distAB(auto[0],   wCerca[0],      auto[1],   wCerca[1]      ))
-        ww = abs(Util._distAB(wCerca[0], wCerca_next[0], wCerca[1], wCerca_next[1] ))
+        cl = abs(Util._distXY(auto[0],   auto[1],   wCerca_next[0],  wCerca_next[1] ))
+        cw = abs(Util._distXY(auto[0],   auto[1],   wCerca[0],       wCerca[1]      ))
+        ww = abs(Util._distXY(wCerca[0], wCerca[1], wCerca_next[0],  wCerca_next[1] ))
         
         try:
             distancia = abs(Util._diffWP(ww, cw) + Util._diffWP(ww, cl) + Util._diffWP(cw, cl))**0.5 / (2*ww)
@@ -50,7 +37,7 @@ class Util:
         dDos = []
 
         for i in range(len(racingLine)):
-            dist = Util._distAB(racingLine[i][0], wp[0],  racingLine[i][1], wp[1])
+            dist = Util._distXY(racingLine[i][0], racingLine[i][1], wp[0],  wp[1])
             dUno.append(dist)
             dDos.append(dist)
 
@@ -68,22 +55,23 @@ class Util:
     
 
     #----------------------------------------------------------------------------------------------------
-    # Distancias entre los puntos A y B
-    @staticmethod
-    def _distAB(a1, a2, b1, b2):
-        return abs(abs(a1-a2)**2 
-                 + abs(b1-b2)**2)**0.5
+    # _distXY: Distancias entre los puntos A y B
+    # _diffWP: Diferencia entre los waypoints W1 y W2
 
-    #----------------------------------------------------------------------------------------------------
-    # Diferencia entre los waypoints W1 y W2
-    @staticmethod
-    def _diffWP(w1, w2):
-        return 2*(w1**2)*(w2**2) - (w1**4)
+    _distXY = lambda x1, y1, x2, y2 : abs(abs(x1-x2)**2 + abs(y1-y2)**2)**0.5
 
+    _diffWP = lambda w1, w2 : 2*(w1**2)*(w2**2) - (w1**4)
 
+    
 
 class MyRacingLine:
 
+    wp  = lambda wp : MyRacingLine.RACING_LINE[wp]
+    wpX = lambda wp : MyRacingLine.RACING_LINE[wp][0]
+    wpY = lambda wp : MyRacingLine.RACING_LINE[wp][1]
+    wpS = lambda wp : MyRacingLine.RACING_LINE[wp][2]
+    wpT = lambda wp : MyRacingLine.RACING_LINE[wp][3]
+       
     # sept 2023,Roger Super Raceway	60.17m	Clockwise  (2022_september_pro_cw)
     # Optimal racing line (x, y, velocidad)
     RACING_LINE = [
@@ -293,6 +281,18 @@ class MyRacingLine:
 
     #-----------[  RACING LINE - END  ]-------------------
 
+#-----------[  DATA  ]------------------------------------
+
+    # # sept 2023	Roger Super Raceway	60.17m	Clockwise  (2022_september_pro_cw)
+
+LAP_LENGHT = 60.17
+LAP_WIDTH  = 01.07
+
+VALUE_MAX_ = 1e3
+VALUE_ZERO = 1e-3
+AJUSTE_K = 1
+
+MODE_DEBUG = True
 
 RECTA_01           = 'RECTA_01'
 RECTA_02           = 'RECTA_02'
@@ -333,7 +333,7 @@ class Track:
         [PATH_01            , 53,54,55,56,57,58,59,60],
         [CURVA_03_LL        , 61,62,63,64,65,66],
         
-        [CURVA_03_LL_ZONA   , 58,59,60,61,62,63,64,65,66,67,68,69],
+        [CURVA_03_LL_ZONA   , 57,58,59,60,61,62,63,64],   # Vel 1.45 - 1.3
 
 
         [PATH_02            , 67,68,69,70,71,72,73],
@@ -371,40 +371,37 @@ class Track:
 
         return [isLap_n1, isLap_n2, isLap_n3]
     
-     #----------------------------------------------------------------------------------------------------
+    #----------------------------------------------------------------------------------------------------
     # Dice la zona
     @staticmethod
     def isz(z, wp):
-        zona = Track.Zones[0] 
-        return (wp in zona and z in zona ) 
+        isInZone = False
+        for zone in Track.Zones:
+            if (wp in zone and z in zone):
+                return True
+        return isInZone
     
 
     #----------------------------------------------------------------------------------------------------
     # Dice si es una Recta
-    @staticmethod
-    def isRecta(wp):
-        return (Track.isz(RECTA_01, wp) or 
-                Track.isz(RECTA_02, wp) or 
-                Track.isz(RECTA_03, wp) or 
-                Track.isz(RECTA_04, wp))
+    isRecta = lambda wp : (Track.isz(RECTA_01, wp) or 
+                           Track.isz(RECTA_02, wp) or 
+                           Track.isz(RECTA_03, wp) or 
+                           Track.isz(RECTA_04, wp))
 
     #----------------------------------------------------------------------------------------------------
     # Dice si es una Curva Left
-    @staticmethod
-    def isCurvaLeft(wp):
-        return (Track.isz(CURVA_03_LL, wp) or 
-                Track.isz(CURVA_06_LL, wp))
+    isCurvaLeft  = lambda wp : (Track.isz(CURVA_03_LL, wp) or 
+                                Track.isz(CURVA_06_LL, wp))
 
     #----------------------------------------------------------------------------------------------------
     # Dice si es una Curva Right
-    @staticmethod
-    def isCurvaRight(wp):
-        return (Track.isz(CURVA_01_RR, wp) or 
-                Track.isz(CURVA_02_RR, wp) or 
-                Track.isz(CURVA_04_RR, wp) or 
-                Track.isz(CURVA_05_RR, wp) or 
-                Track.isz(CURVA_07_RR, wp) or 
-                Track.isz(CURVA_08_RR, wp))
+    isCurvaRight = lambda wp : (Track.isz(CURVA_01_RR, wp) or 
+                                Track.isz(CURVA_02_RR, wp) or 
+                                Track.isz(CURVA_04_RR, wp) or 
+                                Track.isz(CURVA_05_RR, wp) or 
+                                Track.isz(CURVA_07_RR, wp) or 
+                                Track.isz(CURVA_08_RR, wp))
 
     #----------------------------------------------------------------------------------------------------
     # Speed Castigo
@@ -437,6 +434,10 @@ class Track:
 
         for e in gapVel:
             if  gap  >= e[0] and gap  < e[1]:
+                try:
+                    print(" xSpeedCastigo(", speed, ",", speed_deseada, "): gap=", gap, " -> [", e[0], ",", e[1], ",", e[2], "]" )
+                except Exception as e:
+                    print("Excepcion e:", e)
                 return e[2]
 
         return 1
@@ -525,11 +526,149 @@ class Track:
 
         #-------------------------------------------------------------
         if MODE_DEBUG:
-            print("   dirPista: ", dirPista,  " - dirDiff: ", dirDiff, " - heading: ", heading ) 
-        
+            try:
+                print("   dirPista: ", dirPista,  " - dirDiff: ", dirDiff, " - heading: ", heading ) 
+            except Exception as e:
+                print("Excepcion e:", e)
 
         return 1
+
+
+def reward_function(params):
+    '''
+    Example of rewarding the agent to stay inside the two borders of the track
+    '''
+    
+    #-----------[ INPUT PARAMETERS] -------------------
+
+    x = params['x']
+    y = params['y']
+
+    steps    = params['steps']
+    speed    = params['speed']
+    heading  = params['heading']
+    progress = params['progress']
+
+    is_left_of_center    = params['is_left_of_center']
+    distance_from_center = params['distance_from_center']
+    all_wheels_on_track  = params['all_wheels_on_track']
+    is_offtrack          = params['is_offtrack']
+
+    steering_angle       = params['steering_angle']
+    track_width          = params['track_width']
+    waypoints            = params['waypoints']
+    closest_waypoints    = params['closest_waypoints']
+    track_length         = params['track_length']
+
+
+    isLap_n1, isLap_n2, isLap_n3 = Track.isLap(track_length)
+
+    prev_wp = closest_waypoints[0]
+    next_wp = closest_waypoints[1]
+
+    # Mar recompensa en Cruva Tres y Seis
+    isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, next_wp)
+    isZonaCurvaSeis   = Track.isz(CURVA_06_LL_ZONA, next_wp)
+
+    xw = MyRacingLine.wpX(next_wp)
+    yw = MyRacingLine.wpY(next_wp)
+
+    dist = Util._distXY(x, y, xw, yw)
+
+
+    dirPista = Track._direccionPista(params) 
+
+
+    if MODE_DEBUG:
+        try:
+            if (next_wp < 5):
+                print("waypoints=", waypoints)
+
+            print("closest_waypoints=", closest_waypoints, "(x, y, speed)=[", x, ",", y, ",", speed, "]", 
+                              "dist=", dist,
+                            "curva3=", isZonaCurvaTres, 
+                            "curva6=", isZonaCurvaSeis) 
+             
+            print("steering_angle=", steering_angle, "heading=", heading, "dirPista=", dirPista,
+                    "distance_from_center=", distance_from_center, "progress=",  progress)
             
+        except Exception as e:
+            print("Excepcion e:", e)
+
+    
+
+
+
+    # Por defaul, la menor recompensa
+    reward = 1e-3
+
+    # Se le da recompensa si el agente no está Off Track pero dentro de los bordes
+    if all_wheels_on_track and (0.5*track_width - distance_from_center) >= 0.05:
+        reward = 1.0
+
+
+    # Si es la curva tres bajar la velocidad deseada a la de la referencia
+    if isZonaCurvaTres or isZonaCurvaSeis:
+        
+        speed_deseada = MyRacingLine.wpS(next_wp)
+        reward *= Track.xSpeedCastigo(speed, speed_deseada)
+
+        distReward = lambda d : 1 - dist/LAP_WIDTH
+        reward *= 1 - distReward
+
+
+
+    # Si la diferencia con el angulo de la pista es mayor a 30 lo dejo en cero
+    # Evitaría trompos
+    reward *= Track.xHeadingCastigo(params, 30, 1e-3)
+
+
+
+    #-----------[ Distancia a la Racing Line] -------------------
+
+    racingLine = MyRacingLine.RACING_LINE
+
+    cercaUno, cercaDos = Util.racingPointsCercanos([x, y], racingLine)
+
+    speed_deseada = cercaUno[2]
+
+    dist = Util.distanciaRacingLine([x, y], cercaUno, cercaDos)
+
+    ## Recompensa por el waypoint ##
+    wp_reward = max(1 - (dist/(track_width*0.5)), VALUE_ZERO)
+    reward += wp_reward
+
+
+    #-----------[ Stearing ] -------------------
+    # Rotado, cero
+    STEERING_ABS_THRESHOLD    =  15
+    DIRECCION_ABS_VAL         =  20
+
+    reward *= Track.xSteeringCastigo(steering_angle, STEERING_ABS_THRESHOLD, 0.8)
+    reward *= Track.xHeadingCastigo(params, DIRECCION_ABS_VAL, castigo=0.5)
+
+
+    if dist == 0: 
+        reward *= 1
+        dist = Util._distXY(x, y, xw, yw)
+    else:
+        reward *= 1
+        dist = Util._distXY(x, y, xw, yw)
+
+    
+    return float(reward)
+
+
+
+
+
+
+
+
+
+
+
+
 #----------------------------------------
 # Version z02
 #

@@ -276,6 +276,23 @@ function _getRegion() {
 
 ##----------------------------
 
+export DIR_LOGS=~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01/.logsTmp
+
+function logs() {
+
+    tree -L 2  ${DIR_LOGS}
+
+    read -p "¿Modelo Version Name?  (Ejemplo: "lgy-model-NNN" o "aws-beast-nnn"? " MODEL_VERSION_NAME
+
+    
+    if [ $MODEL_VERSION_NAME ]; then
+        cd ${DIR_LOGS}/${MODEL_VERSION_NAME}
+    else
+        cd ${DIR_LOGS}
+    fi
+}
+
+
 function menu() {
    echo "menu, $1!"
    echo "estoy en  /home/ubuntu/deepracer-on-the-spot-pei/glaciar/030_Scripts  "

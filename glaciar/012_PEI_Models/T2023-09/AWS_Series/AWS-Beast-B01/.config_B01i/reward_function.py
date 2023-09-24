@@ -566,17 +566,20 @@ def reward_function(params):
     prev_wp = closest_waypoints[0]
     next_wp = closest_waypoints[1]
 
-    # Mar recompensa en Cruva Tres y Seis
-    isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, next_wp)
-    isZonaCurvaSeis   = Track.isz(CURVA_06_LL_ZONA, next_wp)
-
     xw = MyRacingLine.wpX(next_wp)
     yw = MyRacingLine.wpY(next_wp)
 
     dist = Util._distXY(x, y, xw, yw)
 
-
     dirPista = Track._direccionPista(params) 
+
+
+    # Mar recompensa en Cruva Tres y Seis
+    isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, next_wp)
+    isZonaCurvaSeis   = Track.isz(CURVA_06_LL_ZONA, next_wp)
+
+
+
 
 
     if MODE_DEBUG:
