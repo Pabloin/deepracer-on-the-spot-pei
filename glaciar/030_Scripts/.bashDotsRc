@@ -286,7 +286,7 @@ function logs() {
 
     
     if [ $MODEL_VERSION_NAME ]; then
-        cd ${DIR_LOGS}/${MODEL_VERSION_NAME}
+        cd ${DIR_LOGS}/AWS-Beast-B01/${MODEL_VERSION_NAME}
     else
         cd ${DIR_LOGS}
     fi
@@ -300,7 +300,7 @@ function menu() {
    
    echo ""
    echo " - prof       |   "
-   echo " - drSync     |  drDown     | drUp  "
+   echo " - drSync     |  drDown     | drUp  | logs "
    echo " - drImport   | drImportGlaciar "
    echo " - goVirginia - goMiami     | goAfrica, goAfricaPEI  |  goOregon | _set _getRegion " 
    echo ""
