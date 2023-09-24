@@ -367,3 +367,8 @@ if [ -f "$BASH_DOTS/..bashRegion_Africa.sh" ]; then
     echo "Hola"
         . "$BASH_DOTS/..bashRegion_Africa.sh"
 fi
+
+
+
+
+grep -F -A1 "closest_waypoints= [38"  deep*log

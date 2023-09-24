@@ -44,7 +44,7 @@ class Util:
         cercaIdxUno = dUno.index(min(dUno))
 
 
-        dDos[cercaIdxUno] = VALUE_MAX_
+        dDos[cercaIdxUno] = MAX_VALUE 
 
         cercaIdxDos = dDos.index(min(dDos))
 
@@ -288,8 +288,8 @@ class MyRacingLine:
 LAP_LENGHT = 60.17
 LAP_WIDTH  = 01.07
 
-VALUE_MAX_ = 1e3
-VALUE_ZERO = 1e-3
+MAX_VALUE  = 1e3
+ZERO_VALUE = 1e-3
 AJUSTE_K = 1
 
 MODE_DEBUG = True
@@ -520,16 +520,18 @@ class Track:
         dirPista = Track._direccionPista(params) 
 
         dirDiff = abs(dirPista - heading)
-        if dirDiff > DIRECCION_ABS_VAL:
-            return castigo
-
 
         #-------------------------------------------------------------
         if MODE_DEBUG:
             try:
-                print("   dirPista: ", dirPista,  " - dirDiff: ", dirDiff, " - heading: ", heading ) 
+                print("xHeadingCastigo(heading=", heading, ", dirPista=", dirPista, ", dirDiff=", dirDiff, ")") 
             except Exception as e:
                 print("Excepcion e:", e)
+
+
+        if dirDiff > DIRECCION_ABS_VAL:
+            return castigo
+
 
         return 1
 
@@ -566,17 +568,20 @@ def reward_function(params):
     prev_wp = closest_waypoints[0]
     next_wp = closest_waypoints[1]
 
-    # Mar recompensa en Cruva Tres y Seis
-    isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, next_wp)
-    isZonaCurvaSeis   = Track.isz(CURVA_06_LL_ZONA, next_wp)
-
     xw = MyRacingLine.wpX(next_wp)
     yw = MyRacingLine.wpY(next_wp)
 
     dist = Util._distXY(x, y, xw, yw)
 
-
     dirPista = Track._direccionPista(params) 
+
+
+    # Mar recompensa en Cruva Tres y Seis
+    isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, next_wp)
+    isZonaCurvaSeis   = Track.isz(CURVA_06_LL_ZONA, next_wp)
+
+
+
 
 
     if MODE_DEBUG:
@@ -600,11 +605,17 @@ def reward_function(params):
 
 
     # Por defaul, la menor recompensa
-    reward = 1e-3
+    reward = ZERO_VALUE
 
     # Se le da recompensa si el agente no está Off Track pero dentro de los bordes
     if all_wheels_on_track and (0.5*track_width - distance_from_center) >= 0.05:
         reward = 1.0
+
+
+    # Si es una recta, que controle el Heading esté cerca de la dirección de la pista (20 grados max)
+    if Track.isRecta:
+        reward *= Track.xHeadingCastigo(params, 20, ZERO_VALUE)
+
 
 
     # Si es la curva tres bajar la velocidad deseada a la de la referencia
@@ -618,20 +629,6 @@ def reward_function(params):
 
 
 
-    # Si la diferencia con el angulo de la pista es mayor a 30 lo dejo en cero
-    # Evitaría trompos
-    reward *= Track.xHeadingCastigo(params, 30, 1e-3)
-
-
-
-
-
-    if dist == 0: 
-        reward *= 1
-        dist = Util._distXY(x, y, xw, yw)
-    else:
-        reward *= 1
-        dist = Util._distXY(x, y, xw, yw)
 
     
     return float(reward)

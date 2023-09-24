@@ -280,6 +280,10 @@ export DIR_LOGS=~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_
 
 function logs() {
 
+    echo " ayudas" 
+    echo " grep -F -A1 \"closest_waypoints= [38\"  deep*log "
+    echo " "
+     
     tree -L 2  ${DIR_LOGS}
 
     read -p "¿Modelo Version Name?  (Ejemplo: "lgy-model-NNN" o "aws-beast-nnn"? " MODEL_VERSION_NAME
