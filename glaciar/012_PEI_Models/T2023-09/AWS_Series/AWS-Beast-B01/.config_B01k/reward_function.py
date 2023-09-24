@@ -438,12 +438,15 @@ class Track:
             if  gap  >= e[0] and gap < e[1]:
                 GF = e
 
-        try:
-            print(" xSpeedCastigo(", speed, ",", speed_deseada, "): gap -> [", GF[0], ",", GF[1], ",", GF[2], "]" )
-        except Exception as e:
-            print("Excepcion e:", e)
-
         PUNISH = GF[2]
+
+        #-------------------------------------------------------------
+        if MODE_DEBUG:
+            try:
+                print("Track.xSpeedCastigo(", speed, ",", speed_deseada, "): gap -> [",GF[0],",",GF[1],",",GF[2],"]")
+            except Exception as e:
+                print("Excepcion e:", e)
+
 
         return PUNISH
 
@@ -529,7 +532,7 @@ class Track:
         #-------------------------------------------------------------
         if MODE_DEBUG:
             try:
-                print("xHeadingCastigo(heading=", heading, ", dirPista=", dirPista, ", dirDiff=", dirDiff, ")") 
+                print("Track.xHeadingCastigo(heading=", heading, ", dirPista=", dirPista, ", dirDiff=", dirDiff, ")") 
             except Exception as e:
                 print("Excepcion e:", e)
 
