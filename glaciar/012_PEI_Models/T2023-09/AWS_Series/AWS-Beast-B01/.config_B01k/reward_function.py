@@ -628,16 +628,10 @@ def reward_function(params):
         reward *= Track.xHeadingCastigo(params, 20)
 
 
-
-    # Si es la curva tres bajar la velocidad deseada a la de la referencia
+    # Si es la curva, acercar la velocidad deseada a la de la referencia
     if isZonaCurvaTres or isZonaCurvaSeis:
-        
         speed_deseada = MyRacingLine.rpS(next_wp)
         reward *= Track.xSpeedCastigo(speed, speed_deseada)
-
-        distReward = lambda d : 1 - dist/LAP_WIDTH
-        reward *= 1 - distReward
-
 
 
 
