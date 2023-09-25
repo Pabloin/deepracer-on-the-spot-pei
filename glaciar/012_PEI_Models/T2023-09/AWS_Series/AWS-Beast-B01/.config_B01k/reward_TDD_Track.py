@@ -115,6 +115,12 @@ def test_printPuntos(closest_waypoints, speed, waypoints=params.waypoints):
     }
     dirAngulos = MyRacingLine.printPuntos(params)
 
+    print("\n-----------------------\n printPunto\n")
+
+    prev_wp = closest_waypoints[0]
+    next_wp = closest_waypoints[1]
+
+    MyRacingLine.printPunto(waypoints, next_wp, speed)
 
     # print("test_direccionPista(",closest_waypoints,"): dir(Angulos)=", dirAngulos)
     print("-----------------------\n")
@@ -124,3 +130,4 @@ def test_printPuntos(closest_waypoints, speed, waypoints=params.waypoints):
 speed=3.9884385764598846
 closest_waypoints= [32, 33]
 test_printPuntos(closest_waypoints, speed)
+
