@@ -452,45 +452,7 @@ class Track:
 
 
     #----------------------------------------------------------------------------------------------------
-    # Speed Premio
-    @staticmethod
-    def xSpeedPremio(speed, speed_deseada):
-
-        if speed  >= speed_deseada:
-            return 1
-
-        gap = abs(speed_deseada-speed)
-
-        gapVel = [
-            #min  max   rew
-            [ 0.0,  0.1,  1.60 ],
-            [ 0.1,  0.2,  1.57 ],
-            [ 0.2,  0.3,  1.55 ],
-            [ 0.3,  0.4,  1.54 ],
-            [ 0.4,  0.5,  1.50 ],
-            [ 0.5,  0.6,  1.46 ],
-            [ 0.6,  0.7,  1.42 ],
-            [ 0.7,  0.8,  1.40 ],
-            [ 0.8,  0.9,  1.36 ],
-            [ 0.9,  1.0,  1.32 ],
-            [ 1.0,  1.1,  1.28 ],
-            [ 1.1,  1.2,  1.34 ],
-            [ 1.2,  1.3,  1.20 ],
-            [ 1.3,  1.4,  1.16 ],
-            [ 1.4,  1.5,  1.12 ],
-            [ 1.5,  1.6,  1.08 ],
-            [ 1.6,  1.9,  1.04 ],
-            [ 2.1,  4.0,  1.00 ],
-        ]        
-
-        for e in gapVel:
-            if  gap  >= e[0] and gap  < e[1]:
-                return e[2]
-
-        return 1
-
-    #----------------------------------------------------------------------------------------------------
-    # Steering Castigo
+    # Steering Castigo - TDD:  reward_TDD_Track.py - test_xSpeedCastigo
     @staticmethod
     def xSteeringCastigo(steering_angle, STEERING_VAL, castigo=0.8):
         steering = abs(steering_angle) 
@@ -504,6 +466,7 @@ class Track:
     # - Calculate la direccion de la pista en grados (atan2)
     # - the direction in radius, arctan2(dy, dx), the result is (-pi, pi) in radians
     # ... Podría calcular los xy para la direccion de la racing line ... 
+    #                            TDD:  reward_TDD_Track.py - test_xSpeedCastigo
     @staticmethod
     def _direccionPista(params):
        
@@ -515,6 +478,13 @@ class Track:
 
         dirPista = math.degrees(math.atan2(wpNext[1] - wpPrev[1], 
                                            wpNext[0] - wpPrev[0]))
+
+        #-------------------------------------------------------------
+        if MODE_DEBUG:
+            try:
+                print("Track._direccionPista(closest_waypoints=", closest_waypoints, "): wpNext=",wpNext,", wpPrev=",wpPrev,", dirPista=", dirPista)
+            except Exception as e:
+                print("Excepcion e:", e)
 
         return dirPista
 

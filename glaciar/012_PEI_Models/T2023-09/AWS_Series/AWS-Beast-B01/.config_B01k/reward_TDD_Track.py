@@ -64,3 +64,24 @@ test_xSpeedCastigo(speed, speed_deseada)
 speed=1.25 
 speed_deseada=1.45015 
 test_xSpeedCastigo(speed, speed_deseada)
+
+
+
+
+#----------------------------------
+def test_direccionPista(closest_waypoints, waypoints=params.waypoints):
+
+    print("\n\n-----------------------\n test_direccionPista\n")
+    params = {
+        "waypoints"         : waypoints,
+        "closest_waypoints" : closest_waypoints
+    }
+    dirAngulos = Track._direccionPista(params)
+
+
+    print("test_direccionPista(",closest_waypoints,"): dir(Angulos)=", dirAngulos)
+    print("-----------------------\n")
+
+
+closest_waypoints= [32, 33]
+test_direccionPista(closest_waypoints)
