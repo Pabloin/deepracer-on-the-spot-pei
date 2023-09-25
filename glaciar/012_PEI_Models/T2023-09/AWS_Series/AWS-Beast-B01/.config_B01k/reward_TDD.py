@@ -188,8 +188,11 @@ def printPuntos():
         rX=MyRacingLine.rpX(i)
         rY=MyRacingLine.rpY(i)
 
+        dist = Util._distXY(wX, wY, rX, rY)
+
         print("printPuntos()")
         print(f"wp({i}-> [{wX}, {wY}] - " + 
-              f"rl({i}-> [{rX}, {rY}]   ")
+              f"rl({i}-> [{rX}, {rY}] ->  " + 
+              f"dd({dist} ]   ")
 
 printPuntos()
