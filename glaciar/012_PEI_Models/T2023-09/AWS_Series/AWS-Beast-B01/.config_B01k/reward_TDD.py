@@ -2,7 +2,7 @@ import math
 
 from reward_function import \
          LAP_LENGHT, LAP_WIDTH,  \
-         VALUE_MAX_, VALUE_ZERO, \
+         MAX_VALUE, ZERO_VALUE, \
          MODE_DEBUG, \
          RECTA_01, RECTA_02, RECTA_03, RECTA_04, RECTA_INI, RECTA_FIN, \
          CURVA_01_RR, CURVA_02_RR, CURVA_03_LL, CURVA_03_LL_ZONA,  \

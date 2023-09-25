@@ -404,7 +404,7 @@ class Track:
                                 Track.isz(CURVA_08_RR, wp))
 
     #----------------------------------------------------------------------------------------------------
-    # Speed Castigo
+    # Speed Castigo - TDD:  reward_TDD_Track.py - test_xSpeedCastigo
     @staticmethod
     def xSpeedCastigo(speed, speed_deseada):
 
@@ -443,7 +443,7 @@ class Track:
         #-------------------------------------------------------------
         if MODE_DEBUG:
             try:
-                print("Track.xSpeedCastigo(", speed, ",", speed_deseada, "): gap -> [",GF[0],",",GF[1],",",GF[2],"]")
+                print("Track.xSpeedCastigo(speed=", speed, ", speed_deseada=", speed_deseada, "): gap -> [",GF[0],",",GF[1],",",GF[2],"]")
             except Exception as e:
                 print("Excepcion e:", e)
 
@@ -519,9 +519,9 @@ class Track:
         return dirPista
 
     #----------------------------------------------------------------------------------------------------
-    # Castigo por Heading vs DirPista
+    # Castigo por Heading vs DirPista   - TDD:  reward_TDD_Track.py - test_xHeadingCastigo
     @staticmethod
-    def xHeadingCastigo(params, DIRECCION_ABS_VAL, castigo=0.5):
+    def xHeadingCastigo(params, DIRECCION_ABS_VAL, castigo=ZERO_VALUE):
        
         heading = params['heading']
 
@@ -529,19 +529,19 @@ class Track:
 
         dirDiff = abs(dirPista - heading)
 
+        PUNISH = 1
+
+        if dirDiff > DIRECCION_ABS_VAL:
+            PUNISH= castigo
+
         #-------------------------------------------------------------
         if MODE_DEBUG:
             try:
-                print("Track.xHeadingCastigo(heading=", heading, ", dirPista=", dirPista, ", dirDiff=", dirDiff, ")") 
+                print("Track.xHeadingCastigo(heading=", heading, ", dirPista=", dirPista, ", dirDiff=", dirDiff, "): PUNISH=",PUNISH) 
             except Exception as e:
                 print("Excepcion e:", e)
 
-
-        if dirDiff > DIRECCION_ABS_VAL:
-            return castigo
-
-
-        return 1
+        return PUNISH
 
 
 def reward_function(params):
@@ -622,7 +622,7 @@ def reward_function(params):
 
     # Si es una recta, que controle el Heading esté cerca de la dirección de la pista (20 grados max)
     if Track.isRecta:
-        reward *= Track.xHeadingCastigo(params, 20, ZERO_VALUE)
+        reward *= Track.xHeadingCastigo(params, 20)
 
 
 
