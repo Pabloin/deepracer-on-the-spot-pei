@@ -593,7 +593,7 @@ def reward_function(params):
 
     if MODE_DEBUG:
         try:
-            if (next_wp < 5):
+            if (next_wp < 3):
                 print("waypoints=", waypoints)
 
             print("closest_waypoints=", closest_waypoints, "(x, y, speed)=[", x, ",", y, ",", speed, "]", 
@@ -602,7 +602,7 @@ def reward_function(params):
                             "curva6=", isZonaCurvaSeis) 
              
             print("steering_angle=", steering_angle, "heading=", heading, "dirPista=", dirPista,
-                    "distance_from_center=", distance_from_center, "progress=",  progress)
+                    "distance_from_center=", distance_from_center, "steps", steps, "progress=",  progress)
             
         except Exception as e:
             print("Excepcion e:", e)
@@ -611,7 +611,6 @@ def reward_function(params):
     if MODE_DEBUG_RACING_LINE:
         try:
             MyRacingLine.printPunto(waypoints, prev_wp, speed)
-            
         except Exception as e:
             print("Excepcion e:", e)        
 
