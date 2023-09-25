@@ -16,6 +16,16 @@ Model The Beast ...
            ./create-spot-instance.sh     base       aws-beast-b01FA      60 
            ./create-standard-instance.sh base-miami aws-beast-b01FA     120 
 
+
+------------------------------------------------
+
+#           ./create-spot-instance.sh base aws-beast-b01h        60      (pincho... )
+#               ./create-spot-instance.sh base aws-beast-b01i      60    (pincho... )
+#               ./create-spot-instance.sh base aws-beast-b01j      60    (pincho... )
+#           ./create-spot-instance.sh base aws-beast-b01k      60 
+
+
+
 ------------------------------------------------
 
 
