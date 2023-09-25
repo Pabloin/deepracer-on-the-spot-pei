@@ -507,7 +507,7 @@ class Track:
         #-------------------------------------------------------------
         if MODE_DEBUG:
             try:
-                print("Track.xHeadingCastigo(heading=", heading, ", dirPista=", dirPista, ", dirDiff=", dirDiff, "): PUNISH=",PUNISH) 
+                print("Track.xHeadingCastigo(heading=", heading, ", K,c=",DIRECCION_ABS_VAL, castigo,"): [ dirPista=", dirPista, ", dirDiff=", dirDiff, "] -> PUNISH=",PUNISH) 
             except Exception as e:
                 print("Excepcion e:", e)
 
