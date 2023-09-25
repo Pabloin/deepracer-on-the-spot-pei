@@ -71,7 +71,33 @@ class MyRacingLine:
     rpY = lambda wp : MyRacingLine.RACING_LINE[wp][1]
     rpS = lambda wp : MyRacingLine.RACING_LINE[wp][2]
     rpT = lambda wp : MyRacingLine.RACING_LINE[wp][3]
-       
+
+    #----------------------------------------------------------------------------------------------------
+    # Tieme TDD en reward_TDD.py 
+    @staticmethod
+    def printPuntos(params):
+
+        speed                = params['speed']
+        waypoints            = params['waypoints']
+
+        for i in range (len(waypoints)):
+            MyRacingLine.printPunto(waypoints, i, speed)
+
+    #----------------------------------------------------------------------------------------------------
+    # Tieme TDD en reward_TDD.py 
+    @staticmethod
+    def printPunto(waypoints, i, speed):
+        wX=waypoints[i][0]
+        wY=waypoints[i][1]
+        rX=MyRacingLine.rpX(i)
+        rY=MyRacingLine.rpY(i)
+
+        dist = Util._distXY(wX, wY, rX, rY)
+
+        print(f"DEBUG_RACING_LINE wp({i}-> [{wX}, {wY}] - " + 
+            f"rl({i}-> [{rX}, {rY}] ->  " + 
+            f"dist({dist:4.2f}) ]   ")
+
     # sept 2023,Roger Super Raceway	60.17m	Clockwise  (2022_september_pro_cw)
     # Optimal racing line (x, y, velocidad)
     RACING_LINE = [
@@ -293,6 +319,7 @@ ZERO_VALUE = 1e-3
 AJUSTE_K = 1
 
 MODE_DEBUG = True
+MODE_DEBUG_RACING_LINE = True
 
 RECTA_01           = 'RECTA_01'
 RECTA_02           = 'RECTA_02'
@@ -581,7 +608,12 @@ def reward_function(params):
             print("Excepcion e:", e)
 
     
-
+    if MODE_DEBUG_RACING_LINE:
+        try:
+            MyRacingLine.printPunto(waypoints, prev_wp, speed)
+            
+        except Exception as e:
+            print("Excepcion e:", e)        
 
 
     # Por defaul, la menor recompensa

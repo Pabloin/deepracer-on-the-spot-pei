@@ -177,22 +177,3 @@ heading= 119.07971369710347
 closest_waypoints= [32, 33]
 testDirPista(heading, closest_waypoints)
 
-
-#-----------------------------
-# TODO: Imprimir Distancias  entre dos 
-def printPuntos():
-
-    for i in range (len(params.waypoints)):
-        wX=params.waypointX(i)
-        wY=params.waypointY(i)
-        rX=MyRacingLine.rpX(i)
-        rY=MyRacingLine.rpY(i)
-
-        dist = Util._distXY(wX, wY, rX, rY)
-
-        print("printPuntos()")
-        print(f"wp({i}-> [{wX}, {wY}] - " + 
-              f"rl({i}-> [{rX}, {rY}] ->  " + 
-              f"dist({dist:4.2f}) ]   ")
-
-printPuntos()

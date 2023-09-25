@@ -98,3 +98,29 @@ print("isZonaCurvaTres(", CURVA_03_LL_ZONA, ",", next_wp, ") = ", isZonaCurvaTre
 
 
 
+
+
+
+
+
+
+#----------------------------------
+def test_printPuntos(closest_waypoints, speed, waypoints=params.waypoints):
+
+    print("\n\n-----------------------\n test_printPuntos\n")
+    params = {
+        "speed"             : speed,
+        "waypoints"         : waypoints,
+        "closest_waypoints" : closest_waypoints
+    }
+    dirAngulos = MyRacingLine.printPuntos(params)
+
+
+    # print("test_direccionPista(",closest_waypoints,"): dir(Angulos)=", dirAngulos)
+    print("-----------------------\n")
+
+
+
+speed=3.9884385764598846
+closest_waypoints= [32, 33]
+test_printPuntos(closest_waypoints, speed)
