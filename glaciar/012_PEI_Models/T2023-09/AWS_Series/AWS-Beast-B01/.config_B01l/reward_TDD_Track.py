@@ -134,6 +134,25 @@ test_printPuntos(closest_waypoints, speed)
 
 
 
+
+
+# #----------------------------------
+# def test_addIdx():
+
+#     print("\n\n-----------------------\n test_addIdx\n")
+
+#     dirAngulos = MyRacingLine.addIdx()
+
+#     print("-----------------------\n")
+
+
+# speed=3.9884385764598846
+# closest_waypoints= [32, 33]
+# test_addIdx()
+
+
+
+
 #----------------------------------
 def test_racingPointsCercanos(wp):
 
@@ -152,3 +171,42 @@ y= -4.3378093609562995
 
 xyPoint=[x, y]
 test_racingPointsCercanos(xyPoint)
+
+
+#---------------------------------------------
+waypoint=50
+closest_waypoints= [50, 51]
+
+
+x=-7.377988610326252
+y=-3.4873098237291256 
+xyPoint=[x, y]
+test_racingPointsCercanos(xyPoint)
+
+x=-7.373047259897509
+y=-3.4818414798413038
+xyPoint=[x, y]
+test_racingPointsCercanos(xyPoint)
+
+
+
+x=-7.367953942564247
+y=-3.470647788242167
+xyPoint=[x, y]
+test_racingPointsCercanos(xyPoint)
+
+x=-7.3575201668125
+y=-3.4563898954808288
+xyPoint=[x, y]
+test_racingPointsCercanos(xyPoint)
+
+
+
+x= -7.320055285934866
+y= -3.4204596895711097
+xyPoint=[x, y]
+test_racingPointsCercanos(xyPoint)
+
+
+
+
