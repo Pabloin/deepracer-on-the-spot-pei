@@ -20,7 +20,7 @@ from reward_TDD_params import params
 #----------------------------------
 def test_xHeadingCastigo(heading, closest_waypoints, waypoints=params.waypoints):
 
-    print("\n\n-----------------------\ntest_xHeadingCastigo\n")
+    print("\n\n-----------------------\n test_xHeadingCastigo\n")
     params = {
         "heading"           : heading,
         "waypoints"         : waypoints,
@@ -44,10 +44,10 @@ test_xHeadingCastigo(heading, closest_waypoints)
 
 
 
-
+#----------------------------------
 def test_xSpeedCastigo(speed, speed_deseada):
     
-    print("\n\n-----------------------\test_xSpeedCastigo\n")
+    print("\n\n-----------------------\n test_xSpeedCastigo\n")
 
     reward = Track.xSpeedCastigo(speed, speed_deseada)
 
@@ -60,3 +60,7 @@ speed=3.9884385764598846
 speed_deseada=1.45015
 test_xSpeedCastigo(speed, speed_deseada)
 
+
+speed=1.25 
+speed_deseada=1.45015 
+test_xSpeedCastigo(speed, speed_deseada)
