@@ -710,6 +710,8 @@ def reward_function(params):
         reward *= Track.xSpeedCastigo(speed, speed_deseada)
 
 
+    # Si es la curva, acercar la velocidad deseada a la de la referencia
+    reward *= Track.castigoPunto([x,y], cercaUno)
     
     
 
