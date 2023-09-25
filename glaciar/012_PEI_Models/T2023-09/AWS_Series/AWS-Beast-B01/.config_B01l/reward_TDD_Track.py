@@ -210,3 +210,28 @@ test_racingPointsCercanos(xyPoint)
 
 
 
+
+
+
+
+#----------------------------------
+def test_castigoPunto(xyPoint):
+
+    print("\n\n-----------------------\n test_castigoPunto\n")
+
+    cercaUno, cercaDos = Util.racingPointsCercanos([x, y])
+    cercaUno_rl = cercaUno[4]
+    cercaDos_rl = cercaDos[4]
+
+    castigo = Track.castigoPunto(xyPoint, cercaUno)
+
+    print("\n-----------------------\n castigoPunto\n")
+
+    print(f"test_castigoPunto({xyPoint},{cercaUno}): castigo={castigo}")
+    print("-----------------------\n")
+
+
+x=-7.367953942564247
+y=-3.470647788242167
+xyPoint=[x, y]
+test_castigoPunto(xyPoint)

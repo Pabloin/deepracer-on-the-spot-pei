@@ -81,6 +81,7 @@ class MyRacingLine:
     rpY = lambda wp : MyRacingLine.RACING_LINE[wp][1]
     rpS = lambda wp : MyRacingLine.RACING_LINE[wp][2]
     rpT = lambda wp : MyRacingLine.RACING_LINE[wp][3]
+    rpJ = lambda wp : MyRacingLine.RACING_LINE[wp][4]
 
 
     #----------------------------------------------------------------------------------------------------
@@ -334,11 +335,6 @@ class MyRacingLine:
     ]
 
 
-
-
-
-
-
     #-----------[  RACING LINE - END  ]-------------------
 
 #-----------[  DATA  ]------------------------------------
@@ -577,6 +573,48 @@ class Track:
         return PUNISH
 
 
+    #----------------------------------------------------------------------------------------------------
+    # Castigo por distancia a la RacingLine   - TDD:  reward_TDD_Track.py - test_castigoPunto (WIP)
+    @staticmethod
+    def castigoPunto(carPunto, cercaUno):
+        dist = Util._distXY(carPunto[0],carPunto[1],cercaUno[0],cercaUno[1])
+
+        gaps = [
+            #min  max   rew
+            [ 0.0,  0.1,  1.00 ],
+            [ 0.1,  0.2,  0.90 ],
+            [ 0.2,  0.3,  0.80 ],
+            [ 0.3,  0.4,  0.70 ],
+            [ 0.4,  0.5,  0.60 ],
+            [ 0.5,  0.6,  0.50 ],
+            [ 0.6,  0.7,  0.40 ],
+            [ 0.7,  0.8,  0.30 ],
+            [ 0.8,  0.9,  0.20 ],
+            [ 0.9,  1.0,  0.10 ],
+            [ 1.0,  1.1,  0.05 ],
+            [ 1.1,  2.0,  ZERO_VALUE ],
+        ]        
+
+        GP = [ "nn",  "nn",  ZERO_VALUE ]
+
+        for g in gaps:
+            if  dist >= g[0] and dist < g[1]:
+                GP = g
+
+        PUNISH = GP[2]
+
+        #-------------------------------------------------------------
+        if MODE_DEBUG:
+            try:
+                print(f"Track.castigoPunto(carPunto={carPunto}, cercaUno={cercaUno}): dist={dist}, gap -> [{GP[0]},{GP[1]},{GP[2]}")
+            except Exception as e:
+                print("Excepcion e:", e)
+
+        return PUNISH
+
+
+
+
 def reward_function(params):
     '''
     Example of rewarding the agent to stay inside the two borders of the track
@@ -623,7 +661,8 @@ def reward_function(params):
 
 
     cercaUno, cercaDos = Util.racingPointsCercanos([x, y])
-
+    cercaUno_rl = cercaUno[4]
+    cercaDos_rl = cercaDos[4]
 
 
     if MODE_DEBUG:
@@ -645,7 +684,8 @@ def reward_function(params):
     
     if MODE_DEBUG_RACING_LINE:
         try:
-            MyRacingLine.printPunto(waypoints, prev_wp, speed)
+            # MyRacingLine.printPunto(waypoints, prev_wp, speed)
+            MyRacingLine.printPunto(waypoints, cercaUno_rl, speed)
         except Exception as e:
             print("Excepcion e:", e)        
 
@@ -665,12 +705,14 @@ def reward_function(params):
 
     # Si es la curva, acercar la velocidad deseada a la de la referencia
     if isZonaCurvaTres or isZonaCurvaSeis:
-        speed_deseada = MyRacingLine.rpS(next_wp)
+        # speed_deseada = MyRacingLine.rpS(next_wp)
+        speed_deseada = MyRacingLine.rpS(cercaUno_rl)        
         reward *= Track.xSpeedCastigo(speed, speed_deseada)
 
 
-
     
+    
+
     return float(reward)
 
 
