@@ -378,12 +378,14 @@ class Track:
         isInZone = False
         for zone in Track.Zones:
             if (wp in zone and z in zone):
+                if MODE_DEBUG:
+                   print("isz(",z,",",wp,")=True")
                 return True
         return isInZone
     
 
     #----------------------------------------------------------------------------------------------------
-    # Dice si es una Recta
+    # Dice si es una Recta - TDD
     isRecta = lambda wp : (Track.isz(RECTA_01, wp) or 
                            Track.isz(RECTA_02, wp) or 
                            Track.isz(RECTA_03, wp) or 

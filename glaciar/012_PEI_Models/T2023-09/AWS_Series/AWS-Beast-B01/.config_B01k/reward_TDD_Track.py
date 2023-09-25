@@ -85,3 +85,16 @@ def test_direccionPista(closest_waypoints, waypoints=params.waypoints):
 
 closest_waypoints= [32, 33]
 test_direccionPista(closest_waypoints)
+
+
+#----------------------------------
+next_wp=63
+isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, next_wp)
+print("isZonaCurvaTres(", CURVA_03_LL_ZONA, ",", next_wp, ") = ", isZonaCurvaTres )
+
+next_wp=12
+isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, next_wp)
+print("isZonaCurvaTres(", CURVA_03_LL_ZONA, ",", next_wp, ") = ", isZonaCurvaTres )
+
+
+
