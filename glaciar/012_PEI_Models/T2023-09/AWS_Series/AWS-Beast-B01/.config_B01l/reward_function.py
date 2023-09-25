@@ -55,8 +55,6 @@ class Util:
         #-------------------------------------------------------------
         if MODE_DEBUG:
             try:
-                print("Util.racingPointsCercanos(xyPoint=", xyPoint, "): cercaUno=",cercaUno,", cercaDos=",cercaDos)
-
                 print(f"Util.racingPointsCercanos(xyPoint{xyPoint}): -> [cercaUno={cercaUno},{a[0]:4.4f}] [cercaDos={cercaDos},{a[1]:4.4f}]")
             except Exception as e:
                 print("Excepcion e:", e)
@@ -107,8 +105,8 @@ class MyRacingLine:
         dist = Util._distXY(wX, wY, rX, rY)
 
         print(f"DEBUG_RACING_LINE wp({i}-> [{wX}, {wY}] - " + 
-            f"rl({i}-> [{rX}, {rY}] ->  " + 
-            f"dist({dist:4.2f}) ]   ")
+                                f"rl({i}-> [{rX}, {rY}] ->  " + 
+                                f"dist({dist:4.2f}) ]   ")
 
     # sept 2023,Roger Super Raceway	60.17m	Clockwise  (2022_september_pro_cw)
     # Optimal racing line (x, y, velocidad)
@@ -418,7 +416,7 @@ class Track:
         for zone in Track.Zones:
             if (wp in zone and z in zone):
                 if MODE_DEBUG:
-                   print("isz(",z,",",wp,")=True")
+                   print(f"isz({z},{wp})=True")
                 return True
         return isInZone
     
@@ -484,7 +482,7 @@ class Track:
         #-------------------------------------------------------------
         if MODE_DEBUG:
             try:
-                print("Track.xSpeedCastigo(speed=", speed, ", speed_deseada=", speed_deseada, "): gap -> [",GF[0],",",GF[1],",",GF[2],"]")
+                print(f"Track.xSpeedCastigo(speed={speed}, speed_deseada={speed_deseada}): gap -> [{GF[0]},{GF[1]},{GF[2]}")
             except Exception as e:
                 print("Excepcion e:", e)
 
@@ -523,7 +521,7 @@ class Track:
         #-------------------------------------------------------------
         if MODE_DEBUG:
             try:
-                print("Track._direccionPista(closest_waypoints=", closest_waypoints, "): wpNext=",wpNext,", wpPrev=",wpPrev,", dirPista=", dirPista)
+                print(f"Track._direccionPista(closest_waypoints={closest_waypoints}): wpNext={wpNext}, wpPrev={wpPrev}, dirPista={dirPista}")
             except Exception as e:
                 print("Excepcion e:", e)
 
@@ -548,7 +546,7 @@ class Track:
         #-------------------------------------------------------------
         if MODE_DEBUG:
             try:
-                print("Track.xHeadingCastigo(heading=", heading, ", K,c=",DIRECCION_ABS_VAL, castigo,"): [ dirPista=", dirPista, ", dirDiff=", dirDiff, "] -> PUNISH=",PUNISH) 
+                print(f"Track.xHeadingCastigo(heading={heading}, K,c={DIRECCION_ABS_VAL},{castigo}): [ dirPista={dirPista}, dirDiff={dirDiff}] -> PUNISH={PUNISH}") 
             except Exception as e:
                 print("Excepcion e:", e)
 
@@ -608,13 +606,13 @@ def reward_function(params):
             if (next_wp < 3):
                 print("waypoints=", waypoints)
 
-            print("closest_waypoints=", closest_waypoints, "(x, y, speed)=[", x, ",", y, ",", speed, "]", 
-                              "dist=", dist,
+            print(f"closest_waypoints={closest_waypoints}, (x, y, speed)=[{x},{y},{speed}]" +  
+                            f"dist={dist}" + 
                             "curva3=", isZonaCurvaTres, 
                             "curva6=", isZonaCurvaSeis) 
              
-            print("steering_angle=", steering_angle, "heading=", heading, "dirPista=", dirPista,
-                    "distance_from_center=", distance_from_center, "steps", steps, "progress=",  progress)
+            print(f"steering_angle={steering_angle}, heading={heading}, dirPista={dirPista}, "+
+                  f"distance_from_center={distance_from_center}, steps={steps}, progress={progress}")
             
         except Exception as e:
             print("Excepcion e:", e)
