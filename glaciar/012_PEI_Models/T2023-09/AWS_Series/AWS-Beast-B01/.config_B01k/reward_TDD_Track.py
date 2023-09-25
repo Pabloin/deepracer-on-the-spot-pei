@@ -105,12 +105,12 @@ print("isZonaCurvaTres(", CURVA_03_LL_ZONA, ",", next_wp, ") = ", isZonaCurvaTre
 
 
 #----------------------------------
-def test_printPuntos(closest_waypoints, speed, waypoints=params.waypoints):
+def test_printPuntos(closest_waypoints, speed):
 
     print("\n\n-----------------------\n test_printPuntos\n")
     params = {
         "speed"             : speed,
-        "waypoints"         : waypoints,
+        "waypoints"         : params.waypoints,
         "closest_waypoints" : closest_waypoints
     }
     dirAngulos = MyRacingLine.printPuntos(params)
