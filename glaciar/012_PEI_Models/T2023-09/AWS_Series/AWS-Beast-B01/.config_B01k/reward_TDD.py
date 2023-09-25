@@ -193,6 +193,6 @@ def printPuntos():
         print("printPuntos()")
         print(f"wp({i}-> [{wX}, {wY}] - " + 
               f"rl({i}-> [{rX}, {rY}] ->  " + 
-              f"dd({dist} ]   ")
+              f"dist({dist:4.2f}) ]   ")
 
 printPuntos()
