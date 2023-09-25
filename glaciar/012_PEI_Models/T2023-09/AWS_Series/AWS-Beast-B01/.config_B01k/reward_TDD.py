@@ -70,11 +70,11 @@ isZonaCurvaSeis   = Track.isz(CURVA_06_LL_ZONA, next_wp)
 
 
 next_wp=61
-print("MyRacingLine[",next_wp,"]", MyRacingLine.wp(next_wp))
-print("MyRacingLine[",next_wp,"]", MyRacingLine.wpX(next_wp))
-print("MyRacingLine[",next_wp,"]", MyRacingLine.wpY(next_wp))
-print("MyRacingLine[",next_wp,"]", MyRacingLine.wpS(next_wp))
-print("MyRacingLine[",next_wp,"]", MyRacingLine.wpT(next_wp))
+print("MyRacingLine[",next_wp,"]", MyRacingLine.rp(next_wp))
+print("MyRacingLine[",next_wp,"]", MyRacingLine.rpX(next_wp))
+print("MyRacingLine[",next_wp,"]", MyRacingLine.rpY(next_wp))
+print("MyRacingLine[",next_wp,"]", MyRacingLine.rpS(next_wp))
+print("MyRacingLine[",next_wp,"]", MyRacingLine.rpT(next_wp))
 # curva3 False curva6 False
 
 # renglon 61 = (-6.041717529296875, -0.9397014677524567), 
@@ -83,8 +83,8 @@ print("MyRacingLine[",next_wp,"]", MyRacingLine.wpT(next_wp))
 next_wp=61
 x = -6.041717529296875
 y = -0.9397014677524567
-b1 = MyRacingLine.wpX(next_wp)
-b2 = MyRacingLine.wpY(next_wp)
+b1 = MyRacingLine.rpX(next_wp)
+b2 = MyRacingLine.rpY(next_wp)
 
 
 print("_distXY: ",  Util._distXY(x, y, b1, b2) )
@@ -124,8 +124,8 @@ print("isZonaCurvaTres(", CURVA_03_LL_ZONA, ",", next_wp, ") = ", isZonaCurvaTre
 eee = [ 0.7215891450030298 , -6.820596359742561 , 1.25 ]
 x = eee[0]
 y = eee[1]
-b1 = MyRacingLine.wpX(next_wp)
-b2 = MyRacingLine.wpY(next_wp)
+b1 = MyRacingLine.rpX(next_wp)
+b2 = MyRacingLine.rpY(next_wp)
 
 dist = Util._distXY(b1, b2, x, y) 
 
@@ -178,3 +178,18 @@ closest_waypoints= [32, 33]
 testDirPista(heading, closest_waypoints)
 
 
+#-----------------------------
+# TODO: Imprimir Distancias  entre dos 
+def printPuntos():
+
+    for i in range (len(params.waypoints)):
+        wX=params.waypointX(i)
+        wY=params.waypointY(i)
+        rX=MyRacingLine.rpX(i)
+        rY=MyRacingLine.rpY(i)
+
+        print("printPuntos()")
+        print(f"wp({i}-> [{wX}, {wY}] - " + 
+              f"rl({i}-> [{rX}, {rY}]   ")
+
+printPuntos()

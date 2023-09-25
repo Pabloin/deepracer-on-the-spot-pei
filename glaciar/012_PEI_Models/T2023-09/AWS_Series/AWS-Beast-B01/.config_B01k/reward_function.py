@@ -66,11 +66,11 @@ class Util:
 
 class MyRacingLine:
 
-    wp  = lambda wp : MyRacingLine.RACING_LINE[wp]
-    wpX = lambda wp : MyRacingLine.RACING_LINE[wp][0]
-    wpY = lambda wp : MyRacingLine.RACING_LINE[wp][1]
-    wpS = lambda wp : MyRacingLine.RACING_LINE[wp][2]
-    wpT = lambda wp : MyRacingLine.RACING_LINE[wp][3]
+    rp  = lambda wp : MyRacingLine.RACING_LINE[wp]
+    rpX = lambda wp : MyRacingLine.RACING_LINE[wp][0]
+    rpY = lambda wp : MyRacingLine.RACING_LINE[wp][1]
+    rpS = lambda wp : MyRacingLine.RACING_LINE[wp][2]
+    rpT = lambda wp : MyRacingLine.RACING_LINE[wp][3]
        
     # sept 2023,Roger Super Raceway	60.17m	Clockwise  (2022_september_pro_cw)
     # Optimal racing line (x, y, velocidad)
@@ -548,8 +548,8 @@ def reward_function(params):
     prev_wp = closest_waypoints[0]
     next_wp = closest_waypoints[1]
 
-    xw = MyRacingLine.wpX(next_wp)
-    yw = MyRacingLine.wpY(next_wp)
+    xw = MyRacingLine.rpX(next_wp)
+    yw = MyRacingLine.rpY(next_wp)
 
     dist = Util._distXY(x, y, xw, yw)
 
@@ -601,7 +601,7 @@ def reward_function(params):
     # Si es la curva tres bajar la velocidad deseada a la de la referencia
     if isZonaCurvaTres or isZonaCurvaSeis:
         
-        speed_deseada = MyRacingLine.wpS(next_wp)
+        speed_deseada = MyRacingLine.rpS(next_wp)
         reward *= Track.xSpeedCastigo(speed, speed_deseada)
 
         distReward = lambda d : 1 - dist/LAP_WIDTH
