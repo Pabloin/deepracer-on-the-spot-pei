@@ -28,6 +28,18 @@ alias B01m="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01m"
 alias B01n="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01n"
 alias B01o="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01o"
 
+alias B01p="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01p"
+alias B01q="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01q"
+alias B01r="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01r"
+alias B01s="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01s"
+alias B01t="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01t"
+alias B01u="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01u"
+alias B01v="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01v"
+alias B01w="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01w"
+alias B01x="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01x"
+alias B01y="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01y"
+alias B01z="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B01z"
+
 
 ##----------------------------
 
