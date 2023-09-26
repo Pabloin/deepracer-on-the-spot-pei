@@ -8,10 +8,10 @@ mkdir -p ~/deepracer-on-the-spot-pei/custom-files
 ## De esta config
 cp   ./run.env                 ~/deepracer-on-the-spot-pei/custom-files
 cp   ./reward_function.py      ~/deepracer-on-the-spot-pei/custom-files
+cp   ./hyperparameters.json    ~/deepracer-on-the-spot-pei/custom-files
 
 ## De la Base
 cp   ../model_metadata.json     ~/deepracer-on-the-spot-pei/custom-files
-cp   ../hyperparameters.json   ~/deepracer-on-the-spot-pei/custom-files
 cp   ../system.env             ~/deepracer-on-the-spot-pei/custom-files
 
 
