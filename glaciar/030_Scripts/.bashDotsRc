@@ -168,7 +168,7 @@ function aws.ec2.all() {
 
 alias   H="cd ~/deepracer-on-the-spot-pei/"
 alias   C="vim ~/.aws/credentials"
-alias   X="chmod +x x*sh "
+alias   X="chmod +x x*sh ; ./xModel-setConfig.sh  "
 
 export -f menu
 export -f drSync
