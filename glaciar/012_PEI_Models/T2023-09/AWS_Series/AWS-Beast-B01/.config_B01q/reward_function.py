@@ -712,6 +712,10 @@ def reward_function(params):
     
         reward *= Track.xSpeedCastigo(speed, speed_deseada)
 
+        if not is_left_of_center:
+            reward *= 0.80
+
+
 
     return float(reward)
 
