@@ -450,7 +450,7 @@ class Track:
 
     #----------------------------------------------------------------------------------------------------
     # Dice si es una Curva Left
-    isCurvaLeft()  = lambda wp : (Track.isz(CURVA_03_LL, wp) or 
+    isCurvaLeft  = lambda wp : (Track.isz(CURVA_03_LL, wp) or 
                                 Track.isz(CURVA_06_LL, wp))
 
     #----------------------------------------------------------------------------------------------------

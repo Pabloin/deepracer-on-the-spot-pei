@@ -238,3 +238,11 @@ print("dist closest_waypoints=[49, 50]):", dist)
 
 
 
+
+#------------
+# Mar recompensa en Cruva Tres y Seis
+
+next_wp=91
+isCurvaTres   = Track.isCurvaLeft(next_wp)
+
+print("isCurvaTres", isCurvaTres)
