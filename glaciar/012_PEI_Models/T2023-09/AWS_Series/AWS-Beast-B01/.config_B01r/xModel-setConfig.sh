@@ -18,7 +18,7 @@ cp   ../system.env             ~/deepracer-on-the-spot-pei/custom-files
 ls   -la   ~/deepracer-on-the-spot-pei/custom-files
 
 echo "\n ---- [ run.env ] ---"
-head -25   ~/deepracer-on-the-spot-pei/custom-files/run.env 
+head -35   ~/deepracer-on-the-spot-pei/custom-files/run.env 
 
 echo "\n ---- [ system.env ] ---"
 head -15   ~/deepracer-on-the-spot-pei/custom-files/system.env   
