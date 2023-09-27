@@ -637,6 +637,7 @@ def reward_function(params):
     distance_from_center = params['distance_from_center']
     all_wheels_on_track  = params['all_wheels_on_track']
     is_offtrack          = params['is_offtrack']
+    is_reversed          = params['is_reversed']
 
     steering_angle       = params['steering_angle']
     track_width          = params['track_width']
@@ -662,6 +663,8 @@ def reward_function(params):
     isZonaCurvaTres   = Track.isz(CURVA_03_LL_ZONA, next_wp)
     isZonaCurvaSeis   = Track.isz(CURVA_06_LL_ZONA, next_wp)
 
+    is_clockwise = is_reversed
+    is_counter_clockwise = not is_reversed
 
     cercaUno, cercaDos = Util.racingPointsCercanos([x, y])
     cercaUno_rl = cercaUno[4]
@@ -676,7 +679,8 @@ def reward_function(params):
             print(f"closest_waypoints={closest_waypoints}, (x, y, speed)=[{x},{y},{speed}]" +  
                             f"dist={dist}" + 
                             "curva3=", isZonaCurvaTres, 
-                            "curva6=", isZonaCurvaSeis) 
+                            "curva6=", isZonaCurvaSeis,
+                            "is_reversed=", is_reversed) 
              
             print(f"steering_angle={steering_angle}, heading={heading}, dirPista={dirPista}, "+
                   f"distance_from_center={distance_from_center}, steps={steps}, progress={progress}")
@@ -693,8 +697,14 @@ def reward_function(params):
             print("Excepcion e:", e)        
 
 
+
     # Por defaul, la menor recompensa
     reward = ZERO_VALUE
+
+    
+    # Si se va de pista o invertido - reward cero 
+    if is_offtrack or is_counter_clockwise:
+        reward = ZERO_VALUE
 
 
     # Se le da recompensa si el agente no está Off Track pero dentro de los bordes
@@ -726,13 +736,7 @@ def reward_function(params):
 
 
 
-    # Si se va de pista - reward cero 
-    if is_offtrack:
-        reward = ZERO_VALUE
 
     return float(reward)
-
-
-
 
 
