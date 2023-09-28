@@ -625,6 +625,7 @@ class Reward:
 
     # Que ayude a las curvas Lefto o right
     # Reward [ ZERO_VALUE..1 ] - Suma valores (un 20% ie 0.2)
+    @staticmethod
     def fn_curvas(params):
 
         is_left_of_center    = params['is_left_of_center']
@@ -650,6 +651,7 @@ class Reward:
     # Si es la curva, acercar la velocidad a un 20% menos
     # En ningún considerar a velocidades menores a 1.25
     # Reward [ ZERO_VALUE..1 ] - mas cerca de uno a medida que se acerca a la velocidad deseada
+    @staticmethod
     def fn_curvas_tres_y_seis(params):
 
         speed                = params['speed']
