@@ -775,7 +775,7 @@ def reward_function(params):
     # Si es una curva, que controle si se está tirando sobre la curva
     reward_curvas = Reward.fn_curvas(params)
 
-    reward_curvas_3y6 = RecursionError.fn_curvas_tres_y_seis(params)
+    reward_curvas_3y6 = Reward.fn_curvas_tres_y_seis(params)
 
     reward += reward_curvas + reward_rectas + reward_curvas_3y6
 
