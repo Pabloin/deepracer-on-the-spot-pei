@@ -15,14 +15,14 @@ from reward_function import Util
 from reward_function import MyRacingLine
 from reward_function import Track
 from reward_function import Reward
-from reward_TDD_params import params
-
+from reward_TDD_params import MyParams
+from reward_function import reward_function
 
 
 
 
 #----------------------------------
-def fn_rectas_heading(heading, closest_waypoints, waypoints=params.waypoints):
+def fn_rectas_heading(heading, closest_waypoints, waypoints=MyParams.waypoints):
 
     print("\n\n-----------------------\n fn_rectas_heading\n")
     params = {
@@ -30,7 +30,7 @@ def fn_rectas_heading(heading, closest_waypoints, waypoints=params.waypoints):
         "waypoints"         : waypoints,
         "closest_waypoints" : closest_waypoints
     }
-    reward = Reward.fn_heading(params, 30)
+    reward = Reward.fn_rectas_heading(params, 30)
 
 
     print("fn_rectas_heading(",heading,",",closest_waypoints,")", reward)
@@ -73,7 +73,7 @@ test_xSpeedCastigo(speed, speed_deseada)
 
 
 #----------------------------------
-def test_direccionPista(closest_waypoints, waypoints=params.waypoints):
+def test_direccionPista(closest_waypoints, waypoints=MyParams.waypoints):
 
     print("\n\n-----------------------\n test_direccionPista\n")
     params = {
@@ -109,7 +109,7 @@ print("isZonaCurvaTres(", CURVA_03_LL_ZONA, ",", next_wp, ") = ", isZonaCurvaTre
 
 
 #----------------------------------
-def test_printPuntos(closest_waypoints, speed, waypoints=params.waypoints):
+def test_printPuntos(closest_waypoints, speed, waypoints=MyParams.waypoints):
 
     print("\n\n-----------------------\n test_printPuntos\n")
     params = {
@@ -244,51 +244,65 @@ test_castigoPunto(xyPoint)
 
 
 
+#----------------------------------
+def test_reward_function():
 
+    print("\n\n-----------------------\n test_reward_function\n")
 
+    x=-8.713415188646103
+    y=2.8507765531539917
+    steps=224.0
+    steps=1.25  #???
+    heading=75.21663026908212
+    progress=43.95628927576247
+    distance_from_center=0.23052139701033608
+    steering_angle=-13.464126114287648
+    closest_waypoints=[77, 78]
+    track_length=LAP_LENGHT
+    track_width=1.06
 
+    is_left_of_center=True
+    all_wheels_on_track=True
 
-# #----------------------------------
-# def test_isLeft(xyPoint):
+    is_offtrack=False
+    is_reversed=False
 
-#     print("\n\n-----------------------\n test_isLeft\n")
-
-#     isLeft = Track.isLeft(xyPoint)
-
-#     print("\n-----------------------\n test_isLeft\n")
-
-#     print(f"test_isLeft({xyPoint}): isLeft={isLeft}")
-#     print("-----------------------\n")
-
-
-# x=-7.367953942564247
-# y=-3.470647788242167
-# xyPoint=[x, y]
-# test_isLeft(xyPoint)
-
-
-    # #----------------------------------------------------------------------------------------------------
-    # # Dice is un punto left - arriba del 20% de la izquiera es left
-    # @staticmethod
-    # def isLeft(params, marker=0.2):
-
-    #     x = params['x']
-    #     y = params['y']
-
-    #     xyPoint=[x,y]
-
-    #     # Calcula 3 markers en funcion del centro
-    #     marker_1 = 0.10 * track_width
-    #     marker_2 = 0.25 * track_width
-    #     marker_x = marker * track_width
-    #     marker_3 = 0.50 * track_width
+    params = {
+        "x"             : x,
+        "y"             : y,
         
-    #     is_left_of_center    = params['is_left_of_center']
-    #     distance_from_center = params['distance_from_center']
-    #     track_width          = params['track_width']
+        "steps"         : steps,
+        "speed"         : speed,
+        "heading"       : heading,
+        "progress"      : progress,
+        "heading"       : heading,
+
+        "is_left_of_center": is_left_of_center,
+        "all_wheels_on_track" :  all_wheels_on_track, 
+
+        "is_offtrack" : is_offtrack,
+        "is_reversed" : is_reversed,
+        
+        "waypoints" : MyParams.waypoints,
+
+        "distance_from_center"   : distance_from_center,
+        "steering_angle"         : steering_angle,
+        "closest_waypoints"       : closest_waypoints,
+        "track_length"            : track_length,
+        "track_width"  : track_width
+    }
 
 
-    #     if is_left_of_center and distance_from_center >= marker:
-    #         print(f"Track.isLeft(xyPoint={xyPoint})")
- 
-    #     return False
+
+
+
+    rr = reward_function(params)
+
+    print("\n-----------------------\n test_reward_function\n")
+
+    print(f"test_reward_function(params): reward_function={rr}")
+    print("-----------------------\n")
+
+
+
+test_reward_function()
