@@ -700,7 +700,7 @@ def reward_function(params):
 
 
     # Si es una recta, que controle el Heading esté cerca de la dirección de la pista (20 grados max)
-    if Track.isRecta:
+    if Track.isRecta(next_wp):
         reward *= Track.xHeadingCastigo(params, 20)
 
 
