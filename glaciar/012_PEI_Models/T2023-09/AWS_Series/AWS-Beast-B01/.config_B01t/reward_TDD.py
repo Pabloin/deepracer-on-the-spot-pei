@@ -20,28 +20,6 @@ from reward_TDD_params import params
 
 print('Hola')
 
-
-# closest_waypoints: [1, 2]
-# closest_waypoints[1]: 2
-# closest_waypoints[0]: 1
-# closest_waypoints: 1 2
-
-
-# x: 4.5960888763624235 y: -4.3378093609562995    next_wp:  4.429752826690674 -4.417214512825012  - wpPrev:  4.654623508453369 -4.217042446136475  - speed:  1.25
-# steering_angle:  30.0 heading:  -125.8884993664113 distance_from_center:  0.05128566786655362
-# curva3 False curva6 False progress:  0.7063766453562026
-# OTRA: x: 4.5960888763624235 y: -4.3378093609562995    next_wp:  4.429752826690674 -4.417214512825012  - wpPrev:  4.654623508453369 -4.217042446136475  - speed:  1.25
-# OTRA: steering_angle:  30.0 heading:  -125.8884993664113 distance_from_center:  0.05128566786655362 progress:  0.7063766453562026
-# SIM_TRACE_LOG:0,7,4.5961,-4.3378,-125.8885,30.00,1.25,[30.0, 1.25],1.0000,False,True,0.7064,1,60.18,42.173,in_progress,0.00
-
-
-#SIM_TRACE_LOG:0,1,4.7634,-4.0986,-132.5784,-0.80,2.46,[-0.7983805874334244, 2.455950601998581],0.0000,False,True,0.2331,
-# 
-# 0,60.18,38.842,prepare,0.00
-
-# next_wp = waypoints[closest_waypoints[1]]
-# wpPrev = waypoints[closest_waypoints[0]]
-
 closest_waypoints = [1, 2]
 
 next_wp = [4.429752826690674, -4.417214512825012]    

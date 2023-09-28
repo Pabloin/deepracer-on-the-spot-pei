@@ -779,6 +779,30 @@ def reward_function(params):
 
     reward += reward_curvas + reward_rectas + reward_curvas_3y6
 
+
+
+    # Distancia a los Racing Points
+                # ... La que yo use un tiempo
+                # Castigo para The Racing Line
+                # reward *= Track.castigoPunto([x,y], cercaUno)
+
+    dist =  Util.distanciaRacingLine([x,y], cercaUno, cercaDos)
+
+    reward_dist_rpoint = max(ZERO_VALUE, 1 - (dist/(track_width*0.5)))
+
+
+
+    # Distancia a los Racing Points 
+    #           # SPeed  
+    speed_deseada = MyRacingLine.rpS(cercaUno_rl)  
+    gap = abs(speed_deseada-speed)
+
+    reward_speed = (1 - gap**2)**2 if gap <= 1 else ZERO_VALUE
+
+    reward += reward_dist_rpoint
+    reward += reward_speed
+
+
     return float(reward)
 
 
