@@ -348,8 +348,8 @@ MAX_VALUE  = 1e3
 ZERO_VALUE = 1e-3
 AJUSTE_K = 1
 
-MODE_DEBUG = True
-MODE_DEBUG_RACING_LINE = True
+MODE_DEBUG = False
+MODE_DEBUG_RACING_LINE = False
 
 RECTA_01           = 'RECTA_01'
 RECTA_02           = 'RECTA_02'
@@ -769,15 +769,15 @@ def reward_function(params):
         reward = 1.0
 
 
-    # Si es una recta, que controle el Heading esté cerca de la dirección de la pista (20 grados max)
-    reward_rectas = Reward.fn_rectas_heading(params, 25) if Track.isRecta(next_wp) else ZERO_VALUE
+    # # Si es una recta, que controle el Heading esté cerca de la dirección de la pista (20 grados max)
+    # reward_rectas = Reward.fn_rectas_heading(params, 25) if Track.isRecta(next_wp) else ZERO_VALUE
 
-    # Si es una curva, que controle si se está tirando sobre la curva
-    reward_curvas = Reward.fn_curvas(params)
+    # # Si es una curva, que controle si se está tirando sobre la curva
+    # reward_curvas = Reward.fn_curvas(params)
 
-    reward_curvas_3y6 = Reward.fn_curvas_tres_y_seis(params)
+    # reward_curvas_3y6 = Reward.fn_curvas_tres_y_seis(params)
 
-    reward += reward_curvas + reward_rectas + reward_curvas_3y6
+    # reward += reward_curvas + reward_rectas + reward_curvas_3y6
 
     return float(reward)
 
