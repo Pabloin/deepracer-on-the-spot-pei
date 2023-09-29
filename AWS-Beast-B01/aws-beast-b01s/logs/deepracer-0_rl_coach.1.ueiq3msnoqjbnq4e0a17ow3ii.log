@@ -1,0 +1,859 @@
+Parameter image_name will be renamed to image_uri in SageMaker Python SDK v2.
+Model checkpoints and other metadata will be stored at: s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/aws-beast-b01s
+Uploading to s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/aws-beast-b01s
+Using image awsdeepracercommunity/deepracer-sagemaker:5.1.0-gpu
+Configured following hyperparameters
+{'s3_bucket': 'base-bucket-1f3pfk38sjoqu', 's3_prefix': 'AWS-Beast-B01/aws-beast-b01s', 'aws_region': 'us-east-1', 'model_metadata_s3_key': 's3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/custom_files/model_metadata.json', 'RLCOACH_PRESET': 'deepracer', 'pretrained_s3_bucket': 'base-bucket-1f3pfk38sjoqu', 'pretrained_s3_prefix': 'AWS-Beast-B01/aws-beast-b01', 'pretrained_checkpoint': 'last', 'batch_size': 128, 'beta_entropy': 0.01, 'discount_factor': 0.999, 'e_greedy_value': 0.05, 'epsilon_steps': 10000, 'exploration_type': 'categorical', 'loss_type': 'huber', 'lr': 0.0003, 'num_episodes_between_training': 20, 'num_epochs': 10, 'stack_size': 1, 'term_cond_avg_score': 100000.0, 'term_cond_max_episodes': 100000}
+The Docker Engine you're using is running in swarm mode.
+
+Compose does not use swarm mode to deploy services to multiple nodes in a swarm. All containers will be scheduled on the current node.
+
+To deploy your application across the swarm, use `docker stack deploy`.
+
+Creating tmp12ky19b5_algo-1-0bmf8_1 ... 
+Creating tmp12ky19b5_algo-1-0bmf8_1 ... done
+Attaching to tmp12ky19b5_algo-1-0bmf8_1
+[36malgo-1-0bmf8_1  |[0m 21:C 28 Sep 2023 05:22:36.545 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+[36malgo-1-0bmf8_1  |[0m 21:C 28 Sep 2023 05:22:36.545 # Redis version=6.2.7, bits=64, commit=00000000, modified=0, pid=21, just started
+[36malgo-1-0bmf8_1  |[0m 21:C 28 Sep 2023 05:22:36.545 # Configuration loaded
+[36malgo-1-0bmf8_1  |[0m 21:M 28 Sep 2023 05:22:36.545 * monotonic clock: POSIX clock_gettime
+[36malgo-1-0bmf8_1  |[0m 21:M 28 Sep 2023 05:22:36.546 # A key '__redis__compare_helper' was added to Lua globals which is not on the globals allow list nor listed on the deny list.
+[36malgo-1-0bmf8_1  |[0m                 _._                                                  
+[36malgo-1-0bmf8_1  |[0m            _.-``__ ''-._                                             
+[36malgo-1-0bmf8_1  |[0m       _.-``    `.  `_.  ''-._           Redis 6.2.7 (00000000/0) 64 bit
+[36malgo-1-0bmf8_1  |[0m   .-`` .-```.  ```\/    _.,_ ''-._                                  
+[36malgo-1-0bmf8_1  |[0m  (    '      ,       .-`  | `,    )     Running in standalone mode
+[36malgo-1-0bmf8_1  |[0m  |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+[36malgo-1-0bmf8_1  |[0m  |    `-._   `._    /     _.-'    |     PID: 21
+[36malgo-1-0bmf8_1  |[0m   `-._    `-._  `-./  _.-'    _.-'                                   
+[36malgo-1-0bmf8_1  |[0m  |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+[36malgo-1-0bmf8_1  |[0m  |    `-._`-._        _.-'_.-'    |           https://redis.io       
+[36malgo-1-0bmf8_1  |[0m   `-._    `-._`-.__.-'_.-'    _.-'                                   
+[36malgo-1-0bmf8_1  |[0m  |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+[36malgo-1-0bmf8_1  |[0m  |    `-._`-._        _.-'_.-'    |                                  
+[36malgo-1-0bmf8_1  |[0m   `-._    `-._`-.__.-'_.-'    _.-'                                   
+[36malgo-1-0bmf8_1  |[0m       `-._    `-.__.-'    _.-'                                       
+[36malgo-1-0bmf8_1  |[0m           `-._        _.-'                                           
+[36malgo-1-0bmf8_1  |[0m               `-.__.-'                                               
+[36malgo-1-0bmf8_1  |[0m 
+[36malgo-1-0bmf8_1  |[0m 21:M 28 Sep 2023 05:22:36.546 # Server initialized
+[36malgo-1-0bmf8_1  |[0m 21:M 28 Sep 2023 05:22:36.546 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+[36malgo-1-0bmf8_1  |[0m 21:M 28 Sep 2023 05:22:36.546 * Ready to accept connections
+[36malgo-1-0bmf8_1  |[0m /usr/local/lib/python3.6/dist-packages/paramiko/transport.py:32: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography. The next release of cryptography will remove support for Python 3.6.
+[36malgo-1-0bmf8_1  |[0m   from cryptography.hazmat.backends import default_backend
+[36malgo-1-0bmf8_1  |[0m /usr/local/lib/python3.6/dist-packages/boto3/compat.py:88: PythonDeprecationWarning: Boto3 will no longer support Python 3.6 starting May 30, 2022. To continue receiving service updates, bug fixes, and security updates please upgrade to Python 3.7 or later. More information can be found here: https://aws.amazon.com/blogs/developer/python-support-policy-updates-for-aws-sdks-and-tools/
+[36malgo-1-0bmf8_1  |[0m   warnings.warn(warning, PythonDeprecationWarning)
+[36malgo-1-0bmf8_1  |[0m 2023-09-28 05:22:39.995547: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+[36malgo-1-0bmf8_1  |[0m WARNING:tensorflow:Deprecation warnings have been disabled. Set TF_ENABLE_DEPRECATION_WARNINGS=1 to re-enable them.
+[36malgo-1-0bmf8_1  |[0m 2023-09-28 05:23:11,785 sagemaker-containers INFO     Imported framework sagemaker_tensorflow_container.training
+[36malgo-1-0bmf8_1  |[0m /usr/local/lib/python3.6/dist-packages/boto3/compat.py:88: PythonDeprecationWarning: Boto3 will no longer support Python 3.6 starting May 30, 2022. To continue receiving service updates, bug fixes, and security updates please upgrade to Python 3.7 or later. More information can be found here: https://aws.amazon.com/blogs/developer/python-support-policy-updates-for-aws-sdks-and-tools/
+[36malgo-1-0bmf8_1  |[0m   warnings.warn(warning, PythonDeprecationWarning)
+[36malgo-1-0bmf8_1  |[0m 2023-09-28 05:23:14,692 sagemaker-containers INFO     Invoking user script
+[36malgo-1-0bmf8_1  |[0m 
+[36malgo-1-0bmf8_1  |[0m Training Env:
+[36malgo-1-0bmf8_1  |[0m 
+[36malgo-1-0bmf8_1  |[0m {
+[36malgo-1-0bmf8_1  |[0m     "additional_framework_parameters": {
+[36malgo-1-0bmf8_1  |[0m         "sagemaker_estimator": "RLEstimator"
+[36malgo-1-0bmf8_1  |[0m     },
+[36malgo-1-0bmf8_1  |[0m     "channel_input_dirs": {},
+[36malgo-1-0bmf8_1  |[0m     "current_host": "algo-1-0bmf8",
+[36malgo-1-0bmf8_1  |[0m     "framework_module": "sagemaker_tensorflow_container.training:main",
+[36malgo-1-0bmf8_1  |[0m     "hosts": [
+[36malgo-1-0bmf8_1  |[0m         "algo-1-0bmf8"
+[36malgo-1-0bmf8_1  |[0m     ],
+[36malgo-1-0bmf8_1  |[0m     "hyperparameters": {
+[36malgo-1-0bmf8_1  |[0m         "s3_bucket": "base-bucket-1f3pfk38sjoqu",
+[36malgo-1-0bmf8_1  |[0m         "s3_prefix": "AWS-Beast-B01/aws-beast-b01s",
+[36malgo-1-0bmf8_1  |[0m         "aws_region": "us-east-1",
+[36malgo-1-0bmf8_1  |[0m         "model_metadata_s3_key": "s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/custom_files/model_metadata.json",
+[36malgo-1-0bmf8_1  |[0m         "RLCOACH_PRESET": "deepracer",
+[36malgo-1-0bmf8_1  |[0m         "pretrained_s3_bucket": "base-bucket-1f3pfk38sjoqu",
+[36malgo-1-0bmf8_1  |[0m         "pretrained_s3_prefix": "AWS-Beast-B01/aws-beast-b01",
+[36malgo-1-0bmf8_1  |[0m         "pretrained_checkpoint": "last",
+[36malgo-1-0bmf8_1  |[0m         "batch_size": 128,
+[36malgo-1-0bmf8_1  |[0m         "beta_entropy": 0.01,
+[36malgo-1-0bmf8_1  |[0m         "discount_factor": 0.999,
+[36malgo-1-0bmf8_1  |[0m         "e_greedy_value": 0.05,
+[36malgo-1-0bmf8_1  |[0m         "epsilon_steps": 10000,
+[36malgo-1-0bmf8_1  |[0m         "exploration_type": "categorical",
+[36malgo-1-0bmf8_1  |[0m         "loss_type": "huber",
+[36malgo-1-0bmf8_1  |[0m         "lr": 0.0003,
+[36malgo-1-0bmf8_1  |[0m         "num_episodes_between_training": 20,
+[36malgo-1-0bmf8_1  |[0m         "num_epochs": 10,
+[36malgo-1-0bmf8_1  |[0m         "stack_size": 1,
+[36malgo-1-0bmf8_1  |[0m         "term_cond_avg_score": 100000.0,
+[36malgo-1-0bmf8_1  |[0m         "term_cond_max_episodes": 100000
+[36malgo-1-0bmf8_1  |[0m     },
+[36malgo-1-0bmf8_1  |[0m     "input_config_dir": "/opt/ml/input/config",
+[36malgo-1-0bmf8_1  |[0m     "input_data_config": {},
+[36malgo-1-0bmf8_1  |[0m     "input_dir": "/opt/ml/input",
+[36malgo-1-0bmf8_1  |[0m     "is_master": true,
+[36malgo-1-0bmf8_1  |[0m     "job_name": "AWS-Beast-B01/aws-beast-b01s",
+[36malgo-1-0bmf8_1  |[0m     "log_level": 20,
+[36malgo-1-0bmf8_1  |[0m     "master_hostname": "algo-1-0bmf8",
+[36malgo-1-0bmf8_1  |[0m     "model_dir": "/opt/ml/model",
+[36malgo-1-0bmf8_1  |[0m     "module_dir": "s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/aws-beast-b01s/source/sourcedir.tar.gz",
+[36malgo-1-0bmf8_1  |[0m     "module_name": "training_worker",
+[36malgo-1-0bmf8_1  |[0m     "network_interface_name": "eth0",
+[36malgo-1-0bmf8_1  |[0m     "num_cpus": 8,
+[36malgo-1-0bmf8_1  |[0m     "num_gpus": 1,
+[36malgo-1-0bmf8_1  |[0m     "output_data_dir": "/opt/ml/output/data",
+[36malgo-1-0bmf8_1  |[0m     "output_dir": "/opt/ml/output",
+[36malgo-1-0bmf8_1  |[0m     "output_intermediate_dir": "/opt/ml/output/intermediate",
+[36malgo-1-0bmf8_1  |[0m     "resource_config": {
+[36malgo-1-0bmf8_1  |[0m         "current_host": "algo-1-0bmf8",
+[36malgo-1-0bmf8_1  |[0m         "hosts": [
+[36malgo-1-0bmf8_1  |[0m             "algo-1-0bmf8"
+[36malgo-1-0bmf8_1  |[0m         ]
+[36malgo-1-0bmf8_1  |[0m     },
+[36malgo-1-0bmf8_1  |[0m     "user_entry_point": "training_worker.py"
+[36malgo-1-0bmf8_1  |[0m }
+[36malgo-1-0bmf8_1  |[0m 
+[36malgo-1-0bmf8_1  |[0m Environment variables:
+[36malgo-1-0bmf8_1  |[0m 
+[36malgo-1-0bmf8_1  |[0m SM_HOSTS=["algo-1-0bmf8"]
+[36malgo-1-0bmf8_1  |[0m SM_NETWORK_INTERFACE_NAME=eth0
+[36malgo-1-0bmf8_1  |[0m SM_HPS={"RLCOACH_PRESET":"deepracer","aws_region":"us-east-1","batch_size":128,"beta_entropy":0.01,"discount_factor":0.999,"e_greedy_value":0.05,"epsilon_steps":10000,"exploration_type":"categorical","loss_type":"huber","lr":0.0003,"model_metadata_s3_key":"s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/custom_files/model_metadata.json","num_episodes_between_training":20,"num_epochs":10,"pretrained_checkpoint":"last","pretrained_s3_bucket":"base-bucket-1f3pfk38sjoqu","pretrained_s3_prefix":"AWS-Beast-B01/aws-beast-b01","s3_bucket":"base-bucket-1f3pfk38sjoqu","s3_prefix":"AWS-Beast-B01/aws-beast-b01s","stack_size":1,"term_cond_avg_score":100000.0,"term_cond_max_episodes":100000}
+[36malgo-1-0bmf8_1  |[0m SM_USER_ENTRY_POINT=training_worker.py
+[36malgo-1-0bmf8_1  |[0m SM_FRAMEWORK_PARAMS={"sagemaker_estimator":"RLEstimator"}
+[36malgo-1-0bmf8_1  |[0m SM_RESOURCE_CONFIG={"current_host":"algo-1-0bmf8","hosts":["algo-1-0bmf8"]}
+[36malgo-1-0bmf8_1  |[0m SM_INPUT_DATA_CONFIG={}
+[36malgo-1-0bmf8_1  |[0m SM_OUTPUT_DATA_DIR=/opt/ml/output/data
+[36malgo-1-0bmf8_1  |[0m SM_CHANNELS=[]
+[36malgo-1-0bmf8_1  |[0m SM_CURRENT_HOST=algo-1-0bmf8
+[36malgo-1-0bmf8_1  |[0m SM_MODULE_NAME=training_worker
+[36malgo-1-0bmf8_1  |[0m SM_LOG_LEVEL=20
+[36malgo-1-0bmf8_1  |[0m SM_FRAMEWORK_MODULE=sagemaker_tensorflow_container.training:main
+[36malgo-1-0bmf8_1  |[0m SM_INPUT_DIR=/opt/ml/input
+[36malgo-1-0bmf8_1  |[0m SM_INPUT_CONFIG_DIR=/opt/ml/input/config
+[36malgo-1-0bmf8_1  |[0m SM_OUTPUT_DIR=/opt/ml/output
+[36malgo-1-0bmf8_1  |[0m SM_NUM_CPUS=8
+[36malgo-1-0bmf8_1  |[0m SM_NUM_GPUS=1
+[36malgo-1-0bmf8_1  |[0m SM_MODEL_DIR=/opt/ml/model
+[36malgo-1-0bmf8_1  |[0m SM_MODULE_DIR=s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/aws-beast-b01s/source/sourcedir.tar.gz
+[36malgo-1-0bmf8_1  |[0m SM_TRAINING_ENV={"additional_framework_parameters":{"sagemaker_estimator":"RLEstimator"},"channel_input_dirs":{},"current_host":"algo-1-0bmf8","framework_module":"sagemaker_tensorflow_container.training:main","hosts":["algo-1-0bmf8"],"hyperparameters":{"RLCOACH_PRESET":"deepracer","aws_region":"us-east-1","batch_size":128,"beta_entropy":0.01,"discount_factor":0.999,"e_greedy_value":0.05,"epsilon_steps":10000,"exploration_type":"categorical","loss_type":"huber","lr":0.0003,"model_metadata_s3_key":"s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/custom_files/model_metadata.json","num_episodes_between_training":20,"num_epochs":10,"pretrained_checkpoint":"last","pretrained_s3_bucket":"base-bucket-1f3pfk38sjoqu","pretrained_s3_prefix":"AWS-Beast-B01/aws-beast-b01","s3_bucket":"base-bucket-1f3pfk38sjoqu","s3_prefix":"AWS-Beast-B01/aws-beast-b01s","stack_size":1,"term_cond_avg_score":100000.0,"term_cond_max_episodes":100000},"input_config_dir":"/opt/ml/input/config","input_data_config":{},"input_dir":"/opt/ml/input","is_master":true,"job_name":"AWS-Beast-B01/aws-beast-b01s","log_level":20,"master_hostname":"algo-1-0bmf8","model_dir":"/opt/ml/model","module_dir":"s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/aws-beast-b01s/source/sourcedir.tar.gz","module_name":"training_worker","network_interface_name":"eth0","num_cpus":8,"num_gpus":1,"output_data_dir":"/opt/ml/output/data","output_dir":"/opt/ml/output","output_intermediate_dir":"/opt/ml/output/intermediate","resource_config":{"current_host":"algo-1-0bmf8","hosts":["algo-1-0bmf8"]},"user_entry_point":"training_worker.py"}
+[36malgo-1-0bmf8_1  |[0m SM_USER_ARGS=["--RLCOACH_PRESET","deepracer","--aws_region","us-east-1","--batch_size","128","--beta_entropy","0.01","--discount_factor","0.999","--e_greedy_value","0.05","--epsilon_steps","10000","--exploration_type","categorical","--loss_type","huber","--lr","0.0003","--model_metadata_s3_key","s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/custom_files/model_metadata.json","--num_episodes_between_training","20","--num_epochs","10","--pretrained_checkpoint","last","--pretrained_s3_bucket","base-bucket-1f3pfk38sjoqu","--pretrained_s3_prefix","AWS-Beast-B01/aws-beast-b01","--s3_bucket","base-bucket-1f3pfk38sjoqu","--s3_prefix","AWS-Beast-B01/aws-beast-b01s","--stack_size","1","--term_cond_avg_score","100000.0","--term_cond_max_episodes","100000"]
+[36malgo-1-0bmf8_1  |[0m SM_OUTPUT_INTERMEDIATE_DIR=/opt/ml/output/intermediate
+[36malgo-1-0bmf8_1  |[0m SM_HP_S3_BUCKET=base-bucket-1f3pfk38sjoqu
+[36malgo-1-0bmf8_1  |[0m SM_HP_S3_PREFIX=AWS-Beast-B01/aws-beast-b01s
+[36malgo-1-0bmf8_1  |[0m SM_HP_AWS_REGION=us-east-1
+[36malgo-1-0bmf8_1  |[0m SM_HP_MODEL_METADATA_S3_KEY=s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/custom_files/model_metadata.json
+[36malgo-1-0bmf8_1  |[0m SM_HP_RLCOACH_PRESET=deepracer
+[36malgo-1-0bmf8_1  |[0m SM_HP_PRETRAINED_S3_BUCKET=base-bucket-1f3pfk38sjoqu
+[36malgo-1-0bmf8_1  |[0m SM_HP_PRETRAINED_S3_PREFIX=AWS-Beast-B01/aws-beast-b01
+[36malgo-1-0bmf8_1  |[0m SM_HP_PRETRAINED_CHECKPOINT=last
+[36malgo-1-0bmf8_1  |[0m SM_HP_BATCH_SIZE=128
+[36malgo-1-0bmf8_1  |[0m SM_HP_BETA_ENTROPY=0.01
+[36malgo-1-0bmf8_1  |[0m SM_HP_DISCOUNT_FACTOR=0.999
+[36malgo-1-0bmf8_1  |[0m SM_HP_E_GREEDY_VALUE=0.05
+[36malgo-1-0bmf8_1  |[0m SM_HP_EPSILON_STEPS=10000
+[36malgo-1-0bmf8_1  |[0m SM_HP_EXPLORATION_TYPE=categorical
+[36malgo-1-0bmf8_1  |[0m SM_HP_LOSS_TYPE=huber
+[36malgo-1-0bmf8_1  |[0m SM_HP_LR=0.0003
+[36malgo-1-0bmf8_1  |[0m SM_HP_NUM_EPISODES_BETWEEN_TRAINING=20
+[36malgo-1-0bmf8_1  |[0m SM_HP_NUM_EPOCHS=10
+[36malgo-1-0bmf8_1  |[0m SM_HP_STACK_SIZE=1
+[36malgo-1-0bmf8_1  |[0m SM_HP_TERM_COND_AVG_SCORE=100000.0
+[36malgo-1-0bmf8_1  |[0m SM_HP_TERM_COND_MAX_EPISODES=100000
+[36malgo-1-0bmf8_1  |[0m PYTHONPATH=/usr/local/bin:/opt/amazon:/opt/ml/code:/usr/lib/python36.zip:/usr/lib/python3.6:/usr/lib/python3.6/lib-dynload:/usr/local/lib/python3.6/dist-packages:/usr/lib/python3/dist-packages
+[36malgo-1-0bmf8_1  |[0m 
+[36malgo-1-0bmf8_1  |[0m Invoking script with the following command:
+[36malgo-1-0bmf8_1  |[0m 
+[36malgo-1-0bmf8_1  |[0m /usr/bin/python3 training_worker.py --RLCOACH_PRESET deepracer --aws_region us-east-1 --batch_size 128 --beta_entropy 0.01 --discount_factor 0.999 --e_greedy_value 0.05 --epsilon_steps 10000 --exploration_type categorical --loss_type huber --lr 0.0003 --model_metadata_s3_key s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/custom_files/model_metadata.json --num_episodes_between_training 20 --num_epochs 10 --pretrained_checkpoint last --pretrained_s3_bucket base-bucket-1f3pfk38sjoqu --pretrained_s3_prefix AWS-Beast-B01/aws-beast-b01 --s3_bucket base-bucket-1f3pfk38sjoqu --s3_prefix AWS-Beast-B01/aws-beast-b01s --stack_size 1 --term_cond_avg_score 100000.0 --term_cond_max_episodes 100000
+[36malgo-1-0bmf8_1  |[0m 
+[36malgo-1-0bmf8_1  |[0m 
+[36malgo-1-0bmf8_1  |[0m /usr/local/lib/python3.6/dist-packages/redis/utils.py:13: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography. The next release of cryptography will remove support for Python 3.6.
+[36malgo-1-0bmf8_1  |[0m   import cryptography  # noqa
+[36malgo-1-0bmf8_1  |[0m WARNING:tensorflow:Deprecation warnings have been disabled. Set TF_ENABLE_DEPRECATION_WARNINGS=1 to re-enable them.
+[36malgo-1-0bmf8_1  |[0m WARNING:tensorflow:From training_worker.py:47: The name tf.logging.set_verbosity is deprecated. Please use tf.compat.v1.logging.set_verbosity instead.
+[36malgo-1-0bmf8_1  |[0m 
+[36malgo-1-0bmf8_1  |[0m WARNING:tensorflow:From training_worker.py:47: The name tf.logging.ERROR is deprecated. Please use tf.compat.v1.logging.ERROR instead.
+[36malgo-1-0bmf8_1  |[0m 
+[36malgo-1-0bmf8_1  |[0m Training Worker Args: Namespace(aws_region='us-east-1', checkpoint_dir='./checkpoint_sagemaker', cuda_visible_devices=None, environment_s3_key=None, framework='tensorflow', model_metadata_s3_key='s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/custom_files/model_metadata.json', preset_s3_key=None, pretrained_checkpoint='last', pretrained_checkpoint_dir='./pretrained_checkpoint_sagemaker', pretrained_s3_bucket='base-bucket-1f3pfk38sjoqu', pretrained_s3_prefix='AWS-Beast-B01/aws-beast-b01', s3_bucket='base-bucket-1f3pfk38sjoqu', s3_endpoint_url=None, s3_prefix='AWS-Beast-B01/aws-beast-b01s')
+[36malgo-1-0bmf8_1  |[0m S3 bucket: base-bucket-1f3pfk38sjoqu 
+[36malgo-1-0bmf8_1  |[0m  S3 prefix: AWS-Beast-B01/aws-beast-b01s 
+[36malgo-1-0bmf8_1  |[0m  S3 endpoint URL: None
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded model metadata                  from s3 key AWS-Beast-B01/custom_files/model_metadata.json to local ./custom_files/agent/model_metadata.json.
+[36malgo-1-0bmf8_1  |[0m Sensor list ['FRONT_FACING_CAMERA'], network DEEP_CONVOLUTIONAL_NETWORK_SHALLOW, simapp_version 5.0, training_algorithm clipped_ppo, action_space_type continuous lidar_config {'num_sectors': 8, 'num_values_per_sector': 8, 'clipping_dist': 2.0}
+[36malgo-1-0bmf8_1  |[0m Action space from file: {'steering_angle': {'high': 30.0, 'low': -30.0}, 'speed': {'high': 4.0, 'low': 1.25}}
+[36malgo-1-0bmf8_1  |[0m Using the following hyper-parameters
+[36malgo-1-0bmf8_1  |[0m {
+[36malgo-1-0bmf8_1  |[0m   "batch_size": 128,
+[36malgo-1-0bmf8_1  |[0m   "beta_entropy": 0.01,
+[36malgo-1-0bmf8_1  |[0m   "discount_factor": 0.999,
+[36malgo-1-0bmf8_1  |[0m   "e_greedy_value": 0.05,
+[36malgo-1-0bmf8_1  |[0m   "epsilon_steps": 10000,
+[36malgo-1-0bmf8_1  |[0m   "exploration_type": "categorical",
+[36malgo-1-0bmf8_1  |[0m   "loss_type": "huber",
+[36malgo-1-0bmf8_1  |[0m   "lr": 0.0003,
+[36malgo-1-0bmf8_1  |[0m   "num_episodes_between_training": 20,
+[36malgo-1-0bmf8_1  |[0m   "num_epochs": 10,
+[36malgo-1-0bmf8_1  |[0m   "stack_size": 1,
+[36malgo-1-0bmf8_1  |[0m   "term_cond_avg_score": 100000.0,
+[36malgo-1-0bmf8_1  |[0m   "term_cond_max_episodes": 100000
+[36malgo-1-0bmf8_1  |[0m }
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded hyperparameters to                  s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/ip/hyperparameters.json.
+[36malgo-1-0bmf8_1  |[0m Hostname: algo-1-0bmf8
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded ip address to                  s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/ip/ip.json.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded ip done to                  s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/ip/done.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01/model/deepracer_checkpoints.json to local pretrained_checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded temp coach checkpoint to                   s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01/model/.coach_checkpoint.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded 16_Step-9724.ckpt.data-00000-of-00001 from                  s3 key AWS-Beast-B01/aws-beast-b01/model/16_Step-9724.ckpt.data-00000-of-00001 to local pretrained_checkpoint_sagemaker/agent/16_Step-9724.ckpt.data-00000-of-00001.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded 16_Step-9724.ckpt.index from                  s3 key AWS-Beast-B01/aws-beast-b01/model/16_Step-9724.ckpt.index to local pretrained_checkpoint_sagemaker/agent/16_Step-9724.ckpt.index.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded 16_Step-9724.ckpt.meta from                  s3 key AWS-Beast-B01/aws-beast-b01/model/16_Step-9724.ckpt.meta to local pretrained_checkpoint_sagemaker/agent/16_Step-9724.ckpt.meta.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded .ready from                  s3 key AWS-Beast-B01/aws-beast-b01/model/.ready to local pretrained_checkpoint_sagemaker/agent/.ready.
+[36malgo-1-0bmf8_1  |[0m ## Creating graph - name: MultiAgentGraphManager
+[36malgo-1-0bmf8_1  |[0m ## Start physics before creating graph
+[36malgo-1-0bmf8_1  |[0m ## Create graph
+[36malgo-1-0bmf8_1  |[0m ## Creating agent - name: agent
+[36malgo-1-0bmf8_1  |[0m [RL] Created agent loggers
+[36malgo-1-0bmf8_1  |[0m [RL] Dynamic import of memory:  "DeepRacerMemoryParameters" {
+[36malgo-1-0bmf8_1  |[0m     "load_memory_from_file_path": null,
+[36malgo-1-0bmf8_1  |[0m     "max_size": [
+[36malgo-1-0bmf8_1  |[0m         "<MemoryGranularity.Transitions: 0>",
+[36malgo-1-0bmf8_1  |[0m         1000000
+[36malgo-1-0bmf8_1  |[0m     ],
+[36malgo-1-0bmf8_1  |[0m     "n_step": -1,
+[36malgo-1-0bmf8_1  |[0m     "shared_memory": false,
+[36malgo-1-0bmf8_1  |[0m     "train_to_eval_ratio": 1
+[36malgo-1-0bmf8_1  |[0m }
+[36malgo-1-0bmf8_1  |[0m 
+[36malgo-1-0bmf8_1  |[0m [RL] Dynamically imported of memory <markov.memories.deepracer_memory.DeepRacerMemory object at 0x7f1d0c114c18>
+[36malgo-1-0bmf8_1  |[0m [RL] Setting devices
+[36malgo-1-0bmf8_1  |[0m [RL] Setting filters
+[36malgo-1-0bmf8_1  |[0m [RL] Setting filter devices: numpy
+[36malgo-1-0bmf8_1  |[0m [RL] Setting Phase
+[36malgo-1-0bmf8_1  |[0m [RL] After setting Phase
+[36malgo-1-0bmf8_1  |[0m [RL] Setting signals
+[36malgo-1-0bmf8_1  |[0m [RL] Agent init successful
+[36malgo-1-0bmf8_1  |[0m [RL] ActorCriticAgent init
+[36malgo-1-0bmf8_1  |[0m [RL] ActorCriticAgent  init successful
+[36malgo-1-0bmf8_1  |[0m ## Created agent: agent
+[36malgo-1-0bmf8_1  |[0m ## Stop physics after creating graph
+[36malgo-1-0bmf8_1  |[0m ## Creating session
+[36malgo-1-0bmf8_1  |[0m Creating regular session
+[36malgo-1-0bmf8_1  |[0m 2023-09-28 05:25:27.668846: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+[36malgo-1-0bmf8_1  |[0m   /job:localhost/replica:0/task:0/device:CPU:0].
+[36malgo-1-0bmf8_1  |[0m See below for details of this colocation group:
+[36malgo-1-0bmf8_1  |[0m Colocation Debug Info:
+[36malgo-1-0bmf8_1  |[0m Colocation group had the following types and supported devices: 
+[36malgo-1-0bmf8_1  |[0m Root Member(assigned_device_name_index_=-1 requested_device_name_='/device:GPU:0' assigned_device_name_='' resource_device_name_='/device:GPU:0' supported_device_types_=[CPU] possible_devices_=[]
+[36malgo-1-0bmf8_1  |[0m Identity: GPU CPU XLA_CPU XLA_GPU 
+[36malgo-1-0bmf8_1  |[0m VariableV2: CPU 
+[36malgo-1-0bmf8_1  |[0m Assign: GPU CPU 
+[36malgo-1-0bmf8_1  |[0m 
+[36malgo-1-0bmf8_1  |[0m Colocation members, user-requested devices, and framework assigned devices, if any:
+[36malgo-1-0bmf8_1  |[0m   main_level/agent/main/online/Variable (VariableV2) /device:GPU:0
+[36malgo-1-0bmf8_1  |[0m   main_level/agent/main/online/Variable/Assign (Assign) /device:GPU:0
+[36malgo-1-0bmf8_1  |[0m   main_level/agent/main/online/Variable/read (Identity) /device:GPU:0
+[36malgo-1-0bmf8_1  |[0m   main_level/agent/main/online/Assign (Assign) /device:GPU:0
+[36malgo-1-0bmf8_1  |[0m 
+[36malgo-1-0bmf8_1  |[0m 2023-09-28 05:25:27.671163: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+[36malgo-1-0bmf8_1  |[0m   /job:localhost/replica:0/task:0/device:CPU:0].
+[36malgo-1-0bmf8_1  |[0m See below for details of this colocation group:
+[36malgo-1-0bmf8_1  |[0m Colocation Debug Info:
+[36malgo-1-0bmf8_1  |[0m Colocation group had the following types and supported devices: 
+[36malgo-1-0bmf8_1  |[0m Root Member(assigned_device_name_index_=-1 requested_device_name_='/device:GPU:0' assigned_device_name_='' resource_device_name_='/device:GPU:0' supported_device_types_=[CPU] possible_devices_=[]
+[36malgo-1-0bmf8_1  |[0m Identity: GPU CPU XLA_CPU XLA_GPU 
+[36malgo-1-0bmf8_1  |[0m VariableV2: CPU 
+[36malgo-1-0bmf8_1  |[0m Assign: GPU CPU 
+[36malgo-1-0bmf8_1  |[0m 
+[36malgo-1-0bmf8_1  |[0m Colocation members, user-requested devices, and framework assigned devices, if any:
+[36malgo-1-0bmf8_1  |[0m   main_level/agent/main/target/Variable (VariableV2) /device:GPU:0
+[36malgo-1-0bmf8_1  |[0m   main_level/agent/main/target/Variable/Assign (Assign) /device:GPU:0
+[36malgo-1-0bmf8_1  |[0m   main_level/agent/main/target/Variable/read (Identity) /device:GPU:0
+[36malgo-1-0bmf8_1  |[0m   main_level/agent/main/target/Assign (Assign) /device:GPU:0
+[36malgo-1-0bmf8_1  |[0m 
+[36malgo-1-0bmf8_1  |[0m Checkpoint> Restoring from path=./pretrained_checkpoint_sagemaker/agent/16_Step-9724.ckpt
+[36malgo-1-0bmf8_1  |[0m Checkpoint> Saving in path=['./checkpoint_sagemaker/agent/17_Step-0.ckpt']
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded .lock to                      s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.lock.
+[36malgo-1-0bmf8_1  |[0m Uploaded 3 files for checkpoint 17
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded coach checkpoint to                   s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.coach_checkpoint.
+[36malgo-1-0bmf8_1  |[0m Unable to find deepracer checkpoint json
+[36malgo-1-0bmf8_1  |[0m Unable to find the best deepracer checkpoint number. Getting the last checkpoint number
+[36malgo-1-0bmf8_1  |[0m Unable to find deepracer checkpoint json
+[36malgo-1-0bmf8_1  |[0m Unable to find the last deepracer checkpoint number.
+[36malgo-1-0bmf8_1  |[0m Unable to find deepracer checkpoint json
+[36malgo-1-0bmf8_1  |[0m Unable to find the last deepracer checkpoint number.
+[36malgo-1-0bmf8_1  |[0m saved intermediate frozen graph: AWS-Beast-B01/aws-beast-b01s/model/model_17.pb
+[36malgo-1-0bmf8_1  |[0m Best checkpoint number: -1, Last checkpoint number: -1
+[36malgo-1-0bmf8_1  |[0m Copying the frozen checkpoint from ./frozen_models/agent/model_17.pb to /opt/ml/model/agent/model.pb.
+[36malgo-1-0bmf8_1  |[0m Unable to find deepracer checkpoint json
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded .lock to                      s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.lock.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded .ready to                      s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.ready.
+[36malgo-1-0bmf8_1  |[0m DoorMan: installing SIGINT, SIGTERM
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=1, Total reward=66.13, Steps=59, Training iteration=0
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=2, Total reward=86.99, Steps=142, Training iteration=0
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=3, Total reward=28.28, Steps=172, Training iteration=0
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=4, Total reward=39.69, Steps=210, Training iteration=0
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=5, Total reward=79.95, Steps=282, Training iteration=0
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=6, Total reward=45.9, Steps=326, Training iteration=0
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=7, Total reward=50.5, Steps=373, Training iteration=0
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=8, Total reward=24.87, Steps=400, Training iteration=0
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=9, Total reward=23.67, Steps=427, Training iteration=0
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=10, Total reward=66.36, Steps=494, Training iteration=0
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=11, Total reward=91.58, Steps=577, Training iteration=0
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=12, Total reward=29.87, Steps=607, Training iteration=0
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=13, Total reward=72.96, Steps=676, Training iteration=0
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=14, Total reward=45.3, Steps=720, Training iteration=0
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=15, Total reward=34.48, Steps=753, Training iteration=0
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=16, Total reward=37.51, Steps=796, Training iteration=0
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=17, Total reward=11.63, Steps=809, Training iteration=0
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=18, Total reward=67.93, Steps=871, Training iteration=0
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=19, Total reward=16.84, Steps=890, Training iteration=0
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=20, Total reward=18.64, Steps=910, Training iteration=0
+[36malgo-1-0bmf8_1  |[0m 2023-09-28 05:35:23.138638: W tensorflow/stream_executor/cuda/redzone_allocator.cc:312] Not found: ./bin/ptxas not found
+[36malgo-1-0bmf8_1  |[0m Relying on driver to perform ptx compilation. This message will be only logged once.
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=0.0033030530903488398, KL divergence=0.00959033239632845, Entropy=2.780151605606079, training epoch=0, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.03804280608892441, KL divergence=0.02359454333782196, Entropy=2.77913498878479, training epoch=1, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.053319793194532394, KL divergence=0.030388470739126205, Entropy=2.7792258262634277, training epoch=2, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.07609216123819351, KL divergence=0.03380211442708969, Entropy=2.7789385318756104, training epoch=3, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.07489720731973648, KL divergence=0.037157800048589706, Entropy=2.777304172515869, training epoch=4, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.08425133675336838, KL divergence=0.043888192623853683, Entropy=2.7752115726470947, training epoch=5, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.09824926406145096, KL divergence=0.048906683921813965, Entropy=2.772845983505249, training epoch=6, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.10616767406463623, KL divergence=0.0487813763320446, Entropy=2.769989252090454, training epoch=7, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.09745564311742783, KL divergence=0.05470893904566765, Entropy=2.767195463180542, training epoch=8, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.11377061158418655, KL divergence=0.052220914512872696, Entropy=2.7644824981689453, training epoch=9, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Checkpoint> Saving in path=['./checkpoint_sagemaker/agent/18_Step-910.ckpt']
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded .lock to                      s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.lock.
+[36malgo-1-0bmf8_1  |[0m Uploaded 3 files for checkpoint 18
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded coach checkpoint to                   s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.coach_checkpoint.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m saved intermediate frozen graph: AWS-Beast-B01/aws-beast-b01s/model/model_18.pb
+[36malgo-1-0bmf8_1  |[0m Best checkpoint number: 17, Last checkpoint number: 17
+[36malgo-1-0bmf8_1  |[0m Copying the frozen checkpoint from ./frozen_models/agent/model_17.pb to /opt/ml/model/agent/model.pb.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=21, Total reward=30.67, Steps=940, Training iteration=1
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=22, Total reward=34.08, Steps=974, Training iteration=1
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=23, Total reward=37.29, Steps=1011, Training iteration=1
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=24, Total reward=91.93, Steps=1091, Training iteration=1
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=25, Total reward=63.93, Steps=1150, Training iteration=1
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=26, Total reward=32.87, Steps=1182, Training iteration=1
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=27, Total reward=15.65, Steps=1200, Training iteration=1
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=28, Total reward=31.76, Steps=1232, Training iteration=1
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=29, Total reward=31.27, Steps=1262, Training iteration=1
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=30, Total reward=39.3, Steps=1302, Training iteration=1
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=31, Total reward=42.96, Steps=1352, Training iteration=1
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=32, Total reward=29.06, Steps=1380, Training iteration=1
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=33, Total reward=16.43, Steps=1396, Training iteration=1
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=34, Total reward=13.47, Steps=1410, Training iteration=1
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=35, Total reward=25.67, Steps=1437, Training iteration=1
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=36, Total reward=26.55, Steps=1466, Training iteration=1
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=37, Total reward=39.24, Steps=1502, Training iteration=1
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=38, Total reward=37.56, Steps=1537, Training iteration=1
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=39, Total reward=141.38, Steps=1667, Training iteration=1
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=40, Total reward=12.85, Steps=1684, Training iteration=1
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=0.003585701109841466, KL divergence=0.012813572771847248, Entropy=2.762300729751587, training epoch=0, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.04030746594071388, KL divergence=0.024912139400839806, Entropy=2.760373830795288, training epoch=1, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.06829246878623962, KL divergence=0.043870631605386734, Entropy=2.758084297180176, training epoch=2, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.08082034438848495, KL divergence=0.055227722972631454, Entropy=2.7557389736175537, training epoch=3, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.0973065197467804, KL divergence=0.06466195732355118, Entropy=2.753321886062622, training epoch=4, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.10098874568939209, KL divergence=0.07433295994997025, Entropy=2.7512378692626953, training epoch=5, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.10871324688196182, KL divergence=0.06942607462406158, Entropy=2.749382734298706, training epoch=6, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.11365029215812683, KL divergence=0.07915206998586655, Entropy=2.7474701404571533, training epoch=7, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.12022697925567627, KL divergence=0.09032603353261948, Entropy=2.7452447414398193, training epoch=8, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.12367304414510727, KL divergence=0.09102845191955566, Entropy=2.742948293685913, training epoch=9, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Checkpoint> Saving in path=['./checkpoint_sagemaker/agent/19_Step-1684.ckpt']
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded .lock to                      s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.lock.
+[36malgo-1-0bmf8_1  |[0m Uploaded 3 files for checkpoint 19
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded coach checkpoint to                   s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.coach_checkpoint.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m saved intermediate frozen graph: AWS-Beast-B01/aws-beast-b01s/model/model_19.pb
+[36malgo-1-0bmf8_1  |[0m Best checkpoint number: 17, Last checkpoint number: 17
+[36malgo-1-0bmf8_1  |[0m Copying the frozen checkpoint from ./frozen_models/agent/model_17.pb to /opt/ml/model/agent/model.pb.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=41, Total reward=49.75, Steps=1737, Training iteration=2
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=42, Total reward=27.69, Steps=1768, Training iteration=2
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=43, Total reward=36.01, Steps=1804, Training iteration=2
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=44, Total reward=31.07, Steps=1834, Training iteration=2
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=45, Total reward=16.52, Steps=1851, Training iteration=2
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=46, Total reward=15.27, Steps=1867, Training iteration=2
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=47, Total reward=75.55, Steps=1937, Training iteration=2
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=48, Total reward=72.54, Steps=2002, Training iteration=2
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=49, Total reward=25.07, Steps=2029, Training iteration=2
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=50, Total reward=11.84, Steps=2045, Training iteration=2
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=51, Total reward=41.93, Steps=2092, Training iteration=2
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=52, Total reward=19.07, Steps=2115, Training iteration=2
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=53, Total reward=61.34, Steps=2168, Training iteration=2
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=54, Total reward=76.84, Steps=2232, Training iteration=2
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=55, Total reward=25.49, Steps=2261, Training iteration=2
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=56, Total reward=23.08, Steps=2288, Training iteration=2
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=57, Total reward=41.74, Steps=2338, Training iteration=2
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=58, Total reward=26.89, Steps=2368, Training iteration=2
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=59, Total reward=20.61, Steps=2390, Training iteration=2
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=60, Total reward=37.34, Steps=2423, Training iteration=2
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=0.013002457097172737, KL divergence=0.005541484337300062, Entropy=2.7410717010498047, training epoch=0, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.008032336831092834, KL divergence=0.033067382872104645, Entropy=2.739410400390625, training epoch=1, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.041745640337467194, KL divergence=0.05399201437830925, Entropy=2.738060474395752, training epoch=2, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.09686118364334106, KL divergence=0.05929121375083923, Entropy=2.736821413040161, training epoch=3, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.06518573313951492, KL divergence=0.05889014154672623, Entropy=2.7355775833129883, training epoch=4, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.12529447674751282, KL divergence=0.07420246303081512, Entropy=2.7343838214874268, training epoch=5, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.09609971195459366, KL divergence=0.07965300977230072, Entropy=2.7330195903778076, training epoch=6, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.07848049700260162, KL divergence=0.0866793617606163, Entropy=2.731626272201538, training epoch=7, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.12034324556589127, KL divergence=0.10997408628463745, Entropy=2.730292797088623, training epoch=8, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.10428857803344727, KL divergence=0.10375652462244034, Entropy=2.728921413421631, training epoch=9, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Checkpoint> Saving in path=['./checkpoint_sagemaker/agent/20_Step-2423.ckpt']
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded .lock to                      s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.lock.
+[36malgo-1-0bmf8_1  |[0m Uploaded 3 files for checkpoint 20
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded coach checkpoint to                   s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.coach_checkpoint.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m saved intermediate frozen graph: AWS-Beast-B01/aws-beast-b01s/model/model_20.pb
+[36malgo-1-0bmf8_1  |[0m Best checkpoint number: 18, Last checkpoint number: 18
+[36malgo-1-0bmf8_1  |[0m Copying the frozen checkpoint from ./frozen_models/agent/model_18.pb to /opt/ml/model/agent/model.pb.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=61, Total reward=16.55, Steps=2439, Training iteration=3
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=62, Total reward=62.95, Steps=2498, Training iteration=3
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=63, Total reward=48.57, Steps=2556, Training iteration=3
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=64, Total reward=29.68, Steps=2587, Training iteration=3
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=65, Total reward=83.46, Steps=2658, Training iteration=3
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=66, Total reward=56.73, Steps=2713, Training iteration=3
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=67, Total reward=43.33, Steps=2759, Training iteration=3
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=68, Total reward=75.41, Steps=2834, Training iteration=3
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=69, Total reward=61.86, Steps=2886, Training iteration=3
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=70, Total reward=99.56, Steps=2978, Training iteration=3
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=71, Total reward=18.25, Steps=2999, Training iteration=3
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=72, Total reward=29.27, Steps=3030, Training iteration=3
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=73, Total reward=10.04, Steps=3043, Training iteration=3
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=74, Total reward=36.31, Steps=3083, Training iteration=3
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=75, Total reward=39.22, Steps=3117, Training iteration=3
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=76, Total reward=17.26, Steps=3139, Training iteration=3
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=77, Total reward=60.42, Steps=3191, Training iteration=3
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=78, Total reward=11.24, Steps=3206, Training iteration=3
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=79, Total reward=43.54, Steps=3255, Training iteration=3
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=80, Total reward=10.24, Steps=3270, Training iteration=3
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=0.022579049691557884, KL divergence=0.007397183682769537, Entropy=2.7277348041534424, training epoch=0, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.0352359376847744, KL divergence=0.04076636955142021, Entropy=2.726494550704956, training epoch=1, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.0734233483672142, KL divergence=0.0691366195678711, Entropy=2.725245714187622, training epoch=2, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.08001219481229782, KL divergence=0.08712980151176453, Entropy=2.7241904735565186, training epoch=3, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.08905565738677979, KL divergence=0.0951039269566536, Entropy=2.722496747970581, training epoch=4, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.08964383602142334, KL divergence=0.0985071137547493, Entropy=2.7206223011016846, training epoch=5, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.08982966095209122, KL divergence=0.10528738051652908, Entropy=2.7190568447113037, training epoch=6, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.11681743711233139, KL divergence=0.11830075830221176, Entropy=2.7173874378204346, training epoch=7, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.09167922288179398, KL divergence=0.11850772053003311, Entropy=2.7155063152313232, training epoch=8, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.10207978636026382, KL divergence=0.12204087525606155, Entropy=2.713477373123169, training epoch=9, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Checkpoint> Saving in path=['./checkpoint_sagemaker/agent/21_Step-3270.ckpt']
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded .lock to                      s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.lock.
+[36malgo-1-0bmf8_1  |[0m Uploaded 3 files for checkpoint 21
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded coach checkpoint to                   s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.coach_checkpoint.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m saved intermediate frozen graph: AWS-Beast-B01/aws-beast-b01s/model/model_21.pb
+[36malgo-1-0bmf8_1  |[0m Best checkpoint number: 18, Last checkpoint number: 19
+[36malgo-1-0bmf8_1  |[0m Copying the frozen checkpoint from ./frozen_models/agent/model_18.pb to /opt/ml/model/agent/model.pb.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m Deleting the frozen models in s3 for the iterations: {'17'}
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=81, Total reward=30.9, Steps=3306, Training iteration=4
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=82, Total reward=25.06, Steps=3332, Training iteration=4
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=83, Total reward=13.99, Steps=3347, Training iteration=4
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=84, Total reward=13.63, Steps=3361, Training iteration=4
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=85, Total reward=44.3, Steps=3403, Training iteration=4
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=86, Total reward=61.03, Steps=3461, Training iteration=4
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=87, Total reward=14.65, Steps=3480, Training iteration=4
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=88, Total reward=82.58, Steps=3556, Training iteration=4
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=89, Total reward=27.29, Steps=3587, Training iteration=4
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=90, Total reward=80.62, Steps=3668, Training iteration=4
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=91, Total reward=53.93, Steps=3719, Training iteration=4
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=92, Total reward=31.12, Steps=3757, Training iteration=4
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=93, Total reward=33.87, Steps=3790, Training iteration=4
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=94, Total reward=107.02, Steps=3891, Training iteration=4
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=95, Total reward=10.04, Steps=3905, Training iteration=4
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=96, Total reward=23.87, Steps=3931, Training iteration=4
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=97, Total reward=21.46, Steps=3956, Training iteration=4
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=98, Total reward=40.9, Steps=3995, Training iteration=4
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=99, Total reward=26.06, Steps=4022, Training iteration=4
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=100, Total reward=138.3, Steps=4148, Training iteration=4
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=0.0290715079754591, KL divergence=0.019872503355145454, Entropy=2.71124005317688, training epoch=0, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.02771824598312378, KL divergence=0.03458254039287567, Entropy=2.7096776962280273, training epoch=1, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.07628488540649414, KL divergence=0.051737505942583084, Entropy=2.7084131240844727, training epoch=2, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.0945780798792839, KL divergence=0.065882109105587, Entropy=2.707430124282837, training epoch=3, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.0626043900847435, KL divergence=0.0828663557767868, Entropy=2.7064011096954346, training epoch=4, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.11769851297140121, KL divergence=0.08194202184677124, Entropy=2.704878568649292, training epoch=5, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.12453673034906387, KL divergence=0.09246005862951279, Entropy=2.702672243118286, training epoch=6, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.10323410481214523, KL divergence=0.09829246252775192, Entropy=2.7004387378692627, training epoch=7, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.12759268283843994, KL divergence=0.10261666774749756, Entropy=2.698214530944824, training epoch=8, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.13646133244037628, KL divergence=0.12339242547750473, Entropy=2.695652961730957, training epoch=9, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Checkpoint> Saving in path=['./checkpoint_sagemaker/agent/22_Step-4148.ckpt']
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded .lock to                      s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.lock.
+[36malgo-1-0bmf8_1  |[0m Uploaded 3 files for checkpoint 22
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded coach checkpoint to                   s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.coach_checkpoint.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m saved intermediate frozen graph: AWS-Beast-B01/aws-beast-b01s/model/model_22.pb
+[36malgo-1-0bmf8_1  |[0m Best checkpoint number: 18, Last checkpoint number: 20
+[36malgo-1-0bmf8_1  |[0m Copying the frozen checkpoint from ./frozen_models/agent/model_18.pb to /opt/ml/model/agent/model.pb.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m Deleting the frozen models in s3 for the iterations: {'19'}
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=101, Total reward=105.39, Steps=4241, Training iteration=5
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=102, Total reward=139.07, Steps=4364, Training iteration=5
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=103, Total reward=69.78, Steps=4432, Training iteration=5
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=104, Total reward=102.26, Steps=4531, Training iteration=5
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=105, Total reward=28.08, Steps=4561, Training iteration=5
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=106, Total reward=58.95, Steps=4620, Training iteration=5
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=107, Total reward=55.32, Steps=4674, Training iteration=5
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=108, Total reward=49.71, Steps=4722, Training iteration=5
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=109, Total reward=22.7, Steps=4754, Training iteration=5
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=110, Total reward=22.7, Steps=4786, Training iteration=5
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=111, Total reward=24.69, Steps=4819, Training iteration=5
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=112, Total reward=27.9, Steps=4855, Training iteration=5
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=113, Total reward=30.47, Steps=4885, Training iteration=5
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=114, Total reward=44.3, Steps=4928, Training iteration=5
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=115, Total reward=54.51, Steps=4979, Training iteration=5
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=116, Total reward=36.29, Steps=5015, Training iteration=5
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=117, Total reward=200.4, Steps=5193, Training iteration=5
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=118, Total reward=24.86, Steps=5219, Training iteration=5
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=119, Total reward=15.04, Steps=5235, Training iteration=5
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=120, Total reward=51.1, Steps=5281, Training iteration=5
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=0.018034351989626884, KL divergence=0.024686144664883614, Entropy=2.6930131912231445, training epoch=0, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.039059799164533615, KL divergence=0.052282609045505524, Entropy=2.6923463344573975, training epoch=1, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.050766393542289734, KL divergence=0.06539365649223328, Entropy=2.6931018829345703, training epoch=2, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.10096113383769989, KL divergence=0.06844323128461838, Entropy=2.6937191486358643, training epoch=3, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.0957748293876648, KL divergence=0.07814367115497589, Entropy=2.693730354309082, training epoch=4, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.11078516393899918, KL divergence=0.08766541630029678, Entropy=2.693049907684326, training epoch=5, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.11667177081108093, KL divergence=0.08995465934276581, Entropy=2.6914196014404297, training epoch=6, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.11219674348831177, KL divergence=0.09952957928180695, Entropy=2.6890406608581543, training epoch=7, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.13204270601272583, KL divergence=0.10535886138677597, Entropy=2.6859006881713867, training epoch=8, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.12792646884918213, KL divergence=0.11576873064041138, Entropy=2.6825551986694336, training epoch=9, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Checkpoint> Saving in path=['./checkpoint_sagemaker/agent/23_Step-5281.ckpt']
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded .lock to                      s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.lock.
+[36malgo-1-0bmf8_1  |[0m Uploaded 3 files for checkpoint 23
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded coach checkpoint to                   s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.coach_checkpoint.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m saved intermediate frozen graph: AWS-Beast-B01/aws-beast-b01s/model/model_23.pb
+[36malgo-1-0bmf8_1  |[0m Best checkpoint number: 21, Last checkpoint number: 21
+[36malgo-1-0bmf8_1  |[0m Copying the frozen checkpoint from ./frozen_models/agent/model_21.pb to /opt/ml/model/agent/model.pb.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m Deleting the frozen models in s3 for the iterations: {'20'}
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=121, Total reward=32.87, Steps=5312, Training iteration=6
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=122, Total reward=30.26, Steps=5341, Training iteration=6
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=123, Total reward=34.68, Steps=5376, Training iteration=6
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=124, Total reward=23.25, Steps=5400, Training iteration=6
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=125, Total reward=34.89, Steps=5437, Training iteration=6
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=126, Total reward=38.89, Steps=5475, Training iteration=6
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=127, Total reward=17.98, Steps=5497, Training iteration=6
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=128, Total reward=29.68, Steps=5528, Training iteration=6
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=129, Total reward=87.77, Steps=5607, Training iteration=6
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=130, Total reward=49.33, Steps=5656, Training iteration=6
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=131, Total reward=59.52, Steps=5711, Training iteration=6
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=132, Total reward=30.5, Steps=5747, Training iteration=6
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=133, Total reward=18.12, Steps=5765, Training iteration=6
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=134, Total reward=45.8, Steps=5810, Training iteration=6
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=135, Total reward=55.51, Steps=5861, Training iteration=6
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=136, Total reward=138.05, Steps=5982, Training iteration=6
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=137, Total reward=29.68, Steps=6014, Training iteration=6
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=138, Total reward=36.08, Steps=6050, Training iteration=6
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=139, Total reward=21.46, Steps=6074, Training iteration=6
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=140, Total reward=16.06, Steps=6095, Training iteration=6
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=0.007401177193969488, KL divergence=0.01166169811040163, Entropy=2.679835081100464, training epoch=0, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.023072345182299614, KL divergence=0.053544431924819946, Entropy=2.6776931285858154, training epoch=1, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.08088256418704987, KL divergence=0.06163102760910988, Entropy=2.6761369705200195, training epoch=2, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.09008872509002686, KL divergence=0.07450161129236221, Entropy=2.674535036087036, training epoch=3, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.10525759309530258, KL divergence=0.08559497445821762, Entropy=2.6726179122924805, training epoch=4, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.10135316848754883, KL divergence=0.09200528264045715, Entropy=2.670093536376953, training epoch=5, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.1093607023358345, KL divergence=0.09623170644044876, Entropy=2.667652130126953, training epoch=6, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.11594831943511963, KL divergence=0.10158520191907883, Entropy=2.6650712490081787, training epoch=7, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.12401822954416275, KL divergence=0.10315686464309692, Entropy=2.6623950004577637, training epoch=8, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.11876379698514938, KL divergence=0.1164354681968689, Entropy=2.659633159637451, training epoch=9, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Checkpoint> Saving in path=['./checkpoint_sagemaker/agent/24_Step-6095.ckpt']
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded .lock to                      s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.lock.
+[36malgo-1-0bmf8_1  |[0m Uploaded 3 files for checkpoint 24
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded coach checkpoint to                   s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.coach_checkpoint.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m saved intermediate frozen graph: AWS-Beast-B01/aws-beast-b01s/model/model_24.pb
+[36malgo-1-0bmf8_1  |[0m Best checkpoint number: 21, Last checkpoint number: 22
+[36malgo-1-0bmf8_1  |[0m Copying the frozen checkpoint from ./frozen_models/agent/model_21.pb to /opt/ml/model/agent/model.pb.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m Deleting the frozen models in s3 for the iterations: {'22'}
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=141, Total reward=21.27, Steps=6119, Training iteration=7
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=142, Total reward=31.11, Steps=6155, Training iteration=7
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=143, Total reward=59.32, Steps=6211, Training iteration=7
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=144, Total reward=38.48, Steps=6248, Training iteration=7
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=145, Total reward=49.11, Steps=6295, Training iteration=7
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=146, Total reward=17.25, Steps=6315, Training iteration=7
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=147, Total reward=15.05, Steps=6333, Training iteration=7
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=148, Total reward=35.89, Steps=6370, Training iteration=7
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=149, Total reward=22.46, Steps=6396, Training iteration=7
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=150, Total reward=12.63, Steps=6411, Training iteration=7
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=151, Total reward=18.05, Steps=6432, Training iteration=7
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=152, Total reward=32.29, Steps=6467, Training iteration=7
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=153, Total reward=64.98, Steps=6521, Training iteration=7
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=154, Total reward=65.51, Steps=6578, Training iteration=7
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=155, Total reward=58.31, Steps=6630, Training iteration=7
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=156, Total reward=52.52, Steps=6680, Training iteration=7
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=157, Total reward=16.04, Steps=6698, Training iteration=7
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=158, Total reward=17.65, Steps=6718, Training iteration=7
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=159, Total reward=46.6, Steps=6758, Training iteration=7
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=160, Total reward=48.9, Steps=6803, Training iteration=7
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.008201191201806068, KL divergence=0.013325326144695282, Entropy=2.6575160026550293, training epoch=0, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.04917866736650467, KL divergence=0.049972549080848694, Entropy=2.656364917755127, training epoch=1, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.08282733708620071, KL divergence=0.07467938214540482, Entropy=2.6555683612823486, training epoch=2, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.09594617784023285, KL divergence=0.11017916351556778, Entropy=2.6552186012268066, training epoch=3, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.11487190425395966, KL divergence=0.11065138876438141, Entropy=2.654933214187622, training epoch=4, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.10940225422382355, KL divergence=0.12004609405994415, Entropy=2.654362678527832, training epoch=5, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.09940347820520401, KL divergence=0.1242966428399086, Entropy=2.6536448001861572, training epoch=6, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.11228008568286896, KL divergence=0.12866170704364777, Entropy=2.652775764465332, training epoch=7, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.12860006093978882, KL divergence=0.13110551238059998, Entropy=2.6517934799194336, training epoch=8, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.1235271543264389, KL divergence=0.12430447340011597, Entropy=2.6505391597747803, training epoch=9, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Checkpoint> Saving in path=['./checkpoint_sagemaker/agent/25_Step-6803.ckpt']
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded .lock to                      s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.lock.
+[36malgo-1-0bmf8_1  |[0m Uploaded 3 files for checkpoint 25
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded coach checkpoint to                   s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.coach_checkpoint.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m saved intermediate frozen graph: AWS-Beast-B01/aws-beast-b01s/model/model_25.pb
+[36malgo-1-0bmf8_1  |[0m Best checkpoint number: 21, Last checkpoint number: 23
+[36malgo-1-0bmf8_1  |[0m Copying the frozen checkpoint from ./frozen_models/agent/model_21.pb to /opt/ml/model/agent/model.pb.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m Deleting the frozen models in s3 for the iterations: {'18'}
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=161, Total reward=19.0, Steps=6821, Training iteration=8
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=162, Total reward=15.15, Steps=6836, Training iteration=8
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=163, Total reward=32.27, Steps=6867, Training iteration=8
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=164, Total reward=29.07, Steps=6896, Training iteration=8
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=165, Total reward=35.49, Steps=6933, Training iteration=8
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=166, Total reward=32.08, Steps=6965, Training iteration=8
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=167, Total reward=15.06, Steps=6984, Training iteration=8
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=168, Total reward=22.08, Steps=7011, Training iteration=8
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=169, Total reward=23.47, Steps=7038, Training iteration=8
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=170, Total reward=32.47, Steps=7069, Training iteration=8
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=171, Total reward=20.72, Steps=7095, Training iteration=8
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=172, Total reward=26.44, Steps=7124, Training iteration=8
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=173, Total reward=10.05, Steps=7140, Training iteration=8
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=174, Total reward=21.06, Steps=7163, Training iteration=8
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=175, Total reward=16.6, Steps=7181, Training iteration=8
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=176, Total reward=17.72, Steps=7199, Training iteration=8
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=177, Total reward=14.83, Steps=7214, Training iteration=8
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=178, Total reward=15.03, Steps=7229, Training iteration=8
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=179, Total reward=32.1, Steps=7266, Training iteration=8
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=180, Total reward=41.94, Steps=7315, Training iteration=8
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=0.00642669852823019, KL divergence=0.0037652815226465464, Entropy=2.649261474609375, training epoch=0, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.056281059980392456, KL divergence=0.02257074974477291, Entropy=2.6477603912353516, training epoch=1, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.07441166043281555, KL divergence=0.049344781786203384, Entropy=2.646178722381592, training epoch=2, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.0864233672618866, KL divergence=0.06344295293092728, Entropy=2.6444709300994873, training epoch=3, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.09325757622718811, KL divergence=0.0743982344865799, Entropy=2.6426711082458496, training epoch=4, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.09778901189565659, KL divergence=0.08183389902114868, Entropy=2.6408276557922363, training epoch=5, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.10316235572099686, KL divergence=0.08616428077220917, Entropy=2.6389598846435547, training epoch=6, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.10644275695085526, KL divergence=0.09793839603662491, Entropy=2.6371679306030273, training epoch=7, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.10712394118309021, KL divergence=0.10675275325775146, Entropy=2.635322093963623, training epoch=8, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.10977041721343994, KL divergence=0.10866418480873108, Entropy=2.633430242538452, training epoch=9, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Checkpoint> Saving in path=['./checkpoint_sagemaker/agent/26_Step-7315.ckpt']
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded .lock to                      s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.lock.
+[36malgo-1-0bmf8_1  |[0m Uploaded 3 files for checkpoint 26
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded coach checkpoint to                   s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.coach_checkpoint.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m saved intermediate frozen graph: AWS-Beast-B01/aws-beast-b01s/model/model_26.pb
+[36malgo-1-0bmf8_1  |[0m Best checkpoint number: 21, Last checkpoint number: 24
+[36malgo-1-0bmf8_1  |[0m Copying the frozen checkpoint from ./frozen_models/agent/model_21.pb to /opt/ml/model/agent/model.pb.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m Deleting the frozen models in s3 for the iterations: {'23'}
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=181, Total reward=25.48, Steps=7344, Training iteration=9
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=182, Total reward=19.47, Steps=7369, Training iteration=9
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=183, Total reward=12.04, Steps=7384, Training iteration=9
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=184, Total reward=10.04, Steps=7398, Training iteration=9
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=185, Total reward=15.06, Steps=7417, Training iteration=9
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=186, Total reward=16.26, Steps=7437, Training iteration=9
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=187, Total reward=24.69, Steps=7467, Training iteration=9
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=188, Total reward=19.87, Steps=7491, Training iteration=9
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=189, Total reward=25.09, Steps=7521, Training iteration=9
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=190, Total reward=17.06, Steps=7542, Training iteration=9
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=191, Total reward=35.51, Steps=7582, Training iteration=9
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=192, Total reward=52.94, Steps=7635, Training iteration=9
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=193, Total reward=114.02, Steps=7737, Training iteration=9
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=194, Total reward=107.79, Steps=7831, Training iteration=9
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=195, Total reward=36.69, Steps=7868, Training iteration=9
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=196, Total reward=27.48, Steps=7897, Training iteration=9
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=197, Total reward=111.38, Steps=7991, Training iteration=9
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=198, Total reward=94.32, Steps=8071, Training iteration=9
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=199, Total reward=38.9, Steps=8111, Training iteration=9
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=200, Total reward=66.95, Steps=8174, Training iteration=9
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=0.020306572318077087, KL divergence=0.03229052200913429, Entropy=2.631192684173584, training epoch=0, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.04874472692608833, KL divergence=0.07604671269655228, Entropy=2.629997491836548, training epoch=1, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.08232983201742172, KL divergence=0.11309567838907242, Entropy=2.6293630599975586, training epoch=2, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.08001759648323059, KL divergence=0.11609860509634018, Entropy=2.628636121749878, training epoch=3, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.07281699031591415, KL divergence=0.1517358273267746, Entropy=2.6276323795318604, training epoch=4, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.09280723333358765, KL divergence=0.1494317352771759, Entropy=2.6261415481567383, training epoch=5, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.09347766637802124, KL divergence=0.1968126893043518, Entropy=2.624347448348999, training epoch=6, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.12239531427621841, KL divergence=0.1844719648361206, Entropy=2.622363805770874, training epoch=7, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.11789015680551529, KL divergence=0.19408893585205078, Entropy=2.6200008392333984, training epoch=8, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.13183365762233734, KL divergence=0.20004720985889435, Entropy=2.617419958114624, training epoch=9, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Checkpoint> Saving in path=['./checkpoint_sagemaker/agent/27_Step-8174.ckpt']
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded .lock to                      s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.lock.
+[36malgo-1-0bmf8_1  |[0m Uploaded 3 files for checkpoint 27
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded coach checkpoint to                   s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.coach_checkpoint.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m saved intermediate frozen graph: AWS-Beast-B01/aws-beast-b01s/model/model_27.pb
+[36malgo-1-0bmf8_1  |[0m Best checkpoint number: 21, Last checkpoint number: 25
+[36malgo-1-0bmf8_1  |[0m Copying the frozen checkpoint from ./frozen_models/agent/model_21.pb to /opt/ml/model/agent/model.pb.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m Deleting the frozen models in s3 for the iterations: {'24'}
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=201, Total reward=90.18, Steps=8255, Training iteration=10
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=202, Total reward=41.88, Steps=8295, Training iteration=10
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=203, Total reward=21.06, Steps=8319, Training iteration=10
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=204, Total reward=48.41, Steps=8362, Training iteration=10
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=205, Total reward=67.11, Steps=8419, Training iteration=10
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=206, Total reward=71.28, Steps=8480, Training iteration=10
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=207, Total reward=21.66, Steps=8505, Training iteration=10
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=208, Total reward=44.5, Steps=8548, Training iteration=10
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=209, Total reward=16.04, Steps=8566, Training iteration=10
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=210, Total reward=23.89, Steps=8591, Training iteration=10
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=211, Total reward=45.47, Steps=8630, Training iteration=10
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=212, Total reward=47.03, Steps=8670, Training iteration=10
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=213, Total reward=35.29, Steps=8706, Training iteration=10
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=214, Total reward=32.29, Steps=8740, Training iteration=10
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=215, Total reward=18.36, Steps=8758, Training iteration=10
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=216, Total reward=9.87, Steps=8770, Training iteration=10
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=217, Total reward=13.35, Steps=8785, Training iteration=10
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=218, Total reward=10.7, Steps=8796, Training iteration=10
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=219, Total reward=50.9, Steps=8842, Training iteration=10
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=220, Total reward=21.85, Steps=8864, Training iteration=10
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=0.007310305722057819, KL divergence=0.008028455078601837, Entropy=2.6149442195892334, training epoch=0, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.04208313673734665, KL divergence=0.038829825818538666, Entropy=2.6136937141418457, training epoch=1, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.06609268486499786, KL divergence=0.07385478168725967, Entropy=2.613288640975952, training epoch=2, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.08724772930145264, KL divergence=0.09123806655406952, Entropy=2.613189220428467, training epoch=3, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.0982714593410492, KL divergence=0.09731891751289368, Entropy=2.613156795501709, training epoch=4, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.10790171474218369, KL divergence=0.10656449943780899, Entropy=2.6128687858581543, training epoch=5, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.10096301883459091, KL divergence=0.10889420658349991, Entropy=2.6124491691589355, training epoch=6, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.10378655046224594, KL divergence=0.12161960452795029, Entropy=2.6118340492248535, training epoch=7, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.10753242671489716, KL divergence=0.11975957453250885, Entropy=2.6110599040985107, training epoch=8, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.10419627279043198, KL divergence=0.1361471712589264, Entropy=2.610081195831299, training epoch=9, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Checkpoint> Saving in path=['./checkpoint_sagemaker/agent/28_Step-8864.ckpt']
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded .lock to                      s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.lock.
+[36malgo-1-0bmf8_1  |[0m Uploaded 3 files for checkpoint 28
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded coach checkpoint to                   s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.coach_checkpoint.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m saved intermediate frozen graph: AWS-Beast-B01/aws-beast-b01s/model/model_28.pb
+[36malgo-1-0bmf8_1  |[0m Best checkpoint number: 26, Last checkpoint number: 26
+[36malgo-1-0bmf8_1  |[0m Copying the frozen checkpoint from ./frozen_models/agent/model_26.pb to /opt/ml/model/agent/model.pb.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m Deleting the frozen models in s3 for the iterations: {'21'}
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=221, Total reward=36.88, Steps=8900, Training iteration=11
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=222, Total reward=35.28, Steps=8934, Training iteration=11
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=223, Total reward=23.09, Steps=8962, Training iteration=11
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=224, Total reward=50.19, Steps=9022, Training iteration=11
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=225, Total reward=39.33, Steps=9066, Training iteration=11
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=226, Total reward=25.09, Steps=9095, Training iteration=11
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=227, Total reward=13.29, Steps=9112, Training iteration=11
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=228, Total reward=39.17, Steps=9149, Training iteration=11
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=229, Total reward=22.87, Steps=9175, Training iteration=11
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=230, Total reward=73.58, Steps=9246, Training iteration=11
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=231, Total reward=12.05, Steps=9262, Training iteration=11
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=232, Total reward=9.04, Steps=9275, Training iteration=11
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=233, Total reward=17.31, Steps=9291, Training iteration=11
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=234, Total reward=16.67, Steps=9307, Training iteration=11
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=235, Total reward=132.75, Steps=9441, Training iteration=11
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=236, Total reward=43.51, Steps=9485, Training iteration=11
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=237, Total reward=48.52, Steps=9533, Training iteration=11
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=238, Total reward=31.06, Steps=9563, Training iteration=11
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=239, Total reward=18.07, Steps=9586, Training iteration=11
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=240, Total reward=48.34, Steps=9637, Training iteration=11
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=0.006934548262506723, KL divergence=0.014111357741057873, Entropy=2.60945987701416, training epoch=0, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.054854635149240494, KL divergence=0.07007957249879837, Entropy=2.609893560409546, training epoch=1, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.0855681523680687, KL divergence=0.10044297575950623, Entropy=2.6095619201660156, training epoch=2, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.09556379169225693, KL divergence=0.1375933438539505, Entropy=2.6083896160125732, training epoch=3, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.11628835648298264, KL divergence=0.13743503391742706, Entropy=2.606816530227661, training epoch=4, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.11931893974542618, KL divergence=0.15172678232192993, Entropy=2.6048076152801514, training epoch=5, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.11941784620285034, KL divergence=0.18317250907421112, Entropy=2.6027848720550537, training epoch=6, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.12472433596849442, KL divergence=0.16249312460422516, Entropy=2.600515365600586, training epoch=7, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.13075315952301025, KL divergence=0.1739652156829834, Entropy=2.5982108116149902, training epoch=8, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.12954704463481903, KL divergence=0.17716427147388458, Entropy=2.595818042755127, training epoch=9, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Checkpoint> Saving in path=['./checkpoint_sagemaker/agent/29_Step-9637.ckpt']
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded .lock to                      s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.lock.
+[36malgo-1-0bmf8_1  |[0m Uploaded 3 files for checkpoint 29
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded coach checkpoint to                   s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.coach_checkpoint.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m saved intermediate frozen graph: AWS-Beast-B01/aws-beast-b01s/model/model_29.pb
+[36malgo-1-0bmf8_1  |[0m Best checkpoint number: 26, Last checkpoint number: 27
+[36malgo-1-0bmf8_1  |[0m Copying the frozen checkpoint from ./frozen_models/agent/model_26.pb to /opt/ml/model/agent/model.pb.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m Deleting the frozen models in s3 for the iterations: {'25'}
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=241, Total reward=32.91, Steps=9674, Training iteration=12
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=242, Total reward=28.1, Steps=9706, Training iteration=12
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=243, Total reward=18.26, Steps=9728, Training iteration=12
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=244, Total reward=27.09, Steps=9758, Training iteration=12
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=245, Total reward=35.32, Steps=9802, Training iteration=12
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=246, Total reward=22.08, Steps=9831, Training iteration=12
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=247, Total reward=96.25, Steps=9914, Training iteration=12
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=248, Total reward=118.52, Steps=10030, Training iteration=12
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=249, Total reward=16.26, Steps=10051, Training iteration=12
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=250, Total reward=19.27, Steps=10075, Training iteration=12
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=251, Total reward=82.98, Steps=10152, Training iteration=12
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=252, Total reward=25.27, Steps=10178, Training iteration=12
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=253, Total reward=81.57, Steps=10247, Training iteration=12
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=254, Total reward=110.59, Steps=10341, Training iteration=12
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=255, Total reward=37.08, Steps=10377, Training iteration=12
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=256, Total reward=125.45, Steps=10490, Training iteration=12
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=257, Total reward=12.84, Steps=10506, Training iteration=12
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=258, Total reward=30.87, Steps=10539, Training iteration=12
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=259, Total reward=44.23, Steps=10577, Training iteration=12
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=260, Total reward=64.41, Steps=10630, Training iteration=12
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=0.010375925339758396, KL divergence=0.02480267360806465, Entropy=2.5935020446777344, training epoch=0, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.03865686058998108, KL divergence=0.10449106246232986, Entropy=2.5917375087738037, training epoch=1, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.06446726620197296, KL divergence=0.20215532183647156, Entropy=2.590686798095703, training epoch=2, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.07888127863407135, KL divergence=0.17406652867794037, Entropy=2.5900814533233643, training epoch=3, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.08722419291734695, KL divergence=0.20311881601810455, Entropy=2.5893309116363525, training epoch=4, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.10273480415344238, KL divergence=0.22891923785209656, Entropy=2.5878195762634277, training epoch=5, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.11274850368499756, KL divergence=0.251057893037796, Entropy=2.585736036300659, training epoch=6, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.12020641565322876, KL divergence=0.19065426290035248, Entropy=2.5833358764648438, training epoch=7, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.12459457665681839, KL divergence=0.22924160957336426, Entropy=2.5806448459625244, training epoch=8, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.12123023718595505, KL divergence=0.235220268368721, Entropy=2.577913522720337, training epoch=9, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Checkpoint> Saving in path=['./checkpoint_sagemaker/agent/30_Step-10630.ckpt']
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded .lock to                      s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.lock.
+[36malgo-1-0bmf8_1  |[0m Uploaded 3 files for checkpoint 30
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded coach checkpoint to                   s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.coach_checkpoint.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m saved intermediate frozen graph: AWS-Beast-B01/aws-beast-b01s/model/model_30.pb
+[36malgo-1-0bmf8_1  |[0m Best checkpoint number: 26, Last checkpoint number: 28
+[36malgo-1-0bmf8_1  |[0m Copying the frozen checkpoint from ./frozen_models/agent/model_26.pb to /opt/ml/model/agent/model.pb.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m Deleting the frozen models in s3 for the iterations: {'27'}
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=261, Total reward=12.51, Steps=10644, Training iteration=13
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=262, Total reward=14.36, Steps=10660, Training iteration=13
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=263, Total reward=40.49, Steps=10698, Training iteration=13
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=264, Total reward=129.27, Steps=10817, Training iteration=13
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=265, Total reward=30.67, Steps=10847, Training iteration=13
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=266, Total reward=47.92, Steps=10897, Training iteration=13
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=267, Total reward=27.09, Steps=10928, Training iteration=13
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=268, Total reward=19.07, Steps=10951, Training iteration=13
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=269, Total reward=117.67, Steps=11064, Training iteration=13
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=270, Total reward=21.27, Steps=11091, Training iteration=13
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=271, Total reward=29.87, Steps=11122, Training iteration=13
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=272, Total reward=33.08, Steps=11155, Training iteration=13
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=273, Total reward=10.04, Steps=11169, Training iteration=13
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=274, Total reward=14.08, Steps=11193, Training iteration=13
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=275, Total reward=50.92, Steps=11244, Training iteration=13
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=276, Total reward=36.68, Steps=11279, Training iteration=13
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=277, Total reward=16.65, Steps=11297, Training iteration=13
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=278, Total reward=82.16, Steps=11372, Training iteration=13
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=279, Total reward=21.86, Steps=11397, Training iteration=13
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=280, Total reward=35.49, Steps=11433, Training iteration=13
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=0.021113434806466103, KL divergence=0.015435751527547836, Entropy=2.575387477874756, training epoch=0, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.04413524270057678, KL divergence=0.08140316605567932, Entropy=2.573319435119629, training epoch=1, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.08020588755607605, KL divergence=0.13544195890426636, Entropy=2.5715434551239014, training epoch=2, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.09181395918130875, KL divergence=0.1676715761423111, Entropy=2.569979667663574, training epoch=3, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.10190218687057495, KL divergence=0.16014081239700317, Entropy=2.568636178970337, training epoch=4, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.1259099841117859, KL divergence=0.167506143450737, Entropy=2.5670177936553955, training epoch=5, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.11820948868989944, KL divergence=0.16699570417404175, Entropy=2.5647947788238525, training epoch=6, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.11248180270195007, KL divergence=0.16526912152767181, Entropy=2.5621888637542725, training epoch=7, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.12501908838748932, KL divergence=0.1671866625547409, Entropy=2.5594513416290283, training epoch=8, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Policy training> Surrogate loss=-0.11404161900281906, KL divergence=0.17692862451076508, Entropy=2.556708574295044, training epoch=9, learning_rate=0.0003
+[36malgo-1-0bmf8_1  |[0m Checkpoint> Saving in path=['./checkpoint_sagemaker/agent/31_Step-11433.ckpt']
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded .lock to                      s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.lock.
+[36malgo-1-0bmf8_1  |[0m Uploaded 3 files for checkpoint 31
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully uploaded coach checkpoint to                   s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.coach_checkpoint.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m saved intermediate frozen graph: AWS-Beast-B01/aws-beast-b01s/model/model_31.pb
+[36malgo-1-0bmf8_1  |[0m Best checkpoint number: 26, Last checkpoint number: 29
+[36malgo-1-0bmf8_1  |[0m Copying the frozen checkpoint from ./frozen_models/agent/model_26.pb to /opt/ml/model/agent/model.pb.
+[36malgo-1-0bmf8_1  |[0m [s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01s/model/deepracer_checkpoints.json to local checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[36malgo-1-0bmf8_1  |[0m Deleting the frozen models in s3 for the iterations: {'28'}
+[36malgo-1-0bmf8_1  |[0m Training> Name=main_level/agent, Worker=0, Episode=281, Total reward=15.67, Steps=11458, Training iteration=14

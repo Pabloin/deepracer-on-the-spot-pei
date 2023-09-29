@@ -1,0 +1,50 @@
+-----------------------------------
+DR_LOCAL_S3_MODEL_PREFIX=AWS-Beast-B01/aws-beast-b01s
+2023-09-28_06:19:33_UTC
+=====Robomaker (main Worker)=====
+SIM_TRACE_LOG:54,24,3.9131,8.0579,47.9711,2.09,1.25,[2.093643552988624, 1.25],0.0040,True,False,3.0023,147,60.18,531.262,off_track,0.00
+SIM_TRACE_LOG:55,36,9.7189,6.4297,4.6529,5.68,4.00,[5.682662276323057, 4.0],0.0040,True,False,6.4918,164,60.18,534.104,off_track,0.00
+SIM_TRACE_LOG:56,40,7.1847,2.3443,-132.5905,27.73,2.25,[27.728916415598427, 2.2459082453388772],0.2030,True,False,8.1258,177,60.18,552.579,off_track,0.00
+SIM_TRACE_LOG:57,37,7.8382,-0.7719,-71.0564,24.66,2.37,[24.659409581535925, 2.3670961117672435],0.0040,True,False,7.9141,187,60.18,555.189,off_track,0.00
+SIM_TRACE_LOG:58,36,5.1536,-2.2757,-123.6603,13.05,3.34,[13.048938110675067, 3.3377603367129614],0.2030,True,False,7.2739,196,60.18,557.807,off_track,0.00
+SIM_TRACE_LOG:59,34,4.2737,-5.4623,-101.6545,27.39,4.00,[27.387698118107593, 4.0],0.0040,True,False,7.1328,4,60.18,560.324,off_track,0.00
+SIM_TRACE_LOG:60,56,-0.2335,-8.1275,-101.1528,30.00,3.06,[30.0, 3.0645845704818635],0.0040,True,False,10.8179,22,60.18,582.999,off_track,0.00
+SIM_TRACE_LOG:61,112,-5.3926,0.0325,56.6570,-30.00,2.73,[-30.0, 2.725051156853559],0.2830,True,False,26.0350,62,60.18,591.103,off_track,0.00
+SIM_TRACE_LOG:62,16,-0.9101,-8.4360,-73.4631,30.00,1.96,[30.0, 1.959745817231298],0.0040,True,False,1.5742,23,60.18,592.64,off_track,0.00
+SIM_TRACE_LOG:63,24,-4.6369,-5.2529,138.8628,-30.00,2.55,[-30.0, 2.547887943013542],0.2030,True,False,3.8867,38,60.18,594.53,off_track,0.00
+=====Sagemaker policy training=====
+=====GPU performance=====
+| N/A   42C    P0    26W /  70W |      0MiB / 15109MiB |      5%      Default |
+=====Docker containers status=====
+CONTAINER ID   IMAGE                                                      COMMAND                  CREATED          STATUS          PORTS                                       NAMES
+ffc3d0126228   nginx:latest                                               "/docker-entrypoint.…"   56 minutes ago   Up 56 minutes   80/tcp                                      deepracer-0-viewer_proxy.1.wqwrz2c39e87yu9gtoekmur79
+a86c6eedff96   awsdeepracercommunity/deepracer-robomaker:5.1.0-cpu-avx2   "/bin/bash -c './run…"   57 minutes ago   Up 57 minutes                                               deepracer-0_robomaker.2.kq1tyhomnt7xiegolf43kdcvn
+6d8c692578b2   awsdeepracercommunity/deepracer-robomaker:5.1.0-cpu-avx2   "/bin/bash -c './run…"   57 minutes ago   Up 57 minutes                                               deepracer-0_robomaker.4.vpgkcyjyf5rjh30ihg9lgy0uq
+3781a602f0ab   awsdeepracercommunity/deepracer-robomaker:5.1.0-cpu-avx2   "/bin/bash -c './run…"   57 minutes ago   Up 57 minutes                                               deepracer-0_robomaker.3.fvtd3v3xc85k4csu11ldgw2sd
+18c5d1d7f451   awsdeepracercommunity/deepracer-robomaker:5.1.0-cpu-avx2   "/bin/bash -c './run…"   57 minutes ago   Up 57 minutes                                               deepracer-0_robomaker.1.vtuci6hnh0kzcrg95euje5n08
+54ac16827de1   awsdeepracercommunity/deepracer-robomaker:5.1.0-cpu-avx2   "/bin/bash -c './run…"   57 minutes ago   Up 57 minutes                                               deepracer-0_robomaker.5.lvipxos4eiydezjw10h2lval3
+d4495871bdc9   awsdeepracercommunity/deepracer-robomaker:5.1.0-cpu-avx2   "/bin/bash -c './run…"   57 minutes ago   Up 57 minutes                                               deepracer-0_robomaker.6.49wva0gl88kyeiixpar5y2hmd
+17e81e588868   awsdeepracercommunity/deepracer-analysis:cpu               "/bin/sh -c 'jupyter…"   59 minutes ago   Up 58 minutes   0.0.0.0:8888->8888/tcp, :::8888->8888/tcp   deepracer-analysis
+=====CPU average load (1min / 5min / 15min avg)=====
+108.51 108.29 106.12 1/395 24778
+=====Memory usage=====
+MemTotal:       32408412 kB
+MemFree:        25290168 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+=====Robomaker Testing result logs (all Workers)=====
+Testing> Name=main_level/agent, Worker=0, Episode=56, Total reward=56.74, Steps=2131, Training iteration=0
+Testing> Name=main_level/agent, Worker=0, Episode=56, Total reward=21.47, Steps=2131, Training iteration=0
+Testing> Name=main_level/agent, Worker=0, Episode=56, Total reward=80.82, Steps=2131, Training iteration=0
+Testing> Name=main_level/agent, Worker=0, Episode=56, Total reward=31.71, Steps=2131, Training iteration=0
+Testing> Name=main_level/agent, Worker=0, Episode=60, Total reward=67.53, Steps=2245, Training iteration=0
+Testing> Name=main_level/agent, Worker=0, Episode=60, Total reward=147.48, Steps=2245, Training iteration=0
+Testing> Name=main_level/agent, Worker=0, Episode=60, Total reward=64.93, Steps=2245, Training iteration=0
+Testing> Name=main_level/agent, Worker=0, Episode=60, Total reward=32.09, Steps=2245, Training iteration=0
+Testing> Name=main_level/agent, Worker=0, Episode=60, Total reward=29.47, Steps=2245, Training iteration=0
+Testing> Name=main_level/agent, Worker=0, Episode=60, Total reward=55.71, Steps=2245, Training iteration=0
+=====Sagemaker training logs=====
+=====Robomaker Top 10 completed laps (all Workers)=====
+Number of completed laps: 0
+=====Robomaker (main Worker) - OutputLog: =====
+###################

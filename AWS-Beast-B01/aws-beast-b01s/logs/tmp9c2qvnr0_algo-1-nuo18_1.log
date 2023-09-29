@@ -1,0 +1,270 @@
+20:C 28 Sep 2023 05:21:46.942 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+20:C 28 Sep 2023 05:21:46.942 # Redis version=6.2.7, bits=64, commit=00000000, modified=0, pid=20, just started
+20:C 28 Sep 2023 05:21:46.942 # Configuration loaded
+20:M 28 Sep 2023 05:21:46.943 * monotonic clock: POSIX clock_gettime
+20:M 28 Sep 2023 05:21:46.944 # A key '__redis__compare_helper' was added to Lua globals which is not on the globals allow list nor listed on the deny list.
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 6.2.7 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                  
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 20
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           https://redis.io       
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+20:M 28 Sep 2023 05:21:46.944 # Server initialized
+20:M 28 Sep 2023 05:21:46.944 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+20:M 28 Sep 2023 05:21:46.945 * Ready to accept connections
+/usr/local/lib/python3.6/dist-packages/paramiko/transport.py:32: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography. The next release of cryptography will remove support for Python 3.6.
+  from cryptography.hazmat.backends import default_backend
+/usr/local/lib/python3.6/dist-packages/boto3/compat.py:88: PythonDeprecationWarning: Boto3 will no longer support Python 3.6 starting May 30, 2022. To continue receiving service updates, bug fixes, and security updates please upgrade to Python 3.7 or later. More information can be found here: https://aws.amazon.com/blogs/developer/python-support-policy-updates-for-aws-sdks-and-tools/
+  warnings.warn(warning, PythonDeprecationWarning)
+2023-09-28 05:22:34.536043: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+WARNING:tensorflow:Deprecation warnings have been disabled. Set TF_ENABLE_DEPRECATION_WARNINGS=1 to re-enable them.
+2023-09-28 05:23:11,787 sagemaker-containers INFO     Imported framework sagemaker_tensorflow_container.training
+/usr/local/lib/python3.6/dist-packages/boto3/compat.py:88: PythonDeprecationWarning: Boto3 will no longer support Python 3.6 starting May 30, 2022. To continue receiving service updates, bug fixes, and security updates please upgrade to Python 3.7 or later. More information can be found here: https://aws.amazon.com/blogs/developer/python-support-policy-updates-for-aws-sdks-and-tools/
+  warnings.warn(warning, PythonDeprecationWarning)
+2023-09-28 05:23:14,642 sagemaker-containers INFO     Invoking user script
+
+Training Env:
+
+{
+    "additional_framework_parameters": {
+        "sagemaker_estimator": "RLEstimator"
+    },
+    "channel_input_dirs": {},
+    "current_host": "algo-1-nuo18",
+    "framework_module": "sagemaker_tensorflow_container.training:main",
+    "hosts": [
+        "algo-1-nuo18"
+    ],
+    "hyperparameters": {
+        "s3_bucket": "base-bucket-1f3pfk38sjoqu",
+        "s3_prefix": "AWS-Beast-B01/aws-beast-b01s",
+        "aws_region": "us-east-1",
+        "model_metadata_s3_key": "s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/custom_files/model_metadata.json",
+        "RLCOACH_PRESET": "deepracer",
+        "pretrained_s3_bucket": "base-bucket-1f3pfk38sjoqu",
+        "pretrained_s3_prefix": "AWS-Beast-B01/aws-beast-b01",
+        "pretrained_checkpoint": "last",
+        "batch_size": 128,
+        "beta_entropy": 0.01,
+        "discount_factor": 0.999,
+        "e_greedy_value": 0.05,
+        "epsilon_steps": 10000,
+        "exploration_type": "categorical",
+        "loss_type": "huber",
+        "lr": 0.0003,
+        "num_episodes_between_training": 20,
+        "num_epochs": 10,
+        "stack_size": 1,
+        "term_cond_avg_score": 100000.0,
+        "term_cond_max_episodes": 100000
+    },
+    "input_config_dir": "/opt/ml/input/config",
+    "input_data_config": {},
+    "input_dir": "/opt/ml/input",
+    "is_master": true,
+    "job_name": "AWS-Beast-B01/aws-beast-b01s",
+    "log_level": 20,
+    "master_hostname": "algo-1-nuo18",
+    "model_dir": "/opt/ml/model",
+    "module_dir": "s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/aws-beast-b01s/source/sourcedir.tar.gz",
+    "module_name": "training_worker",
+    "network_interface_name": "eth0",
+    "num_cpus": 8,
+    "num_gpus": 1,
+    "output_data_dir": "/opt/ml/output/data",
+    "output_dir": "/opt/ml/output",
+    "output_intermediate_dir": "/opt/ml/output/intermediate",
+    "resource_config": {
+        "current_host": "algo-1-nuo18",
+        "hosts": [
+            "algo-1-nuo18"
+        ]
+    },
+    "user_entry_point": "training_worker.py"
+}
+
+Environment variables:
+
+SM_HOSTS=["algo-1-nuo18"]
+SM_NETWORK_INTERFACE_NAME=eth0
+SM_HPS={"RLCOACH_PRESET":"deepracer","aws_region":"us-east-1","batch_size":128,"beta_entropy":0.01,"discount_factor":0.999,"e_greedy_value":0.05,"epsilon_steps":10000,"exploration_type":"categorical","loss_type":"huber","lr":0.0003,"model_metadata_s3_key":"s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/custom_files/model_metadata.json","num_episodes_between_training":20,"num_epochs":10,"pretrained_checkpoint":"last","pretrained_s3_bucket":"base-bucket-1f3pfk38sjoqu","pretrained_s3_prefix":"AWS-Beast-B01/aws-beast-b01","s3_bucket":"base-bucket-1f3pfk38sjoqu","s3_prefix":"AWS-Beast-B01/aws-beast-b01s","stack_size":1,"term_cond_avg_score":100000.0,"term_cond_max_episodes":100000}
+SM_USER_ENTRY_POINT=training_worker.py
+SM_FRAMEWORK_PARAMS={"sagemaker_estimator":"RLEstimator"}
+SM_RESOURCE_CONFIG={"current_host":"algo-1-nuo18","hosts":["algo-1-nuo18"]}
+SM_INPUT_DATA_CONFIG={}
+SM_OUTPUT_DATA_DIR=/opt/ml/output/data
+SM_CHANNELS=[]
+SM_CURRENT_HOST=algo-1-nuo18
+SM_MODULE_NAME=training_worker
+SM_LOG_LEVEL=20
+SM_FRAMEWORK_MODULE=sagemaker_tensorflow_container.training:main
+SM_INPUT_DIR=/opt/ml/input
+SM_INPUT_CONFIG_DIR=/opt/ml/input/config
+SM_OUTPUT_DIR=/opt/ml/output
+SM_NUM_CPUS=8
+SM_NUM_GPUS=1
+SM_MODEL_DIR=/opt/ml/model
+SM_MODULE_DIR=s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/aws-beast-b01s/source/sourcedir.tar.gz
+SM_TRAINING_ENV={"additional_framework_parameters":{"sagemaker_estimator":"RLEstimator"},"channel_input_dirs":{},"current_host":"algo-1-nuo18","framework_module":"sagemaker_tensorflow_container.training:main","hosts":["algo-1-nuo18"],"hyperparameters":{"RLCOACH_PRESET":"deepracer","aws_region":"us-east-1","batch_size":128,"beta_entropy":0.01,"discount_factor":0.999,"e_greedy_value":0.05,"epsilon_steps":10000,"exploration_type":"categorical","loss_type":"huber","lr":0.0003,"model_metadata_s3_key":"s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/custom_files/model_metadata.json","num_episodes_between_training":20,"num_epochs":10,"pretrained_checkpoint":"last","pretrained_s3_bucket":"base-bucket-1f3pfk38sjoqu","pretrained_s3_prefix":"AWS-Beast-B01/aws-beast-b01","s3_bucket":"base-bucket-1f3pfk38sjoqu","s3_prefix":"AWS-Beast-B01/aws-beast-b01s","stack_size":1,"term_cond_avg_score":100000.0,"term_cond_max_episodes":100000},"input_config_dir":"/opt/ml/input/config","input_data_config":{},"input_dir":"/opt/ml/input","is_master":true,"job_name":"AWS-Beast-B01/aws-beast-b01s","log_level":20,"master_hostname":"algo-1-nuo18","model_dir":"/opt/ml/model","module_dir":"s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/aws-beast-b01s/source/sourcedir.tar.gz","module_name":"training_worker","network_interface_name":"eth0","num_cpus":8,"num_gpus":1,"output_data_dir":"/opt/ml/output/data","output_dir":"/opt/ml/output","output_intermediate_dir":"/opt/ml/output/intermediate","resource_config":{"current_host":"algo-1-nuo18","hosts":["algo-1-nuo18"]},"user_entry_point":"training_worker.py"}
+SM_USER_ARGS=["--RLCOACH_PRESET","deepracer","--aws_region","us-east-1","--batch_size","128","--beta_entropy","0.01","--discount_factor","0.999","--e_greedy_value","0.05","--epsilon_steps","10000","--exploration_type","categorical","--loss_type","huber","--lr","0.0003","--model_metadata_s3_key","s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/custom_files/model_metadata.json","--num_episodes_between_training","20","--num_epochs","10","--pretrained_checkpoint","last","--pretrained_s3_bucket","base-bucket-1f3pfk38sjoqu","--pretrained_s3_prefix","AWS-Beast-B01/aws-beast-b01","--s3_bucket","base-bucket-1f3pfk38sjoqu","--s3_prefix","AWS-Beast-B01/aws-beast-b01s","--stack_size","1","--term_cond_avg_score","100000.0","--term_cond_max_episodes","100000"]
+SM_OUTPUT_INTERMEDIATE_DIR=/opt/ml/output/intermediate
+SM_HP_S3_BUCKET=base-bucket-1f3pfk38sjoqu
+SM_HP_S3_PREFIX=AWS-Beast-B01/aws-beast-b01s
+SM_HP_AWS_REGION=us-east-1
+SM_HP_MODEL_METADATA_S3_KEY=s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/custom_files/model_metadata.json
+SM_HP_RLCOACH_PRESET=deepracer
+SM_HP_PRETRAINED_S3_BUCKET=base-bucket-1f3pfk38sjoqu
+SM_HP_PRETRAINED_S3_PREFIX=AWS-Beast-B01/aws-beast-b01
+SM_HP_PRETRAINED_CHECKPOINT=last
+SM_HP_BATCH_SIZE=128
+SM_HP_BETA_ENTROPY=0.01
+SM_HP_DISCOUNT_FACTOR=0.999
+SM_HP_E_GREEDY_VALUE=0.05
+SM_HP_EPSILON_STEPS=10000
+SM_HP_EXPLORATION_TYPE=categorical
+SM_HP_LOSS_TYPE=huber
+SM_HP_LR=0.0003
+SM_HP_NUM_EPISODES_BETWEEN_TRAINING=20
+SM_HP_NUM_EPOCHS=10
+SM_HP_STACK_SIZE=1
+SM_HP_TERM_COND_AVG_SCORE=100000.0
+SM_HP_TERM_COND_MAX_EPISODES=100000
+PYTHONPATH=/usr/local/bin:/opt/amazon:/opt/ml/code:/usr/lib/python36.zip:/usr/lib/python3.6:/usr/lib/python3.6/lib-dynload:/usr/local/lib/python3.6/dist-packages:/usr/lib/python3/dist-packages
+
+Invoking script with the following command:
+
+/usr/bin/python3 training_worker.py --RLCOACH_PRESET deepracer --aws_region us-east-1 --batch_size 128 --beta_entropy 0.01 --discount_factor 0.999 --e_greedy_value 0.05 --epsilon_steps 10000 --exploration_type categorical --loss_type huber --lr 0.0003 --model_metadata_s3_key s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/custom_files/model_metadata.json --num_episodes_between_training 20 --num_epochs 10 --pretrained_checkpoint last --pretrained_s3_bucket base-bucket-1f3pfk38sjoqu --pretrained_s3_prefix AWS-Beast-B01/aws-beast-b01 --s3_bucket base-bucket-1f3pfk38sjoqu --s3_prefix AWS-Beast-B01/aws-beast-b01s --stack_size 1 --term_cond_avg_score 100000.0 --term_cond_max_episodes 100000
+
+
+/usr/local/lib/python3.6/dist-packages/redis/utils.py:13: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography. The next release of cryptography will remove support for Python 3.6.
+  import cryptography  # noqa
+WARNING:tensorflow:Deprecation warnings have been disabled. Set TF_ENABLE_DEPRECATION_WARNINGS=1 to re-enable them.
+WARNING:tensorflow:From training_worker.py:47: The name tf.logging.set_verbosity is deprecated. Please use tf.compat.v1.logging.set_verbosity instead.
+
+WARNING:tensorflow:From training_worker.py:47: The name tf.logging.ERROR is deprecated. Please use tf.compat.v1.logging.ERROR instead.
+
+Training Worker Args: Namespace(aws_region='us-east-1', checkpoint_dir='./checkpoint_sagemaker', cuda_visible_devices=None, environment_s3_key=None, framework='tensorflow', model_metadata_s3_key='s3://base-bucket-1f3pfk38sjoqu/AWS-Beast-B01/custom_files/model_metadata.json', preset_s3_key=None, pretrained_checkpoint='last', pretrained_checkpoint_dir='./pretrained_checkpoint_sagemaker', pretrained_s3_bucket='base-bucket-1f3pfk38sjoqu', pretrained_s3_prefix='AWS-Beast-B01/aws-beast-b01', s3_bucket='base-bucket-1f3pfk38sjoqu', s3_endpoint_url=None, s3_prefix='AWS-Beast-B01/aws-beast-b01s')
+S3 bucket: base-bucket-1f3pfk38sjoqu 
+ S3 prefix: AWS-Beast-B01/aws-beast-b01s 
+ S3 endpoint URL: None
+[s3] Successfully downloaded model metadata                  from s3 key AWS-Beast-B01/custom_files/model_metadata.json to local ./custom_files/agent/model_metadata.json.
+Sensor list ['FRONT_FACING_CAMERA'], network DEEP_CONVOLUTIONAL_NETWORK_SHALLOW, simapp_version 5.0, training_algorithm clipped_ppo, action_space_type continuous lidar_config {'num_sectors': 8, 'num_values_per_sector': 8, 'clipping_dist': 2.0}
+Action space from file: {'steering_angle': {'high': 30.0, 'low': -30.0}, 'speed': {'high': 4.0, 'low': 1.25}}
+Using the following hyper-parameters
+{
+  "batch_size": 128,
+  "beta_entropy": 0.01,
+  "discount_factor": 0.999,
+  "e_greedy_value": 0.05,
+  "epsilon_steps": 10000,
+  "exploration_type": "categorical",
+  "loss_type": "huber",
+  "lr": 0.0003,
+  "num_episodes_between_training": 20,
+  "num_epochs": 10,
+  "stack_size": 1,
+  "term_cond_avg_score": 100000.0,
+  "term_cond_max_episodes": 100000
+}
+[s3] Successfully uploaded hyperparameters to                  s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/ip/hyperparameters.json.
+Hostname: algo-1-nuo18
+[s3] Successfully uploaded ip address to                  s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/ip/ip.json.
+[s3] Successfully uploaded ip done to                  s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/ip/done.
+[s3] Successfully downloaded deepracer checkpoint json from                  s3 key AWS-Beast-B01/aws-beast-b01/model/deepracer_checkpoints.json to local pretrained_checkpoint_sagemaker/agent/deepracer_checkpoints.json.
+[s3] Successfully uploaded temp coach checkpoint to                   s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01/model/.coach_checkpoint.
+[s3] Successfully downloaded 16_Step-9724.ckpt.data-00000-of-00001 from                  s3 key AWS-Beast-B01/aws-beast-b01/model/16_Step-9724.ckpt.data-00000-of-00001 to local pretrained_checkpoint_sagemaker/agent/16_Step-9724.ckpt.data-00000-of-00001.
+[s3] Successfully downloaded 16_Step-9724.ckpt.index from                  s3 key AWS-Beast-B01/aws-beast-b01/model/16_Step-9724.ckpt.index to local pretrained_checkpoint_sagemaker/agent/16_Step-9724.ckpt.index.
+[s3] Successfully downloaded 16_Step-9724.ckpt.meta from                  s3 key AWS-Beast-B01/aws-beast-b01/model/16_Step-9724.ckpt.meta to local pretrained_checkpoint_sagemaker/agent/16_Step-9724.ckpt.meta.
+[s3] Successfully downloaded .ready from                  s3 key AWS-Beast-B01/aws-beast-b01/model/.ready to local pretrained_checkpoint_sagemaker/agent/.ready.
+## Creating graph - name: MultiAgentGraphManager
+## Start physics before creating graph
+## Create graph
+## Creating agent - name: agent
+[RL] Created agent loggers
+[RL] Dynamic import of memory:  "DeepRacerMemoryParameters" {
+    "load_memory_from_file_path": null,
+    "max_size": [
+        "<MemoryGranularity.Transitions: 0>",
+        1000000
+    ],
+    "n_step": -1,
+    "shared_memory": false,
+    "train_to_eval_ratio": 1
+}
+
+[RL] Dynamically imported of memory <markov.memories.deepracer_memory.DeepRacerMemory object at 0x7f7c51399c18>
+[RL] Setting devices
+[RL] Setting filters
+[RL] Setting filter devices: numpy
+[RL] Setting Phase
+[RL] After setting Phase
+[RL] Setting signals
+[RL] Agent init successful
+[RL] ActorCriticAgent init
+[RL] ActorCriticAgent  init successful
+## Created agent: agent
+## Stop physics after creating graph
+## Creating session
+Creating regular session
+2023-09-28 05:25:27.669239: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+  /job:localhost/replica:0/task:0/device:CPU:0].
+See below for details of this colocation group:
+Colocation Debug Info:
+Colocation group had the following types and supported devices: 
+Root Member(assigned_device_name_index_=-1 requested_device_name_='/device:GPU:0' assigned_device_name_='' resource_device_name_='/device:GPU:0' supported_device_types_=[CPU] possible_devices_=[]
+Identity: GPU CPU XLA_CPU XLA_GPU 
+VariableV2: CPU 
+Assign: GPU CPU 
+
+Colocation members, user-requested devices, and framework assigned devices, if any:
+  main_level/agent/main/online/Variable (VariableV2) /device:GPU:0
+  main_level/agent/main/online/Variable/Assign (Assign) /device:GPU:0
+  main_level/agent/main/online/Variable/read (Identity) /device:GPU:0
+  main_level/agent/main/online/Assign (Assign) /device:GPU:0
+
+2023-09-28 05:25:27.671962: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+  /job:localhost/replica:0/task:0/device:CPU:0].
+See below for details of this colocation group:
+Colocation Debug Info:
+Colocation group had the following types and supported devices: 
+Root Member(assigned_device_name_index_=-1 requested_device_name_='/device:GPU:0' assigned_device_name_='' resource_device_name_='/device:GPU:0' supported_device_types_=[CPU] possible_devices_=[]
+Identity: GPU CPU XLA_CPU XLA_GPU 
+VariableV2: CPU 
+Assign: GPU CPU 
+
+Colocation members, user-requested devices, and framework assigned devices, if any:
+  main_level/agent/main/target/Variable (VariableV2) /device:GPU:0
+  main_level/agent/main/target/Variable/Assign (Assign) /device:GPU:0
+  main_level/agent/main/target/Variable/read (Identity) /device:GPU:0
+  main_level/agent/main/target/Assign (Assign) /device:GPU:0
+
+Checkpoint> Restoring from path=./pretrained_checkpoint_sagemaker/agent/16_Step-9724.ckpt
+Checkpoint> Saving in path=['./checkpoint_sagemaker/agent/17_Step-0.ckpt']
+[s3] Successfully uploaded .lock to                      s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.lock.
+Uploaded 3 files for checkpoint 17
+[s3] Successfully uploaded coach checkpoint to                   s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.coach_checkpoint.
+Unable to find deepracer checkpoint json
+Unable to find the best deepracer checkpoint number. Getting the last checkpoint number
+Unable to find deepracer checkpoint json
+Unable to find the last deepracer checkpoint number.
+Unable to find deepracer checkpoint json
+Unable to find the last deepracer checkpoint number.
+saved intermediate frozen graph: AWS-Beast-B01/aws-beast-b01s/model/model_17.pb
+Best checkpoint number: -1, Last checkpoint number: -1
+Copying the frozen checkpoint from ./frozen_models/agent/model_17.pb to /opt/ml/model/agent/model.pb.
+Unable to find deepracer checkpoint json
+[s3] Successfully uploaded .lock to                      s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.lock.
+[s3] Successfully uploaded .ready to                      s3 bucket base-bucket-1f3pfk38sjoqu with s3 key AWS-Beast-B01/aws-beast-b01s/model/.ready.
+DoorMan: installing SIGINT, SIGTERM
