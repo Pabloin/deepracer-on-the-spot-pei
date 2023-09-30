@@ -46,6 +46,15 @@ alias B21a="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B21a"
 alias B21b="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B21b"
 alias B21c="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B21c"
 
+alias B21d="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B21d"
+alias B21e="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B21e"
+alias B21f="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B21f"
+alias B21g="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B21g"
+alias B21h="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B21h"
+alias B21i="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B21i"
+alias B21j="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B21j"
+alias B21k="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B21k"
+
 
 ##----------------------------
 
