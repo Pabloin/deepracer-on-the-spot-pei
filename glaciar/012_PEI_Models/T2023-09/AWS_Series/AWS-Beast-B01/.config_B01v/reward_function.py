@@ -617,7 +617,7 @@ class Reward:
         #-------------------------------------------------------------
         if MODE_DEBUG:
             try:
-                print(f"Reward.fn_rectas_heading(heading={heading}, K,c={DIRECCION_ABS_VAL}): [ dirPista={dirPista}, dirDiff={dirDiff}] -> PUNISH={PUNISH}") 
+                print(f"Reward.fn_rectas_heading(heading={heading}, K,c={DIRECCION_ABS_VAL}): [ dirPista={dirPista}, dirDiff={dirDiff}] -> reward={reward}") 
             except Exception as e:
                 print("Excepcion e:", e)
 
