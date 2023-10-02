@@ -4,12 +4,12 @@ export MODEL_PATH=~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models
 
 function model() {
 
-    echo "cd ${MODEL_PATH}/T2023-10/AWS-Beast-C01/.config_{$MODEL_VERSION_NUMBER}" 
+    echo "cd ${MODEL_PATH}/T2023-10/AWS-Tracks/.config_{$MODEL_VERSION_NUMBER}" 
 
     read -p "¿Modelo Version Numbre?  (Ejemplo: "C01a" o "C21a"? " MODEL_VERSION_NUMBER
 
 
-    cd ${MODEL_PATH}/T2023-10/AWS-Beast-C01/.config_$MODEL_VERSION_NUMBER
+    cd ${MODEL_PATH}/T2023-10/AWS-Tracks/.config_$MODEL_VERSION_NUMBER
 
 }
 
@@ -70,84 +70,3 @@ alias B21h="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B21h"
 alias B21i="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B21i"
 alias B21j="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B21j"
 alias B21k="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_B21k"
-
-
-##----------------------------
-
-
-alias B02="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02"
-alias B02a="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02a"
-alias B02b="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02b"
-alias B02c="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02c"
-alias B02d="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02d"
-alias B02e="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02e"
-alias B02f="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02f"
-alias B02g="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02g"
-alias B02h="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02h"
-
-alias C01="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_C01"
-
-##----------------------------
-
-
-alias B03="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B03/.config_B03"
-alias B03a="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B03/.config_B03a"
-alias B03b="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B03/.config_B03b"
-alias B03c="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B03/.config_B03c"
-alias B03d="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B03/.config_B03d"
-alias B03e="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B03/.config_B03e"
-alias B03f="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B03/.config_B03f"
-alias B03g="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B03/.config_B03g"
-alias B03h="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B03/.config_B03h"
-
-
-
-
-##----------------------------
-
-
-alias B04="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B04/.config_B04"
-alias B04a="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B04/.config_B04a"
-alias B04b="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B04/.config_B04b"
-alias B04c="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B04/.config_B04c"
-alias B04d="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B04/.config_B04d"
-alias B04e="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B04/.config_B04e"
-alias B04f="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B04/.config_B04f"
-alias B04g="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B04/.config_B04g"
-alias B04h="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B04/.config_B04h"
-
-
-
-
-
-##----------------------------
-
-
-alias B05="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B05/.config_B05"
-alias B05a="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B05/.config_B05a"
-alias B05b="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B05/.config_B05b"
-alias B05c="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B05/.config_B05c"
-alias B05d="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B05/.config_B05d"
-alias B05e="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B05/.config_B05e"
-alias B05f="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B05/.config_B05f"
-alias B05g="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B05/.config_B05g"
-alias B05h="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B05/.config_B05h"
-
-
-#***********************************************
-
-
-alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
-alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
-alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
-alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
-alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
-alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
-alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
-alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
-alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
-alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
-alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
-alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
-
-

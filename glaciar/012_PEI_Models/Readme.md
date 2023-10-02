@@ -5,6 +5,10 @@ UPDATE OCTUBRE 2022
       Track name: DBro Super Raceway
 
 
+AWS-Beast-C01
+AWS-Track-T10
+
+
       https://github.com/aws-deepracer-community/deepracer-race-data/blob/main/raw_data/tracks/README.md
       https://github.com/dp770/aws_deepracer_worksheet/blob/main/tracks/DBro_Super_Raceway_v1.png
             
