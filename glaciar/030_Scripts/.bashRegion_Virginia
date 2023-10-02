@@ -68,6 +68,7 @@ alias B02e="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02e"
 alias B02f="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02f"
 alias B02g="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02g"
 alias B02h="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02h"
+
 alias C01="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_C01"
 
 ##----------------------------
@@ -117,3 +118,28 @@ alias B05g="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B05/.config_B05g"
 alias B05h="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B05/.config_B05h"
 
 
+#***********************************************
+
+
+alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
+alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
+alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
+alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
+alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
+alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
+alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
+alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
+alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
+alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
+alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
+alias C01a="cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_C01a"
+
+
+
+function CNN() {
+
+    read -p "¿Modelo Version Numbre?  (Ejemplo: "C01a" o "C21a"? " MODEL_VERSION_NUMBER
+
+    cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_{$MODEL_VERSION_NUMBER}
+
+}
