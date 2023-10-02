@@ -18,7 +18,7 @@ function dots() {
 function drDown() {
 
     echo "                                                                 "
-    echo "  cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-10/${KEY_SERIES}/${KEY_MODEL}   "    
+    echo "  cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-10/${KEY_MODEL}   "    
     echo "                                                                 "
     echo "  aws s3 sync s3://${S3_BUCKET_SOURCE}/${KEY_MODEL}/ \    "
     echo "                       .logsTmp/${KEY_MODEL}/      "
@@ -29,7 +29,7 @@ function drDown() {
     
     read -p "Hacemos DOWN? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
 
-    cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-10/${KEY_SERIES}/${KEY_MODEL}
+    cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-10/${KEY_MODEL}
 
     aws s3 sync s3://${S3_BUCKET_SOURCE}/${KEY_MODEL}/ \
                          .logsTmp/${KEY_MODEL}/   
@@ -41,7 +41,7 @@ function drDown() {
 function drUp() {
 
     echo "                                                                 "
-    echo "  cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-10/${KEY_SERIES}/${KEY_MODEL}   "    
+    echo "  cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-10/${KEY_MODEL}   "    
     echo "                                                                 "
     echo "  aws s3 sync                       .logsTmp/${KEY_MODEL}/  \   "
     echo "          s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \   "
@@ -52,7 +52,7 @@ function drUp() {
         
     read -p "Hacemos UP? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || return 1
 
-    cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-10/${KEY_SERIES}/${KEY_MODEL}
+    cd ~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-10/${KEY_MODEL}
                                                                 
     aws s3 sync                       .logsTmp/${KEY_MODEL}/  \
             s3://${S3_BUCKET_TARGET}/${KEY_MODEL}/  \
@@ -321,7 +321,7 @@ function menu() {
    echo ""
    echo "--------------------------------------------------------" 
    echo "S3_BUCKET_SOURCE=${S3_BUCKET_SOURCE}"
-   echo " SERIE = ${KEY_SERIES}  "
+   echo " SERIE = ${KEY_SERIES}  (Deprecado...)"
    echo " MODEL = ${KEY_MODEL}  "
 
    cat ~/.aws/config
