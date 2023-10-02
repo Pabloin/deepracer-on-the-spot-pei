@@ -20,18 +20,44 @@ UPDATE OCTUBRE 2022
 
       DBro Super Raceway	DBro Super Raceway	2022-07-01T00:00:00Z	
       
-      2022_july_pro.npy 2
-      022_july_pro_ccw.npy 
+      2022_july_pro.npy 
+      2022_july_pro_ccw.npy 
       2022_july_pro_cw.npy	
       
       57.89 meters	1.07 meters
 
 
 
+Rank
+Racer
+Time
+Gap to 1st
+Video
+Off-track
+Country
+Region
 
 
 
+JuanStingo
+02:34.211	-	View	15	Argentina	South America
 
+pablo-ezequiel-inchausti
+02:50.480	+00:16.269	View	28	Argentina	South America
+
+
+	
+Avatar
+BoltronRacingTeam
+01:33.416	-	View	1	United States	North America
+2	
+Avatar
+PrototypeBooster#2771
+01:41.079	+00:07.663	View	4	United States	North America
+3	
+Avatar
+MTFHammerdown
+01:42.521	+00:09.105	View	0	United States	North America
 
 
 
