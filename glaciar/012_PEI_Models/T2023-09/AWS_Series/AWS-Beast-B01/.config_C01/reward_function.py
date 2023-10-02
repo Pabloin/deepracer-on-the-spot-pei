@@ -339,11 +339,10 @@ class MyRacingLine:
 
 #-----------[  DATA  ]------------------------------------
 
-    # # Oct 2023	DBro Super Raceway 57.89 meters	1.07 meters (2022_july_pro_cw)
+    # # sept 2023	Roger Super Raceway	60.17m	Clockwise  (2022_september_pro_cw)
 
-LAP_LENGHT = 57.89
+LAP_LENGHT = 60.17
 LAP_WIDTH  = 01.07
-
 
 MAX_VALUE  = 1e3
 ZERO_VALUE = 1e-3

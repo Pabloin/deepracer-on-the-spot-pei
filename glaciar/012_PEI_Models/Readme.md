@@ -1,3 +1,46 @@
+
+************************************************************
+UPDATE OCTUBRE 2022
+
+      Track name: DBro Super Raceway
+
+
+      https://github.com/aws-deepracer-community/deepracer-race-data/blob/main/raw_data/tracks/README.md
+      https://github.com/dp770/aws_deepracer_worksheet/blob/main/tracks/DBro_Super_Raceway_v1.png
+            
+      DBro_Super_Raceway.npy
+      DBro_Super_Raceway.py
+      DBro_Super_Raceway.txt
+
+      DBro_Super_Raceway.png
+      DBro_Super_Raceway_v1.png
+      DBro_Super_Raceway_v2.png
+      DBro_Super_Raceway_v3.png
+
+
+      DBro Super Raceway	DBro Super Raceway	2022-07-01T00:00:00Z	
+      
+      2022_july_pro.npy 2
+      022_july_pro_ccw.npy 
+      2022_july_pro_cw.npy	
+      
+      57.89 meters	1.07 meters
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+************************************************************
+
 Experimentos de mis modelos
 
 VERSION 
