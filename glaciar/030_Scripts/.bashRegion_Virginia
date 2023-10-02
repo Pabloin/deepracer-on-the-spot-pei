@@ -4,7 +4,7 @@ export MODEL_PATH=~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models
 
 function model() {
 
-    echo "cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_{$MODEL_VERSION_NUMBER}" 
+    echo "cd ${MODEL_PATH}/T2023-10/AWS-Beast-C01/.config_{$MODEL_VERSION_NUMBER}" 
 
     read -p "¿Modelo Version Numbre?  (Ejemplo: "C01a" o "C21a"? " MODEL_VERSION_NUMBER
 

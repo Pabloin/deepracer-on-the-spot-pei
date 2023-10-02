@@ -278,7 +278,7 @@ function _getRegion() {
 ##----------------------------
 
 export DIR_LOGS_T09=~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-09/AWS_Series/AWS-Beast-B01/.logsTmp
-export DIR_LOGS_T10=~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-10/AWS_Series/AWS-Beast-C01/.logsTmp
+export DIR_LOGS_T10=~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models/T2023-10/AWS-Beast-C01/.logsTmp
 export DIR_LOGS=${DIR_LOGS_T10}
 
 function logs() {
