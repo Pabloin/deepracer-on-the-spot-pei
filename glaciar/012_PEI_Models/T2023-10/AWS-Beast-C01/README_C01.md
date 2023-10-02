@@ -1,0 +1,22 @@
+#
+
+https://github.com/aws-deepracer-community/deepracer-race-data/blob/main/raw_data/tracks/README.md
+
+
+
+
+Spain_track
+Circuit de Barcelona-Catalunya	2020-05-01T00:00:00Z	Spain_track.npy	60.00 meters	1.07 meter
+
+
+2022_july_pro_cw
+DBro Super Raceway	2022-07-01T00:00:00Z	2022_july_pro_ccw.npy 2022_july_pro.npy 2022_july_pro_cw.npy	57.89 meters	1.07 meters
+
+
+
+# sept 2023	Roger Super Raceway	60.17m	Clockwise  (2022_september_pro_cw)
+#
+#
+#       ./create-spot-instance.sh base aws-beast-b01       60    (2022_september_pro)
+#       ./create-spot-instance.sh base aws-track-c01       60    (2022_july_pro_cw)
+#       ./create-spot-instance.sh base aws-track-c01b      60    (Spain_track) 
