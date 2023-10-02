@@ -68,7 +68,7 @@ alias B02e="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02e"
 alias B02f="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02f"
 alias B02g="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02g"
 alias B02h="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B02/.config_B02h"
-
+alias C01="cd ${MODEL_PATH}/T2023-09/AWS_Series/AWS-Beast-B01/.config_C01"
 
 ##----------------------------
 
