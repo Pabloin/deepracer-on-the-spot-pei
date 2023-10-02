@@ -307,7 +307,7 @@ function menu() {
    
    echo ""
    echo " - prof       |   "
-   echo " - drSync     |  drDown     | drUp  | logs | CNN "
+   echo " - drSync     |  drDown     | drUp  | logs | model "
    echo " - drImport   | drImportGlaciar "
    echo " - goVirginia - goMiami     | goAfrica, goAfricaPEI  |  goOregon | _set _getRegion " 
    echo ""
@@ -328,3 +328,4 @@ function menu() {
 }
 
 menu
+

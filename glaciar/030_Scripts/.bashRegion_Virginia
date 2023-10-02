@@ -2,7 +2,7 @@
 
 export MODEL_PATH=~/deepracer-on-the-spot-pei/glaciar/012_PEI_Models
 
-function CNN() {
+function model() {
 
     echo "cd ${MODEL_PATH}/T2023-10/AWS_Series/AWS-Beast-C01/.config_{$MODEL_VERSION_NUMBER}" 
 
