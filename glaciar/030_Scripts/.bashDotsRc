@@ -293,7 +293,7 @@ function logs() {
 
     
     if [ $MODEL_VERSION_NAME ]; then
-        cd ${DIR_LOGS}/AWS-Beast-B01/${MODEL_VERSION_NAME}
+        cd ${DIR_LOGS}/AWS-Beast-C01/${MODEL_VERSION_NAME}
     else
         cd ${DIR_LOGS}
     fi
