@@ -1,11 +1,28 @@
 #
+#       ./create-spot-instance.sh base aws-track-c01        60      (2022_july_pro_cw) 
+
+
+
+
+
+*******************************************
+
+
+
+
+
+
+
+
+
+
+
 
 https://github.com/aws-deepracer-community/deepracer-race-data/blob/main/raw_data/tracks/README.md
 
 
 
 #       ./create-spot-instance.sh base aws-beast-b01        60      (2022_september_pro)
-#       ./create-spot-instance.sh base aws-track-c01        60      (2022_july_pro_cw) 
 #       ./create-spot-instance.sh base aws-track-c01b       60      (Spain_track) 
 #       ./create-spot-instance.sh base aws-track-c01c       60      (caecer_gp)
 #       ./create-spot-instance.sh base aws-track-c01d       60      (2022_august_pro_cw)
