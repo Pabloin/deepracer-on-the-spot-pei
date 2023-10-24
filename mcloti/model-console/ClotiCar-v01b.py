@@ -1,37 +1,12 @@
-import math
-
-def aux_heading_vs_track_angle(params):
-
-    # Params for heading eval
-    track_waypoints = params['waypoints']
-    closest_waypoints = params['closest_waypoints']
-    heading = params['heading']
-    
-    # Heading and track_angle closer
-    wp1 = track_waypoints[closest_waypoints[1]]
-    wp0 = track_waypoints[closest_waypoints[0]]
-
-    track_angle = math.degrees(math.atan2(wp1[1] - wp0[1], wp1[0] - wp0[0]))
-
-    angleDiffernce = abs(track_angle - heading)
-
-    if angleDiffernce > 180:
-       angleDiffernce = 360 - angleDiffernce
-
-    return angleDiffernce
-
-
 def reward_function(params):
 
-    # Params for borders eval
+    # Read input parameters
     all_wheels_on_track = params['all_wheels_on_track']
     distance_from_center = params['distance_from_center']
     track_width = params['track_width']
     
-    # Params for steering eval
     abs_steering = abs(params['steering_angle'])
     
-
     # Give a very low reward by default
     reward = 1e-3
 
@@ -41,52 +16,10 @@ def reward_function(params):
         reward = 1.0
 
 
+    ABS_STEERING_THRESHOLD = 15 
+    
     # Penalize reward if the car is steering too much
-    ABS_STEERING_THRESHOLD = 15
     if abs_steering > ABS_STEERING_THRESHOLD:
         reward *= 0.8
 
-
-    # Penalize reward heading vs track is high
-    ABS_ANGLE_DIFF_THRESHOLD = 10
-
-    angleDiffernce = aux_heading_vs_track_angle(params)
-
-    if angleDiffernce > ABS_ANGLE_DIFF_THRESHOLD:
-        reward *= 0.7
-
-    
     return float(reward)
-
-
-
-
-##
-##
-# Similar a:
-# https://www.linkedin.com/pulse/samples-reward-functions-aws-deepracer-bahman-javadi
-# y a un par de:
-    # https://refactored.ai/microcourse/notebook?path=content%2FDeepRacer%2FAWS_DeepRacer_Reward_function_Additional_material.ipynb
-    # IDEM TO
-    # https://wiki.deepracing.io/Training_the_AWS_DeepRacer
-# Y contiene a:
-#    https://github.com/sasasavic82/deepracer-reward/blob/master/model/reward_v1.py
-
-
-
-# Nota ... la otra corriente de la hipotenusa es
-#    https://everdark.github.io/k9/projects/deepracer_2020/deepracer_2020.html
-# que esta mas claro en:
-#    https://wiki.deepracing.io/Training_the_AWS_DeepRacer
-#
-
-        # rabbit = [waypoints[closest_waypoints+1][0],waypoints[closest_waypoints+1][1]]
-
-        # radius = math.hypot(x - rabbit[0], y - rabbit[1])
-
-        # pointing[0] = x + (radius * math.cos(car_orientation))
-        # pointing[1] = y + (radius * math.sin(car_orientation))
-
-        # vector_delta = math.hypot(pointing[0] - rabbit[0], pointing[1] - rabbit[1])
-
-
