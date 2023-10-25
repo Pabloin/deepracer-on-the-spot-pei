@@ -1,5 +1,6 @@
 import math
 
+MAX_VALUE  = 1
 ZERO_VALUE = 1e-3
 MODE_DEBUG = True
 
@@ -45,42 +46,39 @@ class Reward:
     #----------------------------------------------------------------------------------------------------
     # Se le da recompensa si el agente no está Off Track pero dentro de los bordes
     @staticmethod
-    def fn_abs_steering(params):
-
-        # Params for steering eval
-        abs_steering = abs(params['steering_angle'])
-    
-        reward_function = ZERO_VALUE
-
-        # Reward if the car is steering low
-        ABS_STEERING_THRESHOLD = 15
-        if abs_steering <= ABS_STEERING_THRESHOLD:
-            reward_function = Reward.BASE_VALUE_80
-           
-        return reward_function
-
-
-    #----------------------------------------------------------------------------------------------------
-    # Se le da recompensa si el agente no está Off Track pero dentro de los bordes
-    @staticmethod
-    def fn_inside_track(params):
+    def fn_inside_track(params, reward_function = ZERO_VALUE):
 
         # Read input parameters
         all_wheels_on_track = params['all_wheels_on_track']
         distance_from_center = params['distance_from_center']
         track_width = params['track_width']
         
-        reward_function = ZERO_VALUE
-
+        # Reward if is between borders
         if all_wheels_on_track and (0.5*track_width - distance_from_center) >= 0.05:
             reward_function = 1.0
 
         return reward_function
     
+
+    #----------------------------------------------------------------------------------------------------
+    # Se le da recompensa si el agente no está Off Track pero dentro de los bordes
+    @staticmethod
+    def fn_abs_steering(params, reward_function = MAX_VALUE):
+
+        # Params for steering eval
+        abs_steering = abs(params['steering_angle'])
+    
+        # Punish if the car is steering low
+        ABS_STEERING_THRESHOLD = 15
+        if abs_steering >= ABS_STEERING_THRESHOLD:
+            reward_function *= Reward.BASE_VALUE_80
+           
+        return reward_function
+
     #----------------------------------------------------------------------------------------------------
     # Castigo por Heading vs DirPista   - TDD:  fn_diff_heading_track.py - fn_rectas_heading
     @staticmethod
-    def fn_diff_heading_track(params):
+    def fn_diff_heading_track(params, reward_function = MAX_VALUE):
        
         heading = params['heading']
 
@@ -93,11 +91,11 @@ class Reward:
             
         reward_function = ZERO_VALUE
 
-        # Reward if heading vs track is low
+        # Punish if heading vs track is low
         ABS_DIFF_DEGREE_THRESHOLD = 10
 
-        if dirDiff <= ABS_DIFF_DEGREE_THRESHOLD:
-            reward_function = Reward.BASE_VALUE_60
+        if dirDiff >= ABS_DIFF_DEGREE_THRESHOLD:
+            reward_function *= Reward.BASE_VALUE_60
 
         return reward_function
                    
@@ -108,14 +106,13 @@ def reward_function(params):
 
     reward = 1e-3
 
-    reward_fn_01 = Reward.fn_inside_track(params)
+    reward_fn_01 = Reward.fn_inside_track(params, reward)
 
-    # reward_fn_02 = Reward.fn_abs_steering(params)
-    # reward_fn_03 = Reward.fn_diff_heading_track(params)
+    reward_fn_02 = Reward.fn_abs_steering(params, reward_fn_01)
 
-    # reward = reward + reward_fn_01 + reward_fn_02 + reward_fn_03
+    # reward_fn_03 = Reward.fn_diff_heading_track(params, reward_fn_02)
 
-    reward = reward + reward_fn_01
+    reward = reward_fn_02
 
     return float(reward)
 
