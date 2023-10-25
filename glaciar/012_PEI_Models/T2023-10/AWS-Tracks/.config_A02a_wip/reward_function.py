@@ -68,7 +68,7 @@ class Reward:
         # Params for steering eval
         abs_steering = abs(params['steering_angle'])
     
-        # Punish if the car is steering low
+        # Punish if the car is steering high
         ABS_STEERING_THRESHOLD = 15
         if abs_steering >= ABS_STEERING_THRESHOLD:
             reward_function *= Reward.BASE_VALUE_80
@@ -88,10 +88,8 @@ class Reward:
 
         if dirDiff > 180:
            dirDiff = 360 - dirDiff
-            
-        reward_function = ZERO_VALUE
-
-        # Punish if heading vs track is low
+ 
+        # Punish if heading vs track is high
         ABS_DIFF_DEGREE_THRESHOLD = 10
 
         if dirDiff >= ABS_DIFF_DEGREE_THRESHOLD:
