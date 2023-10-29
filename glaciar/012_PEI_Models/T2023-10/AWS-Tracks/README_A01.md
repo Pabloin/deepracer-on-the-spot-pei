@@ -5,12 +5,6 @@
 
 
 
-*******************************************
-
-
-
-
-
 
 
 
@@ -68,3 +62,50 @@ DBro Super Raceway	2022-07-01T00:00:00Z	2022_july_pro_ccw.npy 2022_july_pro.npy 
 #       ./create-spot-instance.sh base aws-beast-b01       60    (2022_september_pro)
 #       ./create-spot-instance.sh base aws-track-c01       60    (2022_july_pro_cw)
 #       ./create-spot-instance.sh base aws-track-c01b      60    (Spain_track) 
+
+
+
+
+
+
+
+
+
+
+
+*******************************************
+Serie P01 es la del Vector y Continuo
+
+
+
+
+
+##
+##
+# Similar a:
+# https://www.linkedin.com/pulse/samples-reward-functions-aws-deepracer-bahman-javadi
+# y a un par de:
+    # https://refactored.ai/microcourse/notebook?path=content%2FDeepRacer%2FAWS_DeepRacer_Reward_function_Additional_material.ipynb
+    # IDEM TO
+    # https://wiki.deepracing.io/Training_the_AWS_DeepRacer
+# Y contiene a:
+#    https://github.com/sasasavic82/deepracer-reward/blob/master/model/reward_v1.py
+
+
+
+# Nota ... la otra corriente de la hipotenusa es
+#    https://everdark.github.io/k9/projects/deepracer_2020/deepracer_2020.html
+# que esta mas claro en:
+#    https://wiki.deepracing.io/Training_the_AWS_DeepRacer
+#
+
+        # rabbit = [waypoints[closest_waypoints+1][0],waypoints[closest_waypoints+1][1]]
+
+        # radius = math.hypot(x - rabbit[0], y - rabbit[1])
+
+        # pointing[0] = x + (radius * math.cos(car_orientation))
+        # pointing[1] = y + (radius * math.sin(car_orientation))
+
+        # vector_delta = math.hypot(pointing[0] - rabbit[0], pointing[1] - rabbit[1])
+
+
