@@ -1,4 +1,4 @@
-from ClotiCar_v01e_wip import CarControl
+from ClotiCar_v01g import CarControl
  
 
 def testCarControl(waypoint, dir, expected): 
@@ -91,6 +91,14 @@ testCarControl_Reward(44, False,  0.15, NO_CASTIGAR_ESTA_OK)
 
 testCarControl_Reward(44, True,   0.05, NO_CASTIGAR_ESTA_OK)
 testCarControl_Reward(44, False,  0.05, NO_CASTIGAR_ESTA_OK)
+
+
+# El 117 castigar si no esta en el centro: 
+testCarControl_Reward(117, True,   0.05, NO_CASTIGAR_ESTA_OK)
+testCarControl_Reward(117, False,  0.05, NO_CASTIGAR_ESTA_OK)
+
+testCarControl_Reward(117, True,  0.15, CASTIGAR_REWARD)  # Castiga por estar a la izquierda 
+testCarControl_Reward(117, False, 0.15, CASTIGAR_REWARD)  # Castiga por estar a la derecha
 
 
 # El 155 castigar si no esta hacia la izquierda: 
