@@ -21,3 +21,5 @@ nohup.*
 .logsTmp
 .logsGlaciar
 .logsEval
+
+__pycache__
