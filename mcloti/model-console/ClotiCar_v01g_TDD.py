@@ -97,8 +97,8 @@ testCarControl_Reward(44, False,  0.05, NO_CASTIGAR_ESTA_OK)
 testCarControl_Reward(117, True,   0.05, NO_CASTIGAR_ESTA_OK)
 testCarControl_Reward(117, False,  0.05, NO_CASTIGAR_ESTA_OK)
 
-testCarControl_Reward(117, True,  0.15, CASTIGAR_REWARD)  # Castiga por estar a la izquierda 
-testCarControl_Reward(117, False, 0.15, CASTIGAR_REWARD)  # Castiga por estar a la derecha
+testCarControl_Reward(117, True,   0.15, CASTIGAR_REWARD)  # Castiga por estar a la izquierda 
+testCarControl_Reward(117, False,  0.15, CASTIGAR_REWARD)  # Castiga por estar a la derecha
 
 
 # El 155 castigar si no esta hacia la izquierda: 
