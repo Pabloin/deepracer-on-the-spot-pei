@@ -4,7 +4,7 @@ import math
 #       57.89 meters	
 #       1.07 meters
 
-PRINT_LOG = False
+PRINT_LOG = True
 
 class CarControl:
 
@@ -48,7 +48,20 @@ class CarControl:
         Tramo_21, Tramo_22
     ]
 
+    Recta_A = [ Ctrl_ON, 14,15,16,17,18,19 ]
+    Recta_B = [ Ctrl_ON, 81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98 ]
+    Recta_C = [ Ctrl_ON, 112,113,114,115,116,117,118,119 ]
+    Recta_D = [ Ctrl_ON, 130,131,132,133,134,135,136,137 ]
+    Recta_E = [ Ctrl_ON, 144,145,146,147,148,149 ]
+    Recta_F = [ Ctrl_ON, 160,161,162,163,164,165,166,167,168 ]
+    Recta_G = [ Ctrl_ON, 177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194 ]
 
+    Rectas = [
+        Recta_A, Recta_B, Recta_C, 
+        Recta_D, Recta_E, Recta_F, 
+        Recta_G
+    ]
+    
     # Si el control esta Ctrl_OFF, la función de dirección retorna Ok
     # si el control esta ON y coincide esta OK, sino False
     @staticmethod
@@ -56,7 +69,7 @@ class CarControl:
 
         for t in CarControl.Tramos:
             if (waypoint in t):
-                is_off = (CarControl.Ctrl_OFF  in t)   
+                is_off = (CarControl.Ctrl_OFF in t)   
                 dir_ok = (dir in t)
                 if PRINT_LOG:
                    print(f"direccion_ok({waypoint},{dir})={t} esta la dir en el tramo? {dir_ok}")
@@ -65,6 +78,24 @@ class CarControl:
                 return dir_ok
 
         return False
+
+
+    # Si el control esta Ctrl_OFF, la funcion "esta en la recta" da falso
+    # si el control esta ON y el waypoint esta en un recta "True"
+    @staticmethod
+    def esta_en_la_recta(waypoint):
+
+        for r in CarControl.Rectas:
+            is_off = (CarControl.Ctrl_OFF in r)
+            if (is_off):
+                continue
+            if (waypoint in r):
+                if PRINT_LOG:
+                   print(f"esta_en_la_recta({waypoint})={r} esta en recta (True)")
+                return True
+
+        return False
+    
 
     @staticmethod
     def aux_side(params):
