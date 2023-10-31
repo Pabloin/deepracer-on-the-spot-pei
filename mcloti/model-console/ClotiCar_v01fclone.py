@@ -4,7 +4,7 @@ import math
 #       57.89 meters	
 #       1.07 meters
 
-PRINT_LOG = True
+PRINT_LOG = False
 
 class CarControl:
 
@@ -29,8 +29,8 @@ class CarControl:
     Tramo_10 = [ Ctrl_OFF, Curva, DIR_R, 67,68,69,70,71,72,73 ]
     Tramo_11 = [ Ctrl_OFF, Curva, DIR_R, 74,75,76,77,78,79 ]
     Tramo_12 = [ Ctrl_OFF, Recta, DIR_C, 80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99 ]
-    Tramo_13 = [ Ctrl_OFF, Curva, DIR_R, 100,101,102,103,104,105,106,107,108,109,110,111 ]
-    Tramo_14 = [ Ctrl_ON,  Recta, DIR_C, 112,113,114,115,116,117,118,119 ]
+    Tramo_13 = [ Ctrl_OFF, Curva, DIR_R, 100,101,102,103,104,105,106,107,108,109 ]
+    Tramo_14 = [ Ctrl_OFF, Recta, DIR_C, 110,111,112,113,114,115,116,117,118,119 ]
     Tramo_15 = [ Ctrl_OFF, Curva, DIR_R, 120,121,122,123,124,125,126 ]
     Tramo_16 = [ Ctrl_OFF, Recta, DIR_C, 127,128,129,130,131,132,133,134,135,136,137,138,139 ]
     Tramo_17 = [ Ctrl_OFF, Curva, DIR_R, 140,141,142,143 ]
@@ -175,51 +175,4 @@ def reward_function(params):
         reward += 100
 
     return float(reward)
-
-
-   
-##
-# Similar a:
-# https://www.linkedin.com/pulse/samples-reward-functions-aws-deepracer-bahman-javadi
-# y a un par de:
-    # https://refactored.ai/microcourse/notebook?path=content%2FDeepRacer%2FAWS_DeepRacer_Reward_function_Additional_material.ipynb
-    # IDEM TO
-    # https://wiki.deepracing.io/Training_the_AWS_DeepRacer
-# Y contiene a:
-#    https://github.com/sasasavic82/deepracer-reward/blob/master/model/reward_v1.py
-
-
-
-# Nota ... la otra corriente de la hipotenusa es
-#    https://everdark.github.io/k9/projects/deepracer_2020/deepracer_2020.html
-# que esta mas claro en:
-#    https://wiki.deepracing.io/Training_the_AWS_DeepRacer
-#
-
-        # rabbit = [waypoints[closest_waypoints+1][0],waypoints[closest_waypoints+1][1]]
-
-        # radius = math.hypot(x - rabbit[0], y - rabbit[1])
-
-        # pointing[0] = x + (radius * math.cos(car_orientation))
-        # pointing[1] = y + (radius * math.sin(car_orientation))
-
-        # vector_delta = math.hypot(pointing[0] - rabbit[0], pointing[1] - rabbit[1])
-
-
-
-
-# De un Post borrado pero con Time Machine
-#
-# (B-Sharp)
-# https://medium.com/proud2becloud/deepracer-our-journey-to-the-top-ten-257ff69922e
-# https://web.archive.org/web/20200905141829/https://medium.com/proud2becloud/deepracer-our-journey-to-the-top-ten-257ff69922e
-#
-# Hoping that there will soon be new opportunities to get on track, we want to share some of our notes with you:
-
-# It is better to use a machine learning model specific to the track on which you want to compete;
-# It is not strictly necessary to train a model for more than eight consecutive hours but, to obtain record times, it becomes essential;
-# It is always possible to increase confidence by changing the car’s degrees of freedom;
-# Using Waypoints allows you to outline the ideal path;
-# To gain those thousandths of a second that make the difference, you can manually vary the speed of the machine during the laps.
-
 

@@ -109,3 +109,5 @@ Serie P01 es la del Vector y Continuo
         # vector_delta = math.hypot(pointing[0] - rabbit[0], pointing[1] - rabbit[1])
 
 
+Pure pursiot
+https://scholar.sun.ac.za/server/api/core/bitstreams/e4d5a9a2-66ac-4829-ac8a-2bc6bab97485/content
