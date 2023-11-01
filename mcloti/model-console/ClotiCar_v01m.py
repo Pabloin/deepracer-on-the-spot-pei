@@ -17,8 +17,8 @@ class CarControl:
     Ctrl_ON  = "_ON"
     Ctrl_OFF = "OFF"
 
-    Tramo_01 = [ Ctrl_OFF, Recta, DIR_C, 0,1,2,3,4,5 ]
-    Tramo_02 = [ Ctrl_OFF, Curva, DIR_R, 6,7,8,9,10,11,12 ]
+    Tramo_01 = [ Ctrl_ON,  Recta, DIR_C, 0,1,2,3,4,5 ]
+    Tramo_02 = [ Ctrl_ON,  Curva, DIR_R, 6,7,8,9,10,11,12 ]
     Tramo_03 = [ Ctrl_OFF, Recta, DIR_C, 13,14,15,16,17,18,19,20,21,22,23 ]
     Tramo_04 = [ Ctrl_OFF, Curva, DIR_R, 24,25,26,27,28,29,30 ]
     Tramo_05 = [ Ctrl_OFF, Curva, DIR_R, 31,32,33,34,35,36 ]
@@ -26,19 +26,19 @@ class CarControl:
     Tramo_07 = [ Ctrl_OFF, Curva, DIR_L, 43,44,45,46,47,48 ]
     Tramo_08 = [ Ctrl_OFF, Recta, DIR_C, 49,50,51,52,53,54,55,56,57,58,59,60,61 ]
     Tramo_09 = [ Ctrl_ON,  Curva, DIR_L, 62,63,64,65,66 ]
-    Tramo_10 = [ Ctrl_OFF, Curva, DIR_R, 67,68,69,70,71,72,73 ]
-    Tramo_11 = [ Ctrl_OFF, Curva, DIR_R, 74,75,76,77,78,79 ]
-    Tramo_12 = [ Ctrl_OFF, Recta, DIR_C, 80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99 ]
-    Tramo_13 = [ Ctrl_OFF, Curva, DIR_R, 100,101,102,103,104,105,106,107,108,109 ]
+    Tramo_10 = [ Ctrl_ON,  Curva, DIR_R, 67,68,69,70,71,72,73 ]
+    Tramo_11 = [ Ctrl_ON,  Curva, DIR_R, 74,75,76,77,78,79 ]
+    Tramo_12 = [ Ctrl_ON,  Recta, DIR_C, 80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99 ]
+    Tramo_13 = [ Ctrl_ON,  Curva, DIR_R, 100,101,102,103,104,105,106,107,108,109 ]
     Tramo_14 = [ Ctrl_OFF, Recta, DIR_C, 110,111,112,113,114,115,116,117,118,119 ]
     Tramo_15 = [ Ctrl_OFF, Curva, DIR_R, 120,121,122,123,124,125,126 ]
     Tramo_16 = [ Ctrl_OFF, Recta, DIR_C, 127,128,129,130,131,132,133,134,135,136,137,138,139 ]
     Tramo_17 = [ Ctrl_OFF, Curva, DIR_R, 140,141,142,143 ]
     Tramo_18 = [ Ctrl_OFF, Recta, DIR_C, 144,145,146,147,148,149 ]
     Tramo_19 = [ Ctrl_ON,  Curva, DIR_L, 150,151,152,153,154,155,156,157,158,159 ]
-    Tramo_20 = [ Ctrl_OFF, Recta, DIR_C, 160,161,162,163,164,165,166,167,168,169 ]
+    Tramo_20 = [ Ctrl_ON, Recta, DIR_C, 160,161,162,163,164,165,166,167,168,169 ]
     Tramo_21 = [ Ctrl_OFF, Curva, DIR_R, 170,171,172,173,174,175 ]
-    Tramo_22 = [ Ctrl_OFF, Recta, DIR_C, 176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194 ]
+    Tramo_22 = [ Ctrl_ON,  Recta, DIR_C, 176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194 ]
 
     Tramos = [
         Tramo_01, Tramo_02, Tramo_03, Tramo_04, Tramo_05, 
@@ -48,7 +48,20 @@ class CarControl:
         Tramo_21, Tramo_22
     ]
 
+    Recta_A = [ Ctrl_ON, 14,15,16,17,18,19 ]
+    Recta_B = [ Ctrl_ON, 81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98 ]
+    Recta_C = [ Ctrl_ON, 112,113,114,115,116,117,118,119 ]
+    Recta_D = [ Ctrl_ON, 130,131,132,133,134,135,136,137 ]
+    Recta_E = [ Ctrl_ON, 144,145,146,147,148,149 ]
+    Recta_F = [ Ctrl_ON, 160,161,162,163,164,165,166,167,168 ]
+    Recta_G = [ Ctrl_ON, 177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194 ]
 
+    Rectas = [
+        Recta_A, Recta_B, Recta_C, 
+        Recta_D, Recta_E, Recta_F, 
+        Recta_G
+    ]
+    
     # Si el control esta Ctrl_OFF, la función de dirección retorna Ok
     # si el control esta ON y coincide esta OK, sino False
     @staticmethod
@@ -56,7 +69,7 @@ class CarControl:
 
         for t in CarControl.Tramos:
             if (waypoint in t):
-                is_off = (CarControl.Ctrl_OFF  in t)   
+                is_off = (CarControl.Ctrl_OFF in t)   
                 dir_ok = (dir in t)
                 if PRINT_LOG:
                    print(f"direccion_ok({waypoint},{dir})={t} esta la dir en el tramo? {dir_ok}")
@@ -65,6 +78,33 @@ class CarControl:
                 return dir_ok
 
         return False
+
+
+    @staticmethod
+    def is_recta_B(waypoint):
+        return (waypoint in CarControl.Recta_B)
+    
+    @staticmethod
+    def is_recta_G(waypoint):
+        return (waypoint in CarControl.Recta_G)
+    
+
+    # Si el control esta Ctrl_OFF, la funcion "esta en la recta" da falso
+    # si el control esta ON y el waypoint esta en un recta "True"
+    @staticmethod
+    def esta_en_la_recta(waypoint):
+
+        for r in CarControl.Rectas:
+            is_off = (CarControl.Ctrl_OFF in r)
+            if (is_off):
+                continue
+            if (waypoint in r):
+                if PRINT_LOG:
+                   print(f"esta_en_la_recta({waypoint})={r} esta en recta (True)")
+                return True
+
+        return False
+    
 
     @staticmethod
     def aux_side(params):
@@ -104,7 +144,13 @@ def aux_heading_vs_track_angle(params):
 
     return angleDiffernce
 
+def aux_is_counter_clockwise(params):
 
+    is_reversed  = params['is_reversed'] # is clockwise (True) or counter clockwise (False).
+    is_clockwise = is_reversed
+    is_counter_clockwise = is_reversed
+
+    return is_counter_clockwise
 
 def reward_function(params):
 
@@ -122,6 +168,10 @@ def reward_function(params):
     speed = params['speed']
     progress = params['progress']
 
+    # Waypoints
+    closest_waypoints = params['closest_waypoints']
+    wp_Cerca0 = closest_waypoints[0]
+    wp_Cerca1 = closest_waypoints[1]
 
 
     REWARD_ZERO = 1e-3
@@ -133,6 +183,11 @@ def reward_function(params):
     if is_offtrack:
         return REWARD_ZERO
 
+    # Si Counter Clockwise
+    if aux_is_counter_clockwise(params):
+        return REWARD_ZERO
+
+
     # Give a high reward if no wheels go off the track and
     # the agent is somewhere in between the track borders
     if all_wheels_on_track and (0.5*track_width - distance_from_center) >= 0.05:
@@ -140,13 +195,19 @@ def reward_function(params):
 
 
     # Penalize reward if the car is steering too much
-    ABS_STEERING_UMBRAL = 15
+    #       En la recta tolerancia al angulo en rectas
+    #                 - Mayor castigo y a su vez
+    is_recta = CarControl.esta_en_la_recta(wp_Cerca1)
+    ABS_STEERING_UMBRAL = 10  if is_recta else 15
+    KKK_STEARING_PUNISH = 0.7 if is_recta else 0.8
+
     if abs_steering > ABS_STEERING_UMBRAL:
-        reward *= 0.8
+        reward *= KKK_STEARING_PUNISH
 
 
     # Penalize reward heading vs track is high
-    ABS_ANGLE_DIFF_UMBRAL = 10
+    # ABS_ANGLE_DIFF_UMBRAL = 10
+    ABS_ANGLE_DIFF_UMBRAL = 8  if is_recta else 10
 
     angleDiffernce = aux_heading_vs_track_angle(params)
 
@@ -157,16 +218,25 @@ def reward_function(params):
     # Penalize reward si la direccion del auto (L, C, R) esta lejos del desado para el tramo
     # En este caso, solo en el tramo de Waypoints (62,63,64,65,66) y Left
 
-    closest_waypoints = params['closest_waypoints']
-    wp_Cerca0 = closest_waypoints[0]
-    wp_Cerca1 = closest_waypoints[1]
-
     dir = CarControl.aux_side(params)
 
     if not CarControl.direccion_ok(wp_Cerca1, dir):
         reward *= 0.8
 
     
+    # Penalizo velocidad Mínima en las Rectas (RECTAB)
+    RECTAB_VEL_MIN = 1.4
+    if CarControl.is_recta_B(wp_Cerca1):
+        if speed < RECTAB_VEL_MIN:
+            reward *= 0.8
+
+    # Penalizo velocidad Mínima en las Rectas (RECTAG)
+    RECTAG_VEL_MIN = 1.5
+    if CarControl.is_recta_G(wp_Cerca1):
+        if speed < RECTAG_VEL_MIN:
+            reward *= 0.8
+
+
     # Speed y Progreso
     SPEED_UMBRAL = 3
     if speed < SPEED_UMBRAL:
@@ -175,51 +245,4 @@ def reward_function(params):
         reward += 100
 
     return float(reward)
-
-
-   
-##
-# Similar a:
-# https://www.linkedin.com/pulse/samples-reward-functions-aws-deepracer-bahman-javadi
-# y a un par de:
-    # https://refactored.ai/microcourse/notebook?path=content%2FDeepRacer%2FAWS_DeepRacer_Reward_function_Additional_material.ipynb
-    # IDEM TO
-    # https://wiki.deepracing.io/Training_the_AWS_DeepRacer
-# Y contiene a:
-#    https://github.com/sasasavic82/deepracer-reward/blob/master/model/reward_v1.py
-
-
-
-# Nota ... la otra corriente de la hipotenusa es
-#    https://everdark.github.io/k9/projects/deepracer_2020/deepracer_2020.html
-# que esta mas claro en:
-#    https://wiki.deepracing.io/Training_the_AWS_DeepRacer
-#
-
-        # rabbit = [waypoints[closest_waypoints+1][0],waypoints[closest_waypoints+1][1]]
-
-        # radius = math.hypot(x - rabbit[0], y - rabbit[1])
-
-        # pointing[0] = x + (radius * math.cos(car_orientation))
-        # pointing[1] = y + (radius * math.sin(car_orientation))
-
-        # vector_delta = math.hypot(pointing[0] - rabbit[0], pointing[1] - rabbit[1])
-
-
-
-
-# De un Post borrado pero con Time Machine
-#
-# (B-Sharp)
-# https://medium.com/proud2becloud/deepracer-our-journey-to-the-top-ten-257ff69922e
-# https://web.archive.org/web/20200905141829/https://medium.com/proud2becloud/deepracer-our-journey-to-the-top-ten-257ff69922e
-#
-# Hoping that there will soon be new opportunities to get on track, we want to share some of our notes with you:
-
-# It is better to use a machine learning model specific to the track on which you want to compete;
-# It is not strictly necessary to train a model for more than eight consecutive hours but, to obtain record times, it becomes essential;
-# It is always possible to increase confidence by changing the car’s degrees of freedom;
-# Using Waypoints allows you to outline the ideal path;
-# To gain those thousandths of a second that make the difference, you can manually vary the speed of the machine during the laps.
-
 

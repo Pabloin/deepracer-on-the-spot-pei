@@ -4,7 +4,7 @@ import math
 #       57.89 meters	
 #       1.07 meters
 
-PRINT_LOG = True
+PRINT_LOG = False
 
 class CarControl:
 
@@ -36,8 +36,8 @@ class CarControl:
     Tramo_17 = [ Ctrl_OFF, Curva, DIR_R, 140,141,142,143 ]
     Tramo_18 = [ Ctrl_OFF, Recta, DIR_C, 144,145,146,147,148,149 ]
     Tramo_19 = [ Ctrl_ON,  Curva, DIR_L, 150,151,152,153,154,155,156,157,158,159 ]
-    Tramo_20 = [ Ctrl_OFF, Recta, DIR_C, 160,161,162,163,164,165,166,167,168,169 ]
-    Tramo_21 = [ Ctrl_OFF, Curva, DIR_L, 170,171,172,173,174,175 ]
+    Tramo_20 = [ Ctrl_ON, Recta, DIR_C, 160,161,162,163,164,165,166,167,168,169 ]
+    Tramo_21 = [ Ctrl_OFF, Curva, DIR_R, 170,171,172,173,174,175 ]
     Tramo_22 = [ Ctrl_ON,  Recta, DIR_C, 176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194 ]
 
     Tramos = [
@@ -79,6 +79,23 @@ class CarControl:
 
         return False
 
+
+    @staticmethod
+    def is_recta_A(waypoint):
+        return (waypoint in CarControl.Recta_A)
+    
+    @staticmethod
+    def is_recta_B(waypoint):
+        return (waypoint in CarControl.Recta_B)
+
+    @staticmethod
+    def is_recta_F(waypoint):
+        return (waypoint in CarControl.Recta_F)
+        
+    @staticmethod
+    def is_recta_G(waypoint):
+        return (waypoint in CarControl.Recta_G)
+    
 
     # Si el control esta Ctrl_OFF, la funcion "esta en la recta" da falso
     # si el control esta ON y el waypoint esta en un recta "True"
@@ -159,6 +176,11 @@ def reward_function(params):
     speed = params['speed']
     progress = params['progress']
 
+    # Waypoints
+    closest_waypoints = params['closest_waypoints']
+    wp_Cerca0 = closest_waypoints[0]
+    wp_Cerca1 = closest_waypoints[1]
+
 
     REWARD_ZERO = 1e-3
 
@@ -181,13 +203,19 @@ def reward_function(params):
 
 
     # Penalize reward if the car is steering too much
-    ABS_STEERING_UMBRAL = 15
+    #       En la recta tolerancia al angulo en rectas
+    #                 - Mayor castigo y a su vez
+    is_recta = CarControl.esta_en_la_recta(wp_Cerca1)
+    ABS_STEERING_UMBRAL = 10  if is_recta else 15
+    KKK_STEARING_PUNISH = 0.7 if is_recta else 0.8
+
     if abs_steering > ABS_STEERING_UMBRAL:
-        reward *= 0.8
+        reward *= KKK_STEARING_PUNISH
 
 
     # Penalize reward heading vs track is high
-    ABS_ANGLE_DIFF_UMBRAL = 10
+    # ABS_ANGLE_DIFF_UMBRAL = 10
+    ABS_ANGLE_DIFF_UMBRAL = 8  if is_recta else 10
 
     angleDiffernce = aux_heading_vs_track_angle(params)
 
@@ -198,16 +226,37 @@ def reward_function(params):
     # Penalize reward si la direccion del auto (L, C, R) esta lejos del desado para el tramo
     # En este caso, solo en el tramo de Waypoints (62,63,64,65,66) y Left
 
-    closest_waypoints = params['closest_waypoints']
-    wp_Cerca0 = closest_waypoints[0]
-    wp_Cerca1 = closest_waypoints[1]
-
     dir = CarControl.aux_side(params)
 
     if not CarControl.direccion_ok(wp_Cerca1, dir):
         reward *= 0.8
 
+
+    # Penalizo velocidad Mínima en las Rectas (RECTAA)
+    RECTAA_VEL_MIN = 1.4
+    if CarControl.is_recta_G(wp_Cerca1):
+        if speed < RECTAA_VEL_MIN:
+            reward *= 0.8
     
+    # Penalizo velocidad Mínima en las Rectas (RECTAB)
+    RECTAB_VEL_MIN = 1.5
+    if CarControl.is_recta_B(wp_Cerca1):
+        if speed < RECTAB_VEL_MIN:
+            reward *= 0.8
+
+    # Penalizo velocidad Mínima en las Rectas (RECTAF)
+    RECTAF_VEL_MIN = 1.4
+    if CarControl.is_recta_G(wp_Cerca1):
+        if speed < RECTAF_VEL_MIN:
+            reward *= 0.8
+
+    # Penalizo velocidad Mínima en las Rectas (RECTAG)
+    RECTAG_VEL_MIN = 1.6
+    if CarControl.is_recta_G(wp_Cerca1):
+        if speed < RECTAG_VEL_MIN:
+            reward *= 0.8
+
+
     # Speed y Progreso
     SPEED_UMBRAL = 3
     if speed < SPEED_UMBRAL:
