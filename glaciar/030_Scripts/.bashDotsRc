@@ -72,6 +72,12 @@ function drSync() {
     drUp
 }
 
+
+function drInfoTrack() {
+
+    aws deepracer  get-leaderboard  --leaderboard-arn $1  | grep "TrackArn\|Name"
+}
+
 function drImportGlaciar() {
 
 

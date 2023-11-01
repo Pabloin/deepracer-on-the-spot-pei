@@ -1,0 +1,3 @@
+Puedo tener dos ideas para bajar de los 20 ...
+
+    a) El modelo F, que no está contaminado por los waypoints compitio en T2023-11

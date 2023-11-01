@@ -36,7 +36,7 @@ class CarControl:
     Tramo_17 = [ Ctrl_OFF, Curva, DIR_R, 140,141,142,143 ]
     Tramo_18 = [ Ctrl_OFF, Recta, DIR_C, 144,145,146,147,148,149 ]
     Tramo_19 = [ Ctrl_ON,  Curva, DIR_L, 150,151,152,153,154,155,156,157,158,159 ]
-    Tramo_20 = [ Ctrl_ON, Recta, DIR_C, 160,161,162,163,164,165,166,167,168,169 ]
+    Tramo_20 = [ Ctrl_ON,  Recta, DIR_C, 160,161,162,163,164,165,166,167,168,169 ]
     Tramo_21 = [ Ctrl_OFF, Curva, DIR_R, 170,171,172,173,174,175 ]
     Tramo_22 = [ Ctrl_ON,  Recta, DIR_C, 176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194 ]
 
